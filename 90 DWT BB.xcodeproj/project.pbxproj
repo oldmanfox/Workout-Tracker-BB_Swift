@@ -16,6 +16,7 @@
 		A52813D81D1AF9E000F6FF57 /* _0_DWT_BBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813D71D1AF9E000F6FF57 /* _0_DWT_BBUITests.swift */; };
 		A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E61D1AFCC600F6FF57 /* PassKit.framework */; };
 		A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E81D1AFCD300F6FF57 /* StoreKit.framework */; };
+		A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813EA1D1AFD9100F6FF57 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A52813E51D1AFC9300F6FF57 /* 90 DWT BB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "90 DWT BB.entitlements"; sourceTree = "<group>"; };
 		A52813E61D1AFCC600F6FF57 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		A52813E81D1AFCD300F6FF57 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A52813EA1D1AFD9100F6FF57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */,
 				A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */,
 				A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */,
 			);
@@ -84,6 +87,7 @@
 		A52813AB1D1AF9E000F6FF57 = {
 			isa = PBXGroup;
 			children = (
+				A52813EA1D1AFD9100F6FF57 /* CoreData.framework */,
 				A52813E81D1AFCD300F6FF57 /* StoreKit.framework */,
 				A52813E61D1AFCC600F6FF57 /* PassKit.framework */,
 				A52813B61D1AF9E000F6FF57 /* 90 DWT BB */,
