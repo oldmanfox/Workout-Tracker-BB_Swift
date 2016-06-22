@@ -17,6 +17,7 @@
 		A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E61D1AFCC600F6FF57 /* PassKit.framework */; };
 		A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E81D1AFCD300F6FF57 /* StoreKit.framework */; };
 		A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813EA1D1AFD9100F6FF57 /* CoreData.framework */; };
+		A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		A52813E61D1AFCC600F6FF57 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		A52813E81D1AFCD300F6FF57 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A52813EA1D1AFD9100F6FF57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "_0_DWT_BB 2.xcdatamodel"; sourceTree = "<group>"; };
+		A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB.xcdatamodel; sourceTree = "<group>"; };
+		A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB_v3.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */,
 				A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */,
 				A52813C31D1AF9E000F6FF57 /* Info.plist */,
+				A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */,
 			);
 			path = "90 DWT BB";
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */,
+				A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */,
 				A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +540,21 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */,
+				A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */,
+				A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */,
+			);
+			currentVersion = A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */;
+			path = _0_DWT_BB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A52813AC1D1AF9E000F6FF57 /* Project object */;
 }
