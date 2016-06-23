@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController, MPAdViewDelegate {
 
     var adView = MPAdView(adUnitId: "AD_UNIT_ID", size: MOPUB_BANNER_SIZE)
-    //var headerView:UIView
-    lazy var headerView: UIView = UIView(frame: CGRectMake(0, 0, self.view.bounds.size.width, 0))
+    var headerView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +23,7 @@ class ViewController: UIViewController, MPAdViewDelegate {
         self.view.addSubview(self.adView)
         self.adView.loadAd()
         
-        //let newView = CGRectMake(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
-        
-        //self.headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.size.width, 0))
-        self.headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.size.width, 0))
-        
+        self.headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 0))
     }
 
     override func didReceiveMemoryWarning() {

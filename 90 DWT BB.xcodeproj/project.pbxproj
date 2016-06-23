@@ -197,6 +197,10 @@
 		A51571A71D1B3256002588C0 /* MPRewardedVideoCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A51570E71D1B3256002588C0 /* MPRewardedVideoCustomEvent.m */; };
 		A51571A81D1B3256002588C0 /* MPRewardedVideoError.m in Sources */ = {isa = PBXBuildFile; fileRef = A51570E91D1B3256002588C0 /* MPRewardedVideoError.m */; };
 		A51571A91D1B3256002588C0 /* MPRewardedVideoReward.m in Sources */ = {isa = PBXBuildFile; fileRef = A51570EB1D1B3256002588C0 /* MPRewardedVideoReward.m */; };
+		A51571AE1D1C36A2002588C0 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571AD1D1C36A2002588C0 /* IAPHelper.swift */; };
+		A51571B01D1C36B2002588C0 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571AF1D1C36B2002588C0 /* Products.swift */; };
+		A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B11D1C36C5002588C0 /* ProductCell.swift */; };
+		A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B31D1C3B8D002588C0 /* StoreTVC.swift */; };
 		A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */; };
 		A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B91D1AF9E000F6FF57 /* ViewController.swift */; };
 		A52813BD1D1AF9E000F6FF57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52813BB1D1AF9E000F6FF57 /* Main.storyboard */; };
@@ -609,6 +613,10 @@
 		A51570E91D1B3256002588C0 /* MPRewardedVideoError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRewardedVideoError.m; sourceTree = "<group>"; };
 		A51570EA1D1B3256002588C0 /* MPRewardedVideoReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRewardedVideoReward.h; sourceTree = "<group>"; };
 		A51570EB1D1B3256002588C0 /* MPRewardedVideoReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRewardedVideoReward.m; sourceTree = "<group>"; };
+		A51571AD1D1C36A2002588C0 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		A51571AF1D1C36B2002588C0 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		A51571B11D1C36C5002588C0 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A51571B31D1C3B8D002588C0 /* StoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTVC.swift; sourceTree = "<group>"; };
 		A52813B41D1AF9E000F6FF57 /* 90 DWT BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "90 DWT BB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52813B91D1AF9E000F6FF57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1256,6 +1264,24 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		A51571AB1D1C35F6002588C0 /* TableView Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A51571B31D1C3B8D002588C0 /* StoreTVC.swift */,
+			);
+			name = "TableView Controllers";
+			sourceTree = "<group>";
+		};
+		A51571AC1D1C3613002588C0 /* In-App Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				A51571AD1D1C36A2002588C0 /* IAPHelper.swift */,
+				A51571AF1D1C36B2002588C0 /* Products.swift */,
+				A51571B11D1C36C5002588C0 /* ProductCell.swift */,
+			);
+			name = "In-App Purchases";
+			sourceTree = "<group>";
+		};
 		A52813AB1D1AF9E000F6FF57 = {
 			isa = PBXGroup;
 			children = (
@@ -1283,6 +1309,8 @@
 			isa = PBXGroup;
 			children = (
 				A5156F551D1B3256002588C0 /* MoPubSDK */,
+				A51571AC1D1C3613002588C0 /* In-App Purchases */,
+				A51571AB1D1C35F6002588C0 /* TableView Controllers */,
 				A52813E51D1AFC9300F6FF57 /* 90 DWT BB.entitlements */,
 				A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */,
 				A52813B91D1AF9E000F6FF57 /* ViewController.swift */,
@@ -1482,6 +1510,7 @@
 				A515718E1D1B3256002588C0 /* MOPUBNativeVideoAdRendererSettings.m in Sources */,
 				A51571701D1B3256002588C0 /* MPCollectionViewAdPlacer.m in Sources */,
 				A51570F71D1B3256002588C0 /* MPBannerCustomEventAdapter.m in Sources */,
+				A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */,
 				A515717E1D1B3256002588C0 /* MPStreamAdPlacementData.m in Sources */,
 				A51570EF1D1B3256002588C0 /* README.md in Sources */,
 				A515714F1D1B3256002588C0 /* MPVASTMediaFile.m in Sources */,
@@ -1504,6 +1533,7 @@
 				A51571521D1B3256002588C0 /* MPVASTResponse.m in Sources */,
 				A51570FA1D1B3256002588C0 /* MPAdAlertManager.m in Sources */,
 				A51571081D1B3256002588C0 /* MPLastResortDelegate.m in Sources */,
+				A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */,
 				A51570FF1D1B3256002588C0 /* MPAdConfiguration.m in Sources */,
 				A51571201D1B3256002588C0 /* MPVASTTracking.m in Sources */,
 				A51570F61D1B3256002588C0 /* MPBannerAdManager.m in Sources */,
@@ -1514,6 +1544,7 @@
 				A51571111D1B3256002588C0 /* MPLogEventRecorder.m in Sources */,
 				A51571011D1B3256002588C0 /* MPAdServerCommunicator.m in Sources */,
 				A51571401D1B3256002588C0 /* MPLogProvider.m in Sources */,
+				A51571B01D1C36B2002588C0 /* Products.swift in Sources */,
 				A515714B1D1B3256002588C0 /* MPVASTInline.m in Sources */,
 				A51571391D1B3256002588C0 /* MPAnalyticsTracker.m in Sources */,
 				A51571141D1B3256002588C0 /* MPRetryingHTTPOperation.m in Sources */,
@@ -1527,6 +1558,7 @@
 				A51571A71D1B3256002588C0 /* MPRewardedVideoCustomEvent.m in Sources */,
 				A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */,
 				A51571481D1B3256002588C0 /* MPVASTCreative.m in Sources */,
+				A51571AE1D1C36A2002588C0 /* IAPHelper.swift in Sources */,
 				A51571471D1B3256002588C0 /* MPVASTCompanionAd.m in Sources */,
 				A51571101D1B3256002588C0 /* MPLogEventCommunicator.m in Sources */,
 				A51571251D1B3256002588C0 /* MRBridge.m in Sources */,
