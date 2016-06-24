@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F5D1D1B3256002588C0 /* GoogleMobileAds.framework */; };
+		5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F6A1D1B3256002588C0 /* MMAdSDK.framework */; };
+		5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */; };
 		A51570EC1D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */; };
 		A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5B1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m */; };
-		A51570EE1D1B3256002588C0 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F5D1D1B3256002588C0 /* GoogleMobileAds.framework */; };
 		A51570EF1D1B3256002588C0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5E1D1B3256002588C0 /* README.md */; };
 		A51570F01D1B3256002588C0 /* MPiAdBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F611D1B3256002588C0 /* MPiAdBannerCustomEvent.m */; };
 		A51570F11D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F631D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m */; };
 		A51570F21D1B3256002588C0 /* MPMillennialBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F661D1B3256002588C0 /* MPMillennialBannerCustomEvent.m */; };
 		A51570F31D1B3256002588C0 /* MPMillennialInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F681D1B3256002588C0 /* MPMillennialInterstitialCustomEvent.m */; };
-		A51570F41D1B3256002588C0 /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F6A1D1B3256002588C0 /* MMAdSDK.framework */; };
 		A51570F51D1B3256002588C0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A5156F6B1D1B3256002588C0 /* README.md */; };
 		A51570F61D1B3256002588C0 /* MPBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F6F1D1B3256002588C0 /* MPBannerAdManager.m */; };
 		A51570F71D1B3256002588C0 /* MPBannerCustomEventAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F721D1B3256002588C0 /* MPBannerCustomEventAdapter.m */; };
@@ -232,6 +233,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "90-DWT-BB-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5156F581D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
 		A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
@@ -644,8 +646,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51570EE1D1B3256002588C0 /* GoogleMobileAds.framework in Frameworks */,
-				A51570F41D1B3256002588C0 /* MMAdSDK.framework in Frameworks */,
+				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
+				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */,
 				A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */,
 				A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */,
@@ -1268,6 +1270,7 @@
 			isa = PBXGroup;
 			children = (
 				A51571B31D1C3B8D002588C0 /* StoreTVC.swift */,
+				5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */,
 			);
 			name = "TableView Controllers";
 			sourceTree = "<group>";
@@ -1532,6 +1535,7 @@
 				A515715E1D1B3256002588C0 /* MPCollectionViewAdPlacerCell.m in Sources */,
 				A51571521D1B3256002588C0 /* MPVASTResponse.m in Sources */,
 				A51570FA1D1B3256002588C0 /* MPAdAlertManager.m in Sources */,
+				5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */,
 				A51571081D1B3256002588C0 /* MPLastResortDelegate.m in Sources */,
 				A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */,
 				A51570FF1D1B3256002588C0 /* MPAdConfiguration.m in Sources */,
@@ -1826,6 +1830,7 @@
 				CODE_SIGN_ENTITLEMENTS = "90 DWT BB/90 DWT BB.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/90",
@@ -1858,6 +1863,7 @@
 				CODE_SIGN_ENTITLEMENTS = "90 DWT BB/90 DWT BB.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/90",

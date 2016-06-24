@@ -24,6 +24,12 @@ import UIKit
 import StoreKit
 
 class ProductCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var buyButton: UIButton!
+    
     static let priceFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
         
@@ -41,33 +47,29 @@ class ProductCell: UITableViewCell {
             
             ProductCell.priceFormatter.locale = product.priceLocale
             
-            let titleName:String? = product.localizedTitle
-            let titlePrice:String? = ProductCell.priceFormatter.stringFromNumber(product.price)
-            textLabel?.text = "\(titleName!) - \(titlePrice!)"
-            
-            detailTextLabel?.text = product.localizedDescription
-            
-            //textLabel?.text = product.localizedTitle
-            
+            titleLabel.text = product.localizedTitle
+            priceLabel.text = ProductCell.priceFormatter.stringFromNumber(product.price)
+            descriptionLabel.text = product.localizedDescription
+
             if Products.store.isProductPurchased(product.productIdentifier) {
-                //accessoryType = .Checkmark
-                let accessoryCheckMark = UIImage(named: "Orange-White-Check")
-                let accessoryViewForCell = UIImageView(image: accessoryCheckMark)
                 
+                // The product was purchased so show the checkmark.
+                buyButton.setTitle("", forState: UIControlState.Normal)
+                buyButton.setImage(UIImage(named: "Orange-White-Check"), forState: UIControlState.Normal)
+                buyButton.userInteractionEnabled = false
                 
-                
-                accessoryType = .None
-                accessoryView = accessoryViewForCell
-                //detailTextLabel?.text = ""
             } else if IAPHelper.canMakePayments() {
-                //ProductCell.priceFormatter.locale = product.priceLocale
-                //detailTextLabel?.text = ProductCell.priceFormatter.stringFromNumber(product.price)
                 
-                accessoryType = .None
-                accessoryView = self.newBuyButton()
+                // The product has not been purchased.
+                // The customer is allowed to purchase it.
+                buyButton.hidden = false
+                buyButton.userInteractionEnabled = true
+                
             } else {
-                textLabel?.text = "\(titleName!) - Not Available"
                 
+                // The customer is not allowed to purchase it.
+                buyButton.hidden = true
+                priceLabel.text = "Not Available"
             }
         }
     }
@@ -80,17 +82,30 @@ class ProductCell: UITableViewCell {
         accessoryView = nil
     }
     
-    func newBuyButton() -> UIButton {
-        let button = UIButton(type: .System)
-        button.setTitleColor(tintColor, forState: .Normal)
-        button.setTitle("Buy", forState: .Normal)
-        button.addTarget(self, action: #selector(ProductCell.buyButtonTapped(_:)), forControlEvents: .TouchUpInside)
-        button.sizeToFit()
+    @IBAction func buyButtonPressedDown(sender: UIButton) {
         
-        return button
+        // Set the default alpha state for the animation.
+        buyButton.titleLabel?.alpha = 0.15
     }
     
-    func buyButtonTapped(sender: AnyObject) {
+    @IBAction func buyButtonTapped(sender: UIButton) {
+        
+        // User released the buy button so start the ainimation back to full alpha.
+        UIView.animateWithDuration(0.3, animations: {
+            
+            self.buyButton.titleLabel?.alpha = 1.0
+        })
+        
         buyButtonHandler?(product: product!)
     }
+
+//    func newBuyButton() -> UIButton {
+//        let button = UIButton(type: .System)
+//        button.setTitleColor(tintColor, forState: .Normal)
+//        button.setTitle("Buy", forState: .Normal)
+//        button.addTarget(self, action: #selector(ProductCell.buyButtonTapped(_:)), forControlEvents: .TouchUpInside)
+//        button.sizeToFit()
+//        
+//        return button
+//    }
 }

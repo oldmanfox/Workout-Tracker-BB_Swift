@@ -35,6 +35,7 @@ class StoreTVC: UITableViewController {
     }
     
     func reload() {
+        
         products = []
         
         //tableView.reloadData()
