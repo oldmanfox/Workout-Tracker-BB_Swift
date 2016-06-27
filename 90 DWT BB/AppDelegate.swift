@@ -18,6 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //UIColor *green = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:1.0f];
+        
+        // Change navigation bar tint color
+        // Green Color
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        // Change navigation bar bar button items and title text color
+        // White Color
+        UINavigationBar.appearance().barTintColor = UIColor (red: 133/255, green: 187/255, blue: 60/255, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        // Change tab bar tint color
+        // Orange Color
+        UITabBar.appearance().tintColor = UIColor (red: 254/255, green: 129/255, blue: 48/255, alpha: 1)
+
         return true
     }
 

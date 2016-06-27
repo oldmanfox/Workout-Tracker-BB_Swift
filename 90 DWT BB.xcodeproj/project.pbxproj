@@ -10,6 +10,10 @@
 		5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F5D1D1B3256002588C0 /* GoogleMobileAds.framework */; };
 		5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F6A1D1B3256002588C0 /* MMAdSDK.framework */; };
 		5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */; };
+		5867DC111D1F0F1F00363A4A /* MonthTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC101D1F0F1F00363A4A /* MonthTVC.swift */; };
+		5867DC131D1F0F4100363A4A /* WeekTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC121D1F0F4100363A4A /* WeekTVC.swift */; };
+		5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */; };
+		5867DC191D20499A00363A4A /* WeekTVC_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */; };
 		A51570EC1D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */; };
 		A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5B1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m */; };
 		A51570EF1D1B3256002588C0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5E1D1B3256002588C0 /* README.md */; };
@@ -234,6 +238,10 @@
 
 /* Begin PBXFileReference section */
 		5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		5867DC101D1F0F1F00363A4A /* MonthTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTVC.swift; sourceTree = "<group>"; };
+		5867DC121D1F0F4100363A4A /* WeekTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC.swift; sourceTree = "<group>"; };
+		5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC.swift; sourceTree = "<group>"; };
+		5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC_TableViewCell.swift; sourceTree = "<group>"; };
 		A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "90-DWT-BB-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5156F581D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
 		A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
@@ -671,6 +679,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5867DC171D20494F00363A4A /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		A5156F551D1B3256002588C0 /* MoPubSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,8 +1285,12 @@
 		A51571AB1D1C35F6002588C0 /* TableView Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5867DC171D20494F00363A4A /* TableViewCells */,
 				A51571B31D1C3B8D002588C0 /* StoreTVC.swift */,
 				5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */,
+				5867DC101D1F0F1F00363A4A /* MonthTVC.swift */,
+				5867DC121D1F0F4100363A4A /* WeekTVC.swift */,
+				5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */,
 			);
 			name = "TableView Controllers";
 			sourceTree = "<group>";
@@ -1525,6 +1545,7 @@
 				A51571591D1B3256002588C0 /* MPBannerCustomEvent.m in Sources */,
 				A51570FD1D1B3256002588C0 /* MPAdBrowserController.m in Sources */,
 				A51571781D1B3256002588C0 /* MPNativeAdRequestTargeting.m in Sources */,
+				5867DC131D1F0F4100363A4A /* WeekTVC.swift in Sources */,
 				A51571631D1B3256002588C0 /* MPNativeAd+Internal.m in Sources */,
 				A515712E1D1B3256002588C0 /* MRNativeCommandHandler.m in Sources */,
 				A515710F1D1B3256002588C0 /* MPLogEvent.m in Sources */,
@@ -1581,6 +1602,7 @@
 				A51570F81D1B3256002588C0 /* MPBaseBannerAdapter.m in Sources */,
 				A51571231D1B3256002588C0 /* MPMRAIDInterstitialCustomEvent.m in Sources */,
 				A515710B1D1B3256002588C0 /* MPURLResolver.m in Sources */,
+				5867DC191D20499A00363A4A /* WeekTVC_TableViewCell.swift in Sources */,
 				A515714C1D1B3256002588C0 /* MPVASTLinearAd.m in Sources */,
 				A51571711D1B3256002588C0 /* MPNativeAd.m in Sources */,
 				A515710D1D1B3256002588C0 /* MPXMLParser.m in Sources */,
@@ -1609,6 +1631,7 @@
 				A51571361D1B3256002588C0 /* UIColor+MPAdditions.m in Sources */,
 				A51571651D1B3256002588C0 /* MPNativeAdSourceQueue.m in Sources */,
 				A51571671D1B3256002588C0 /* MPNativeCache.m in Sources */,
+				5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */,
 				A515716F1D1B3256002588C0 /* MPClientAdPositioning.m in Sources */,
 				A51571531D1B3256002588C0 /* MPVASTStringUtilities.m in Sources */,
 				A51571571D1B3256002588C0 /* MPAdConversionTracker.m in Sources */,
@@ -1681,6 +1704,7 @@
 				A515716D1D1B3256002588C0 /* MPTableViewCellImpressionTracker.m in Sources */,
 				A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */,
 				A51571491D1B3256002588C0 /* MPVASTDurationOffset.m in Sources */,
+				5867DC111D1F0F1F00363A4A /* MonthTVC.swift in Sources */,
 				A515714A1D1B3256002588C0 /* MPVASTIndustryIcon.m in Sources */,
 				A51571A31D1B3256002588C0 /* MPRewardedVideoAdapter.m in Sources */,
 				A515716E1D1B3256002588C0 /* MPAdPositioning.m in Sources */,
