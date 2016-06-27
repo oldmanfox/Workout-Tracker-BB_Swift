@@ -206,6 +206,7 @@
 		A51571B01D1C36B2002588C0 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571AF1D1C36B2002588C0 /* Products.swift */; };
 		A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B11D1C36C5002588C0 /* ProductCell.swift */; };
 		A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B31D1C3B8D002588C0 /* StoreTVC.swift */; };
+		A51571B81D21C561002588C0 /* WorkoutTVC_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */; };
 		A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */; };
 		A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B91D1AF9E000F6FF57 /* ViewController.swift */; };
 		A52813BD1D1AF9E000F6FF57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52813BB1D1AF9E000F6FF57 /* Main.storyboard */; };
@@ -627,6 +628,7 @@
 		A51571AF1D1C36B2002588C0 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		A51571B11D1C36C5002588C0 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A51571B31D1C3B8D002588C0 /* StoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTVC.swift; sourceTree = "<group>"; };
+		A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_TableViewCell.swift; sourceTree = "<group>"; };
 		A52813B41D1AF9E000F6FF57 /* 90 DWT BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "90 DWT BB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52813B91D1AF9E000F6FF57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */,
+				A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1536,6 +1539,7 @@
 				A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */,
 				A515717E1D1B3256002588C0 /* MPStreamAdPlacementData.m in Sources */,
 				A51570EF1D1B3256002588C0 /* README.md in Sources */,
+				A51571B81D21C561002588C0 /* WorkoutTVC_TableViewCell.swift in Sources */,
 				A515714F1D1B3256002588C0 /* MPVASTMediaFile.m in Sources */,
 				A515714D1D1B3256002588C0 /* MPVASTMacroProcessor.m in Sources */,
 				A51571291D1B3256002588C0 /* MRConstants.m in Sources */,
@@ -1869,6 +1873,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1902,6 +1912,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

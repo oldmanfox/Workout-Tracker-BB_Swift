@@ -16,7 +16,8 @@ class MonthTVC: UITableViewController {
         
         super.viewDidLoad()
 
-        navigationItem.title = "Bulk"
+        //navigationItem.title = "Bulk"
+        navigationItem.title = "Tone"
         
         findWeekList()
     }
@@ -51,12 +52,28 @@ class MonthTVC: UITableViewController {
         
         if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
             
-            //cell.accessoryView = tempAccessoryView
+            cell.accessoryView = tempAccessoryView
         }
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            
+            return 20
+        }
+        else {
+            return 10
+        }
+    }
 
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return 10
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,7 +87,7 @@ class MonthTVC: UITableViewController {
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.workoutRoutine = navigationItem.title!
-            destinationVC?.navigationItem.title = sectionsArray[(selectedRow?.section)!][(selectedRow?.row)!] as? String
+            destinationVC?.workoutWeek = (sectionsArray[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
         }
     }
     
