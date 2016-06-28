@@ -95,9 +95,9 @@ class WeekTVC: UITableViewController {
 
         }
         
-        cell.dayOfWeekTextField.layer.borderColor = UIColor .blackColor().CGColor
-        cell.dayOfWeekTextField.layer.borderWidth = 1.5
-        cell.dayOfWeekTextField.layer.cornerRadius = 15
+//        cell.dayOfWeekTextField.layer.borderColor = UIColor .blackColor().CGColor
+//        cell.dayOfWeekTextField.layer.borderWidth = 1.5
+//        cell.dayOfWeekTextField.layer.cornerRadius = 15
 
         return cell
     }
