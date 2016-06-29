@@ -18,6 +18,9 @@ class WorkoutTVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 292.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +37,60 @@ class WorkoutTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 8
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("5 Force", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        var cellIdentifier = ""
+        
+        switch indexPath.row {
+        case 0:
+            cellIdentifier = "5 Force Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+        case 1:
+            cellIdentifier = "6 Progressive Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LargerCell
+        case 2:
+            cellIdentifier = "4 Drop Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell3
+        case 3:
+            cellIdentifier = "3 Increase Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell4
+        case 4:
+            cellIdentifier = "3 Straight Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell5
+        case 5:
+            cellIdentifier = "2 Straight Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell6
+        case 6:
+            cellIdentifier = "1 Straight Set"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell7
+        case 7:
+            cellIdentifier = "1 Straight Set Start On 2"
+            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell8
+        default:
+            break
+        }
+        
+        return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+        
+//        if indexPath.row == 0 {
+//            
+//            cellIdentifier = "5 Force Set"
+//            
+//            
+//        }
+//        else {
+//            
+//            cellIdentifier = "6 Progressive Set"
+//        }
+        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("5 Force Set", forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+//
+//        // Configure the cell...
+//
+//        return cell
     }
 
     /*
@@ -80,6 +128,53 @@ class WorkoutTVC: UITableViewController {
     }
     */
 
+    // MARK: UITableViewDelegate
+    
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        
+//        switch indexPath.row {
+//        case 0:
+//            return 292
+//        case 1:
+//            return 292
+//        case 2:
+//            return 292
+//        case 3:
+//            return 292
+//        case 4:
+//            return 292
+//        case 5:
+//            return 292
+//        case 6:
+//            return 292
+//        case 7:
+//            return 292
+//        default:
+//            return 0
+//        }
+//
+//        
+////        if indexPath.row == 0 {
+////            
+////            return 292
+////        }
+////        else {
+////            
+////            return 392
+////        }
+//        
+////        if isLandscapeOrientation() {
+////            return hasImageAtIndexPath(indexPath) ? 140.0 : 120.0
+////        } else {
+////            return hasImageAtIndexPath(indexPath) ? 235.0 : 155.0
+////        }
+//    }
+    
+    func isLandscapeOrientation() -> Bool {
+        return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
+    }
+    
     /*
     // MARK: - Navigation
 
