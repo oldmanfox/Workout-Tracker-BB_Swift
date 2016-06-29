@@ -47,33 +47,33 @@ class WorkoutTVC: UITableViewController {
         switch indexPath.row {
         case 0:
             cellIdentifier = "5 Force Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
         case 1:
             cellIdentifier = "6 Progressive Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LargerCell
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LargerCell
         case 2:
             cellIdentifier = "4 Drop Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell3
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell3
         case 3:
             cellIdentifier = "3 Increase Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell4
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell4
         case 4:
             cellIdentifier = "3 Straight Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell5
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell5
         case 5:
             cellIdentifier = "2 Straight Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell6
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell6
         case 6:
             cellIdentifier = "1 Straight Set"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell7
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell7
         case 7:
             cellIdentifier = "1 Straight Set Start On 2"
-            return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell8
+            //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell8
         default:
             break
         }
         
-        return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+        //return tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
         
 //        if indexPath.row == 0 {
 //            
@@ -86,11 +86,11 @@ class WorkoutTVC: UITableViewController {
 //            cellIdentifier = "6 Progressive Set"
 //        }
         
-//        let cell = tableView.dequeueReusableCellWithIdentifier("5 Force Set", forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
-//
-//        // Configure the cell...
-//
-//        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
+
+        // Configure the cell...
+
+        return cell
     }
 
     /*
@@ -171,9 +171,9 @@ class WorkoutTVC: UITableViewController {
 ////        }
 //    }
     
-    func isLandscapeOrientation() -> Bool {
-        return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
-    }
+//    func isLandscapeOrientation() -> Bool {
+//        return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
+//    }
     
     /*
     // MARK: - Navigation
