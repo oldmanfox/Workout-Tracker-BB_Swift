@@ -94,10 +94,6 @@ class WeekTVC: UITableViewController {
         default: break
 
         }
-        
-//        cell.dayOfWeekTextField.layer.borderColor = UIColor .blackColor().CGColor
-//        cell.dayOfWeekTextField.layer.borderWidth = 1.5
-//        cell.dayOfWeekTextField.layer.cornerRadius = 15
 
         return cell
     }
@@ -112,6 +108,9 @@ class WeekTVC: UITableViewController {
             return ""
         }
     }
+    
+    
+    // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
@@ -128,17 +127,28 @@ class WeekTVC: UITableViewController {
         
         return 10
     }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+    }
     
-       /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toWorkout" {
+            
+            let destinationVC = segue.destinationViewController as? WorkoutTVC
+            let selectedRow = tableView.indexPathForSelectedRow
+            
+            destinationVC?.navigationItem.title = trimStringForWorkoutName((currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!)
+            destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+        }
     }
-    */
-
+    
     private func trimStringForWorkoutName(originalString: String) -> String {
         
         switch originalString {
