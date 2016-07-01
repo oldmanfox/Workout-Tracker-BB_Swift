@@ -13,6 +13,12 @@ class WorkoutTVC: UITableViewController {
     var selectedWorkout = ""
     var exerciseNameArray = [[], []]
     
+    private struct CellType {
+        static let title = "TitleRepsCell"
+        static let small = "SmallWeightCell"
+        static let large = "LargeWeightCell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,106 +38,107 @@ class WorkoutTVC: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     func loadExerciseNameArray(workout: String) {
         
         switch workout {
         case "B1: Chest+Tri":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
 
         case "B1: Legs":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
             
             
             // Start Here Next Time
             // Add correct cell structure
         case "B1: Back+Bi":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small]]
             
         case "B1: Shoulders":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
-            
-        case "B3: Complete Body":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
             
         case "B2: Arms":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small]]
             
         case "B2: Legs":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
             
         case "B2: Shoulders":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
             
         case "B2: Chest":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large, CellType.title, CellType.large],
+                                 [CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small, CellType.title, CellType.small]]
             
         case "B2: Back":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.small],
+                                 [CellType.title, CellType.large],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small]]
             
         case "T1: Chest+Tri":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.large, CellType.title, CellType.small]]
             
         case "T1: Back+Bi":
-            exerciseNameArray = [["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "LargeWeightCell", "TitleRepsCell", "LargeWeightCell"],
-                                 ["TitleRepsCell", "SmallWeightCell", "TitleRepsCell", "SmallWeightCell"]]
+            exerciseNameArray = [[CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small],
+                                 [CellType.title, CellType.large, CellType.title, CellType.small]]
+            
+        case "B3: Complete Body":
+            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
+                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
             
         default:
             break
@@ -159,11 +166,11 @@ class WorkoutTVC: UITableViewController {
         let cellIdentifier = exerciseNameArray[indexPath.section][indexPath.row]
         
         switch cellIdentifier as! String {
-        case "TitleRepsCell":
+        case CellType.title:
             return tableView.dequeueReusableCellWithIdentifier(cellIdentifier as! String, forIndexPath: indexPath) as! WorkoutTVC_TableViewCell
-        case "SmallWeightCell":
+        case CellType.small:
             return tableView.dequeueReusableCellWithIdentifier(cellIdentifier as! String, forIndexPath: indexPath) as! Cell3
-        case "LargeWeightCell":
+        case CellType.large:
             return tableView.dequeueReusableCellWithIdentifier(cellIdentifier as! String, forIndexPath: indexPath) as! Cell4
         default:
             return tableView.dequeueReusableCellWithIdentifier(cellIdentifier as! String, forIndexPath: indexPath) as! Cell5

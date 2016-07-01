@@ -12,6 +12,21 @@ class MonthTVC: UITableViewController {
     
     var sectionsArray = [[], []]
     
+    private struct Week {
+        static let week1 = "Week 1"
+        static let week2 = "Week 2"
+        static let week3 = "Week 3"
+        static let week4 = "Week 4"
+        static let week5 = "Week 5"
+        static let week6 = "Week 6"
+        static let week7 = "Week 7"
+        static let week8 = "Week 8"
+        static let week9 = "Week 9"
+        static let week10 = "Week 10"
+        static let week11 = "Week 11"
+        static let week12 = "Week 12"
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -95,14 +110,14 @@ class MonthTVC: UITableViewController {
         
         switch navigationItem.title! {
         case "Bulk":
-            sectionsArray = [["Week 1", "Week 2", "Week 3"],
-                             ["Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9"],
-                             ["Week 10", "Week 11", "Week 12"]]
+            sectionsArray = [[Week.week1, Week.week2, Week.week3],
+                             [Week.week4, Week.week5, Week.week6, Week.week7, Week.week8, Week.week9],
+                             [Week.week10, Week.week11, Week.week12]]
             
         case "Tone":
-            sectionsArray = [["Week 1", "Week 2", "Week 3"],
-                             ["Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
-                             ["Week 9", "Week 10", "Week 11", "Week 12"]]
+            sectionsArray = [[Week.week1, Week.week2, Week.week3],
+                             [Week.week4, Week.week5, Week.week6, Week.week7, Week.week8],
+                             [Week.week9, Week.week10, Week.week11, Week.week12]]
             
         default:
             sectionsArray = [[], []]
