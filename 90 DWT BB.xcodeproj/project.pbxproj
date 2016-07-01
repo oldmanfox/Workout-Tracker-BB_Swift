@@ -1925,6 +1925,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1958,6 +1964,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,

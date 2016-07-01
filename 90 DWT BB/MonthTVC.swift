@@ -16,8 +16,8 @@ class MonthTVC: UITableViewController {
         
         super.viewDidLoad()
 
-        //navigationItem.title = "Bulk"
-        navigationItem.title = "Tone"
+        navigationItem.title = "Bulk"
+        //navigationItem.title = "Tone"
         
         findWeekList()
     }
