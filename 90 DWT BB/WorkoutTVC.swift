@@ -43,6 +43,12 @@ class WorkoutTVC: UITableViewController {
         }
     }
     
+    private struct Color {
+        static let lightGreen = UIColor (red: 8/255, green: 175/255, blue: 90/255, alpha: 1)
+        static let mediumGreen = UIColor (red: 4/255, green: 142/255, blue: 93/255, alpha: 1)
+        static let darkGreen = UIColor (red: 0/255, green: 110/255, blue: 96/255, alpha: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,73 +79,71 @@ class WorkoutTVC: UITableViewController {
         
         switch workout {
         case "B1: Chest+Tri":
-//            exerciseNameArray = [["Dumbbell Chest Press"],
-//                                 ["Incline Dumbbell Fly", "Incline Dumbbell Press"],
-//                                 ["Close Grip Dumbbell Press", "Partial Dumbbell Fly", "Decline Push-Up"],
-//                                 ["Laying Tricep Extension"],
-//                                 ["Single Arm Tricep Kickback", "Diamond Push-Up"],
-//                                 ["Dips", "Abs"]]
-//            
-//            exerciseRepsArray = [[Reps._15, Reps._12, Reps._8, Reps._8, Reps.empty, Reps.empty],
-//                                 [[Reps._15, Reps._12, Reps._8, Reps.empty, Reps.empty, Reps.empty], [Reps._15, Reps._12, Reps._8, Reps._8, Reps.empty, Reps.empty]],
-//                                 [[Reps._15, Reps._12, Reps._8, Reps.empty, Reps.empty, Reps.empty], [Reps._15, Reps._12, Reps._8, Reps.empty, Reps.empty, Reps.empty], [Reps._15, Reps._12, Reps._8, Reps.empty, Reps.empty, Reps.empty]],
-//                                 [Reps._15, Reps._12, Reps._8, Reps._8, Reps.empty, Reps.empty],
-//                                 [[Reps._15, Reps._12, Reps._8, Reps._8, Reps.empty, Reps.empty], [Reps._15, Reps._12, Reps._8, Reps.empty, Reps.empty, Reps.empty]],
-//                                 [[Reps._60, Reps.empty, Reps.empty, Reps.empty, Reps.empty, Reps.empty], [Reps._60, Reps.empty, Reps.empty, Reps.empty, Reps.empty, Reps.empty]]]
             
             let cell1 = [["Dumbbell Chest Press"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, false, true, true]]
             
             let cell2 = [["Incline Dumbbell Fly"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, true, true, true]]
             
             let cell3 = [["Incline Dumbbell Press"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, false, true, true]]
             
             let cell4 = [["Close Grip Dumbbell Press"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, true, true, true]]
             
             let cell5 = [["Partial Dumbbell Fly"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, true, true, true]]
             
             let cell6 = [["Decline Push-Up"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, true, true, true]]
             
             let cell7 = [["Laying Tricep Extension"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, false, true, true]]
             
             let cell8 = [["Single Arm Tricep Kickback"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, false, true, true]]
             
             let cell9 = [["Diamond Push-Up"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, false, true, true, true]]
             
             let cell10 = [["Dips"],
                          [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.sec, Reps.Title.empty , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, true, true, true, true, true]]
             
             let cell11 = [["Abs"],
                          [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, true, true, true, true, true]]
             
             cellArray = [[cell1],
@@ -150,88 +154,726 @@ class WorkoutTVC: UITableViewController {
                          [cell10, cell11]]
 
         case "B1: Legs":
-            exerciseNameArray = [[CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
             
+            let cell1 = [["Wide Squat"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
             
-            // Start Here Next Time
-            // Add correct cell structure
-        case "B1: Back+Bi":
-            exerciseNameArray = [[CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small]]
+            let cell2 = [["Alt Lunge"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell3 = [["S-U to Reverse Lunge"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell4 = [["P Squat"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell5 = [["B Squat"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["S-L Deadlift"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell7 = [["S-L Calf Raise"],
+                         [Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell8 = [["S Calf Raise"],
+                         [Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell9 = [["Abs"],
+                         [Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+
+            cellArray = [[cell1],
+                         [cell2, cell3],
+                         [cell4, cell5, cell6],
+                         [cell7, cell8, cell9]]
+            
+            case "B1: Back+Bi":
+                
+                let cell1 = [["Dumbbell Deadlift"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, false, true, true]]
+                
+                let cell2 = [["Dumbbell Pull-Over"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, false, true, true]]
+                
+                let cell3 = [["Pull-Up"],
+                             [Reps.Number._10, Reps.Number._10, Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell4 = [["Curl Bar Row"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell5 = [["One-Arm Dumbbell Row"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell6 = [["Reverse Fly"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell7 = [["Close-Grip Chin-Up"],
+                             [Reps.Number._30, Reps.Number._30, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.sec, Reps.Title.sec, Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell8 = [["Seated Bicep Curl"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, false, true, true]]
+                
+                let cell9 = [["Hammer Curl"],
+                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                             [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                             [false, false, false, true, true, true]]
+                
+                let cell10 = [["Curl Bar Bicep Curl"],
+                              [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                              [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                              [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                              [false, false, false, false, true, true]]
+                
+                let cell11 = [["Superman to Airplane"],
+                              [Reps.Number._30, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                              [Reps.Title.sec, Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                              [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                              [false, false, true, true, true, true]]
+
+                cellArray = [[cell1],
+                             [cell2, cell3],
+                             [cell4, cell5, cell6],
+                             [cell7],
+                             [cell8],
+                             [cell9],
+                             [cell10],
+                             [cell11]]
             
         case "B1: Shoulders":
-            exerciseNameArray = [[CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Shoulder Press"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell2 = [["Dumbbell Lateral Raise"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell3 = [["Curl Bar Upright Row"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell4 = [["Curl Bar Underhand Press"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell5 = [["Front Raise"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["Rear Fly"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell7 = [["Dumbbell Shrug"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell8 = [["Leaning Dumbbell Shrug"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell9 = [["6-Way Shoulder"],
+                         [Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell10 = [["Abs"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+
+            cellArray = [[cell1],
+                         [cell2, cell3],
+                         [cell4, cell5, cell6],
+                         [cell7, cell8],
+                         [cell9, cell10]]
             
         case "B2: Arms":
-            exerciseNameArray = [[CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Curl"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell2 = [["Seated Dumbbell Tricep Extension"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell3 = [["Curl Bar Curl"],
+                         [Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor()],
+                         [false, false, false, false, false, true]]
+            
+            let cell4 = [["Laying Curl Bar Tricep Extension"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell5 = [["Dumbbell Hammer Curl"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell6 = [["Leaning Dumbbell Tricep Extension"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell7 = [["Abs"],
+                         [Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+
+            cellArray = [[cell1],
+                         [cell2],
+                         [cell3],
+                         [cell4],
+                         [cell5],
+                         [cell6],
+                         [cell7]]
             
         case "B2: Legs":
-            exerciseNameArray = [[CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["2-Way Lunge"],
+                         [Reps.Number._12, Reps.Number._10, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell2 = [["Dumbbell Squat"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell3 = [["2-Way Sumo Squat"],
+                         [Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor()],
+                         [false, false, false, false, false, true]]
+            
+            let cell4 = [["Curl Bar Split Squat"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell5 = [["S-L Deadlift"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell6 = [["Side to Side Squat"],
+                         [Reps.Number._10, Reps.Number._10, Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell7 = [["S-L Calf Raise"],
+                         [Reps.Number._50, Reps.Number._50, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell8 = [["Abs"],
+                          [Reps.Number._30, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.sec, Reps.Title.sec , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+
+            cellArray = [[cell1],
+                         [cell2],
+                         [cell3],
+                         [cell4],
+                         [cell5, cell6],
+                         [cell7, cell8]]
             
         case "B2: Shoulders":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Lateral Raise"],
+                         [Reps.Number._12, Reps.Number._10, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell2 = [["Dumbbell Arnold Press"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell3 = [["Curl Bar Upright Row"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell4 = [["One Arm Dumbbell Front Raise"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell5 = [["Two Arm Front Raise Rotate"],
+                         [Reps.Number._10, Reps.Number._10, Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["Reverse Fly"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell7 = [["Plank Opposite Arm Leg Raise"],
+                         [Reps.Number._10, Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell8 = [["Plank Crunch"],
+                         [Reps.Number._30, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.sec, Reps.Title.sec , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+
+            cellArray = [[cell1, cell2],
+                         [cell3],
+                         [cell4, cell5],
+                         [cell6],
+                         [cell7, cell8]]
             
         case "B2: Chest":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Incline Dumbbell Fly"],
+                         [Reps.Number._12, Reps.Number._10, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell2 = [["Incline Dumbbell Press 1"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell3 = [["Rotating Dumbbell Chest Press"],
+                         [Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor()],
+                         [false, false, false, false, false, true]]
+            
+            let cell4 = [["Incline Dumbbell Press 2"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell5 = [["Center Dumbbell Chest Press Fly"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["Decline Push-Up"],
+                         [Reps.Number._12, Reps.Number._10, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell7 = [["Superman Airplane"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell8 = [["Russian Twist"],
+                         [Reps.Number.empty, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.empty, Reps.Title.sec , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [UIColor.whiteColor(), Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [true, false, true, true, true, true]]
+
+            cellArray = [[cell1, cell2],
+                         [cell3],
+                         [cell4],
+                         [cell5],
+                         [cell6, cell7, cell8]]
             
         case "B2: Back":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Pull-Over"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell2 = [["Pull-Up"],
+                         [Reps.Number._10, Reps.Number._10, Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell3 = [["Curl Bar Underhand Row"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number._12, Reps.Number._15],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.darkGreen, Color.mediumGreen, Color.lightGreen],
+                         [false, false, false, false, false, false]]
+            
+            let cell4 = [["One Arm Dumbbell Row"],
+                         [Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number._5, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, Color.lightGreen, UIColor.whiteColor()],
+                         [false, false, false, false, false, true]]
+            
+            let cell5 = [["Deadlift"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, false, true, true]]
+            
+            let cell6 = [["Reverse Fly"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell7 = [["Plank Row Arm Balance"],
+                         [Reps.Number._30, Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.sec, Reps.Title.sec , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+
+            cellArray = [[cell1, cell2],
+                         [cell3],
+                         [cell4],
+                         [cell5],
+                         [cell6, cell7]]
             
         case "T1: Chest+Tri":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Chest Press"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell2 = [["Crunch 1"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell3 = [["Incline Dumbbell Press"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell4 = [["Crunch 2"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell5 = [["Incline Dumbbell Fly"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["Plank To Sphinx"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell7 = [["Curl Bar Tricep Extension"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell8 = [["Curl Bar Crunch"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell9 = [["Dumbbell Tricep Extension"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell10 = [["Dips"],
+                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, false, true, true, true]]
+            
+            let cell11 = [["Plank Crunch"],
+                          [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, true, true, true, true, true]]
+
+            cellArray = [[cell1, cell2],
+                         [cell3, cell4],
+                         [cell5, cell6],
+                         [cell7, cell8],
+                         [cell9, cell10, cell11]]
             
         case "T1: Back+Bi":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Dumbbell Pull-Over"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell2 = [["Plank Hop"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell3 = [["Pull-Up"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell4 = [["Hanging Side-To-Side Crunch"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell5 = [["Curl Bar Row"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell6 = [["Curl Bar Twist"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell7 = [["Dumbbell Preacher Curl"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell8 = [["Hanging Crunch"],
+                         [Reps.Number._10, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, true, true, true, true, true]]
+            
+            let cell9 = [["Curl Bar Multi Curl"],
+                         [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, false, true, true, true]]
+            
+            let cell10 = [["Mountain Climber"],
+                          [Reps.Number._30, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, true, true, true, true, true]]
+
+            cellArray = [[cell1, cell2],
+                         [cell3, cell4],
+                         [cell5, cell6],
+                         [cell7, cell8],
+                         [cell9, cell10]]
             
         case "B3: Complete Body":
-            exerciseNameArray = [[CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small],
-                                 [CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small, CellType.title, CellType.small]]
+            
+            let cell1 = [["Pull-Up"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell2 = [["Push-Up"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell3 = [["Dumbbell Squat"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell4 = [["Crunch"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell5 = [["Dumbell Incline Press"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell6 = [["Dumbell Bent-Over Row"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell7 = [["Dumbell Alt Reverse Lunge"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell8 = [["Plank Crunch"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell9 = [["3-Way Military Press"],
+                         [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                         [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                         [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                         [false, false, true, true, true, true]]
+            
+            let cell10 = [["Single Arm Leaning Reverse Fly"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell11 = [["S-L Deadlift"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell12 = [["Russian Twist"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell13 = [["Curl-Up Hammer-Down"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell14 = [["Leaning Tricep Extension"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell15 = [["Calf Raise"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+            
+            let cell16 = [["Side Sphinx Raise"],
+                          [Reps.Number._15, Reps.Number._15, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
+                          [false, false, true, true, true, true]]
+
+            cellArray = [[cell1, cell2, cell3, cell4],
+                         [cell5, cell6, cell7, cell8],
+                         [cell9, cell10, cell11, cell12],
+                         [cell13, cell14, cell15, cell16]]
             
         default:
             break
@@ -274,14 +916,22 @@ class WorkoutTVC: UITableViewController {
         cell.repNumberLabel6.text = repNumbers![5] as? String
         
         let repTitles = currentCell[2] as? NSArray
-        cell.repTitleLabel1.text = repTitles![0] as? String
-        cell.repTitleLabel2.text = repTitles![1] as? String
-        cell.repTitleLabel3.text = repTitles![2] as? String
-        cell.repTitleLabel4.text = repTitles![3] as? String
-        cell.repTitleLabel5.text = repTitles![4] as? String
-        cell.repTitleLabel6.text = repTitles![5] as? String
+        cell.repTitleLabel1.text = repTitles![0].uppercaseString
+        cell.repTitleLabel2.text = repTitles![1].uppercaseString
+        cell.repTitleLabel3.text = repTitles![2].uppercaseString
+        cell.repTitleLabel4.text = repTitles![3].uppercaseString
+        cell.repTitleLabel5.text = repTitles![4].uppercaseString
+        cell.repTitleLabel6.text = repTitles![5].uppercaseString
         
-        let weightFields = currentCell[3] as? NSArray
+        let cellColor = currentCell[3] as? NSArray
+        cell.currentWeight1.backgroundColor = cellColor![0] as? UIColor
+        cell.currentWeight2.backgroundColor = cellColor![1] as? UIColor
+        cell.currentWeight3.backgroundColor = cellColor![2] as? UIColor
+        cell.currentWeight4.backgroundColor = cellColor![3] as? UIColor
+        cell.currentWeight5.backgroundColor = cellColor![4] as? UIColor
+        cell.currentWeight6.backgroundColor = cellColor![5] as? UIColor
+        
+        let weightFields = currentCell[4] as? NSArray
         cell.previousWeight1.hidden = weightFields![0] as! Bool
         cell.previousWeight2.hidden = weightFields![1] as! Bool
         cell.previousWeight3.hidden = weightFields![2] as! Bool
@@ -303,8 +953,6 @@ class WorkoutTVC: UITableViewController {
         
         return "Set \(section + 1) of \(numberOfSectionsInTableView(tableView))"
     }
-    
-    
 
     // MARK: UITableViewDelegate
     
@@ -318,51 +966,6 @@ class WorkoutTVC: UITableViewController {
         //header.contentView.backgroundColor = UIColor (red: 91/255, green: 91/255, blue: 91/255, alpha: 1)
         header.contentView.backgroundColor = UIColor.lightGrayColor()
     }
-    
-//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//        
-//        switch indexPath.row {
-//        case 0:
-//            return 292
-//        case 1:
-//            return 292
-//        case 2:
-//            return 292
-//        case 3:
-//            return 292
-//        case 4:
-//            return 292
-//        case 5:
-//            return 292
-//        case 6:
-//            return 292
-//        case 7:
-//            return 292
-//        default:
-//            return 0
-//        }
-//
-//        
-////        if indexPath.row == 0 {
-////            
-////            return 292
-////        }
-////        else {
-////            
-////            return 392
-////        }
-//        
-////        if isLandscapeOrientation() {
-////            return hasImageAtIndexPath(indexPath) ? 140.0 : 120.0
-////        } else {
-////            return hasImageAtIndexPath(indexPath) ? 235.0 : 155.0
-////        }
-//    }
-    
-//    func isLandscapeOrientation() -> Bool {
-//        return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
-//    }
     
     /*
     // MARK: - Navigation
