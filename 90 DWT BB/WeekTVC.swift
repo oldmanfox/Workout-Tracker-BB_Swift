@@ -110,7 +110,7 @@ class WeekTVC: UITableViewController {
             cell.dayOfWeekTextField.textColor = UIColor .whiteColor()
             
         case "Green":
-            cell.dayOfWeekTextField.backgroundColor = UIColor(red: 133/255, green: 187/255, blue: 60/255, alpha: 1.0)
+            cell.dayOfWeekTextField.backgroundColor = UIColor(red: 8/255, green: 175/255, blue: 90/255, alpha: 1.0)
             cell.dayOfWeekTextField.textColor = UIColor .whiteColor()
             
         default: break

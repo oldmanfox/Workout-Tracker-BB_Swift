@@ -22,17 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UIColor *green = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:1.0f];
         
         // Change navigation bar tint color
-        // Green Color
+        // White Color
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         // Change navigation bar bar button items and title text color
+        // Green Color
         // White Color
-        UINavigationBar.appearance().barTintColor = UIColor (red: 133/255, green: 187/255, blue: 60/255, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor (red: 8/255, green: 175/255, blue: 90/255, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         // Change tab bar tint color
         // Orange Color
-        UITabBar.appearance().tintColor = UIColor (red: 254/255, green: 129/255, blue: 48/255, alpha: 1)
+        UITabBar.appearance().tintColor = UIColor (red: 175/255, green: 89/255, blue: 8/255, alpha: 1)
 
         return true
     }

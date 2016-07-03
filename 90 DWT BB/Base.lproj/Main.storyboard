@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -74,7 +74,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Select 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZN-Bc-W5f">
                                             <rect key="frame" x="514" y="13" width="51" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="textColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-xf-qeh">
@@ -406,22 +406,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.10000000000000001" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ForceCell" rowHeight="292" id="agd-Zh-b1F" customClass="WorkoutTVC_TableViewCell" customModule="_0_DWT_BB" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="292" id="agd-Zh-b1F" customClass="WorkoutTVC_WorkoutTableViewCell" customModule="_0_DWT_BB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="292"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agd-Zh-b1F" id="x4E-yQ-zeK">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="291"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQW-v8-PpQ">
-                                            <rect key="frame" x="0.0" y="8" width="600" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="kb0-Hd-sBc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-bs-1gR" userLabel="Reps View">
                                             <rect key="frame" x="0.0" y="37" width="600" height="42"/>
                                             <subviews>
@@ -655,7 +646,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZL-zo-B7T">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -693,7 +684,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9W-TX-4vB">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.015686274510000001" green="0.5568627451" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -731,7 +722,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG7-dg-zdX">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -769,7 +760,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tod-SA-FzX">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -807,7 +798,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-k7-iq8">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.015686274510000001" green="0.5568627451" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -845,7 +836,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-q3-Rl6">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -896,7 +887,7 @@
                                         </view>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CURRENT NOTES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-IQ-ffx">
                                             <rect key="frame" x="300" y="195" width="300" height="40"/>
-                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Dnf-Ph-Nj6"/>
                                             </constraints>
@@ -906,7 +897,7 @@
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2g-QP-zDZ">
                                             <rect key="frame" x="150" y="243" width="300" height="40"/>
-                                            <color key="backgroundColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="backgroundColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="5Da-dN-k5h"/>
                                             </constraints>
@@ -925,6 +916,15 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQW-v8-PpQ">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="kb0-Hd-sBc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="l2g-QP-zDZ" firstAttribute="width" secondItem="LPe-5P-noY" secondAttribute="width" id="0Du-ch-zu6"/>
@@ -948,6 +948,36 @@
                                         <constraint firstAttribute="trailing" secondItem="PQW-v8-PpQ" secondAttribute="trailing" id="sqd-KT-zAU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="currentNotes" destination="Gep-IQ-ffx" id="f4m-a0-eEQ"/>
+                                    <outlet property="currentWeight1" destination="0ZL-zo-B7T" id="5Ou-RT-1ir"/>
+                                    <outlet property="currentWeight2" destination="p9W-TX-4vB" id="JgB-rh-Mp0"/>
+                                    <outlet property="currentWeight3" destination="TG7-dg-zdX" id="JaL-Q7-by5"/>
+                                    <outlet property="currentWeight4" destination="Tod-SA-FzX" id="g6y-H2-mAD"/>
+                                    <outlet property="currentWeight5" destination="ZLT-k7-iq8" id="Zbv-vK-7AK"/>
+                                    <outlet property="currentWeight6" destination="9x5-q3-Rl6" id="UHd-wf-uLI"/>
+                                    <outlet property="graphButton" destination="l2g-QP-zDZ" id="HHN-gM-mNe"/>
+                                    <outlet property="previousNotes" destination="LPe-5P-noY" id="iQv-TH-O9r"/>
+                                    <outlet property="previousWeight1" destination="7xp-og-gty" id="qcr-zX-vIs"/>
+                                    <outlet property="previousWeight2" destination="PIb-rf-9SQ" id="LUD-vW-CPr"/>
+                                    <outlet property="previousWeight3" destination="Yw0-hM-0S7" id="pLl-su-jgc"/>
+                                    <outlet property="previousWeight4" destination="3Fb-jJ-WIC" id="Q44-r9-YUU"/>
+                                    <outlet property="previousWeight5" destination="9T5-Hj-hze" id="4Vf-gq-UNK"/>
+                                    <outlet property="previousWeight6" destination="OaH-D6-N5g" id="SMK-xq-fYa"/>
+                                    <outlet property="repNumberLabel1" destination="D6c-oe-7uC" id="jT4-Mo-nv6"/>
+                                    <outlet property="repNumberLabel2" destination="TD1-Xm-P40" id="ySf-es-vJf"/>
+                                    <outlet property="repNumberLabel3" destination="ahV-8O-akk" id="6X3-ET-RhM"/>
+                                    <outlet property="repNumberLabel4" destination="wao-tW-Vm8" id="0NA-7P-Id2"/>
+                                    <outlet property="repNumberLabel5" destination="V0d-t0-bVm" id="AeW-ZH-vY6"/>
+                                    <outlet property="repNumberLabel6" destination="nHS-B1-M9I" id="MhM-Ry-lRl"/>
+                                    <outlet property="repTitleLabel1" destination="jpU-9Z-Hsb" id="G4U-eQ-Rzr"/>
+                                    <outlet property="repTitleLabel2" destination="46t-P9-qof" id="knj-U5-3IA"/>
+                                    <outlet property="repTitleLabel3" destination="Bao-yY-KpR" id="RO2-CY-KR6"/>
+                                    <outlet property="repTitleLabel4" destination="nsS-Hu-KpU" id="Kqr-ia-vGZ"/>
+                                    <outlet property="repTitleLabel5" destination="8Gh-Hc-KFk" id="Qu2-UE-2r1"/>
+                                    <outlet property="repTitleLabel6" destination="z3P-5F-6Hd" id="ILI-j8-zNw"/>
+                                    <outlet property="title" destination="PQW-v8-PpQ" id="eXY-AO-vGy"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProgressiveCell" id="PRM-E5-WXi" customClass="LargerCell" customModule="_0_DWT_BB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="384" width="600" height="392"/>
@@ -1505,7 +1535,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="IQe-5e-6cc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="textColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylk-mf-Sid" userLabel="Reps View">
@@ -1760,7 +1790,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F48-rF-a3Z">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.031372549019607843" green="0.68627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1798,7 +1828,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GD-Rh-5MJ">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.015686274509803921" green="0.55686274509803924" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1836,7 +1866,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xol-8v-MBa">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.43137254901960786" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1874,7 +1904,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTx-Zd-CzF">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.43137254901960786" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1912,7 +1942,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3iG-Ls-UZ9">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.015686274510000001" green="0.5568627451" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1950,7 +1980,7 @@
                                                         </textField>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8e-FU-Gv9">
                                                             <rect key="frame" x="0.0" y="50" width="99" height="50"/>
-                                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.031372549019607843" green="0.68627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -2001,7 +2031,7 @@
                                         </view>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CURRENT NOTES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsF-P7-TBQ">
                                             <rect key="frame" x="300" y="108" width="300" height="40"/>
-                                            <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.031372549019607843" green="0.68627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="niC-aH-S7D"/>
                                             </constraints>
@@ -2011,7 +2041,7 @@
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-iC-4Xv">
                                             <rect key="frame" x="150" y="156" width="300" height="40"/>
-                                            <color key="backgroundColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="backgroundColor" red="0.68627450980392157" green="0.34901960784313724" blue="0.031372549019607843" alpha="1" colorSpace="deviceRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="M67-RX-7Gf"/>
                                             </constraints>

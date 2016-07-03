@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58333B1C1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58333B1B1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift */; };
+		58333B1E1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */; };
 		5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F5D1D1B3256002588C0 /* GoogleMobileAds.framework */; };
 		5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F6A1D1B3256002588C0 /* MMAdSDK.framework */; };
 		5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */; };
@@ -206,14 +208,6 @@
 		A51571B01D1C36B2002588C0 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571AF1D1C36B2002588C0 /* Products.swift */; };
 		A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B11D1C36C5002588C0 /* ProductCell.swift */; };
 		A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B31D1C3B8D002588C0 /* StoreTVC.swift */; };
-		A51571B81D21C561002588C0 /* WorkoutTVC_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */; };
-		A51571BA1D244C67002588C0 /* LargerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B91D244C67002588C0 /* LargerCell.swift */; };
-		A51571C21D2454B8002588C0 /* Cell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571C11D2454B8002588C0 /* Cell3.swift */; };
-		A51571C41D2454D1002588C0 /* Cell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571C31D2454D1002588C0 /* Cell4.swift */; };
-		A51571C61D2454E1002588C0 /* Cell5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571C51D2454E1002588C0 /* Cell5.swift */; };
-		A51571C81D2454EF002588C0 /* Cell6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571C71D2454EF002588C0 /* Cell6.swift */; };
-		A51571CA1D245500002588C0 /* Cell7.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571C91D245500002588C0 /* Cell7.swift */; };
-		A51571CC1D245519002588C0 /* Cell8.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571CB1D245519002588C0 /* Cell8.swift */; };
 		A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */; };
 		A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B91D1AF9E000F6FF57 /* ViewController.swift */; };
 		A52813BD1D1AF9E000F6FF57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52813BB1D1AF9E000F6FF57 /* Main.storyboard */; };
@@ -245,6 +239,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58333B1B1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_CompletionTableViewCell.swift; sourceTree = "<group>"; };
 		5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		5867DC101D1F0F1F00363A4A /* MonthTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTVC.swift; sourceTree = "<group>"; };
 		5867DC121D1F0F4100363A4A /* WeekTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC.swift; sourceTree = "<group>"; };
@@ -635,14 +631,6 @@
 		A51571AF1D1C36B2002588C0 /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		A51571B11D1C36C5002588C0 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A51571B31D1C3B8D002588C0 /* StoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTVC.swift; sourceTree = "<group>"; };
-		A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_TableViewCell.swift; sourceTree = "<group>"; };
-		A51571B91D244C67002588C0 /* LargerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargerCell.swift; sourceTree = "<group>"; };
-		A51571C11D2454B8002588C0 /* Cell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell3.swift; sourceTree = "<group>"; };
-		A51571C31D2454D1002588C0 /* Cell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell4.swift; sourceTree = "<group>"; };
-		A51571C51D2454E1002588C0 /* Cell5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell5.swift; sourceTree = "<group>"; };
-		A51571C71D2454EF002588C0 /* Cell6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell6.swift; sourceTree = "<group>"; };
-		A51571C91D245500002588C0 /* Cell7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell7.swift; sourceTree = "<group>"; };
-		A51571CB1D245519002588C0 /* Cell8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell8.swift; sourceTree = "<group>"; };
 		A52813B41D1AF9E000F6FF57 /* 90 DWT BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "90 DWT BB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52813B91D1AF9E000F6FF57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -699,14 +687,8 @@
 			isa = PBXGroup;
 			children = (
 				5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */,
-				A51571B71D21C561002588C0 /* WorkoutTVC_TableViewCell.swift */,
-				A51571B91D244C67002588C0 /* LargerCell.swift */,
-				A51571C11D2454B8002588C0 /* Cell3.swift */,
-				A51571C31D2454D1002588C0 /* Cell4.swift */,
-				A51571C51D2454E1002588C0 /* Cell5.swift */,
-				A51571C71D2454EF002588C0 /* Cell6.swift */,
-				A51571C91D245500002588C0 /* Cell7.swift */,
-				A51571CB1D245519002588C0 /* Cell8.swift */,
+				58333B1B1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift */,
+				58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1560,7 +1542,6 @@
 				A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */,
 				A515717E1D1B3256002588C0 /* MPStreamAdPlacementData.m in Sources */,
 				A51570EF1D1B3256002588C0 /* README.md in Sources */,
-				A51571B81D21C561002588C0 /* WorkoutTVC_TableViewCell.swift in Sources */,
 				A515714F1D1B3256002588C0 /* MPVASTMediaFile.m in Sources */,
 				A515714D1D1B3256002588C0 /* MPVASTMacroProcessor.m in Sources */,
 				A51571291D1B3256002588C0 /* MRConstants.m in Sources */,
@@ -1580,7 +1561,6 @@
 				A51571411D1B3256002588C0 /* MPReachability.m in Sources */,
 				A515715E1D1B3256002588C0 /* MPCollectionViewAdPlacerCell.m in Sources */,
 				A51571521D1B3256002588C0 /* MPVASTResponse.m in Sources */,
-				A51571C61D2454E1002588C0 /* Cell5.swift in Sources */,
 				A51570FA1D1B3256002588C0 /* MPAdAlertManager.m in Sources */,
 				5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */,
 				A51571081D1B3256002588C0 /* MPLastResortDelegate.m in Sources */,
@@ -1611,7 +1591,6 @@
 				A51571481D1B3256002588C0 /* MPVASTCreative.m in Sources */,
 				A51571AE1D1C36A2002588C0 /* IAPHelper.swift in Sources */,
 				A51571471D1B3256002588C0 /* MPVASTCompanionAd.m in Sources */,
-				A51571CC1D245519002588C0 /* Cell8.swift in Sources */,
 				A51571101D1B3256002588C0 /* MPLogEventCommunicator.m in Sources */,
 				A51571251D1B3256002588C0 /* MRBridge.m in Sources */,
 				A51571151D1B3256002588C0 /* MPAdWebView.m in Sources */,
@@ -1625,6 +1604,7 @@
 				A51571131D1B3256002588C0 /* MPQRunLoopOperation.m in Sources */,
 				A51571741D1B3256002588C0 /* MPNativeAdError.m in Sources */,
 				A51571661D1B3256002588C0 /* MPNativeAdUtils.m in Sources */,
+				58333B1C1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift in Sources */,
 				A51571301D1B3256002588C0 /* MRProperty.m in Sources */,
 				A51570F81D1B3256002588C0 /* MPBaseBannerAdapter.m in Sources */,
 				A51571231D1B3256002588C0 /* MPMRAIDInterstitialCustomEvent.m in Sources */,
@@ -1659,6 +1639,7 @@
 				A51571651D1B3256002588C0 /* MPNativeAdSourceQueue.m in Sources */,
 				A51571671D1B3256002588C0 /* MPNativeCache.m in Sources */,
 				5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */,
+				58333B1E1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift in Sources */,
 				A515716F1D1B3256002588C0 /* MPClientAdPositioning.m in Sources */,
 				A51571531D1B3256002588C0 /* MPVASTStringUtilities.m in Sources */,
 				A51571571D1B3256002588C0 /* MPAdConversionTracker.m in Sources */,
@@ -1672,8 +1653,6 @@
 				A51571771D1B3256002588C0 /* MPNativeAdRequest.m in Sources */,
 				A51571641D1B3256002588C0 /* MPNativeAdRendererImageHandler.m in Sources */,
 				A51571541D1B3256002588C0 /* MPVASTTrackingEvent.m in Sources */,
-				A51571C41D2454D1002588C0 /* Cell4.swift in Sources */,
-				A51571BA1D244C67002588C0 /* LargerCell.swift in Sources */,
 				A515716C1D1B3256002588C0 /* MPTableViewAdPlacerCell.m in Sources */,
 				A51571721D1B3256002588C0 /* MPNativeAdConstants.m in Sources */,
 				A515717A1D1B3256002588C0 /* MPNativeCustomEvent.m in Sources */,
@@ -1689,7 +1668,6 @@
 				A515711E1D1B3256002588C0 /* MPCoreInstanceProvider.m in Sources */,
 				A515715A1D1B3256002588C0 /* MPConstants.m in Sources */,
 				A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */,
-				A51571C21D2454B8002588C0 /* Cell3.swift in Sources */,
 				A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */,
 				A515715C1D1B3256002588C0 /* MPInterstitialCustomEvent.m in Sources */,
 				A51571261D1B3256002588C0 /* MRBundleManager.m in Sources */,
@@ -1707,7 +1685,6 @@
 				A51571061D1B3256002588C0 /* MPFacebookKeywordProvider.m in Sources */,
 				A51571281D1B3256002588C0 /* MRCommand.m in Sources */,
 				A515713A1D1B3256002588C0 /* MPError.m in Sources */,
-				A51571CA1D245500002588C0 /* Cell7.swift in Sources */,
 				A51570F01D1B3256002588C0 /* MPiAdBannerCustomEvent.m in Sources */,
 				A51571601D1B3256002588C0 /* MPImageDownloadQueue.m in Sources */,
 				A51571121D1B3256002588C0 /* MPNetworkManager.m in Sources */,
@@ -1730,7 +1707,6 @@
 				A51571861D1B3256002588C0 /* MOPUBNativeVideoAdConfigValues.m in Sources */,
 				A51571561D1B3256002588C0 /* MoPub.m in Sources */,
 				A51571381D1B3256002588C0 /* UIWebView+MPAdditions.m in Sources */,
-				A51571C81D2454EF002588C0 /* Cell6.swift in Sources */,
 				A515711A1D1B3256002588C0 /* MPBaseInterstitialAdapter.m in Sources */,
 				A51570F51D1B3256002588C0 /* README.md in Sources */,
 				A515716D1D1B3256002588C0 /* MPTableViewCellImpressionTracker.m in Sources */,
