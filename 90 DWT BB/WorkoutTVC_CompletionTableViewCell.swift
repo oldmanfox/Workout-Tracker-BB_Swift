@@ -10,6 +10,12 @@ import UIKit
 
 class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var deleteDateButton: UIButton!
+    @IBOutlet weak var todayDateButton: UIButton!
+    @IBOutlet weak var previousDateButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

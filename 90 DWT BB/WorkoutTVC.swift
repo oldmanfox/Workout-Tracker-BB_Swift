@@ -17,9 +17,8 @@ class WorkoutTVC: UITableViewController {
     var cellArray = [[], []]
     
     private struct CellType {
-        
-        static let title = "WorkoutCell"
-        static let small = "WorkoutCell"
+        static let workout = "WorkoutCell"
+        static let completion = "CompletionCell"
     }
     
     private struct Reps {
@@ -84,74 +83,94 @@ class WorkoutTVC: UITableViewController {
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, false, true, true]]
+                         [false, false, false, false, true, true],
+                         [CellType.workout]]
             
             let cell2 = [["Incline Dumbbell Fly"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, true, true, true]]
+                         [false, false, false, true, true, true],
+                         [CellType.workout]]
             
             let cell3 = [["Incline Dumbbell Press"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, false, true, true]]
+                         [false, false, false, false, true, true],
+                         [CellType.workout]]
             
             let cell4 = [["Close Grip Dumbbell Press"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, true, true, true]]
+                         [false, false, false, true, true, true],
+                         [CellType.workout]]
             
             let cell5 = [["Partial Dumbbell Fly"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, true, true, true]]
+                         [false, false, false, true, true, true],
+                         [CellType.workout]]
             
             let cell6 = [["Decline Push-Up"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, true, true, true]]
+                         [false, false, false, true, true, true],
+                         [CellType.workout]]
             
             let cell7 = [["Laying Tricep Extension"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, false, true, true]]
+                         [false, false, false, false, true, true],
+                         [CellType.workout]]
             
             let cell8 = [["Single Arm Tricep Kickback"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, Color.mediumGreen, UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, false, true, true]]
+                         [false, false, false, false, true, true],
+                         [CellType.workout]]
             
             let cell9 = [["Diamond Push-Up"],
                          [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, Color.mediumGreen, Color.darkGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, false, false, true, true, true]]
+                         [false, false, false, true, true, true],
+                         [CellType.workout]]
             
             let cell10 = [["Dips"],
                          [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.sec, Reps.Title.empty , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, true, true, true, true, true]]
+                         [false, true, true, true, true, true],
+                         [CellType.workout]]
             
             let cell11 = [["Abs"],
                          [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
                          [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
-                         [false, true, true, true, true, true]]
+                         [false, true, true, true, true, true],
+                         [CellType.workout]]
+            
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             
             cellArray = [[cell1],
                          [cell2, cell3],
                          [cell4, cell5, cell6],
                          [cell7],
                          [cell8, cell9],
-                         [cell10, cell11]]
+                         [cell10, cell11],
+                         [completeCell]]
 
         case "B1: Legs":
             
@@ -209,10 +228,18 @@ class WorkoutTVC: UITableViewController {
                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, true, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+            
             cellArray = [[cell1],
                          [cell2, cell3],
                          [cell4, cell5, cell6],
-                         [cell7, cell8, cell9]]
+                         [cell7, cell8, cell9],
+                         [completeCell]]
             
             case "B1: Back+Bi":
                 
@@ -282,6 +309,13 @@ class WorkoutTVC: UITableViewController {
                               [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                               [false, false, true, true, true, true]]
 
+                let completeCell = [[],
+                                    [],
+                                    [],
+                                    [],
+                                    [],
+                                    [CellType.completion]]
+
                 cellArray = [[cell1],
                              [cell2, cell3],
                              [cell4, cell5, cell6],
@@ -289,7 +323,8 @@ class WorkoutTVC: UITableViewController {
                              [cell8],
                              [cell9],
                              [cell10],
-                             [cell11]]
+                             [cell11],
+                             [completeCell]]
             
         case "B1: Shoulders":
             
@@ -353,11 +388,19 @@ class WorkoutTVC: UITableViewController {
                           [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                           [false, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1],
                          [cell2, cell3],
                          [cell4, cell5, cell6],
                          [cell7, cell8],
-                         [cell9, cell10]]
+                         [cell9, cell10],
+                         [completeCell]]
             
         case "B2: Arms":
             
@@ -403,13 +446,21 @@ class WorkoutTVC: UITableViewController {
                          [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, true, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1],
                          [cell2],
                          [cell3],
                          [cell4],
                          [cell5],
                          [cell6],
-                         [cell7]]
+                         [cell7],
+                         [completeCell]]
             
         case "B2: Legs":
             
@@ -461,12 +512,20 @@ class WorkoutTVC: UITableViewController {
                           [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                           [false, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1],
                          [cell2],
                          [cell3],
                          [cell4],
                          [cell5, cell6],
-                         [cell7, cell8]]
+                         [cell7, cell8],
+                         [completeCell]]
             
         case "B2: Shoulders":
             
@@ -518,11 +577,19 @@ class WorkoutTVC: UITableViewController {
                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2],
                          [cell3],
                          [cell4, cell5],
                          [cell6],
-                         [cell7, cell8]]
+                         [cell7, cell8],
+                         [completeCell]]
             
         case "B2: Chest":
             
@@ -574,11 +641,19 @@ class WorkoutTVC: UITableViewController {
                          [UIColor.whiteColor(), Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [true, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2],
                          [cell3],
                          [cell4],
                          [cell5],
-                         [cell6, cell7, cell8]]
+                         [cell6, cell7, cell8],
+                         [completeCell]]
             
         case "B2: Back":
             
@@ -624,11 +699,19 @@ class WorkoutTVC: UITableViewController {
                          [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                          [false, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2],
                          [cell3],
                          [cell4],
                          [cell5],
-                         [cell6, cell7]]
+                         [cell6, cell7],
+                         [completeCell]]
             
         case "T1: Chest+Tri":
             
@@ -698,11 +781,19 @@ class WorkoutTVC: UITableViewController {
                           [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                           [false, true, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2],
                          [cell3, cell4],
                          [cell5, cell6],
                          [cell7, cell8],
-                         [cell9, cell10, cell11]]
+                         [cell9, cell10, cell11],
+                         [completeCell]]
             
         case "T1: Back+Bi":
             
@@ -766,11 +857,19 @@ class WorkoutTVC: UITableViewController {
                           [Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                           [false, true, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2],
                          [cell3, cell4],
                          [cell5, cell6],
                          [cell7, cell8],
-                         [cell9, cell10]]
+                         [cell9, cell10],
+                         [completeCell]]
             
         case "B3: Complete Body":
             
@@ -870,10 +969,18 @@ class WorkoutTVC: UITableViewController {
                           [Color.lightGreen, Color.lightGreen, UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()],
                           [false, false, true, true, true, true]]
 
+            let completeCell = [[],
+                                [],
+                                [],
+                                [],
+                                [],
+                                [CellType.completion]]
+
             cellArray = [[cell1, cell2, cell3, cell4],
                          [cell5, cell6, cell7, cell8],
                          [cell9, cell10, cell11, cell12],
-                         [cell13, cell14, cell15, cell16]]
+                         [cell13, cell14, cell15, cell16],
+                         [completeCell]]
             
         default:
             break
@@ -900,58 +1007,124 @@ class WorkoutTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell", forIndexPath: indexPath) as! WorkoutTVC_WorkoutTableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell", forIndexPath: indexPath) as! WorkoutTVC_WorkoutTableViewCell
         
         let currentCell = cellArray[indexPath.section][indexPath.row] as! NSArray
         
-        let titleArray = currentCell[0] as? NSArray
-        cell.title.text = titleArray![0].uppercaseString
+        let cellIdentifier = currentCell[5] as? NSArray
+        
+        if cellIdentifier![0] as? String == "WorkoutCell" {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier((cellIdentifier![0] as? String)!, forIndexPath: indexPath) as! WorkoutTVC_WorkoutTableViewCell
+            
+            let titleArray = currentCell[0] as? NSArray
+            cell.title.text = titleArray![0].uppercaseString
+            
+            let repNumbers = currentCell[1] as? NSArray
+            cell.repNumberLabel1.text = repNumbers![0] as? String
+            cell.repNumberLabel2.text = repNumbers![1] as? String
+            cell.repNumberLabel3.text = repNumbers![2] as? String
+            cell.repNumberLabel4.text = repNumbers![3] as? String
+            cell.repNumberLabel5.text = repNumbers![4] as? String
+            cell.repNumberLabel6.text = repNumbers![5] as? String
+            
+            let repTitles = currentCell[2] as? NSArray
+            cell.repTitleLabel1.text = repTitles![0].uppercaseString
+            cell.repTitleLabel2.text = repTitles![1].uppercaseString
+            cell.repTitleLabel3.text = repTitles![2].uppercaseString
+            cell.repTitleLabel4.text = repTitles![3].uppercaseString
+            cell.repTitleLabel5.text = repTitles![4].uppercaseString
+            cell.repTitleLabel6.text = repTitles![5].uppercaseString
+            
+            let cellColor = currentCell[3] as? NSArray
+            cell.currentWeight1.backgroundColor = cellColor![0] as? UIColor
+            cell.currentWeight2.backgroundColor = cellColor![1] as? UIColor
+            cell.currentWeight3.backgroundColor = cellColor![2] as? UIColor
+            cell.currentWeight4.backgroundColor = cellColor![3] as? UIColor
+            cell.currentWeight5.backgroundColor = cellColor![4] as? UIColor
+            cell.currentWeight6.backgroundColor = cellColor![5] as? UIColor
+            
+            let weightFields = currentCell[4] as? NSArray
+            cell.previousWeight1.hidden = weightFields![0] as! Bool
+            cell.previousWeight2.hidden = weightFields![1] as! Bool
+            cell.previousWeight3.hidden = weightFields![2] as! Bool
+            cell.previousWeight4.hidden = weightFields![3] as! Bool
+            cell.previousWeight5.hidden = weightFields![4] as! Bool
+            cell.previousWeight6.hidden = weightFields![5] as! Bool
+            
+            cell.currentWeight1.hidden = weightFields![0] as! Bool
+            cell.currentWeight2.hidden = weightFields![1] as! Bool
+            cell.currentWeight3.hidden = weightFields![2] as! Bool
+            cell.currentWeight4.hidden = weightFields![3] as! Bool
+            cell.currentWeight5.hidden = weightFields![4] as! Bool
+            cell.currentWeight6.hidden = weightFields![5] as! Bool
+            
+            return cell
 
-        let repNumbers = currentCell[1] as? NSArray
-        cell.repNumberLabel1.text = repNumbers![0] as? String
-        cell.repNumberLabel2.text = repNumbers![1] as? String
-        cell.repNumberLabel3.text = repNumbers![2] as? String
-        cell.repNumberLabel4.text = repNumbers![3] as? String
-        cell.repNumberLabel5.text = repNumbers![4] as? String
-        cell.repNumberLabel6.text = repNumbers![5] as? String
+        }
+        else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier((cellIdentifier![0] as? String)!, forIndexPath: indexPath) as! WorkoutTVC_CompletionTableViewCell
+            
+            return cell
+        }
         
-        let repTitles = currentCell[2] as? NSArray
-        cell.repTitleLabel1.text = repTitles![0].uppercaseString
-        cell.repTitleLabel2.text = repTitles![1].uppercaseString
-        cell.repTitleLabel3.text = repTitles![2].uppercaseString
-        cell.repTitleLabel4.text = repTitles![3].uppercaseString
-        cell.repTitleLabel5.text = repTitles![4].uppercaseString
-        cell.repTitleLabel6.text = repTitles![5].uppercaseString
         
-        let cellColor = currentCell[3] as? NSArray
-        cell.currentWeight1.backgroundColor = cellColor![0] as? UIColor
-        cell.currentWeight2.backgroundColor = cellColor![1] as? UIColor
-        cell.currentWeight3.backgroundColor = cellColor![2] as? UIColor
-        cell.currentWeight4.backgroundColor = cellColor![3] as? UIColor
-        cell.currentWeight5.backgroundColor = cellColor![4] as? UIColor
-        cell.currentWeight6.backgroundColor = cellColor![5] as? UIColor
-        
-        let weightFields = currentCell[4] as? NSArray
-        cell.previousWeight1.hidden = weightFields![0] as! Bool
-        cell.previousWeight2.hidden = weightFields![1] as! Bool
-        cell.previousWeight3.hidden = weightFields![2] as! Bool
-        cell.previousWeight4.hidden = weightFields![3] as! Bool
-        cell.previousWeight5.hidden = weightFields![4] as! Bool
-        cell.previousWeight6.hidden = weightFields![5] as! Bool
-        
-        cell.currentWeight1.hidden = weightFields![0] as! Bool
-        cell.currentWeight2.hidden = weightFields![1] as! Bool
-        cell.currentWeight3.hidden = weightFields![2] as! Bool
-        cell.currentWeight4.hidden = weightFields![3] as! Bool
-        cell.currentWeight5.hidden = weightFields![4] as! Bool
-        cell.currentWeight6.hidden = weightFields![5] as! Bool
-        
-        return cell
+//        let titleArray = currentCell[0] as? NSArray
+//        cell.title.text = titleArray![0].uppercaseString
+//
+//        let repNumbers = currentCell[1] as? NSArray
+//        cell.repNumberLabel1.text = repNumbers![0] as? String
+//        cell.repNumberLabel2.text = repNumbers![1] as? String
+//        cell.repNumberLabel3.text = repNumbers![2] as? String
+//        cell.repNumberLabel4.text = repNumbers![3] as? String
+//        cell.repNumberLabel5.text = repNumbers![4] as? String
+//        cell.repNumberLabel6.text = repNumbers![5] as? String
+//        
+//        let repTitles = currentCell[2] as? NSArray
+//        cell.repTitleLabel1.text = repTitles![0].uppercaseString
+//        cell.repTitleLabel2.text = repTitles![1].uppercaseString
+//        cell.repTitleLabel3.text = repTitles![2].uppercaseString
+//        cell.repTitleLabel4.text = repTitles![3].uppercaseString
+//        cell.repTitleLabel5.text = repTitles![4].uppercaseString
+//        cell.repTitleLabel6.text = repTitles![5].uppercaseString
+//        
+//        let cellColor = currentCell[3] as? NSArray
+//        cell.currentWeight1.backgroundColor = cellColor![0] as? UIColor
+//        cell.currentWeight2.backgroundColor = cellColor![1] as? UIColor
+//        cell.currentWeight3.backgroundColor = cellColor![2] as? UIColor
+//        cell.currentWeight4.backgroundColor = cellColor![3] as? UIColor
+//        cell.currentWeight5.backgroundColor = cellColor![4] as? UIColor
+//        cell.currentWeight6.backgroundColor = cellColor![5] as? UIColor
+//        
+//        let weightFields = currentCell[4] as? NSArray
+//        cell.previousWeight1.hidden = weightFields![0] as! Bool
+//        cell.previousWeight2.hidden = weightFields![1] as! Bool
+//        cell.previousWeight3.hidden = weightFields![2] as! Bool
+//        cell.previousWeight4.hidden = weightFields![3] as! Bool
+//        cell.previousWeight5.hidden = weightFields![4] as! Bool
+//        cell.previousWeight6.hidden = weightFields![5] as! Bool
+//        
+//        cell.currentWeight1.hidden = weightFields![0] as! Bool
+//        cell.currentWeight2.hidden = weightFields![1] as! Bool
+//        cell.currentWeight3.hidden = weightFields![2] as! Bool
+//        cell.currentWeight4.hidden = weightFields![3] as! Bool
+//        cell.currentWeight5.hidden = weightFields![4] as! Bool
+//        cell.currentWeight6.hidden = weightFields![5] as! Bool
+//        
+//        return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Set \(section + 1) of \(numberOfSectionsInTableView(tableView))"
+        if section != numberOfSectionsInTableView(tableView) - 1 {
+            
+            return "Set \(section + 1) of \(numberOfSectionsInTableView(tableView))"
+        }
+        else {
+            
+            return "Finished"
+        }
     }
 
     // MARK: UITableViewDelegate
