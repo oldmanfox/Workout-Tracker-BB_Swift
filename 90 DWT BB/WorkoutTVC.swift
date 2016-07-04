@@ -1068,51 +1068,6 @@ class WorkoutTVC: UITableViewController {
             
             return cell
         }
-        
-        
-//        let titleArray = currentCell[0] as? NSArray
-//        cell.title.text = titleArray![0].uppercaseString
-//
-//        let repNumbers = currentCell[1] as? NSArray
-//        cell.repNumberLabel1.text = repNumbers![0] as? String
-//        cell.repNumberLabel2.text = repNumbers![1] as? String
-//        cell.repNumberLabel3.text = repNumbers![2] as? String
-//        cell.repNumberLabel4.text = repNumbers![3] as? String
-//        cell.repNumberLabel5.text = repNumbers![4] as? String
-//        cell.repNumberLabel6.text = repNumbers![5] as? String
-//        
-//        let repTitles = currentCell[2] as? NSArray
-//        cell.repTitleLabel1.text = repTitles![0].uppercaseString
-//        cell.repTitleLabel2.text = repTitles![1].uppercaseString
-//        cell.repTitleLabel3.text = repTitles![2].uppercaseString
-//        cell.repTitleLabel4.text = repTitles![3].uppercaseString
-//        cell.repTitleLabel5.text = repTitles![4].uppercaseString
-//        cell.repTitleLabel6.text = repTitles![5].uppercaseString
-//        
-//        let cellColor = currentCell[3] as? NSArray
-//        cell.currentWeight1.backgroundColor = cellColor![0] as? UIColor
-//        cell.currentWeight2.backgroundColor = cellColor![1] as? UIColor
-//        cell.currentWeight3.backgroundColor = cellColor![2] as? UIColor
-//        cell.currentWeight4.backgroundColor = cellColor![3] as? UIColor
-//        cell.currentWeight5.backgroundColor = cellColor![4] as? UIColor
-//        cell.currentWeight6.backgroundColor = cellColor![5] as? UIColor
-//        
-//        let weightFields = currentCell[4] as? NSArray
-//        cell.previousWeight1.hidden = weightFields![0] as! Bool
-//        cell.previousWeight2.hidden = weightFields![1] as! Bool
-//        cell.previousWeight3.hidden = weightFields![2] as! Bool
-//        cell.previousWeight4.hidden = weightFields![3] as! Bool
-//        cell.previousWeight5.hidden = weightFields![4] as! Bool
-//        cell.previousWeight6.hidden = weightFields![5] as! Bool
-//        
-//        cell.currentWeight1.hidden = weightFields![0] as! Bool
-//        cell.currentWeight2.hidden = weightFields![1] as! Bool
-//        cell.currentWeight3.hidden = weightFields![2] as! Bool
-//        cell.currentWeight4.hidden = weightFields![3] as! Bool
-//        cell.currentWeight5.hidden = weightFields![4] as! Bool
-//        cell.currentWeight6.hidden = weightFields![5] as! Bool
-//        
-//        return cell
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
