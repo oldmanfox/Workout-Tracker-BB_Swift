@@ -12,10 +12,21 @@
 		5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F5D1D1B3256002588C0 /* GoogleMobileAds.framework */; };
 		5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5156F6A1D1B3256002588C0 /* MMAdSDK.framework */; };
 		5867DC0F1D1DE4E700363A4A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */; };
-		5867DC111D1F0F1F00363A4A /* MonthTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC101D1F0F1F00363A4A /* MonthTVC.swift */; };
-		5867DC131D1F0F4100363A4A /* WeekTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC121D1F0F4100363A4A /* WeekTVC.swift */; };
-		5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */; };
+		5867DC111D1F0F1F00363A4A /* MonthTVC_Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC101D1F0F1F00363A4A /* MonthTVC_Old.swift */; };
+		5867DC131D1F0F4100363A4A /* WeekTVC_Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC121D1F0F4100363A4A /* WeekTVC_Old.swift */; };
+		5867DC151D1F0F5600363A4A /* WorkoutTVC_Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC141D1F0F5600363A4A /* WorkoutTVC_Old.swift */; };
 		5867DC191D20499A00363A4A /* WeekTVC_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */; };
+		58D6D3041D2AAD67009B6EF5 /* CDCloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */; };
+		58D6D3051D2AAD67009B6EF5 /* CDDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */; };
+		58D6D3061D2AAD67009B6EF5 /* CDFaulter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */; };
+		58D6D3071D2AAD67009B6EF5 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */; };
+		58D6D3081D2AAD67009B6EF5 /* CDImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */; };
+		58D6D3091D2AAD67009B6EF5 /* CDMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */; };
+		58D6D30A1D2AAD67009B6EF5 /* CDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */; };
+		58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */; };
+		58D6D30C1D2AAD67009B6EF5 /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D3011D2AAD67009B6EF5 /* CDTableViewController.swift */; };
+		58D6D30D1D2AAD67009B6EF5 /* CDThumbnailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D3021D2AAD67009B6EF5 /* CDThumbnailer.swift */; };
+		58D6D30E1D2AAD67009B6EF5 /* MigrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D3031D2AAD67009B6EF5 /* MigrationVC.swift */; };
 		A51570EC1D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */; };
 		A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5B1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m */; };
 		A51570EF1D1B3256002588C0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A5156F5E1D1B3256002588C0 /* README.md */; };
@@ -242,10 +253,21 @@
 		58333B1B1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_CompletionTableViewCell.swift; sourceTree = "<group>"; };
 		5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		5867DC101D1F0F1F00363A4A /* MonthTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTVC.swift; sourceTree = "<group>"; };
-		5867DC121D1F0F4100363A4A /* WeekTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC.swift; sourceTree = "<group>"; };
-		5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC.swift; sourceTree = "<group>"; };
+		5867DC101D1F0F1F00363A4A /* MonthTVC_Old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTVC_Old.swift; sourceTree = "<group>"; };
+		5867DC121D1F0F4100363A4A /* WeekTVC_Old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC_Old.swift; sourceTree = "<group>"; };
+		5867DC141D1F0F5600363A4A /* WorkoutTVC_Old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTVC_Old.swift; sourceTree = "<group>"; };
 		5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTVC_TableViewCell.swift; sourceTree = "<group>"; };
+		58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCloudSync.swift; sourceTree = "<group>"; };
+		58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDeduplicator.swift; sourceTree = "<group>"; };
+		58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFaulter.swift; sourceTree = "<group>"; };
+		58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
+		58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDImporter.swift; sourceTree = "<group>"; };
+		58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDMigration.swift; sourceTree = "<group>"; };
+		58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDOperation.swift; sourceTree = "<group>"; };
+		58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPickerTextField.swift; sourceTree = "<group>"; };
+		58D6D3011D2AAD67009B6EF5 /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
+		58D6D3021D2AAD67009B6EF5 /* CDThumbnailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDThumbnailer.swift; sourceTree = "<group>"; };
+		58D6D3031D2AAD67009B6EF5 /* MigrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationVC.swift; sourceTree = "<group>"; };
 		A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "90-DWT-BB-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5156F581D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
 		A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
@@ -691,6 +713,24 @@
 				58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */,
 			);
 			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		58D6D2F81D2AAD67009B6EF5 /* Generic Core Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */,
+				58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */,
+				58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */,
+				58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */,
+				58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */,
+				58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */,
+				58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */,
+				58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */,
+				58D6D3011D2AAD67009B6EF5 /* CDTableViewController.swift */,
+				58D6D3021D2AAD67009B6EF5 /* CDThumbnailer.swift */,
+				58D6D3031D2AAD67009B6EF5 /* MigrationVC.swift */,
+			);
+			path = "Generic Core Data Classes";
 			sourceTree = "<group>";
 		};
 		A5156F551D1B3256002588C0 /* MoPubSDK */ = {
@@ -1294,9 +1334,9 @@
 				5867DC171D20494F00363A4A /* TableViewCells */,
 				A51571B31D1C3B8D002588C0 /* StoreTVC.swift */,
 				5867DC0E1D1DE4E700363A4A /* TestTableViewController.swift */,
-				5867DC101D1F0F1F00363A4A /* MonthTVC.swift */,
-				5867DC121D1F0F4100363A4A /* WeekTVC.swift */,
-				5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */,
+				5867DC101D1F0F1F00363A4A /* MonthTVC_Old.swift */,
+				5867DC121D1F0F4100363A4A /* WeekTVC_Old.swift */,
+				5867DC141D1F0F5600363A4A /* WorkoutTVC_Old.swift */,
 			);
 			name = "TableView Controllers";
 			sourceTree = "<group>";
@@ -1337,6 +1377,7 @@
 		A52813B61D1AF9E000F6FF57 /* 90 DWT BB */ = {
 			isa = PBXGroup;
 			children = (
+				58D6D2F81D2AAD67009B6EF5 /* Generic Core Data Classes */,
 				A5156F551D1B3256002588C0 /* MoPubSDK */,
 				A51571AC1D1C3613002588C0 /* In-App Purchases */,
 				A51571AB1D1C35F6002588C0 /* TableView Controllers */,
@@ -1539,6 +1580,7 @@
 				A515718E1D1B3256002588C0 /* MOPUBNativeVideoAdRendererSettings.m in Sources */,
 				A51571701D1B3256002588C0 /* MPCollectionViewAdPlacer.m in Sources */,
 				A51570F71D1B3256002588C0 /* MPBannerCustomEventAdapter.m in Sources */,
+				58D6D3051D2AAD67009B6EF5 /* CDDeduplicator.swift in Sources */,
 				A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */,
 				A515717E1D1B3256002588C0 /* MPStreamAdPlacementData.m in Sources */,
 				A51570EF1D1B3256002588C0 /* README.md in Sources */,
@@ -1549,9 +1591,10 @@
 				A51571891D1B3256002588C0 /* MOPUBPlayerManager.m in Sources */,
 				A515710A1D1B3256002588C0 /* MPURLActionInfo.m in Sources */,
 				A51571591D1B3256002588C0 /* MPBannerCustomEvent.m in Sources */,
+				58D6D3091D2AAD67009B6EF5 /* CDMigration.swift in Sources */,
 				A51570FD1D1B3256002588C0 /* MPAdBrowserController.m in Sources */,
 				A51571781D1B3256002588C0 /* MPNativeAdRequestTargeting.m in Sources */,
-				5867DC131D1F0F4100363A4A /* WeekTVC.swift in Sources */,
+				5867DC131D1F0F4100363A4A /* WeekTVC_Old.swift in Sources */,
 				A51571631D1B3256002588C0 /* MPNativeAd+Internal.m in Sources */,
 				A515712E1D1B3256002588C0 /* MRNativeCommandHandler.m in Sources */,
 				A515710F1D1B3256002588C0 /* MPLogEvent.m in Sources */,
@@ -1569,15 +1612,18 @@
 				A51571201D1B3256002588C0 /* MPVASTTracking.m in Sources */,
 				A51570F61D1B3256002588C0 /* MPBannerAdManager.m in Sources */,
 				A515717F1D1B3256002588C0 /* MPStreamAdPlacer.m in Sources */,
+				58D6D30A1D2AAD67009B6EF5 /* CDOperation.swift in Sources */,
 				A51570F31D1B3256002588C0 /* MPMillennialInterstitialCustomEvent.m in Sources */,
 				A515714E1D1B3256002588C0 /* MPVASTManager.m in Sources */,
 				A51571821D1B3256002588C0 /* MOPUBAVPlayer.m in Sources */,
+				58D6D3041D2AAD67009B6EF5 /* CDCloudSync.swift in Sources */,
 				A51571111D1B3256002588C0 /* MPLogEventRecorder.m in Sources */,
 				A51571011D1B3256002588C0 /* MPAdServerCommunicator.m in Sources */,
 				A51571401D1B3256002588C0 /* MPLogProvider.m in Sources */,
 				A51571B01D1C36B2002588C0 /* Products.swift in Sources */,
 				A515714B1D1B3256002588C0 /* MPVASTInline.m in Sources */,
 				A51571391D1B3256002588C0 /* MPAnalyticsTracker.m in Sources */,
+				58D6D30E1D2AAD67009B6EF5 /* MigrationVC.swift in Sources */,
 				A51571141D1B3256002588C0 /* MPRetryingHTTPOperation.m in Sources */,
 				A515717B1D1B3256002588C0 /* MPServerAdPositioning.m in Sources */,
 				A51571A51D1B3256002588C0 /* MPRewardedVideoConnection.m in Sources */,
@@ -1638,7 +1684,7 @@
 				A51571361D1B3256002588C0 /* UIColor+MPAdditions.m in Sources */,
 				A51571651D1B3256002588C0 /* MPNativeAdSourceQueue.m in Sources */,
 				A51571671D1B3256002588C0 /* MPNativeCache.m in Sources */,
-				5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */,
+				5867DC151D1F0F5600363A4A /* WorkoutTVC_Old.swift in Sources */,
 				58333B1E1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift in Sources */,
 				A515716F1D1B3256002588C0 /* MPClientAdPositioning.m in Sources */,
 				A51571531D1B3256002588C0 /* MPVASTStringUtilities.m in Sources */,
@@ -1667,12 +1713,14 @@
 				A51571761D1B3256002588C0 /* MPNativeAdRenderingImageLoader.m in Sources */,
 				A515711E1D1B3256002588C0 /* MPCoreInstanceProvider.m in Sources */,
 				A515715A1D1B3256002588C0 /* MPConstants.m in Sources */,
+				58D6D3081D2AAD67009B6EF5 /* CDImporter.swift in Sources */,
 				A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */,
 				A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */,
 				A515715C1D1B3256002588C0 /* MPInterstitialCustomEvent.m in Sources */,
 				A51571261D1B3256002588C0 /* MRBundleManager.m in Sources */,
 				A51571341D1B3256002588C0 /* NSURL+MPAdditions.m in Sources */,
 				A515718C1D1B3256002588C0 /* MOPUBReplayView.m in Sources */,
+				58D6D3061D2AAD67009B6EF5 /* CDFaulter.swift in Sources */,
 				A51571051D1B3256002588C0 /* MPEnhancedDeeplinkRequest.m in Sources */,
 				A51571431D1B3256002588C0 /* MPStoreKitProvider.m in Sources */,
 				A515718A1D1B3256002588C0 /* MOPUBPlayerView.m in Sources */,
@@ -1687,7 +1735,10 @@
 				A515713A1D1B3256002588C0 /* MPError.m in Sources */,
 				A51570F01D1B3256002588C0 /* MPiAdBannerCustomEvent.m in Sources */,
 				A51571601D1B3256002588C0 /* MPImageDownloadQueue.m in Sources */,
+				58D6D30C1D2AAD67009B6EF5 /* CDTableViewController.swift in Sources */,
+				58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */,
 				A51571121D1B3256002588C0 /* MPNetworkManager.m in Sources */,
+				58D6D3071D2AAD67009B6EF5 /* CDHelper.swift in Sources */,
 				A51570F11D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m in Sources */,
 				A515711C1D1B3256002588C0 /* MPInterstitialCustomEventAdapter.m in Sources */,
 				A515718B1D1B3256002588C0 /* MOPUBPlayerViewController.m in Sources */,
@@ -1712,8 +1763,9 @@
 				A515716D1D1B3256002588C0 /* MPTableViewCellImpressionTracker.m in Sources */,
 				A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */,
 				A51571491D1B3256002588C0 /* MPVASTDurationOffset.m in Sources */,
-				5867DC111D1F0F1F00363A4A /* MonthTVC.swift in Sources */,
+				5867DC111D1F0F1F00363A4A /* MonthTVC_Old.swift in Sources */,
 				A515714A1D1B3256002588C0 /* MPVASTIndustryIcon.m in Sources */,
+				58D6D30D1D2AAD67009B6EF5 /* CDThumbnailer.swift in Sources */,
 				A51571A31D1B3256002588C0 /* MPRewardedVideoAdapter.m in Sources */,
 				A515716E1D1B3256002588C0 /* MPAdPositioning.m in Sources */,
 			);

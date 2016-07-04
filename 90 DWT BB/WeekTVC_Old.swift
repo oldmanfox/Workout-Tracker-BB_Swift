@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekTVC: UITableViewController {
+class WeekTVC_Old: UITableViewController {
     
     private var currentWeekWorkoutList = [[], []]
     private var daysOfWeekNumberList = [[], []]
@@ -163,7 +163,7 @@ class WeekTVC: UITableViewController {
         
         if segue.identifier == "toWorkout" {
             
-            let destinationVC = segue.destinationViewController as? WorkoutTVC
+            let destinationVC = segue.destinationViewController as? WorkoutTVC_Old
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.navigationItem.title = trimStringForWorkoutName((currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MonthTVC: UITableViewController {
+class MonthTVC_Old: UITableViewController {
     
     var sectionsArray = [[], []]
     
@@ -98,7 +98,7 @@ class MonthTVC: UITableViewController {
         
         if segue.identifier == "toWeekWorkoutList" {
             
-            let destinationVC = segue.destinationViewController as? WeekTVC
+            let destinationVC = segue.destinationViewController as? WeekTVC_Old
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.workoutRoutine = navigationItem.title!

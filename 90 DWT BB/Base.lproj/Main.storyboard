@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--MonthTVC-->
+        <!--MonthTVC Old-->
         <scene sceneID="TRq-pk-Fsf">
             <objects>
-                <tableViewController id="YNk-gJ-59Q" customClass="MonthTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YNk-gJ-59Q" customClass="MonthTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WrS-YN-k7t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1890" y="451"/>
         </scene>
-        <!--WeekTVC-->
+        <!--WeekTVC Old-->
         <scene sceneID="kbl-Md-zms">
             <objects>
-                <tableViewController id="UjQ-dZ-yH6" customClass="WeekTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="UjQ-dZ-yH6" customClass="WeekTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="TUH-LY-rHU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,10 +396,10 @@
             </objects>
             <point key="canvasLocation" x="1078" y="3170"/>
         </scene>
-        <!--WorkoutTVC-->
+        <!--WorkoutTVC Old-->
         <scene sceneID="YUj-cP-LZF">
             <objects>
-                <tableViewController id="uxf-T1-en9" customClass="WorkoutTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uxf-T1-en9" customClass="WorkoutTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="392" sectionHeaderHeight="28" sectionFooterHeight="28" id="EtV-Qy-wOl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="4000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
