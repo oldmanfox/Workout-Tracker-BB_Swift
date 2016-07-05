@@ -9,7 +9,7 @@
 import UIKit
 //import Foundation
 
-class WorkoutTVC_Old: UITableViewController {
+class WorkoutTVC_Old: CDTableViewController {
 
     var selectedWorkout = ""
     var exerciseNameArray = [[], []]

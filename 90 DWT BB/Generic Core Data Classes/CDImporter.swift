@@ -185,11 +185,14 @@ class CDImporter : NSObject, NSXMLParserDelegate {
         // Only use attributes whose values are alphanumeric.
             
         switch (entityName) {
-            case "Item"          :return ["name"]
-            case "Item_Photo"    :return ["data"]
-            case "Unit"          :return ["name"]
-            case "LocationAtHome":return ["storedIn"]
-            case "LocationAtShop":return ["aisle"]
+            case "WorkoutCompleteDate"  :return ["date"]
+            case "Workout"              :return ["date"]
+            case "Session"              :return ["date"]
+            case "Routine"              :return ["date"]
+            case "Photo"                :return ["date"]
+            case "Measurement"          :return ["date"]
+            case "Email"                :return ["date"]
+            case "AutoLock"             :return ["date"]
             default:
                 break;
         }

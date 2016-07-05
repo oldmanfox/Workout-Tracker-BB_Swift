@@ -23,8 +23,10 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     
     // Override
-    var entity = "MyEntity"
-    var sort = [NSSortDescriptor(key: "myAttribute", ascending: true)]
+//    var entity = "MyEntity"
+//    var sort = [NSSortDescriptor(key: "myAttribute", ascending: true)]
+    var entity = "Workout"
+    var sort = [NSSortDescriptor(key: "exercise", ascending: true)]
     
     // Optionally Override
     var context = CDHelper.shared.context
@@ -148,6 +150,16 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
         case .Delete:
             self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
+            
+            /*
+             // Note that for Update, we update the row at __indexPath__
+             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
+             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
+             
+             cell?.textLabel?.text = animal?.commonName
+             cell?.detailTextLabel?.text = animal?.habitat
+             */
+            
             self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
         case .Move:
             self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)

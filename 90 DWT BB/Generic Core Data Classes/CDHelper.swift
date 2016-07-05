@@ -23,7 +23,7 @@ class CDHelper : NSObject  {
         return urls[urls.count-1]
     }()
     lazy var localStoreURL: NSURL? = {
-        if let url = self.storesDirectory?.URLByAppendingPathComponent("LocalStore.sqlite") {
+        if let url = self.storesDirectory?.URLByAppendingPathComponent("_0_DWT_BB.sqlite") {
             print("localStoreURL = \(url)")
             return url
         }
@@ -44,7 +44,7 @@ class CDHelper : NSObject  {
         return nil
     }()
     lazy var seedStoreURL: NSURL? = {
-        if let url = self.storesDirectory?.URLByAppendingPathComponent("LocalStore.sqlite") {
+        if let url = self.storesDirectory?.URLByAppendingPathComponent("_0_DWT_BB.sqlite") {
             print("seedStoreURL = \(url)")
             return url
         }
@@ -141,7 +141,7 @@ class CDHelper : NSObject  {
     lazy var iCloudStore: NSPersistentStore? = {
 
        // Change contentNameKey for your own applications
-        let contentNameKey = "MyApp"
+        let contentNameKey = "_0_DWT_BB"
         
         print("Using '\(contentNameKey)' as the iCloud Ubiquitous Content Name Key")
         let options:[NSObject:AnyObject] =
@@ -221,9 +221,9 @@ class CDHelper : NSObject  {
         // Load Local Store
         // self.setDefaultDataStoreAsInitialStore()
         //_ = self.sourceStore
-        _ = self.localStore
+        //_ = self.localStore
             
-        /*// Load iCloud Store
+        //Load iCloud Store
         if let _ = self.iCloudStore {
             
             // self.destroyAlliCloudDataForThisApplication()
@@ -236,7 +236,7 @@ class CDHelper : NSObject  {
                     } else {print("Failed to instantiate seed store")}
                 } else {print("Failed to find seed store at '\(path)'")}
             } else {print("Failed to prepare seed store path")}
-        } else {print("Failed to load iCloud store")}*/
+        } else {print("Failed to load iCloud store")}
         
         // Import Default Data
         /* if let _localStoreURL = self.localStoreURL {
@@ -351,7 +351,7 @@ class CDHelper : NSObject  {
             
             print("*** STARTED DEEP COPY FROM SEED STORE TO ICLOUD STORE ***")
             _ = self.seedStore
-            let entities = ["LocationAtHome","LocationAtShop","Unit","Item"]
+            let entities = ["WorkoutCompleteDate","Workout","Session","Routine", "Photo", "Measurement", "Email", "AutoLock"]
             CDImporter.deepCopyEntities(entities, from: self.seedContext, to: self.importContext)
 
             self.context.performBlock {
@@ -420,7 +420,7 @@ class CDHelper : NSObject  {
         
             do {
                 
-                let options = [NSPersistentStoreUbiquitousContentNameKey:"MyApp"]
+                let options = [NSPersistentStoreUbiquitousContentNameKey:"_0_DWT_BB"]
                 try NSPersistentStoreCoordinator.removeUbiquitousContentAndPersistentStoreAtURL(_iCloudStoreURL, options: options)
                 print("\n\n\n")
                 print("*          This application's iCloud content has been destroyed.          *")

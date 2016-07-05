@@ -268,6 +268,7 @@
 		58D6D3011D2AAD67009B6EF5 /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
 		58D6D3021D2AAD67009B6EF5 /* CDThumbnailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDThumbnailer.swift; sourceTree = "<group>"; };
 		58D6D3031D2AAD67009B6EF5 /* MigrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationVC.swift; sourceTree = "<group>"; };
+		58D6D30F1D2AB80E009B6EF5 /* _0_DWT_BB_v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB_v4.xcdatamodel; sourceTree = "<group>"; };
 		A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "90-DWT-BB-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5156F581D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGoogleAdMobBannerCustomEvent.h; sourceTree = "<group>"; };
 		A5156F591D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGoogleAdMobBannerCustomEvent.m; sourceTree = "<group>"; };
@@ -2136,11 +2137,12 @@
 		A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				58D6D30F1D2AB80E009B6EF5 /* _0_DWT_BB_v4.xcdatamodel */,
 				A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */,
 				A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */,
 				A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */,
 			);
-			currentVersion = A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */;
+			currentVersion = 58D6D30F1D2AB80E009B6EF5 /* _0_DWT_BB_v4.xcdatamodel */;
 			path = _0_DWT_BB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
