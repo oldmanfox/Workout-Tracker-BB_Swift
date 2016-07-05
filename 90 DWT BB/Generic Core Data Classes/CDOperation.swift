@@ -127,4 +127,54 @@ class CDOperation {
         return newObject 
     }
     
+    class func saveWithPredicate(session: String, routine: String, workout: String, exercise: String, round: String, index: String, weight: String) {
+        
+        let request = NSFetchRequest( entityName: "Workout")
+        //let sort = NSSortDescriptor( key: "name", ascending: true)
+        //request.sortDescriptors = [sort]
+        let filter = NSPredicate( format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND round == %@ AND index == %@",
+                                  session,
+                                  routine,
+                                  workout,
+                                  exercise,
+                                  round,
+                                  index)
+        request.predicate = filter
+        
+        do {
+            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest( request) as? [Workout] {
+                
+                print("workoutObjects.count = \(workoutObjects.count)")
+                
+                if workoutObjects.count == 0 {
+                    
+                    // No matches for this object.  Insert a new record
+                    
+                    let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as! Workout
+                    
+                    let todaysDate = NSDate()
+                    
+                    insertWorkoutInfo.session = session
+                    insertWorkoutInfo.routine = routine
+                    insertWorkoutInfo.workout = workout
+                    insertWorkoutInfo.exercise = workout
+                    insertWorkoutInfo.round = Int(round)
+                    insertWorkoutInfo.index = Int(index)
+                    insertWorkoutInfo.weight = weight
+                    insertWorkoutInfo.date = todaysDate
+                        
+                        
+                    CDHelper.saveSharedContext()
+                    
+                }
+                else {
+                    
+                
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        print("workoutObject = nil")
+        
+    }
 }

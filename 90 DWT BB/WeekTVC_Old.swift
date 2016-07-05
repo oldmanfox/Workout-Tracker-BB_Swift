@@ -166,8 +166,9 @@ class WeekTVC_Old: UITableViewController {
             let destinationVC = segue.destinationViewController as? WorkoutTVC_Old
             let selectedRow = tableView.indexPathForSelectedRow
             
-            destinationVC?.navigationItem.title = trimStringForWorkoutName((currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!)
+            destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
             destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC!.workoutRoutine = workoutRoutine
         }
     }
     

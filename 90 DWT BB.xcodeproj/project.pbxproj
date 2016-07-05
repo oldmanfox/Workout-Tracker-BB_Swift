@@ -230,6 +230,22 @@
 		A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E81D1AFCD300F6FF57 /* StoreKit.framework */; };
 		A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813EA1D1AFD9100F6FF57 /* CoreData.framework */; };
 		A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */; };
+		A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */; };
+		A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */; };
+		A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */; };
+		A5F36E021D2C4F2100A5C621 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF21D2C4F2100A5C621 /* Photo.swift */; };
+		A5F36E031D2C4F2100A5C621 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF31D2C4F2100A5C621 /* Session+CoreDataProperties.swift */; };
+		A5F36E041D2C4F2100A5C621 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF41D2C4F2100A5C621 /* Session.swift */; };
+		A5F36E051D2C4F2100A5C621 /* Email+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF51D2C4F2100A5C621 /* Email+CoreDataProperties.swift */; };
+		A5F36E061D2C4F2100A5C621 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF61D2C4F2100A5C621 /* Email.swift */; };
+		A5F36E071D2C4F2100A5C621 /* Measurement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF71D2C4F2100A5C621 /* Measurement+CoreDataProperties.swift */; };
+		A5F36E081D2C4F2100A5C621 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF81D2C4F2100A5C621 /* Measurement.swift */; };
+		A5F36E091D2C4F2100A5C621 /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF91D2C4F2100A5C621 /* Workout+CoreDataProperties.swift */; };
+		A5F36E0A1D2C4F2100A5C621 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFA1D2C4F2100A5C621 /* Workout.swift */; };
+		A5F36E0B1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFB1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift */; };
+		A5F36E0C1D2C4F2100A5C621 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFC1D2C4F2100A5C621 /* Routine.swift */; };
+		A5F36E0D1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFD1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift */; };
+		A5F36E0E1D2C4F2100A5C621 /* WorkoutCompleteDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFE1D2C4F2100A5C621 /* WorkoutCompleteDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -674,6 +690,22 @@
 		A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "_0_DWT_BB 2.xcdatamodel"; sourceTree = "<group>"; };
 		A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB.xcdatamodel; sourceTree = "<group>"; };
 		A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB_v3.xcdatamodel; sourceTree = "<group>"; };
+		A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLock.swift; sourceTree = "<group>"; };
+		A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DF21D2C4F2100A5C621 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A5F36DF31D2C4F2100A5C621 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DF41D2C4F2100A5C621 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A5F36DF51D2C4F2100A5C621 /* Email+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Email+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DF61D2C4F2100A5C621 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		A5F36DF71D2C4F2100A5C621 /* Measurement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Measurement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DF81D2C4F2100A5C621 /* Measurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		A5F36DF91D2C4F2100A5C621 /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DFA1D2C4F2100A5C621 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		A5F36DFB1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DFC1D2C4F2100A5C621 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		A5F36DFD1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutCompleteDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5F36DFE1D2C4F2100A5C621 /* WorkoutCompleteDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCompleteDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1378,6 +1410,7 @@
 		A52813B61D1AF9E000F6FF57 /* 90 DWT BB */ = {
 			isa = PBXGroup;
 			children = (
+				A5F36DCE1D2C4E7300A5C621 /* Data Model */,
 				58D6D2F81D2AAD67009B6EF5 /* Generic Core Data Classes */,
 				A5156F551D1B3256002588C0 /* MoPubSDK */,
 				A51571AC1D1C3613002588C0 /* In-App Purchases */,
@@ -1389,7 +1422,6 @@
 				A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */,
 				A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */,
 				A52813C31D1AF9E000F6FF57 /* Info.plist */,
-				A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */,
 				A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */,
 			);
 			path = "90 DWT BB";
@@ -1411,6 +1443,30 @@
 				A52813D91D1AF9E000F6FF57 /* Info.plist */,
 			);
 			path = "90 DWT BBUITests";
+			sourceTree = "<group>";
+		};
+		A5F36DCE1D2C4E7300A5C621 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */,
+				A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */,
+				A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */,
+				A5F36DF21D2C4F2100A5C621 /* Photo.swift */,
+				A5F36DF31D2C4F2100A5C621 /* Session+CoreDataProperties.swift */,
+				A5F36DF41D2C4F2100A5C621 /* Session.swift */,
+				A5F36DF51D2C4F2100A5C621 /* Email+CoreDataProperties.swift */,
+				A5F36DF61D2C4F2100A5C621 /* Email.swift */,
+				A5F36DF71D2C4F2100A5C621 /* Measurement+CoreDataProperties.swift */,
+				A5F36DF81D2C4F2100A5C621 /* Measurement.swift */,
+				A5F36DF91D2C4F2100A5C621 /* Workout+CoreDataProperties.swift */,
+				A5F36DFA1D2C4F2100A5C621 /* Workout.swift */,
+				A5F36DFB1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift */,
+				A5F36DFC1D2C4F2100A5C621 /* Routine.swift */,
+				A5F36DFD1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift */,
+				A5F36DFE1D2C4F2100A5C621 /* WorkoutCompleteDate.swift */,
+				A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1577,6 +1633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F36E021D2C4F2100A5C621 /* Photo.swift in Sources */,
 				A515711F1D1B3256002588C0 /* MPInstanceProvider.m in Sources */,
 				A515718E1D1B3256002588C0 /* MOPUBNativeVideoAdRendererSettings.m in Sources */,
 				A51571701D1B3256002588C0 /* MPCollectionViewAdPlacer.m in Sources */,
@@ -1601,6 +1658,7 @@
 				A515710F1D1B3256002588C0 /* MPLogEvent.m in Sources */,
 				A51571681D1B3256002588C0 /* MPNativePositionResponseDeserializer.m in Sources */,
 				A51571A41D1B3256002588C0 /* MPRewardedVideoAdManager.m in Sources */,
+				A5F36E0B1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift in Sources */,
 				A515715D1D1B3256002588C0 /* MPAdPlacerInvocation.m in Sources */,
 				A51571411D1B3256002588C0 /* MPReachability.m in Sources */,
 				A515715E1D1B3256002588C0 /* MPCollectionViewAdPlacerCell.m in Sources */,
@@ -1629,6 +1687,7 @@
 				A515717B1D1B3256002588C0 /* MPServerAdPositioning.m in Sources */,
 				A51571A51D1B3256002588C0 /* MPRewardedVideoConnection.m in Sources */,
 				A515712D1D1B3256002588C0 /* MRImageDownloader.m in Sources */,
+				A5F36E051D2C4F2100A5C621 /* Email+CoreDataProperties.swift in Sources */,
 				A515712A1D1B3256002588C0 /* MRController.m in Sources */,
 				A51571181D1B3256002588C0 /* MPHTMLInterstitialCustomEvent.m in Sources */,
 				A515712F1D1B3256002588C0 /* MRPictureManager.m in Sources */,
@@ -1638,9 +1697,11 @@
 				A51571481D1B3256002588C0 /* MPVASTCreative.m in Sources */,
 				A51571AE1D1C36A2002588C0 /* IAPHelper.swift in Sources */,
 				A51571471D1B3256002588C0 /* MPVASTCompanionAd.m in Sources */,
+				A5F36E041D2C4F2100A5C621 /* Session.swift in Sources */,
 				A51571101D1B3256002588C0 /* MPLogEventCommunicator.m in Sources */,
 				A51571251D1B3256002588C0 /* MRBridge.m in Sources */,
 				A51571151D1B3256002588C0 /* MPAdWebView.m in Sources */,
+				A5F36E0D1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift in Sources */,
 				A51571791D1B3256002588C0 /* MPNativeAdSource.m in Sources */,
 				A51571241D1B3256002588C0 /* MPMRAIDInterstitialViewController.m in Sources */,
 				A51571731D1B3256002588C0 /* MPNativeAdData.m in Sources */,
@@ -1657,7 +1718,9 @@
 				A51571231D1B3256002588C0 /* MPMRAIDInterstitialCustomEvent.m in Sources */,
 				A515710B1D1B3256002588C0 /* MPURLResolver.m in Sources */,
 				5867DC191D20499A00363A4A /* WeekTVC_TableViewCell.swift in Sources */,
+				A5F36E0A1D2C4F2100A5C621 /* Workout.swift in Sources */,
 				A515714C1D1B3256002588C0 /* MPVASTLinearAd.m in Sources */,
+				A5F36E031D2C4F2100A5C621 /* Session+CoreDataProperties.swift in Sources */,
 				A51571711D1B3256002588C0 /* MPNativeAd.m in Sources */,
 				A515710D1D1B3256002588C0 /* MPXMLParser.m in Sources */,
 				A515711D1D1B3256002588C0 /* MPInterstitialViewController.m in Sources */,
@@ -1694,6 +1757,7 @@
 				A51571351D1B3256002588C0 /* UIButton+MPAdditions.m in Sources */,
 				A515713B1D1B3256002588C0 /* MPGeolocationProvider.m in Sources */,
 				A51571A21D1B3256002588C0 /* MPMoPubRewardedVideoCustomEvent.m in Sources */,
+				A5F36E071D2C4F2100A5C621 /* Measurement+CoreDataProperties.swift in Sources */,
 				A51571881D1B3256002588C0 /* MOPUBNativeVideoImpressionAgent.m in Sources */,
 				A51571331D1B3256002588C0 /* NSJSONSerialization+MPAdditions.m in Sources */,
 				A515713E1D1B3256002588C0 /* MPInternalUtils.m in Sources */,
@@ -1714,6 +1778,7 @@
 				A51571761D1B3256002588C0 /* MPNativeAdRenderingImageLoader.m in Sources */,
 				A515711E1D1B3256002588C0 /* MPCoreInstanceProvider.m in Sources */,
 				A515715A1D1B3256002588C0 /* MPConstants.m in Sources */,
+				A5F36E0C1D2C4F2100A5C621 /* Routine.swift in Sources */,
 				58D6D3081D2AAD67009B6EF5 /* CDImporter.swift in Sources */,
 				A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */,
 				A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */,
@@ -1737,15 +1802,20 @@
 				A51570F01D1B3256002588C0 /* MPiAdBannerCustomEvent.m in Sources */,
 				A51571601D1B3256002588C0 /* MPImageDownloadQueue.m in Sources */,
 				58D6D30C1D2AAD67009B6EF5 /* CDTableViewController.swift in Sources */,
+				A5F36E091D2C4F2100A5C621 /* Workout+CoreDataProperties.swift in Sources */,
 				58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */,
 				A51571121D1B3256002588C0 /* MPNetworkManager.m in Sources */,
+				A5F36E061D2C4F2100A5C621 /* Email.swift in Sources */,
 				58D6D3071D2AAD67009B6EF5 /* CDHelper.swift in Sources */,
 				A51570F11D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m in Sources */,
+				A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */,
+				A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */,
 				A515711C1D1B3256002588C0 /* MPInterstitialCustomEventAdapter.m in Sources */,
 				A515718B1D1B3256002588C0 /* MOPUBPlayerViewController.m in Sources */,
 				A515710E1D1B3256002588C0 /* MPLogEvent+NativeVideo.m in Sources */,
 				A51571A91D1B3256002588C0 /* MPRewardedVideoReward.m in Sources */,
 				A515710C1D1B3256002588C0 /* MPVideoConfig.m in Sources */,
+				A5F36E0E1D2C4F2100A5C621 /* WorkoutCompleteDate.swift in Sources */,
 				A51571161D1B3256002588C0 /* MPAdWebViewAgent.m in Sources */,
 				A51571551D1B3256002588C0 /* MPVASTWrapper.m in Sources */,
 				A51570FB1D1B3256002588C0 /* MPActivityViewControllerHelper+TweetShare.m in Sources */,
@@ -1755,9 +1825,11 @@
 				A51570EC1D1B3256002588C0 /* MPGoogleAdMobBannerCustomEvent.m in Sources */,
 				A51571021D1B3256002588C0 /* MPAdServerURLBuilder.m in Sources */,
 				A51571041D1B3256002588C0 /* MPClosableView.m in Sources */,
+				A5F36E081D2C4F2100A5C621 /* Measurement.swift in Sources */,
 				A51571451D1B3256002588C0 /* MPUserInteractionGestureRecognizer.m in Sources */,
 				A51571861D1B3256002588C0 /* MOPUBNativeVideoAdConfigValues.m in Sources */,
 				A51571561D1B3256002588C0 /* MoPub.m in Sources */,
+				A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */,
 				A51571381D1B3256002588C0 /* UIWebView+MPAdditions.m in Sources */,
 				A515711A1D1B3256002588C0 /* MPBaseInterstitialAdapter.m in Sources */,
 				A51570F51D1B3256002588C0 /* README.md in Sources */,
@@ -1966,6 +2038,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1999,6 +2077,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,

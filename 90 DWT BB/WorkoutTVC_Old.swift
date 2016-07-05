@@ -1,4 +1,4 @@
-//
+///
 //  WorkoutTVC.swift
 //  90 DWT BB
 //
@@ -11,7 +11,9 @@ import UIKit
 
 class WorkoutTVC_Old: CDTableViewController {
 
+    var workoutRoutine = ""
     var selectedWorkout = ""
+    
     var exerciseNameArray = [[], []]
     var exerciseRepsArray = [[], []]
     var cellArray = [[], []]
@@ -71,7 +73,7 @@ class WorkoutTVC_Old: CDTableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     func loadExerciseNameArray(workout: String) {
@@ -1020,6 +1022,10 @@ class WorkoutTVC_Old: CDTableViewController {
             let titleArray = currentCell[0] as? NSArray
             cell.title.text = titleArray![0].uppercaseString
             
+            cell.nonUpperCaseExerciseName = titleArray![0] as! String
+            cell.workoutRoutine = workoutRoutine  // Bulk or Tone
+            cell.selectedWorkout = selectedWorkout  // B1: Chest+Tri etc...
+            
             let repNumbers = currentCell[1] as? NSArray
             cell.repNumberLabel1.text = repNumbers![0] as? String
             cell.repNumberLabel2.text = repNumbers![1] as? String
@@ -1081,7 +1087,7 @@ class WorkoutTVC_Old: CDTableViewController {
             return "Finished"
         }
     }
-
+    
     // MARK: UITableViewDelegate
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -1095,6 +1101,11 @@ class WorkoutTVC_Old: CDTableViewController {
         header.contentView.backgroundColor = UIColor.lightGrayColor()
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        view.endEditing(true)
+    }
+ 
     /*
     // MARK: - Navigation
 
@@ -1104,5 +1115,6 @@ class WorkoutTVC_Old: CDTableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
 }
