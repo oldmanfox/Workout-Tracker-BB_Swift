@@ -127,22 +127,44 @@ class CDOperation {
         return newObject 
     }
     
-    class func saveWithPredicate(session: String, routine: String, workout: String, exercise: String, round: String, index: String, weight: String) {
+    class func saveWithPredicate(session: String, routine: String, workout: String, exercise: String, round: NSNumber, index: NSNumber, weight: String) {
         
         let request = NSFetchRequest( entityName: "Workout")
-        //let sort = NSSortDescriptor( key: "name", ascending: true)
-        //request.sortDescriptors = [sort]
-        let filter = NSPredicate( format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND round == %@ AND index == %@",
-                                  session,
-                                  routine,
-                                  workout,
-                                  exercise,
-                                  round,
-                                  index)
+        let sortRound = NSSortDescriptor( key: "round", ascending: true)
+        let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        request.sortDescriptors = [sortWorkout, sortExercise, sortRound]
+        
+        // Weight with index and round
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@ AND round = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 exercise,
+                                 index,
+                                 round)
+
+//        // Exercise with index
+//        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@",
+//                                 session,
+//                                 routine,
+//                                 workout,
+//                                 exercise,
+//                                 index)
+        
+//        // Workout with index
+//        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+//                                 session,
+//                                 routine,
+//                                 workout,
+//                                 index)
+
+
+        
         request.predicate = filter
         
         do {
-            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest( request) as? [Workout] {
+            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
                 
                 print("workoutObjects.count = \(workoutObjects.count)")
                 
@@ -152,16 +174,16 @@ class CDOperation {
                     
                     let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as! Workout
                     
-                    let todaysDate = NSDate()
+                    //let todaysDate = NSDate()
                     
                     insertWorkoutInfo.session = session
                     insertWorkoutInfo.routine = routine
                     insertWorkoutInfo.workout = workout
-                    insertWorkoutInfo.exercise = workout
-                    insertWorkoutInfo.round = Int(round)
-                    insertWorkoutInfo.index = Int(index)
+                    insertWorkoutInfo.exercise = exercise
+                    insertWorkoutInfo.round = round
+                    insertWorkoutInfo.index = index
                     insertWorkoutInfo.weight = weight
-                    insertWorkoutInfo.date = todaysDate
+                    insertWorkoutInfo.date = NSDate()
                         
                         
                     CDHelper.saveSharedContext()
@@ -169,12 +191,92 @@ class CDOperation {
                 }
                 else {
                     
+                    if workoutObjects.count == 1 {
+                        
+                        let updateWorkoutInfo = workoutObjects[0]
+                        
+                        updateWorkoutInfo.weight = weight
+                        updateWorkoutInfo.date = NSDate()
+                        
+                        CDHelper.saveSharedContext()
+                    }
+                   
+                    for object in workoutObjects {
+                        
+                        print("\(object.exercise!) - Index(\(object.index!)) - Round(\(object.round!)) - Weight(\(object.weight!))")
+                    }
+                    
                 
                 }
             }
         } catch { print(" ERROR executing a fetch request: \( error)") }
+    }
+    
+    class func getWeightTextForExerciseRound(session: String, routine: String, workout: String, exercise: String, round: NSNumber, index: NSNumber) -> String? {
         
-        print("workoutObject = nil")
+        let request = NSFetchRequest( entityName: "Workout")
+        let sortRound = NSSortDescriptor( key: "round", ascending: true)
+        let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        request.sortDescriptors = [sortWorkout, sortExercise, sortRound]
         
+        // Weight with index and round
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@ AND round = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 exercise,
+                                 index,
+                                 round)
+        
+        //        // Exercise with index
+        //        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@",
+        //                                 session,
+        //                                 routine,
+        //                                 workout,
+        //                                 exercise,
+        //                                 index)
+        
+        //        // Workout with index
+        //        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+        //                                 session,
+        //                                 routine,
+        //                                 workout,
+        //                                 index)
+        
+        
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                
+                print("workoutObjects.count = \(workoutObjects.count)")
+                
+                if workoutObjects.count == 0 {
+                    
+                    // No matches for this object.
+                    
+                    return "0.0"
+                
+                }
+                else {
+                    
+                    if workoutObjects.count == 1 {
+                        
+                        let matchedWorkoutInfo = workoutObjects[0]
+                        
+                        return matchedWorkoutInfo.weight!
+                    }
+                    
+                    for object in workoutObjects {
+                        
+                        print("\(object.exercise!) - Index(\(object.index!)) - Round(\(object.round!)) - Weight(\(object.weight!))")
+                    }
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return "0.0"
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 
 class WorkoutTVC_Old: CDTableViewController {
 
+    var session = "1"
     var workoutRoutine = ""
     var selectedWorkout = ""
     
@@ -50,6 +51,17 @@ class WorkoutTVC_Old: CDTableViewController {
         static let darkGreen = UIColor (red: 0/255, green: 110/255, blue: 96/255, alpha: 1)
     }
     
+    // MARK: - INITIALIZATION
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // CDTableViewController subclass customization
+        self.entity = "Workout"
+        self.sort = [NSSortDescriptor(key: "workout", ascending: true),NSSortDescriptor(key: "exercise", ascending: true)]
+        //self.sectionNameKeyPath = "locationAtHome.storedIn"
+        self.fetchBatchSize = 25
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,6 +75,8 @@ class WorkoutTVC_Old: CDTableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 88
+        
+        performFetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -1064,6 +1078,36 @@ class WorkoutTVC_Old: CDTableViewController {
             cell.currentWeight4.hidden = weightFields![3] as! Bool
             cell.currentWeight5.hidden = weightFields![4] as! Bool
             cell.currentWeight6.hidden = weightFields![5] as! Bool
+            
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 1, index: 1) {
+                
+                cell.currentWeight1.text = weightObjectText
+            }
+            
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 2, index: 1) {
+                
+                cell.currentWeight2.text = weightObjectText
+            }
+
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 3, index: 1) {
+                
+                cell.currentWeight3.text = weightObjectText
+            }
+
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 4, index: 1) {
+                
+                cell.currentWeight4.text = weightObjectText
+            }
+
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 5, index: 1) {
+                
+                cell.currentWeight5.text = weightObjectText
+            }
+
+            if let weightObjectText = CDOperation.getWeightTextForExerciseRound(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, round: 6, index: 1) {
+                
+                cell.currentWeight6.text = weightObjectText
+            }
             
             return cell
 

@@ -34,7 +34,7 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     var cacheName:String? = nil
     var sectionNameKeyPath:String? = nil
     var fetchBatchSize = 0 // 0 = No Limit
-    var cellIdentifier = "Cell"
+    var cellIdentifier = "WorkoutCell"
     var fetchLimit = 0
     var fetchOffset = 0
     var resultType:NSFetchRequestResultType = NSFetchRequestResultType.ManagedObjectResultType
@@ -131,41 +131,42 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.tableView.endUpdates()
+        //self.tableView.reloadData()
     }
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        switch type {
-        case .Insert:
-            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        case .Delete:
-            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        default:
-        return
-        }
+//        switch type {
+//        case .Insert:
+//            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+//        case .Delete:
+//            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+//        default:
+//        return
+//        }
     }
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
-        switch type {
-        case .Insert:
-            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-        case .Delete:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-        case .Update:
-            
-            /*
-             // Note that for Update, we update the row at __indexPath__
-             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
-             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
-             
-             cell?.textLabel?.text = animal?.commonName
-             cell?.detailTextLabel?.text = animal?.habitat
-             */
-            
-            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
-        case .Move:
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-        }
-    }    
+//        switch type {
+//        case .Insert:
+//            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+//        case .Delete:
+//            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+//        case .Update:
+//            
+//            /*
+//             // Note that for Update, we update the row at __indexPath__
+//             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
+//             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
+//             
+//             cell?.textLabel?.text = animal?.commonName
+//             cell?.detailTextLabel?.text = animal?.habitat
+//             */
+//            
+//            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
+//        case .Move:
+//            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+//            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+//        }
+    }
     
     // MARK: - SEARCH
     var searchController:UISearchController? = nil
