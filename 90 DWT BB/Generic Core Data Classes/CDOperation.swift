@@ -251,7 +251,7 @@ class CDOperation {
         do {
             if let workoutObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
                 
-                print("workoutObjects.count = \(workoutObjects.count)")
+                //print("workoutObjects.count = \(workoutObjects.count)")
                 
                 if workoutObjects.count == 0 {
                     

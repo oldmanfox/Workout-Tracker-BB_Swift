@@ -222,7 +222,37 @@ class CDHelper : NSObject  {
         // self.setDefaultDataStoreAsInitialStore()
         //_ = self.sourceStore
         //_ = self.localStore
-            
+        
+        
+        
+//        if iCloudAccountIsSignedIn() {
+//            
+//            print("** Attempting to load the iCloud Store **")
+//            
+//            // Load iCloud Store
+//            if let _ = self.iCloudStore {
+//                
+//                // self.destroyAlliCloudDataForThisApplication()
+//                
+//                // Check to see if there is a local store to merge with iCloud
+//                if let path = self.seedStoreURL?.path {
+//                    // Merge existing data with iCloud
+//                    if NSFileManager.defaultManager().fileExistsAtPath(path) {
+//                        if let _ = self.seedStore {
+//                            self.confirmMergeWithiCloud()
+//                        } else {print("Failed to instantiate seed store")}
+//                    } else {print("Failed to find seed store at '\(path)'")}
+//                } else {print("Failed to prepare seed store path")}
+//            } else {print("Failed to load iCloud store")}
+//        }
+//        else {
+//            
+//            // iCloud is not signed in so use local store
+//            _ = self.localStore
+//        }
+
+        
+        
         //Load iCloud Store
         if let _ = self.iCloudStore {
             

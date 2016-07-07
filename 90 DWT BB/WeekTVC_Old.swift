@@ -57,6 +57,8 @@ class WeekTVC_Old: UITableViewController {
         navigationItem.title = "Workout"
         
         loadArraysForCell()
+        
+        CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context)
     }
 
     override func didReceiveMemoryWarning() {

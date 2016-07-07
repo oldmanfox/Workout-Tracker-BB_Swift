@@ -118,9 +118,9 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         return self.frc.sectionForSectionIndexTitle(title, atIndex: index)
     }
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.frc.sections![section].name ?? ""
-    }
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return self.frc.sections![section].name ?? ""
+//    }
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
         return self.frc.sectionIndexTitles
     }

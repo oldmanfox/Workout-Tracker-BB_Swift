@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MonthTVC_Old: UITableViewController {
+class MonthTVC_Old: CDTableViewController {
     
     var sectionsArray = [[], []]
     
@@ -27,6 +27,17 @@ class MonthTVC_Old: UITableViewController {
         static let week12 = "Week 12"
     }
     
+    // MARK: - INITIALIZATION
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // CDTableViewController subclass customization
+        self.entity = "Workout"
+        self.sort = [NSSortDescriptor(key: "workout", ascending: true),NSSortDescriptor(key: "exercise", ascending: true)]
+        //self.sectionNameKeyPath = "locationAtHome.storedIn"
+        self.fetchBatchSize = 25
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -35,6 +46,8 @@ class MonthTVC_Old: UITableViewController {
         //navigationItem.title = "Tone"
         
         findWeekList()
+        
+        performFetch()
     }
 
     override func didReceiveMemoryWarning() {
