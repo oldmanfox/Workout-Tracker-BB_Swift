@@ -1,5 +1,6 @@
 //
 //  CDImporter.swift
+//  Groceries
 //
 //  Created by Tim Roadley on 5/10/2015.
 //  Copyright © 2015 Tim Roadley. All rights reserved.
@@ -37,7 +38,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                     print("Default Data has not been imported yet")
                     return false
                 }
-            } else {print("\(#function) FAILED to get metadata")}
+            } else {print("\(__FUNCTION__) FAILED to get metadata")}
         } catch {
             print("ERROR getting metadata from \(url) \(error)")
         }
@@ -81,7 +82,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let initialVC = UIApplication.sharedApplication().keyWindow?.rootViewController {
                     initialVC.presentViewController(alert, animated: true, completion: nil)
-                } else {NSLog("ERROR getting the initial view controller in %@",#function)}
+                } else {NSLog("ERROR getting the initial view controller in %@",__FUNCTION__)}
             })
         }  
     }
@@ -114,68 +115,65 @@ class CDImporter : NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
         NSLog("ERROR PARSING: %@",parseError.localizedDescription)
     }
-    // NOTE: - The code in the didStartElement function is customized for 'Groceries'. Read "Learning Core Data with Swift for iOS" by Tim Roadley for full details.
-    
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        
-        print("If you want to support importing from XML, please override or update the didStartElement function of CDImporter.swift as appropriate to your own data model.")
-        /*
-        let importContext = CDHelper.shared.importContext
-        importContext.performBlockAndWait {
-     
-            // Process only the 'Item' element in the XML file
-            if elementName == "Item" {
-                    
-                // STEP 1a: Insert a unique 'Item' object
-                var item:Item?
-                if let itemName = attributeDict["name"] {
-                    item = CDOperation.insertUniqueObject("Item", context: importContext, uniqueAttributes: ["name":itemName], additionalAttributes: nil) as? Item
-                    if let _item = item {_item.name = itemName}
-                }
-                    
-                // STEP 1b: Insert a unique 'Unit' object
-                var unit:Unit?
-                if let unitName = attributeDict["unit"] {
-                    unit = CDOperation.insertUniqueObject("Unit", context: importContext, uniqueAttributes: ["name":unitName], additionalAttributes: nil) as? Unit
-                    if let _unit = unit {_unit.name = unitName}
-                }
-                    
-                // STEP 1c: Insert a unique 'LocationAtHome' object
-                var locationAtHome:LocationAtHome?
-                if let storedIn = attributeDict["locationAtHome"] {
-                    locationAtHome = CDOperation.insertUniqueObject("LocationAtHome", context: importContext, uniqueAttributes: ["storedIn":storedIn], additionalAttributes: nil) as? LocationAtHome
-                    if let _locationAtHome = locationAtHome {_locationAtHome.storedIn = storedIn}
-                }
-                    
-                // STEP 1d: Insert a unique 'LocationAtShop' object
-                var locationAtShop:LocationAtShop?
-                if let aisle = attributeDict["locationAtShop"] {
-                    locationAtShop = CDOperation.insertUniqueObject("LocationAtShop", context: importContext, uniqueAttributes: ["aisle":aisle], additionalAttributes: nil) as? LocationAtShop
-                    if let _locationAtShop = locationAtShop {_locationAtShop.aisle = aisle}
-                }
-                    
-                // STEP 2: Manually add extra attribute values.
-                if let _item = item {_item.listed = NSNumber(bool: false)}
-                    
-                // STEP 3: Create relationships
-                if let _item = item {
-                        
-                    _item.unit = unit
-                    _item.locationAtHome = locationAtHome
-                    _item.locationAtShop = locationAtShop
-                }
-                    
-                // STEP 4: Save new objects to the persistent store.
-                CDHelper.save(importContext)
-                    
-                // STEP 5: Turn objects into faults to save memory
-                if let _item = item { CDFaulter.faultObject(_item, moc: importContext)}
-                if let _unit = unit { CDFaulter.faultObject(_unit, moc: importContext)}
-                if let _locationAtHome = locationAtHome { CDFaulter.faultObject(_locationAtHome, moc: importContext)}
-                if let _locationAtShop = locationAtShop { CDFaulter.faultObject(_locationAtShop, moc: importContext)}
-            }
-        }*/
-    }
+    // NOTE: - The code in the didStartElement function is customized for 'Groceries'
+//    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+//            
+//        let importContext = CDHelper.shared.importContext
+//        importContext.performBlockAndWait {
+//     
+//            // Process only the 'Item' element in the XML file
+//            if elementName == "Item" {
+//                    
+//                // STEP 1a: Insert a unique 'Item' object
+//                var item:Item?
+//                if let itemName = attributeDict["name"] {
+//                    item = CDOperation.insertUniqueObject("Item", context: importContext, uniqueAttributes: ["name":itemName], additionalAttributes: nil) as? Item
+//                    if let _item = item {_item.name = itemName}
+//                }
+//                    
+//                // STEP 1b: Insert a unique 'Unit' object
+//                var unit:Unit?
+//                if let unitName = attributeDict["unit"] {
+//                    unit = CDOperation.insertUniqueObject("Unit", context: importContext, uniqueAttributes: ["name":unitName], additionalAttributes: nil) as? Unit
+//                    if let _unit = unit {_unit.name = unitName}
+//                }
+//                    
+//                // STEP 1c: Insert a unique 'LocationAtHome' object
+//                var locationAtHome:LocationAtHome?
+//                if let storedIn = attributeDict["locationAtHome"] {
+//                    locationAtHome = CDOperation.insertUniqueObject("LocationAtHome", context: importContext, uniqueAttributes: ["storedIn":storedIn], additionalAttributes: nil) as? LocationAtHome
+//                    if let _locationAtHome = locationAtHome {_locationAtHome.storedIn = storedIn}
+//                }
+//                    
+//                // STEP 1d: Insert a unique 'LocationAtShop' object
+//                var locationAtShop:LocationAtShop?
+//                if let aisle = attributeDict["locationAtShop"] {
+//                    locationAtShop = CDOperation.insertUniqueObject("LocationAtShop", context: importContext, uniqueAttributes: ["aisle":aisle], additionalAttributes: nil) as? LocationAtShop
+//                    if let _locationAtShop = locationAtShop {_locationAtShop.aisle = aisle}
+//                }
+//                    
+//                // STEP 2: Manually add extra attribute values.
+//                if let _item = item {_item.listed = NSNumber(bool: false)}
+//                    
+//                // STEP 3: Create relationships
+//                if let _item = item {
+//                        
+//                    _item.unit = unit
+//                    _item.locationAtHome = locationAtHome
+//                    _item.locationAtShop = locationAtShop
+//                }
+//                    
+//                // STEP 4: Save new objects to the persistent store.
+//                CDHelper.save(importContext)
+//                    
+//                // STEP 5: Turn objects into faults to save memory
+//                if let _item = item { CDFaulter.faultObject(_item, moc: importContext)}
+//                if let _unit = unit { CDFaulter.faultObject(_unit, moc: importContext)}
+//                if let _locationAtHome = locationAtHome { CDFaulter.faultObject(_locationAtHome, moc: importContext)}
+//                if let _locationAtShop = locationAtShop { CDFaulter.faultObject(_locationAtShop, moc: importContext)}
+//            }
+//        }
+//    }
     
     // MARK: - DEEP COPY
     class func selectedUniqueAttributesForEntity (entityName:String) -> [String]? {
@@ -185,14 +183,8 @@ class CDImporter : NSObject, NSXMLParserDelegate {
         // Only use attributes whose values are alphanumeric.
             
         switch (entityName) {
-            case "WorkoutCompleteDate"  :return ["date"]
-            case "Workout"              :return ["date"]
-            case "Session"              :return ["date"]
-            case "Routine"              :return ["date"]
-            case "Photo"                :return ["date"]
-            case "Measurement"          :return ["date"]
-            case "Email"                :return ["date"]
-            case "AutoLock"             :return ["date"]
+            case "Workout"          :return ["date"]
+            
             default:
                 break;
         }
@@ -216,8 +208,8 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                 attributes = attributes.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                     
                 return "\(entityName) with \(attributes)"
-            } else {print("ERROR: \(#function) could not find any uniqueAttributes")}
-        } else {print("ERROR: \(#function) could not find an entityName")}
+            } else {print("ERROR: \(__FUNCTION__) could not find any uniqueAttributes")}
+        } else {print("ERROR: \(__FUNCTION__) could not find an entityName")}
         return ""
     }
     class func copyUniqueObject (sourceObject:NSManagedObject, targetContext:NSManagedObjectContext) -> NSManagedObject? {
@@ -251,15 +243,15 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                 }
                 
                 return copiedObject
-            } else {print("ERROR: \(#function) could not find any selected unique attributes for the '\(entityName)' entity")}
-        } else {print("ERROR: \(#function) could not find an entity name for the given object '\(sourceObject)'")}
+            } else {print("ERROR: \(__FUNCTION__) could not find any selected unique attributes for the '\(entityName)' entity")}
+        } else {print("ERROR: \(__FUNCTION__) could not find an entity name for the given object '\(sourceObject)'")}
         return nil
     }
     class func establishToOneRelationship (relationshipName:String,from object:NSManagedObject, to relatedObject:NSManagedObject) {
             
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(#function) because the relationship already exists")
+            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
             return
         }
             
@@ -273,13 +265,13 @@ class CDImporter : NSObject, NSXMLParserDelegate {
             CDHelper.save(targetContext)
             targetContext.refreshObject(object, mergeChanges: false)
             targetContext.refreshObject(relatedObject, mergeChanges: false)
-        } else {print("ERROR: \(#function) could not get a targetContext")}
+        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
     }
     class func establishToManyRelationship (relationshipName:String,from object:NSManagedObject, sourceSet:NSMutableSet) {
             
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(#function) because the relationship already exists")
+            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
             return
         }
 
@@ -300,16 +292,16 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                         CDHelper.save(targetContext)
                         targetContext.refreshObject(object, mergeChanges: false)
                         targetContext.refreshObject(theRelatedObject, mergeChanges: false)
-                    } else {print("ERROR: \(#function) could not get a copiedRelatedObject")}
-                } else {print("ERROR: \(#function) could not get theRelatedObject")}
+                    } else {print("ERROR: \(__FUNCTION__) could not get a copiedRelatedObject")}
+                } else {print("ERROR: \(__FUNCTION__) could not get theRelatedObject")}
             })
-        } else {print("ERROR: \(#function) could not get a targetContext")}
+        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
     } 
     class func establishOrderedToManyRelationship (relationshipName:String,from object:NSManagedObject, sourceSet:NSMutableOrderedSet) {
 
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(#function) because the relationship already exists")
+            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
             return
         }
             
@@ -330,10 +322,10 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                         CDHelper.save(targetContext)
                         targetContext.refreshObject(object, mergeChanges: false)
                         targetContext.refreshObject(theRelatedObject, mergeChanges: false)
-                    } else {print("ERROR: \(#function) could not get a copiedRelatedObject")}
-                } else {print("ERROR: \(#function) could not get theRelatedObject")}
+                    } else {print("ERROR: \(__FUNCTION__) could not get a copiedRelatedObject")}
+                } else {print("ERROR: \(__FUNCTION__) could not get theRelatedObject")}
             }
-        } else {print("ERROR: \(#function) could not get a targetContext")}
+        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
     }
     class func copyRelationshipsFromObject(sourceObject:NSManagedObject, to targetContext:NSManagedObjectContext) {
             
@@ -364,11 +356,11 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                                 
                             CDImporter.establishToOneRelationship(relationship.name, from: copiedObject, to: relatedCopiedObject)
                                 
-                        } else {print("ERROR: \(#function) could not get a relatedCopiedObject")}
-                    } else {print("ERROR: \(#function) could not get a relatedSourceObject")}
+                        } else {print("ERROR: \(__FUNCTION__) could not get a relatedCopiedObject")}
+                    } else {print("ERROR: \(__FUNCTION__) could not get a relatedSourceObject")}
                 }
             }
-        } else {print("ERROR: \(#function) could not find or create an object to copy relationships to.")}
+        } else {print("ERROR: \(__FUNCTION__) could not find or create an object to copy relationships to.")}
     }
     class func deepCopyEntities(entities:[String], from sourceContext:NSManagedObjectContext, to targetContext:NSManagedObjectContext) {
             
@@ -381,7 +373,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                      CDImporter.copyUniqueObject(sourceObject, targetContext: targetContext)
                      CDImporter.copyRelationshipsFromObject(sourceObject, to: targetContext)                    
                 }
-            } else {print("ERROR: \(#function) could not find any sourceObjects")}
+            } else {print("ERROR: \(__FUNCTION__) could not find any sourceObjects")}
             NSNotificationCenter.defaultCenter().postNotificationName("SomethingChanged", object: nil)
         }
     }

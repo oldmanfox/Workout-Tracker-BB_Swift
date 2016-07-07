@@ -19,8 +19,6 @@
 		58D6D3041D2AAD67009B6EF5 /* CDCloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */; };
 		58D6D3051D2AAD67009B6EF5 /* CDDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */; };
 		58D6D3061D2AAD67009B6EF5 /* CDFaulter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */; };
-		58D6D3071D2AAD67009B6EF5 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */; };
-		58D6D3081D2AAD67009B6EF5 /* CDImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */; };
 		58D6D3091D2AAD67009B6EF5 /* CDMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */; };
 		58D6D30A1D2AAD67009B6EF5 /* CDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */; };
 		58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */; };
@@ -246,6 +244,8 @@
 		A5F36E0C1D2C4F2100A5C621 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFC1D2C4F2100A5C621 /* Routine.swift */; };
 		A5F36E0D1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFD1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift */; };
 		A5F36E0E1D2C4F2100A5C621 /* WorkoutCompleteDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DFE1D2C4F2100A5C621 /* WorkoutCompleteDate.swift */; };
+		A5F36E101D2EE17A00A5C621 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36E0F1D2EE17A00A5C621 /* CDHelper.swift */; };
+		A5F36E121D2EE1AD00A5C621 /* CDImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36E111D2EE1AD00A5C621 /* CDImporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,8 +276,6 @@
 		58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCloudSync.swift; sourceTree = "<group>"; };
 		58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDeduplicator.swift; sourceTree = "<group>"; };
 		58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDFaulter.swift; sourceTree = "<group>"; };
-		58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
-		58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDImporter.swift; sourceTree = "<group>"; };
 		58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDMigration.swift; sourceTree = "<group>"; };
 		58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDOperation.swift; sourceTree = "<group>"; };
 		58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPickerTextField.swift; sourceTree = "<group>"; };
@@ -706,6 +704,8 @@
 		A5F36DFC1D2C4F2100A5C621 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		A5F36DFD1D2C4F2100A5C621 /* WorkoutCompleteDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutCompleteDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5F36DFE1D2C4F2100A5C621 /* WorkoutCompleteDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCompleteDate.swift; sourceTree = "<group>"; };
+		A5F36E0F1D2EE17A00A5C621 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
+		A5F36E111D2EE1AD00A5C621 /* CDImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -754,8 +754,8 @@
 				58D6D2F91D2AAD67009B6EF5 /* CDCloudSync.swift */,
 				58D6D2FA1D2AAD67009B6EF5 /* CDDeduplicator.swift */,
 				58D6D2FB1D2AAD67009B6EF5 /* CDFaulter.swift */,
-				58D6D2FC1D2AAD67009B6EF5 /* CDHelper.swift */,
-				58D6D2FD1D2AAD67009B6EF5 /* CDImporter.swift */,
+				A5F36E0F1D2EE17A00A5C621 /* CDHelper.swift */,
+				A5F36E111D2EE1AD00A5C621 /* CDImporter.swift */,
 				58D6D2FE1D2AAD67009B6EF5 /* CDMigration.swift */,
 				58D6D2FF1D2AAD67009B6EF5 /* CDOperation.swift */,
 				58D6D3001D2AAD67009B6EF5 /* CDPickerTextField.swift */,
@@ -1637,6 +1637,7 @@
 				A515711F1D1B3256002588C0 /* MPInstanceProvider.m in Sources */,
 				A515718E1D1B3256002588C0 /* MOPUBNativeVideoAdRendererSettings.m in Sources */,
 				A51571701D1B3256002588C0 /* MPCollectionViewAdPlacer.m in Sources */,
+				A5F36E121D2EE1AD00A5C621 /* CDImporter.swift in Sources */,
 				A51570F71D1B3256002588C0 /* MPBannerCustomEventAdapter.m in Sources */,
 				58D6D3051D2AAD67009B6EF5 /* CDDeduplicator.swift in Sources */,
 				A51571B21D1C36C5002588C0 /* ProductCell.swift in Sources */,
@@ -1729,6 +1730,7 @@
 				A515713C1D1B3256002588C0 /* MPGlobal.m in Sources */,
 				A51571091D1B3256002588C0 /* MPProgressOverlayView.m in Sources */,
 				A515716B1D1B3256002588C0 /* MPStaticNativeAdImpressionTimer.m in Sources */,
+				A5F36E101D2EE17A00A5C621 /* CDHelper.swift in Sources */,
 				A515715B1D1B3256002588C0 /* MPInterstitialAdController.m in Sources */,
 				A515716A1D1B3256002588C0 /* MPNativeView.m in Sources */,
 				A51571A61D1B3256002588C0 /* MPRewardedVideo.m in Sources */,
@@ -1779,7 +1781,6 @@
 				A515711E1D1B3256002588C0 /* MPCoreInstanceProvider.m in Sources */,
 				A515715A1D1B3256002588C0 /* MPConstants.m in Sources */,
 				A5F36E0C1D2C4F2100A5C621 /* Routine.swift in Sources */,
-				58D6D3081D2AAD67009B6EF5 /* CDImporter.swift in Sources */,
 				A51570ED1D1B3256002588C0 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */,
 				A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */,
 				A515715C1D1B3256002588C0 /* MPInterstitialCustomEvent.m in Sources */,
@@ -1806,7 +1807,6 @@
 				58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */,
 				A51571121D1B3256002588C0 /* MPNetworkManager.m in Sources */,
 				A5F36E061D2C4F2100A5C621 /* Email.swift in Sources */,
-				58D6D3071D2AAD67009B6EF5 /* CDHelper.swift in Sources */,
 				A51570F11D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m in Sources */,
 				A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */,
 				A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */,

@@ -1,5 +1,6 @@
 //
 //  CDHelper.swift
+//  Groceries
 //
 //  Created by Tim Roadley on 29/09/2015.
 //  Copyright © 2015 Tim Roadley. All rights reserved.
@@ -52,14 +53,9 @@ class CDHelper : NSObject  {
     }()
     lazy var modelURL: NSURL = {
         let bundle = NSBundle.mainBundle()
-//        if let url = bundle.URLForResource("Model", withExtension: "momd") {
-//            return url
-//        }
         if let url = bundle.URLForResource("_0_DWT_BB", withExtension: "momd") {
             return url
         }
-
-        
         print("CRITICAL - Managed Object Model file not found")
         abort()
     }()
@@ -155,7 +151,7 @@ class CDHelper : NSObject  {
             _iCloudStore = try self.coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: self.iCloudStoreURL,options: options)
             return _iCloudStore
         } catch {
-            print("\(#function) ERROR adding iCloud store : \(error)")
+            print("\(__FUNCTION__) ERROR adding iCloud store : \(error)")
             return nil
         }
     }()
@@ -190,8 +186,8 @@ class CDHelper : NSObject  {
             do {
                 try psc.removePersistentStore(ps)
                 return true // Unload complete
-            } catch {print("\(#function) ERROR removing persistent store : \(error)")}
-        } else {print("\(#function) ERROR removing persistent store : store \(ps.description) has no coordinator")}
+            } catch {print("\(__FUNCTION__) ERROR removing persistent store : \(error)")}
+        } else {print("\(__FUNCTION__) ERROR removing persistent store : store \(ps.description) has no coordinator")}
         return false // Fail
     }
     func removeFileAtURL (url:NSURL) {
@@ -200,7 +196,7 @@ class CDHelper : NSObject  {
             try NSFileManager.defaultManager().removeItemAtURL(url)
             print("Deleted \(url)")
         } catch { 
-            print("\(#function) ERROR deleting item at url '\(url)' : \(error)")
+            print("\(__FUNCTION__) ERROR deleting item at url '\(url)' : \(error)")
         }
     }
     
@@ -212,7 +208,7 @@ class CDHelper : NSObject  {
         self.listenForStoreChanges()
     }
     func setupCoreData() {
-            
+        
         /*// Model Migration
         if let _localStoreURL = self.localStoreURL {
             CDMigration.shared.migrateStoreIfNecessary(_localStoreURL, destinationModel: self.model)
@@ -225,48 +221,40 @@ class CDHelper : NSObject  {
         
         
         
-//        if iCloudAccountIsSignedIn() {
-//            
-//            print("** Attempting to load the iCloud Store **")
-//            
-//            // Load iCloud Store
-//            if let _ = self.iCloudStore {
-//                
-//                // self.destroyAlliCloudDataForThisApplication()
-//                
-//                // Check to see if there is a local store to merge with iCloud
-//                if let path = self.seedStoreURL?.path {
-//                    // Merge existing data with iCloud
-//                    if NSFileManager.defaultManager().fileExistsAtPath(path) {
-//                        if let _ = self.seedStore {
-//                            self.confirmMergeWithiCloud()
-//                        } else {print("Failed to instantiate seed store")}
-//                    } else {print("Failed to find seed store at '\(path)'")}
-//                } else {print("Failed to prepare seed store path")}
-//            } else {print("Failed to load iCloud store")}
-//        }
-//        else {
-//            
-//            // iCloud is not signed in so use local store
-//            _ = self.localStore
-//        }
-
+        if iCloudAccountIsSignedIn() {
+            
+            print("** Attempting to load the iCloud Store **")
+            
+            // Load iCloud Store
+            if let _ = self.iCloudStore {
+                
+                //self.destroyAlliCloudDataForThisApplication()
+                
+                // Check to see if there is a local store to merge with iCloud
+                if let path = self.seedStoreURL?.path {
+                    // Merge existing data with iCloud
+                    if NSFileManager.defaultManager().fileExistsAtPath(path) {
+                        if let _ = self.seedStore {
+                            
+                            
+                            //self.confirmMergeWithiCloud()
+                            
+                            self.seedDataToiCloud()
+                            
+                        } else {print("Failed to instantiate seed store")}
+                    } else {print("Failed to find seed store at '\(path)'")}
+                } else {print("Failed to prepare seed store path")}
+            } else {print("Failed to load iCloud store")}
+            
+            
+        }
+        else {
+            
+            // iCloud is not signed in so use local store
+            _ = self.localStore
+        }
         
         
-        //Load iCloud Store
-        if let _ = self.iCloudStore {
-            
-            // self.destroyAlliCloudDataForThisApplication()
-            
-            if let path = self.seedStoreURL?.path {
-                // Merge existing data with iCloud
-                if NSFileManager.defaultManager().fileExistsAtPath(path) {
-                    if let _ = self.seedStore {
-                        self.confirmMergeWithiCloud()
-                    } else {print("Failed to instantiate seed store")}
-                } else {print("Failed to find seed store at '\(path)'")}
-            } else {print("Failed to prepare seed store path")}
-        } else {print("Failed to load iCloud store")}
         
         // Import Default Data
         /* if let _localStoreURL = self.localStoreURL {
@@ -283,7 +271,7 @@ class CDHelper : NSObject  {
             
                 do {
                     try moc.save()
-                    //print("SAVED context \(moc.description)")
+                    print("SAVED context \(moc.description)")
                 } catch {
                     print("ERROR saving context \(moc.description) - \(error)")
                 }
@@ -309,11 +297,11 @@ class CDHelper : NSObject  {
                         try NSFileManager.defaultManager().copyItemAtURL(defaultDataURL, toURL: url)
                         print("A copy of DefaultData.sqlite was set as the initial store for \(url)")
                     } catch {
-                        print("\(#function) ERROR setting DefaultData.sqlite as the initial store: : \(error)")
+                        print("\(__FUNCTION__) ERROR setting DefaultData.sqlite as the initial store: : \(error)")
                     }
-                } else {print("\(#function) ERROR: Could not find DefaultData.sqlite in the application bundle.")}
+                } else {print("\(__FUNCTION__) ERROR: Could not find DefaultData.sqlite in the application bundle.")}
             } 
-        } else {print("\(#function) ERROR: Failed to prepare URL in \(#function)")}
+        } else {print("\(__FUNCTION__) ERROR: Failed to prepare URL in \(__FUNCTION__)")}
     } 
     
     // MARK: - ICLOUD
@@ -333,9 +321,9 @@ class CDHelper : NSObject  {
     }
     func listenForStoreChanges () {
         let dc = NSNotificationCenter.defaultCenter()
-        dc.addObserver(self, selector: #selector(CDHelper.storesWillChange(_:)), name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: self.coordinator)
-        dc.addObserver(self, selector: #selector(CDHelper.storesDidChange(_:)), name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: self.coordinator)
-        dc.addObserver(self, selector: #selector(CDHelper.iCloudDataChanged(_:)), name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object:self.coordinator)
+        dc.addObserver(self, selector: "storesWillChange:", name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: self.coordinator)
+        dc.addObserver(self, selector: "storesDidChange:", name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: self.coordinator)
+        dc.addObserver(self, selector: "iCloudDataChanged:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object:self.coordinator)
     }
     func storesWillChange (note:NSNotification) {
             
@@ -381,7 +369,7 @@ class CDHelper : NSObject  {
             
             print("*** STARTED DEEP COPY FROM SEED STORE TO ICLOUD STORE ***")
             _ = self.seedStore
-            let entities = ["WorkoutCompleteDate","Workout","Session","Routine", "Photo", "Measurement", "Email", "AutoLock"]
+            let entities = ["Workout"]
             CDImporter.deepCopyEntities(entities, from: self.seedContext, to: self.importContext)
 
             self.context.performBlock {
@@ -426,7 +414,7 @@ class CDHelper : NSObject  {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let initialVC = UIApplication.sharedApplication().keyWindow?.rootViewController {
                         initialVC.presentViewController(alert, animated: true, completion: nil)
-                    } else {print("%@ FAILED to prepare the initial view controller",#function)}
+                    } else {print("%@ FAILED to prepare the initial view controller",__FUNCTION__)}
                 })
                 
             } else {

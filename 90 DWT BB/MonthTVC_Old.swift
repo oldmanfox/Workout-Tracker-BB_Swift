@@ -47,7 +47,19 @@ class MonthTVC_Old: CDTableViewController {
         
         findWeekList()
         
-        performFetch()
+        //performFetch()
+        print("VIEWDIDLOAD")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("VIEWDIDAPPEAR")
+//        performFetch()
+//        
+//        // Trigger Deduplication
+//        CDDeduplicator.deDuplicateEntityWithName("Workout", uniqueAttributeName: "date", backgroundMoc: CDHelper.shared.importContext)
+//        
+//        CDHelper.saveSharedContext()
     }
 
     override func didReceiveMemoryWarning() {
