@@ -81,6 +81,11 @@ class CDOperation {
             if let numericalValue = value as? NSNumber {
                 predicate = NSPredicate(format: "%K == %@", attribute, numericalValue)
             }
+            
+            // If the value is a date, create the predicate based on a date value
+            if let dateValue = value as? NSDate {
+                predicate = NSPredicate(format: "%K == %@", attribute, dateValue)
+            }
                 
             // Append new predicate to predicate array, or create it if it doesn't exist yet
             if let newPredicate = predicate {
@@ -117,7 +122,7 @@ class CDOperation {
             }
             return existingObject
         }
-            
+        
         // Create object with given attribute value
         let newObject = NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context)
         newObject.setValuesForKeysWithDictionary(uniqueAttributes)
@@ -218,7 +223,8 @@ class CDOperation {
         let sortRound = NSSortDescriptor( key: "round", ascending: true)
         let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
-        request.sortDescriptors = [sortWorkout, sortExercise, sortRound]
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortWorkout, sortExercise, sortRound, sortDate]
         
         // Weight with index and round
         let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@ AND round = %@",
@@ -253,27 +259,47 @@ class CDOperation {
                 
                 //print("workoutObjects.count = \(workoutObjects.count)")
                 
-                if workoutObjects.count == 0 {
-                    
+                switch workoutObjects.count {
+                case 0:
                     // No matches for this object.
                     
                     return "0.0"
-                
-                }
-                else {
+                case 1:
+                    let matchedWorkoutInfo = workoutObjects[0]
                     
-                    if workoutObjects.count == 1 {
-                        
-                        let matchedWorkoutInfo = workoutObjects[0]
-                        
-                        return matchedWorkoutInfo.weight!
-                    }
+                    return matchedWorkoutInfo.weight
+                default:
+                    // More than one match
+                    // Sort by most recent date and pick the newest
+                    print("More than one match for object")
+                    let matchedWorkoutInfo = workoutObjects.last
                     
-                    for object in workoutObjects {
-                        
-                        print("\(object.exercise!) - Index(\(object.index!)) - Round(\(object.round!)) - Weight(\(object.weight!))")
-                    }
+                    return matchedWorkoutInfo?.weight
                 }
+//                if workoutObjects.count == 0 {
+//                    
+//                    // No matches for this object.
+//                    
+//                    return "0.0"
+//                
+//                }
+//                else if {
+//                    
+//                    if workoutObjects.count == 1 {
+//                        
+//                        let matchedWorkoutInfo = workoutObjects[0]
+//                        
+//                        return matchedWorkoutInfo.weight!
+//                    }
+//                    
+//                    for object in workoutObjects {
+//                        
+//                        print("\(object.exercise!) - Index(\(object.index!)) - Round(\(object.round!)) - Weight(\(object.weight!))")
+//                    }
+//                }
+//                else {
+//                    
+//                }
             }
         } catch { print(" ERROR executing a fetch request: \( error)") }
         

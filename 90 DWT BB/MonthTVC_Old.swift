@@ -33,7 +33,7 @@ class MonthTVC_Old: CDTableViewController {
         
         // CDTableViewController subclass customization
         self.entity = "Workout"
-        self.sort = [NSSortDescriptor(key: "workout", ascending: true),NSSortDescriptor(key: "exercise", ascending: true)]
+        self.sort = [NSSortDescriptor(key: "date", ascending: true)]
         //self.sectionNameKeyPath = "locationAtHome.storedIn"
         self.fetchBatchSize = 25
     }
@@ -47,15 +47,15 @@ class MonthTVC_Old: CDTableViewController {
         
         findWeekList()
         
-        //performFetch()
+//        performFetch()
         print("VIEWDIDLOAD")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         print("VIEWDIDAPPEAR")
-//        performFetch()
-//        
+        performFetch()
+
 //        // Trigger Deduplication
 //        CDDeduplicator.deDuplicateEntityWithName("Workout", uniqueAttributeName: "date", backgroundMoc: CDHelper.shared.importContext)
 //        

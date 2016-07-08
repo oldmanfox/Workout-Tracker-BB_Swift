@@ -58,7 +58,9 @@ class WeekTVC_Old: UITableViewController {
         
         loadArraysForCell()
         
-        CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context)
+        print("SHARED CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context))")
+        
+        print("IMPORT CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.importContext))")
     }
 
     override func didReceiveMemoryWarning() {

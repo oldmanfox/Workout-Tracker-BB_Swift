@@ -237,9 +237,9 @@ class CDHelper : NSObject  {
                         if let _ = self.seedStore {
                             
                             
-                            //self.confirmMergeWithiCloud()
+                            self.confirmMergeWithiCloud()
                             
-                            self.seedDataToiCloud()
+                            //self.seedDataToiCloud()
                             
                         } else {print("Failed to instantiate seed store")}
                     } else {print("Failed to find seed store at '\(path)'")}
@@ -369,9 +369,14 @@ class CDHelper : NSObject  {
             
             print("*** STARTED DEEP COPY FROM SEED STORE TO ICLOUD STORE ***")
             _ = self.seedStore
-            let entities = ["Workout"]
+            let entities = ["AutoLock", "Email", "Measurement", "Photo", "Routine", "Session", "Workout", "WorkoutCompleteDate"]
             CDImporter.deepCopyEntities(entities, from: self.seedContext, to: self.importContext)
 
+            print("SHARED CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context))")
+            print("IMPORT CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: self.importContext))")
+
+            CDHelper.save(self.importContext)
+            
             self.context.performBlock {
                     
                 NSNotificationCenter.defaultCenter().postNotificationName("SomethingChanged", object: nil)
