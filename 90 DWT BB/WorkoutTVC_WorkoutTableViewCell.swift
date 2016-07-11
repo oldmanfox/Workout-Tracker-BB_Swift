@@ -15,7 +15,8 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var workoutRoutine = ""
     var selectedWorkout = ""
     var nonUpperCaseExerciseName = ""
-    
+    var workoutIndex = 0
+        
     var originalCurrentWeight1_Text = ""
     var originalCurrentWeight2_Text = ""
     var originalCurrentWeight3_Text = ""
@@ -64,7 +65,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 0, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
         }
         else {
             
@@ -79,7 +80,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 1, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
         }
         else {
             
@@ -94,7 +95,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 2, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
         }
         else {
             
@@ -109,7 +110,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 3, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
         }
         else {
             
@@ -124,7 +125,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 4, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
         }
         else {
             
@@ -139,7 +140,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, round: 5, index: 1 , weight: sender.text!)
+            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
         }
         else {
             
@@ -170,11 +171,6 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     // MARK: - UITextFieldDelegates
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        
-        
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         

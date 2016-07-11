@@ -132,7 +132,7 @@ class CDOperation {
         return newObject 
     }
     
-    class func saveWithPredicate(session: String, routine: String, workout: String, exercise: String, round: NSNumber, index: NSNumber, weight: String) {
+    class func saveWithPredicate(session: String, routine: String, workout: String, exercise: String, index: NSNumber, weight: String, round: NSNumber) {
         
         let request = NSFetchRequest( entityName: "Workout")
         let sortRound = NSSortDescriptor( key: "round", ascending: true)
@@ -141,7 +141,7 @@ class CDOperation {
         request.sortDescriptors = [sortWorkout, sortExercise, sortRound]
         
         // Weight with index and round
-        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@ AND round = %@",
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise == %@ AND index = %@ AND round == %@",
                                  session,
                                  routine,
                                  workout,
@@ -160,7 +160,7 @@ class CDOperation {
                 case 0:
                     // No matches for this object.
                     // Insert a new record
-                    
+                    print("No Matches")
                     let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as! Workout
                     
                     insertWorkoutInfo.session = session

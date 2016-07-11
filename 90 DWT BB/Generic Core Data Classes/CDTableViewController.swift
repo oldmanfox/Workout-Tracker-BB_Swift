@@ -71,15 +71,24 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     
     // MARK: - FETCHING
     func performFetch () {
-        self.frc.managedObjectContext.performBlock ({
-
-            do {
-                try self.frc.performFetch()
-            } catch {
-                print("\(#function) FAILED : \(error)")
-            }
-            self.tableView.reloadData()
-        })
+//        self.frc.managedObjectContext.performBlock ({
+//
+//            do {
+//                try self.frc.performFetch()
+//                print("Fetching")
+//            } catch {
+//                print("\(#function) FAILED : \(error)")
+//            }
+//            self.tableView.reloadData()
+//        })
+        
+        do {
+            try self.frc.performFetch()
+            print("Fetching")
+        } catch {
+            print("\(#function) FAILED : \(error)")
+        }
+        self.tableView.reloadData()
     }
 
     // MARK: - VIEW
@@ -133,41 +142,45 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
         self.tableView.endUpdates()
     }
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-//        switch type {
-//        case .Insert:
-//            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-//        case .Delete:
-//            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-//        default:
-//        return
-//        }
+        switch type {
+        case .Insert:
+            print("frc: didChangeSection INSERT")
+            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        case .Delete:
+            print("frc: didChangeSection DELETE")
+            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        default:
+        return
+        }
     }
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
-//        switch type {
-//        case .Insert:
-//            //self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-//            print("frc: INSERT")
-//        case .Delete:
-//            //self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-//            print("frc: DELETE")
-//        case .Update:
-//            print("frc: UPDATE")
-//            /*
-//             // Note that for Update, we update the row at __indexPath__
-//             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
-//             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
-//             
-//             cell?.textLabel?.text = animal?.commonName
-//             cell?.detailTextLabel?.text = animal?.habitat
-//             */
-//            
-//            //self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
-//        case .Move:
-//            print("frc: MOVE")
-//            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-//            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-//        }
+        switch type {
+        case .Insert:
+            print("frc: didChangeObject INSERT")
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+            
+        case .Delete:
+            print("frc: didChangeObject DELETE")
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            
+        case .Update:
+            print("frc: didChangeObject UPDATE")
+            /*
+             // Note that for Update, we update the row at __indexPath__
+             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
+             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
+             
+             cell?.textLabel?.text = animal?.commonName
+             cell?.detailTextLabel?.text = animal?.habitat
+             */
+            
+            self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
+        case .Move:
+            print("frc: didChangeObject MOVE")
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        }
     }
     
     // MARK: - SEARCH
