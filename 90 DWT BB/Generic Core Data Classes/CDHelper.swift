@@ -151,7 +151,7 @@ class CDHelper : NSObject  {
             _iCloudStore = try self.coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: self.iCloudStoreURL,options: options)
             return _iCloudStore
         } catch {
-            print("\(__FUNCTION__) ERROR adding iCloud store : \(error)")
+            print("\(#function) ERROR adding iCloud store : \(error)")
             return nil
         }
     }()
@@ -186,8 +186,8 @@ class CDHelper : NSObject  {
             do {
                 try psc.removePersistentStore(ps)
                 return true // Unload complete
-            } catch {print("\(__FUNCTION__) ERROR removing persistent store : \(error)")}
-        } else {print("\(__FUNCTION__) ERROR removing persistent store : store \(ps.description) has no coordinator")}
+            } catch {print("\(#function) ERROR removing persistent store : \(error)")}
+        } else {print("\(#function) ERROR removing persistent store : store \(ps.description) has no coordinator")}
         return false // Fail
     }
     func removeFileAtURL (url:NSURL) {
@@ -196,7 +196,7 @@ class CDHelper : NSObject  {
             try NSFileManager.defaultManager().removeItemAtURL(url)
             print("Deleted \(url)")
         } catch { 
-            print("\(__FUNCTION__) ERROR deleting item at url '\(url)' : \(error)")
+            print("\(#function) ERROR deleting item at url '\(url)' : \(error)")
         }
     }
     
@@ -251,6 +251,7 @@ class CDHelper : NSObject  {
         else {
             
             // iCloud is not signed in so use local store
+            print("** Attempting to load the Local Store **")
             _ = self.localStore
         }
         
@@ -297,11 +298,11 @@ class CDHelper : NSObject  {
                         try NSFileManager.defaultManager().copyItemAtURL(defaultDataURL, toURL: url)
                         print("A copy of DefaultData.sqlite was set as the initial store for \(url)")
                     } catch {
-                        print("\(__FUNCTION__) ERROR setting DefaultData.sqlite as the initial store: : \(error)")
+                        print("\(#function) ERROR setting DefaultData.sqlite as the initial store: : \(error)")
                     }
-                } else {print("\(__FUNCTION__) ERROR: Could not find DefaultData.sqlite in the application bundle.")}
+                } else {print("\(#function) ERROR: Could not find DefaultData.sqlite in the application bundle.")}
             } 
-        } else {print("\(__FUNCTION__) ERROR: Failed to prepare URL in \(__FUNCTION__)")}
+        } else {print("\(#function) ERROR: Failed to prepare URL in \(#function)")}
     } 
     
     // MARK: - ICLOUD
@@ -321,9 +322,9 @@ class CDHelper : NSObject  {
     }
     func listenForStoreChanges () {
         let dc = NSNotificationCenter.defaultCenter()
-        dc.addObserver(self, selector: "storesWillChange:", name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: self.coordinator)
-        dc.addObserver(self, selector: "storesDidChange:", name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: self.coordinator)
-        dc.addObserver(self, selector: "iCloudDataChanged:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object:self.coordinator)
+        dc.addObserver(self, selector: #selector(CDHelper.storesWillChange(_:)), name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: self.coordinator)
+        dc.addObserver(self, selector: #selector(CDHelper.storesDidChange(_:)), name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: self.coordinator)
+        dc.addObserver(self, selector: #selector(CDHelper.iCloudDataChanged(_:)), name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object:self.coordinator)
     }
     func storesWillChange (note:NSNotification) {
             
@@ -419,7 +420,7 @@ class CDHelper : NSObject  {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let initialVC = UIApplication.sharedApplication().keyWindow?.rootViewController {
                         initialVC.presentViewController(alert, animated: true, completion: nil)
-                    } else {print("%@ FAILED to prepare the initial view controller",__FUNCTION__)}
+                    } else {print("%@ FAILED to prepare the initial view controller",#function)}
                 })
                 
             } else {

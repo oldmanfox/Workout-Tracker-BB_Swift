@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MonthTVC_Old: CDTableViewController {
+class MonthTVC: UITableViewController {
     
     var sectionsArray = [[], []]
     
@@ -27,22 +27,31 @@ class MonthTVC_Old: CDTableViewController {
         static let week12 = "Week 12"
     }
     
-    // MARK: - INITIALIZATION
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        // CDTableViewController subclass customization
-        self.entity = "Workout"
-        self.sort = [NSSortDescriptor(key: "date", ascending: true)]
-        //self.sectionNameKeyPath = "locationAtHome.storedIn"
-        self.fetchBatchSize = 25
-    }
+//    // MARK: - INITIALIZATION
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        // CDTableViewController subclass customization
+//        self.entity = "Workout"
+//        self.sort = [NSSortDescriptor(key: "date", ascending: true)]
+//        //self.sectionNameKeyPath = "locationAtHome.storedIn"
+//        self.fetchBatchSize = 25
+//    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        navigationItem.title = "Bulk"
+        // Update the database
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+        
+        //CDOperation.updateWorkoutEntityForFRC()
+        
+        // Get the current routine
+        navigationItem.title = CDOperation.getCurrentRoutine()
+        
+        //navigationItem.title = "Bulk"
         //navigationItem.title = "Tone"
         
         findWeekList()
@@ -54,17 +63,21 @@ class MonthTVC_Old: CDTableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         print("VIEWDIDAPPEAR")
-        performFetch()
+        //performFetch()
 
 //        // Trigger Deduplication
 //        CDDeduplicator.deDuplicateEntityWithName("Workout", uniqueAttributeName: "date", backgroundMoc: CDHelper.shared.importContext)
 //        
-//        CDHelper.saveSharedContext()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - DEALLOCATION
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
     }
 
     // MARK: - Table view data source
@@ -87,7 +100,6 @@ class MonthTVC_Old: CDTableViewController {
         // Configure the cell...
         
         cell.textLabel?.text = sectionsArray[indexPath.section][indexPath.row] as? String
-        
         
         
         if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
@@ -123,7 +135,7 @@ class MonthTVC_Old: CDTableViewController {
         
         if segue.identifier == "toWeekWorkoutList" {
             
-            let destinationVC = segue.destinationViewController as? WeekTVC_Old
+            let destinationVC = segue.destinationViewController as? WeekTVC
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.workoutRoutine = navigationItem.title!
@@ -147,5 +159,10 @@ class MonthTVC_Old: CDTableViewController {
         default:
             sectionsArray = [[], []]
         }
+    }
+    
+    func doNothing() {
+        
+        // Do nothing
     }
 }

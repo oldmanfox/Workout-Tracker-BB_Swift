@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekTVC_Old: UITableViewController {
+class WeekTVC: UITableViewController {
     
     private var currentWeekWorkoutList = [[], []]
     private var daysOfWeekNumberList = [[], []]
@@ -99,7 +99,7 @@ class WeekTVC_Old: UITableViewController {
             cell.detailLabel.hidden = false
         }
         
-        if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "Orange_White_CheckMark")) {
+        if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
             
             cell.accessoryView = tempAccessoryView
         }
@@ -167,7 +167,7 @@ class WeekTVC_Old: UITableViewController {
         
         if segue.identifier == "toWorkout" {
             
-            let destinationVC = segue.destinationViewController as? WorkoutTVC_Old
+            let destinationVC = segue.destinationViewController as? WorkoutTVC
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!

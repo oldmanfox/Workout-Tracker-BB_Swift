@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--MonthTVC Old-->
+        <!--MonthTVC-->
         <scene sceneID="TRq-pk-Fsf">
             <objects>
-                <tableViewController id="YNk-gJ-59Q" customClass="MonthTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YNk-gJ-59Q" customClass="MonthTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="WrS-YN-k7t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1890" y="451"/>
         </scene>
-        <!--WeekTVC Old-->
+        <!--WeekTVC-->
         <scene sceneID="kbl-Md-zms">
             <objects>
-                <tableViewController id="UjQ-dZ-yH6" customClass="WeekTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="UjQ-dZ-yH6" customClass="WeekTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="TUH-LY-rHU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,12 +396,12 @@
             </objects>
             <point key="canvasLocation" x="1078" y="3170"/>
         </scene>
-        <!--WorkoutTVC Old-->
+        <!--WorkoutTVC-->
         <scene sceneID="YUj-cP-LZF">
             <objects>
-                <tableViewController id="uxf-T1-en9" customClass="WorkoutTVC_Old" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uxf-T1-en9" customClass="WorkoutTVC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="392" sectionHeaderHeight="28" sectionFooterHeight="28" id="EtV-Qy-wOl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="4000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.10000000000000001" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -941,8 +941,6 @@
                             <outlet property="delegate" destination="uxf-T1-en9" id="HAf-V7-6iL"/>
                         </connections>
                     </tableView>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="4000"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KT-W9-MSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

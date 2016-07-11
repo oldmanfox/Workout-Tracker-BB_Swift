@@ -38,7 +38,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                     print("Default Data has not been imported yet")
                     return false
                 }
-            } else {print("\(__FUNCTION__) FAILED to get metadata")}
+            } else {print("\(#function) FAILED to get metadata")}
         } catch {
             print("ERROR getting metadata from \(url) \(error)")
         }
@@ -82,7 +82,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let initialVC = UIApplication.sharedApplication().keyWindow?.rootViewController {
                     initialVC.presentViewController(alert, animated: true, completion: nil)
-                } else {NSLog("ERROR getting the initial view controller in %@",__FUNCTION__)}
+                } else {NSLog("ERROR getting the initial view controller in %@",#function)}
             })
         }  
     }
@@ -215,8 +215,8 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                 attributes = attributes.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                     
                 return "\(entityName) with \(attributes)"
-            } else {print("ERROR: \(__FUNCTION__) could not find any uniqueAttributes")}
-        } else {print("ERROR: \(__FUNCTION__) could not find an entityName")}
+            } else {print("ERROR: \(#function) could not find any uniqueAttributes")}
+        } else {print("ERROR: \(#function) could not find an entityName")}
         return ""
     }
     class func copyUniqueObject (sourceObject:NSManagedObject, targetContext:NSManagedObjectContext) -> NSManagedObject? {
@@ -250,15 +250,15 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                 }
                 
                 return copiedObject
-            } else {print("ERROR: \(__FUNCTION__) could not find any selected unique attributes for the '\(entityName)' entity")}
-        } else {print("ERROR: \(__FUNCTION__) could not find an entity name for the given object '\(sourceObject)'")}
+            } else {print("ERROR: \(#function) could not find any selected unique attributes for the '\(entityName)' entity")}
+        } else {print("ERROR: \(#function) could not find an entity name for the given object '\(sourceObject)'")}
         return nil
     }
     class func establishToOneRelationship (relationshipName:String,from object:NSManagedObject, to relatedObject:NSManagedObject) {
             
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
+            print("SKIPPED \(#function) because the relationship already exists")
             return
         }
             
@@ -272,13 +272,13 @@ class CDImporter : NSObject, NSXMLParserDelegate {
             CDHelper.save(targetContext)
             targetContext.refreshObject(object, mergeChanges: false)
             targetContext.refreshObject(relatedObject, mergeChanges: false)
-        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
+        } else {print("ERROR: \(#function) could not get a targetContext")}
     }
     class func establishToManyRelationship (relationshipName:String,from object:NSManagedObject, sourceSet:NSMutableSet) {
             
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
+            print("SKIPPED \(#function) because the relationship already exists")
             return
         }
 
@@ -299,16 +299,16 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                         CDHelper.save(targetContext)
                         targetContext.refreshObject(object, mergeChanges: false)
                         targetContext.refreshObject(theRelatedObject, mergeChanges: false)
-                    } else {print("ERROR: \(__FUNCTION__) could not get a copiedRelatedObject")}
-                } else {print("ERROR: \(__FUNCTION__) could not get theRelatedObject")}
+                    } else {print("ERROR: \(#function) could not get a copiedRelatedObject")}
+                } else {print("ERROR: \(#function) could not get theRelatedObject")}
             })
-        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
+        } else {print("ERROR: \(#function) could not get a targetContext")}
     } 
     class func establishOrderedToManyRelationship (relationshipName:String,from object:NSManagedObject, sourceSet:NSMutableOrderedSet) {
 
         // SKIP establishing an existing relationship
         if object.valueForKey(relationshipName) != nil {
-            print("SKIPPED \(__FUNCTION__) because the relationship already exists")
+            print("SKIPPED \(#function) because the relationship already exists")
             return
         }
             
@@ -329,10 +329,10 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                         CDHelper.save(targetContext)
                         targetContext.refreshObject(object, mergeChanges: false)
                         targetContext.refreshObject(theRelatedObject, mergeChanges: false)
-                    } else {print("ERROR: \(__FUNCTION__) could not get a copiedRelatedObject")}
-                } else {print("ERROR: \(__FUNCTION__) could not get theRelatedObject")}
+                    } else {print("ERROR: \(#function) could not get a copiedRelatedObject")}
+                } else {print("ERROR: \(#function) could not get theRelatedObject")}
             }
-        } else {print("ERROR: \(__FUNCTION__) could not get a targetContext")}
+        } else {print("ERROR: \(#function) could not get a targetContext")}
     }
     class func copyRelationshipsFromObject(sourceObject:NSManagedObject, to targetContext:NSManagedObjectContext) {
             
@@ -363,11 +363,11 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                                 
                             CDImporter.establishToOneRelationship(relationship.name, from: copiedObject, to: relatedCopiedObject)
                                 
-                        } else {print("ERROR: \(__FUNCTION__) could not get a relatedCopiedObject")}
-                    } else {print("ERROR: \(__FUNCTION__) could not get a relatedSourceObject")}
+                        } else {print("ERROR: \(#function) could not get a relatedCopiedObject")}
+                    } else {print("ERROR: \(#function) could not get a relatedSourceObject")}
                 }
             }
-        } else {print("ERROR: \(__FUNCTION__) could not find or create an object to copy relationships to.")}
+        } else {print("ERROR: \(#function) could not find or create an object to copy relationships to.")}
     }
     class func deepCopyEntities(entities:[String], from sourceContext:NSManagedObjectContext, to targetContext:NSManagedObjectContext) {
             
@@ -380,7 +380,7 @@ class CDImporter : NSObject, NSXMLParserDelegate {
                      CDImporter.copyUniqueObject(sourceObject, targetContext: targetContext)
                      CDImporter.copyRelationshipsFromObject(sourceObject, to: targetContext)                    
                 }
-            } else {print("ERROR: \(__FUNCTION__) could not find any sourceObjects")}
+            } else {print("ERROR: \(#function) could not find any sourceObjects")}
             NSNotificationCenter.defaultCenter().postNotificationName("SomethingChanged", object: nil)
         }
     }

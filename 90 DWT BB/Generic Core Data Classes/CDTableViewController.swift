@@ -98,32 +98,32 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     
     // MARK: - DATA SOURCE: UITableView
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return self.frc.sections?.count ?? 0
-//    }
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.frc.sections![section].numberOfObjects ?? 0
-//    }
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier)
-//        if cell == nil {
-//            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: self.cellIdentifier)
-//        }
-//        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-//        cell!.accessoryType = UITableViewCellAccessoryType.DetailButton
-//        self.configureCell(cell!, atIndexPath: indexPath)
-//        return cell!
-//    }
-//    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-//        return self.frc.sectionForSectionIndexTitle(title, atIndex: index)
-//    }
-//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return self.frc.sections![section].name ?? ""
-//    }
-//    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-//        return self.frc.sectionIndexTitles
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.frc.sections?.count ?? 0
+    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.frc.sections![section].numberOfObjects ?? 0
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: self.cellIdentifier)
+        }
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        cell!.accessoryType = UITableViewCellAccessoryType.DetailButton
+        self.configureCell(cell!, atIndexPath: indexPath)
+        return cell!
+    }
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return self.frc.sectionForSectionIndexTitle(title, atIndex: index)
+    }
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.frc.sections![section].name ?? ""
+    }
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return self.frc.sectionIndexTitles
+    }
     
     // MARK: - DELEGATE: NSFetchedResultsController
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
@@ -131,7 +131,6 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.tableView.endUpdates()
-        //self.tableView.reloadData()
     }
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
 //        switch type {
@@ -145,70 +144,70 @@ class CDTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
-        switch type {
-        case .Insert:
-            //self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-            print("frc: INSERT")
-        case .Delete:
-            //self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-            print("frc: DELETE")
-        case .Update:
-            print("frc: UPDATE")
-            /*
-             // Note that for Update, we update the row at __indexPath__
-             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
-             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
-             
-             cell?.textLabel?.text = animal?.commonName
-             cell?.detailTextLabel?.text = animal?.habitat
-             */
-            
-            //self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
-        case .Move:
-            print("frc: MOVE")
+//        switch type {
+//        case .Insert:
+//            //self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+//            print("frc: INSERT")
+//        case .Delete:
+//            //self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+//            print("frc: DELETE")
+//        case .Update:
+//            print("frc: UPDATE")
+//            /*
+//             // Note that for Update, we update the row at __indexPath__
+//             let cell = self.tableView.cellForRowAtIndexPath(updateIndexPath)
+//             let animal = self.fetchedResultsController.objectAtIndexPath(updateIndexPath) as? Animal
+//             
+//             cell?.textLabel?.text = animal?.commonName
+//             cell?.detailTextLabel?.text = animal?.habitat
+//             */
+//            
+//            //self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)
+//        case .Move:
+//            print("frc: MOVE")
 //            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
 //            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-        }
+//        }
     }
     
     // MARK: - SEARCH
-    var searchController:UISearchController? = nil
+    //var searchController:UISearchController? = nil
     func reloadFRC (predicate:NSPredicate?) {
             
-        self.filter = predicate
-        self.frc.fetchRequest.predicate = predicate
-        self.performFetch()
+//        self.filter = predicate
+//        self.frc.fetchRequest.predicate = predicate
+//        self.performFetch()
     }
     func configureSearch () {
             
-        self.searchController = UISearchController(searchResultsController: nil)
-        if let _searchController = self.searchController {
-
-            _searchController.delegate = self
-            _searchController.searchResultsUpdater = self
-            _searchController.dimsBackgroundDuringPresentation = false
-            _searchController.searchBar.delegate = self
-            _searchController.searchBar.sizeToFit()
-            self.tableView.tableHeaderView = _searchController.searchBar
-                
-        } else {print("ERROR configuring _searchController in %@", #function)}
+//        self.searchController = UISearchController(searchResultsController: nil)
+//        if let _searchController = self.searchController {
+//
+//            _searchController.delegate = self
+//            _searchController.searchResultsUpdater = self
+//            _searchController.dimsBackgroundDuringPresentation = false
+//            _searchController.searchBar.delegate = self
+//            _searchController.searchBar.sizeToFit()
+//            self.tableView.tableHeaderView = _searchController.searchBar
+//                
+//        } else {print("ERROR configuring _searchController in %@", #function)}
     }
     
     // MARK: - DELEGATE: UISearchController
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-        if let searchBarText = searchController.searchBar.text {
-                
-            var predicate:NSPredicate?
-            if searchBarText != "" {
-                predicate = NSPredicate(format: "name contains[cd] %@", searchBarText)
-            }
-            self.reloadFRC(predicate)
-        }
+//        if let searchBarText = searchController.searchBar.text {
+//                
+//            var predicate:NSPredicate?
+//            if searchBarText != "" {
+//                predicate = NSPredicate(format: "name contains[cd] %@", searchBarText)
+//            }
+//            self.reloadFRC(predicate)
+//        }
     }
     
     // MARK: - DELEGATE: UISearchBar
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        self.reloadFRC(nil)
+//        self.reloadFRC(nil)
     }
 }

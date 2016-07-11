@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="AutoLock" representedClassName=".AutoLock" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="useAutoLock" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,20 +37,39 @@
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="cellType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="exercise" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="exerciseCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsNumber6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repsTitle6" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="routine" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tableViewRow" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tableViewSection" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weekCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight6" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="workout" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="WorkoutCompleteDate" representedClassName="WorkoutCompleteDate" syncable="YES">
@@ -68,7 +87,7 @@
         <element name="Photo" positionX="27" positionY="135" width="128" height="118"/>
         <element name="Routine" positionX="9" positionY="126" width="128" height="73"/>
         <element name="Session" positionX="0" positionY="117" width="128" height="75"/>
-        <element name="Workout" positionX="0" positionY="0" width="128" height="268"/>
+        <element name="Workout" positionX="0" positionY="0" width="128" height="555"/>
         <element name="WorkoutCompleteDate" positionX="0" positionY="108" width="128" height="135"/>
     </elements>
 </model>
