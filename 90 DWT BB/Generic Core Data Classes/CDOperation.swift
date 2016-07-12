@@ -415,6 +415,66 @@ class CDOperation {
         return "Bulk"
     }
     
+    class func getCurrentSession() -> String {
+        
+        let request = NSFetchRequest( entityName: "Session")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        do {
+            if let sessionObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Session] {
+                
+                print("sessionObjects.count = \(sessionObjects.count)")
+                
+                switch sessionObjects.count {
+                case 0:
+                    // No matches for this object.
+                    // Create a new record with the default session - 1
+                    let insertSessionInfo = NSEntityDescription.insertNewObjectForEntityForName("Session", inManagedObjectContext: CDHelper.shared.context) as! Session
+                    
+                    insertSessionInfo.currentSession = "1"
+                    insertSessionInfo.date = NSDate()
+                    
+                    CDHelper.saveSharedContext()
+                    
+                    // Return the default routine.
+                    // Will be 1 until the user changes it in settings tab.
+                    return "1"
+                    
+                case 1:
+                    // Found an existing record
+                    let matchedSessionInfo = sessionObjects[0]
+                    
+                    return matchedSessionInfo.currentSession!
+                    
+                default:
+                    // More than one match
+                    // Sort by most recent date and pick the newest
+                    print("More than one match for object")
+                    var sessionString = ""
+                    for index in 0..<sessionObjects.count {
+                        
+                        if (index == sessionObjects.count - 1) {
+                            // Get data from the newest existing record.  Usually the last record sorted by date.
+                            
+                            let matchedSessionInfo = sessionObjects[index]
+                            sessionString = matchedSessionInfo.currentSession!
+                        }
+                        else {
+                            // Delete duplicate records.
+                            CDHelper.shared.context.deleteObject(sessionObjects[index])
+                        }
+                    }
+                    
+                    CDHelper.saveSharedContext()
+                    return sessionString
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return "1"
+    }
+
     class func updateWorkoutEntityForFRC() {
         
         struct CellType {

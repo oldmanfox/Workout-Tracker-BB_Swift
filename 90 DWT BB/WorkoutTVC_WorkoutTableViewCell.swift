@@ -11,7 +11,7 @@ import UIKit
 class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var title: UILabel!
-    var session = "1"
+    var session = ""
     var workoutRoutine = ""
     var selectedWorkout = ""
     var nonUpperCaseExerciseName = ""

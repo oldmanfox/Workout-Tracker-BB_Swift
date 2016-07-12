@@ -11,6 +11,7 @@ import UIKit
 class MonthTVC: UITableViewController {
     
     var sectionsArray = [[], []]
+    var session = ""
     
     private struct Week {
         static let week1 = "Week 1"
@@ -43,10 +44,13 @@ class MonthTVC: UITableViewController {
         super.viewDidLoad()
 
         // Update the database
+        //CDOperation.updateWorkoutEntityForFRC()
+        
         // Force fetch when notified of significant data changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
         
-        //CDOperation.updateWorkoutEntityForFRC()
+        // Get the current session
+        session = CDOperation.getCurrentSession()
         
         // Get the current routine
         navigationItem.title = CDOperation.getCurrentRoutine()
@@ -138,6 +142,7 @@ class MonthTVC: UITableViewController {
             let destinationVC = segue.destinationViewController as? WeekTVC
             let selectedRow = tableView.indexPathForSelectedRow
             
+            destinationVC?.session = session
             destinationVC?.workoutRoutine = navigationItem.title!
             destinationVC?.workoutWeek = (sectionsArray[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
         }

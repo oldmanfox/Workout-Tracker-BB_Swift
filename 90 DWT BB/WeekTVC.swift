@@ -14,7 +14,10 @@ class WeekTVC: UITableViewController {
     private var daysOfWeekNumberList = [[], []]
     private var daysOfWeekColorList = [[], []]
     private var optionalWorkoutList = [[], []]
+    private var workoutIndexList = [[], []]
+    
     var workoutRoutine = ""
+    var session = ""
     var workoutWeek = ""
     
     private struct Color {
@@ -172,7 +175,9 @@ class WeekTVC: UITableViewController {
             
             destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
             destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC?.workoutIndex = (workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
             destinationVC!.workoutRoutine = workoutRoutine
+            destinationVC?.session = session
         }
     }
     
@@ -217,6 +222,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[false, false, false, false], [true, true, false], [false], [true, true]]
                 
+                workoutIndexList = [[1, 1, 1, 1], [1, 1, 1], [1], [2, 1]]
+                
             case "Week 2":
                 currentWeekWorkoutList = [[WorkoutName.B1_Legs],
                                           [WorkoutName.B1_Back_Bi, WorkoutName.T1_Back_Bi],
@@ -237,6 +244,8 @@ class WeekTVC: UITableViewController {
                                        [Color.white, Color.white]]
                 
                 optionalWorkoutList = [[false], [true, true], [false, false], [false], [true, true], [false], [true, true]]
+                
+                workoutIndexList =
                 
             case "Week 3":
                 currentWeekWorkoutList = [[WorkoutName.B1_Shoulders, WorkoutName.B3_Ab_Workout],
@@ -259,6 +268,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[false, false], [false], [true, true], [false], [true, true], [false, false], [true, true, false]]
                 
+                workoutIndexList =
+                
             case "Week 4":
                 currentWeekWorkoutList = [[WorkoutName.B2_Chest, WorkoutName.B2_Legs, WorkoutName.B2_Back],
                                           [WorkoutName.B2_Arms, WorkoutName.B3_Ab_Workout],
@@ -271,6 +282,8 @@ class WeekTVC: UITableViewController {
                                        [Color.gray, Color.white, Color.gray]]
                 
                 optionalWorkoutList = [[false, false, false], [false, false], [false, false, false]]
+                
+                workoutIndexList =
                 
             case "Week 5":
                 currentWeekWorkoutList = [[WorkoutName.B2_Legs, WorkoutName.B2_Back],
@@ -285,6 +298,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[false, false], [false, false], [false, false, false, false]]
                 
+                workoutIndexList =
+                
             case "Week 6":
                 currentWeekWorkoutList = [[WorkoutName.B2_Back],
                                           [WorkoutName.B2_Arms, WorkoutName.B3_Ab_Workout],
@@ -297,6 +312,8 @@ class WeekTVC: UITableViewController {
                                        [Color.gray, Color.white, Color.gray, Color.gray, Color.gray]]
                 
                 optionalWorkoutList = [[false], [false, false], [false, false, false, false, false]]
+                
+                workoutIndexList =
                 
             case "Week 7":
                 currentWeekWorkoutList = [[WorkoutName.B2_Arms, WorkoutName.B3_Ab_Workout],
@@ -311,6 +328,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[false, false], [false, false, false, false, false], [false, false]]
                 
+                workoutIndexList =
+                
             case "Week 8":
                 currentWeekWorkoutList = [[WorkoutName.B2_Shoulders, WorkoutName.Rest, WorkoutName.B2_Chest, WorkoutName.B2_Legs, WorkoutName.B2_Back],
                                           [WorkoutName.B2_Arms, WorkoutName.B3_Ab_Workout],
@@ -324,6 +343,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[false, false, false, false, false], [false, false], [false]]
                 
+                workoutIndexList =
+                
             case "Week 9":
                 currentWeekWorkoutList = [[WorkoutName.Rest, WorkoutName.B2_Chest, WorkoutName.B2_Legs, WorkoutName.B2_Back],
                                           [WorkoutName.B2_Arms, WorkoutName.B3_Ab_Workout],
@@ -336,6 +357,8 @@ class WeekTVC: UITableViewController {
                                        [Color.gray, Color.white]]
                 
                 optionalWorkoutList = [[false, false, false, false], [false, false], [false, false]]
+                
+                workoutIndexList =
                 
             case "Week 10":
                 currentWeekWorkoutList = [[WorkoutName.B1_Chest_Tri, WorkoutName.T1_Chest_Tri],
@@ -354,6 +377,8 @@ class WeekTVC: UITableViewController {
                 
                 optionalWorkoutList = [[true, true], [false], [true, true], [true, true, false], [false, false, false]]
                 
+                workoutIndexList =
+                
             case "Week 11":
                 currentWeekWorkoutList = [[WorkoutName.B2_Chest, WorkoutName.B1_Legs],
                                           [WorkoutName.B3_Cardio, WorkoutName.B3_Complete_Body, WorkoutName.B3_Ab_Workout],
@@ -370,6 +395,8 @@ class WeekTVC: UITableViewController {
                                        [Color.green, Color.green]]
                 
                 optionalWorkoutList = [[false, false], [true, true, false], [false, false], [false, false], [true, true]]
+                
+                workoutIndexList =
                 
             case "Week 12":
                 currentWeekWorkoutList = [[WorkoutName.B1_Chest_Tri, WorkoutName.T1_Chest_Tri],
@@ -391,6 +418,8 @@ class WeekTVC: UITableViewController {
                                        [Color.green, Color.green, Color.green]]
                 
                 optionalWorkoutList = [[true, true], [false], [true, true, false], [false], [true, true], [false], [true, true, false]]
+                
+                workoutIndexList =
                 
             default:
                 currentWeekWorkoutList = [[],[]]

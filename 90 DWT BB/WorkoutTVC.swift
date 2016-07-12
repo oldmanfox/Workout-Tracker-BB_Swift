@@ -11,7 +11,7 @@ import UIKit
 
 class WorkoutTVC: CDTableViewController {
 
-    var session = "1"
+    var session = ""
     var workoutRoutine = ""
     var selectedWorkout = ""
     var workoutIndex = 2
