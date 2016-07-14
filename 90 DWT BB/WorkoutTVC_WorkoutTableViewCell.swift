@@ -65,7 +65,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
         }
         else {
             
@@ -80,7 +80,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
         }
         else {
             
@@ -95,7 +95,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
         }
         else {
             
@@ -110,7 +110,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
         }
         else {
             
@@ -125,7 +125,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
         }
         else {
             
@@ -140,7 +140,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate("1", routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
+            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
         }
         else {
             

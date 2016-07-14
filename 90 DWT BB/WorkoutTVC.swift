@@ -139,6 +139,7 @@ class WorkoutTVC: CDTableViewController {
                     cell.workoutRoutine = workoutRoutine // Bulk or Tone
                     cell.selectedWorkout = selectedWorkout // B1: Chest+Tri etc...
                     cell.workoutIndex = workoutIndex // Index of the workout in the program
+                    cell.session = session
 
                     if let repNumbers = workoutObject[1] as? [String] {
                         
@@ -301,6 +302,13 @@ class WorkoutTVC: CDTableViewController {
                 else {
                     
                     let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! WorkoutTVC_CompletionTableViewCell
+                    
+                    cell.workoutRoutine = workoutRoutine // Bulk or Tone
+                    cell.selectedWorkout = selectedWorkout // B1: Chest+Tri etc...
+                    cell.workoutIndex = workoutIndex // Index of the workout in the program
+                    cell.session = session
+
+                    cell.updateWorkoutCompleteCellUI()
                     
                     return cell
                 }

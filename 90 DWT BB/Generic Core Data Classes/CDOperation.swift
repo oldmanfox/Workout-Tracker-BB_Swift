@@ -192,7 +192,7 @@ class CDOperation {
                         
                         if (index == workoutObjects.count - 1) {
                             // Get data from the newest existing record.  Usually the last record sorted by date.
-                            let updateWorkoutInfo = workoutObjects[0]
+                            let updateWorkoutInfo = workoutObjects[index]
                             
                             updateWorkoutInfo.weight = weight
                             updateWorkoutInfo.date = NSDate()
@@ -213,8 +213,6 @@ class CDOperation {
         
         let request = NSFetchRequest( entityName: "Workout")
         let sortRound = NSSortDescriptor( key: "round", ascending: true)
-        //        let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
-        //        let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         let sortDate = NSSortDescriptor( key: "date", ascending: true)
         request.sortDescriptors = [sortRound, sortDate]
         
@@ -308,9 +306,6 @@ class CDOperation {
     class func getWeightTextForExerciseRound(session: String, routine: String, workout: String, exercise: String, round: NSNumber, index: NSNumber) -> String? {
         
         let request = NSFetchRequest( entityName: "Workout")
-//        let sortRound = NSSortDescriptor( key: "round", ascending: true)
-//        let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
-//        let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         let sortDate = NSSortDescriptor( key: "date", ascending: true)
         request.sortDescriptors = [sortDate]
         
@@ -474,160 +469,296 @@ class CDOperation {
         
         return "1"
     }
-
-    class func updateWorkoutEntityForFRC() {
-        
-        struct CellType {
-            static let workout = "WorkoutCell"
-            static let completion = "CompletionCell"
-        }
-        
-        struct Reps {
-            
-            struct Number {
-                static let _5 = "5"
-                static let _8 = "8"
-                static let _10 = "10"
-                static let _12 = "12"
-                static let _15 = "15"
-                static let _30 = "30"
-                static let _50 = "50"
-                static let _60 = "60"
-                static let empty = ""
-            }
-            
-            struct Title {
-                static let reps = "Reps"
-                static let sec = "Sec"
-                static let empty = ""
-            }
-        }
-
-        
-        let workoutNameArray = ["B1: Chest+Tri",
-                                "B1: Legs",
-                                "B1: Back+Bi",
-                                "B1: Shoulders",
-                                "B2: Arms",
-                                "B2: Legs",
-                                "B2: Shoulders",
-                                "B2: Chest",
-                                "B2: Back",
-                                "T1: Chest+Tri",
-                                "T1: Back+Bi",
-                                "B3: Complete Body"]
-        
-        let bulkIndexForWorkout = [6,
-                                   5,
-                                   6,
-                                   5,
-                                   9,
-                                   9,
-                                   8,
-                                   8,
-                                   8,
-                                   5,
-                                   5,
-                                   7]
-        
-        let toneIndexForWorkout = [6,
-                                   6,
-                                   6,
-                                   5,
-                                   7,
-                                   7,
-                                   7,
-                                   7,
-                                   7,
-                                   5,
-                                   5,
-                                   14]
     
-        var counter = 0
+    class func saveWorkoutCompleteDate(session: NSString, routine: NSString, workout: NSString, index: NSNumber, useDate: NSDate) {
         
-        for workoutNameIndex in 0..<workoutNameArray.count {
+        let request = NSFetchRequest( entityName: "WorkoutCompleteDate")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index)
+        
+        request.predicate = filter
+
+        do {
+            if let workoutCompleteDateObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [WorkoutCompleteDate] {
+                
+                print("workoutCompleteDateObjects.count = \(workoutCompleteDateObjects.count)")
+                
+                switch workoutCompleteDateObjects.count {
+                case 0:
+                    // No matches for this object.
+                    // Insert a new record
+                    print("No Matches")
+                    let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("WorkoutCompleteDate", inManagedObjectContext: CDHelper.shared.context) as! WorkoutCompleteDate
+                    
+                    insertWorkoutInfo.session = session as String
+                    insertWorkoutInfo.routine = routine as String
+                    insertWorkoutInfo.workout = workout as String
+                    insertWorkoutInfo.index = index
+                    insertWorkoutInfo.workoutCompleted = true
+                    insertWorkoutInfo.date = NSDate()
+                    
+                    CDHelper.saveSharedContext()
+                    
+                case 1:
+                    // Update existing record
+                    
+                    let updateWorkoutInfo = workoutCompleteDateObjects[0]
+                    
+                    updateWorkoutInfo.workoutCompleted = true
+                    updateWorkoutInfo.date = NSDate()
+                    
+                    CDHelper.saveSharedContext()
+                    
+                default:
+                    // More than one match
+                    // Sort by most recent date and delete all but the newest
+                    print("More than one match for object")
+                    for index in 0..<workoutCompleteDateObjects.count {
+                        
+                        if (index == workoutCompleteDateObjects.count - 1) {
+                            // Get data from the newest existing record.  Usually the last record sorted by date.
+                            let updateWorkoutInfo = workoutCompleteDateObjects[index]
+                            
+                            updateWorkoutInfo.workoutCompleted = true
+                            updateWorkoutInfo.date = NSDate()
+                        }
+                        else {
+                            // Delete duplicate records.
+                            CDHelper.shared.context.deleteObject(workoutCompleteDateObjects[index])
+                        }
+                    }
+                    
+                    CDHelper.saveSharedContext()
+
+                }
+            }
             
-            var cellArray = [[], []]
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+    }
+    
+    class func getWorkoutCompletedObjects(session: NSString, routine: NSString, workout: NSString, index: NSNumber) -> [WorkoutCompleteDate] {
+        
+        let tempWorkoutCompleteArray = [WorkoutCompleteDate]()
+        
+        let request = NSFetchRequest( entityName: "WorkoutCompleteDate")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutCompleteDateObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [WorkoutCompleteDate] {
+                
+                print("workoutCompleteDateObjects.count = \(workoutCompleteDateObjects.count)")
+                
+                return workoutCompleteDateObjects
+                
+            }
             
-            let workoutName = workoutNameArray[workoutNameIndex]
-            
-            switch workoutName {
-            case "B1: Chest+Tri":
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return tempWorkoutCompleteArray
+    }
+    
+    class func deleteDate(session: NSString, routine: NSString, workout: NSString, index: NSNumber) {
+        
+        let request = NSFetchRequest( entityName: "WorkoutCompleteDate")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutCompleteDateObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [WorkoutCompleteDate] {
                 
-                let cell1 = [["Dumbbell Chest Press"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
+                print("workoutCompleteDateObjects.count = \(workoutCompleteDateObjects.count)")
                 
-                let cell2 = [["Incline Dumbbell Fly"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell3 = [["Incline Dumbbell Press"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell4 = [["Close Grip Dumbbell Press"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell5 = [["Partial Dumbbell Fly"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell6 = [["Decline Push-Up"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell7 = [["Laying Tricep Extension"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell8 = [["Single Arm Tricep Kickback"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell9 = [["Diamond Push-Up"],
-                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                             [CellType.workout]]
-                
-                let cell10 = [["Dips"],
-                              [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                              [Reps.Title.sec, Reps.Title.empty , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                              [CellType.workout]]
-                
-                let cell11 = [["Abs"],
-                              [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
-                              [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
-                              [CellType.workout]]
-                
-                let completeCell = [["CompleteCell"],
-                                    [],
-                                    [],
-                                    [CellType.completion]]
-                
-                
-                cellArray = [[cell1],
-                             [cell2, cell3],
-                             [cell4, cell5, cell6],
-                             [cell7],
-                             [cell8, cell9],
-                             [cell10, cell11],
-                             [completeCell]]
-                
-                
-                
-                
-                
-                
+                if workoutCompleteDateObjects.count != 0 {
+                    
+                    for object in workoutCompleteDateObjects {
+                        
+                        // Delete all date records for the index.
+                        CDHelper.shared.context.deleteObject(object)
+                    }
+                    CDHelper.saveSharedContext()
+
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+    }
+
+
+//    class func updateWorkoutEntityForFRC() {
+//        
+//        struct CellType {
+//            static let workout = "WorkoutCell"
+//            static let completion = "CompletionCell"
+//        }
+//        
+//        struct Reps {
+//            
+//            struct Number {
+//                static let _5 = "5"
+//                static let _8 = "8"
+//                static let _10 = "10"
+//                static let _12 = "12"
+//                static let _15 = "15"
+//                static let _30 = "30"
+//                static let _50 = "50"
+//                static let _60 = "60"
+//                static let empty = ""
+//            }
+//            
+//            struct Title {
+//                static let reps = "Reps"
+//                static let sec = "Sec"
+//                static let empty = ""
+//            }
+//        }
+//
+//        
+//        let workoutNameArray = ["B1: Chest+Tri",
+//                                "B1: Legs",
+//                                "B1: Back+Bi",
+//                                "B1: Shoulders",
+//                                "B2: Arms",
+//                                "B2: Legs",
+//                                "B2: Shoulders",
+//                                "B2: Chest",
+//                                "B2: Back",
+//                                "T1: Chest+Tri",
+//                                "T1: Back+Bi",
+//                                "B3: Complete Body"]
+//        
+//        let bulkIndexForWorkout = [6,
+//                                   5,
+//                                   6,
+//                                   5,
+//                                   9,
+//                                   9,
+//                                   8,
+//                                   8,
+//                                   8,
+//                                   5,
+//                                   5,
+//                                   7]
+//        
+//        let toneIndexForWorkout = [6,
+//                                   6,
+//                                   6,
+//                                   5,
+//                                   7,
+//                                   7,
+//                                   7,
+//                                   7,
+//                                   7,
+//                                   5,
+//                                   5,
+//                                   14]
+//    
+//        var counter = 0
+//        
+//        for workoutNameIndex in 0..<workoutNameArray.count {
+//            
+//            var cellArray = [[], []]
+//            
+//            let workoutName = workoutNameArray[workoutNameIndex]
+//            
+//            switch workoutName {
+//            case "B1: Chest+Tri":
+//                
+//                let cell1 = [["Dumbbell Chest Press"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell2 = [["Incline Dumbbell Fly"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell3 = [["Incline Dumbbell Press"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell4 = [["Close Grip Dumbbell Press"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell5 = [["Partial Dumbbell Fly"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell6 = [["Decline Push-Up"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell7 = [["Laying Tricep Extension"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell8 = [["Single Arm Tricep Kickback"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number._8, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell9 = [["Diamond Push-Up"],
+//                             [Reps.Number._15, Reps.Number._12, Reps.Number._8, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                             [Reps.Title.reps, Reps.Title.reps, Reps.Title.reps, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                             [CellType.workout]]
+//                
+//                let cell10 = [["Dips"],
+//                              [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                              [Reps.Title.sec, Reps.Title.empty , Reps.Title.empty  , Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                              [CellType.workout]]
+//                
+//                let cell11 = [["Abs"],
+//                              [Reps.Number._60, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty, Reps.Number.empty],
+//                              [Reps.Title.sec, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty, Reps.Title.empty],
+//                              [CellType.workout]]
+//                
+//                let completeCell = [["CompleteCell"],
+//                                    [],
+//                                    [],
+//                                    [CellType.completion]]
+//                
+//                
+//                cellArray = [[cell1],
+//                             [cell2, cell3],
+//                             [cell4, cell5, cell6],
+//                             [cell7],
+//                             [cell8, cell9],
+//                             [cell10, cell11],
+//                             [completeCell]]
+//                
+//                
+//                
+//                
+//                
+//                
 //            case "B1: Legs":
 //                
 //                let cell1 = [["Wide Squat"],
@@ -1542,82 +1673,82 @@ class CDOperation {
 //                             [cell9, cell10, cell11, cell12],
 //                             [cell13, cell14, cell15, cell16],
 //                             [completeCell]]
-            default:
-                break
-            }
-          
-            // TESTING
-            
-            for sectionIndex in 0..<cellArray.count {
-                
-                for rowIndex in 0..<cellArray[sectionIndex].count {
-                    
-                    print("Section: \(sectionIndex) Row: \(rowIndex)")
-                    
-                    let currentCell = cellArray[sectionIndex][rowIndex] as! NSArray
-                    
-                    for workoutIndex in 1...bulkIndexForWorkout[workoutNameIndex] {
-                        
-                        counter += 1
-                        
-                        if let exerciseRecord = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as? Workout {
-                            
-                            // Session
-                            exerciseRecord.session = "1"
-                            
-                            // Routine
-                            exerciseRecord.routine = "Bulk"
-                            
-                            // Workout
-                            exerciseRecord.workout = workoutName
-                            
-                            // Title
-                            let titleArray = currentCell[0] as? NSArray
-                            exerciseRecord.exercise = titleArray![0] as? String
-                            
-                            // Index
-                            exerciseRecord.index = workoutIndex
-                            
-                            // Section
-                            exerciseRecord.tableViewSection = sectionIndex
-                            
-                            // Row
-                            exerciseRecord.tableViewRow = rowIndex
-                            
-                            if sectionIndex != cellArray.count - 1 {
-                                
-                                // RepsNumber
-                                let repsNumberArray = currentCell[1] as? NSArray
-                                exerciseRecord.repsNumber1 = repsNumberArray![0] as? String
-                                exerciseRecord.repsNumber2 = repsNumberArray![1] as? String
-                                exerciseRecord.repsNumber3 = repsNumberArray![2] as? String
-                                exerciseRecord.repsNumber4 = repsNumberArray![3] as? String
-                                exerciseRecord.repsNumber5 = repsNumberArray![4] as? String
-                                exerciseRecord.repsNumber6 = repsNumberArray![5] as? String
-                                
-                                // RepsTitle
-                                let repsTitleArray = currentCell[2] as? NSArray
-                                exerciseRecord.repsTitle1 = repsTitleArray![0] as? String
-                                exerciseRecord.repsTitle2 = repsTitleArray![1] as? String
-                                exerciseRecord.repsTitle3 = repsTitleArray![2] as? String
-                                exerciseRecord.repsTitle4 = repsTitleArray![3] as? String
-                                exerciseRecord.repsTitle5 = repsTitleArray![4] as? String
-                                exerciseRecord.repsTitle6 = repsTitleArray![5] as? String
-                            }
-                            
-                            // CellType
-                            let cellTypeArray = currentCell[3] as? NSArray
-                            exerciseRecord.cellType = cellTypeArray![0] as? String
-                            
-                        }
-                    }
-                }
-            }
-            
-            print("Added items:  \(counter)")
-
-        }
-        
-        CDHelper.saveSharedContext()
-    }
+//            default:
+//                break
+//            }
+//          
+//            // TESTING
+//            
+//            for sectionIndex in 0..<cellArray.count {
+//                
+//                for rowIndex in 0..<cellArray[sectionIndex].count {
+//                    
+//                    print("Section: \(sectionIndex) Row: \(rowIndex)")
+//                    
+//                    let currentCell = cellArray[sectionIndex][rowIndex] as! NSArray
+//                    
+//                    for workoutIndex in 1...bulkIndexForWorkout[workoutNameIndex] {
+//                        
+//                        counter += 1
+//                        
+//                        if let exerciseRecord = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as? Workout {
+//                            
+//                            // Session
+//                            exerciseRecord.session = "1"
+//                            
+//                            // Routine
+//                            exerciseRecord.routine = "Bulk"
+//                            
+//                            // Workout
+//                            exerciseRecord.workout = workoutName
+//                            
+//                            // Title
+//                            let titleArray = currentCell[0] as? NSArray
+//                            exerciseRecord.exercise = titleArray![0] as? String
+//                            
+//                            // Index
+//                            exerciseRecord.index = workoutIndex
+//                            
+//                            // Section
+//                            exerciseRecord.tableViewSection = sectionIndex
+//                            
+//                            // Row
+//                            exerciseRecord.tableViewRow = rowIndex
+//                            
+//                            if sectionIndex != cellArray.count - 1 {
+//                                
+//                                // RepsNumber
+//                                let repsNumberArray = currentCell[1] as? NSArray
+//                                exerciseRecord.repsNumber1 = repsNumberArray![0] as? String
+//                                exerciseRecord.repsNumber2 = repsNumberArray![1] as? String
+//                                exerciseRecord.repsNumber3 = repsNumberArray![2] as? String
+//                                exerciseRecord.repsNumber4 = repsNumberArray![3] as? String
+//                                exerciseRecord.repsNumber5 = repsNumberArray![4] as? String
+//                                exerciseRecord.repsNumber6 = repsNumberArray![5] as? String
+//                                
+//                                // RepsTitle
+//                                let repsTitleArray = currentCell[2] as? NSArray
+//                                exerciseRecord.repsTitle1 = repsTitleArray![0] as? String
+//                                exerciseRecord.repsTitle2 = repsTitleArray![1] as? String
+//                                exerciseRecord.repsTitle3 = repsTitleArray![2] as? String
+//                                exerciseRecord.repsTitle4 = repsTitleArray![3] as? String
+//                                exerciseRecord.repsTitle5 = repsTitleArray![4] as? String
+//                                exerciseRecord.repsTitle6 = repsTitleArray![5] as? String
+//                            }
+//                            
+//                            // CellType
+//                            let cellTypeArray = currentCell[3] as? NSArray
+//                            exerciseRecord.cellType = cellTypeArray![0] as? String
+//                            
+//                        }
+//                    }
+//                }
+//            }
+//            
+//            print("Added items:  \(counter)")
+//
+//        }
+//        
+//        CDHelper.saveSharedContext()
+//    }
 }

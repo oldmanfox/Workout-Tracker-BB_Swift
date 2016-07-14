@@ -873,12 +873,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5j-Xe-NOE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="Y5j-Xe-NOE">
                                             <rect key="frame" x="2" y="24" width="596" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="qkg-jo-1tt"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -892,6 +892,9 @@
                                             <state key="normal" title="DELETE">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="workoutCompletedDelete:" destination="PRM-E5-WXi" eventType="touchUpInside" id="7zL-Xx-QgQ"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G7-9y-lkv">
                                             <rect key="frame" x="402" y="65" width="196" height="40"/>
@@ -900,6 +903,9 @@
                                             <state key="normal" title="PREVIOUS">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="workoutCompletedPrevious:" destination="PRM-E5-WXi" eventType="touchUpInside" id="Icv-5U-CdL"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-2K-B4f">
                                             <rect key="frame" x="202" y="65" width="196" height="40"/>
@@ -908,6 +914,9 @@
                                             <state key="normal" title="TODAY">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="workoutCompletedToday:" destination="PRM-E5-WXi" eventType="touchUpInside" id="NAI-me-2Qj"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
