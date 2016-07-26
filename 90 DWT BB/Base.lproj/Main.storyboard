@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K1y-T2-WQC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -721,6 +721,9 @@
                                             <state key="normal" title="GRAPH">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="0uT-wy-4GO" kind="presentation" identifier="ShowShinobiChart" id="qpu-De-wZs"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-k7-iq8">
                                             <rect key="frame" x="402" y="137" width="96" height="50"/>
@@ -954,6 +957,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KT-W9-MSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3306" y="451"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="32v-ZS-TmE">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="OHm-gc-ywD" customClass="DatePickerViewController" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xep-NY-QTv"/>
+                        <viewControllerLayoutGuide type="bottom" id="bUF-fs-VgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mDf-0w-pOV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cuY-6w-XHg">
+                                <rect key="frame" x="20" y="62" width="560" height="518"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490311917.83462298">
+                                    <!--2016-07-15 21:45:17 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq4-lz-dY7">
+                                <rect key="frame" x="247" y="28" width="106" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="cQQ-gO-Ze2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bUF-fs-VgO" firstAttribute="top" secondItem="cuY-6w-XHg" secondAttribute="bottom" constant="20" id="MxP-9g-hf4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuY-6w-XHg" secondAttribute="trailing" id="Ryi-p7-aBR"/>
+                            <constraint firstItem="cuY-6w-XHg" firstAttribute="top" secondItem="hq4-lz-dY7" secondAttribute="bottom" constant="8" symbolic="YES" id="Vkt-Ve-GXr"/>
+                            <constraint firstItem="hq4-lz-dY7" firstAttribute="centerX" secondItem="mDf-0w-pOV" secondAttribute="centerX" id="b1R-2u-I5V"/>
+                            <constraint firstItem="cuY-6w-XHg" firstAttribute="leading" secondItem="mDf-0w-pOV" secondAttribute="leadingMargin" id="hY8-eT-O4j"/>
+                            <constraint firstItem="hq4-lz-dY7" firstAttribute="top" secondItem="Xep-NY-QTv" secondAttribute="bottom" constant="8" symbolic="YES" id="izi-mb-2gM"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="hq4-lz-dY7" id="zWI-c1-b5q"/>
+                        <outlet property="datePicker" destination="cuY-6w-XHg" id="LGk-Sy-Prl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABw-gU-kdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3306" y="-244"/>
+        </scene>
+        <!--Exercise Chart View Controller-->
+        <scene sceneID="H4k-uh-616">
+            <objects>
+                <viewController storyboardIdentifier="ExerciseChartViewController" id="uN7-Ch-Xpc" customClass="ExerciseChartViewController" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="thb-R4-BdL"/>
+                        <viewControllerLayoutGuide type="bottom" id="VsM-yo-0ee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WBQ-iY-fdP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-be-7Fd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsF-be-7Fd" secondAttribute="trailing" constant="-20" id="FvK-oi-Cry"/>
+                            <constraint firstItem="VsM-yo-0ee" firstAttribute="top" secondItem="fsF-be-7Fd" secondAttribute="bottom" id="nKv-jG-sbj"/>
+                            <constraint firstItem="fsF-be-7Fd" firstAttribute="leading" secondItem="WBQ-iY-fdP" secondAttribute="leadingMargin" constant="-20" id="pmo-0d-9Gs"/>
+                            <constraint firstItem="fsF-be-7Fd" firstAttribute="top" secondItem="thb-R4-BdL" secondAttribute="bottom" id="wQu-ua-aUj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h9S-1L-Ych">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="VYJ-h1-vlR">
+                            <connections>
+                                <action selector="dismissButtonPressed:" destination="uN7-Ch-Xpc" id="Z8Y-lZ-ZJA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chartView" destination="fsF-be-7Fd" id="wgr-nM-a82"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFi-p4-04C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4916" y="-265"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fXM-GT-11t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0uT-wy-4GO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LVd-rZ-xSR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uN7-Ch-Xpc" kind="relationship" relationship="rootViewController" id="eSf-O0-3aL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obI-rK-L09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4104" y="-265"/>
         </scene>
     </scenes>
     <resources>

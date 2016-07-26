@@ -228,6 +228,15 @@
 		A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E81D1AFCD300F6FF57 /* StoreKit.framework */; };
 		A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813EA1D1AFD9100F6FF57 /* CoreData.framework */; };
 		A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */; };
+		A5A2D9711D3991F9009A363E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */; };
+		A5DE7C581D3FD33F0045B06C /* ExerciseChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */; };
+		A5DE7D191D43FA5F0045B06C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D181D43FA5F0045B06C /* QuartzCore.framework */; };
+		A5DE7D1B1D43FA710045B06C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D1A1D43FA710045B06C /* CoreGraphics.framework */; };
+		A5DE7D1D1D43FA7A0045B06C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D1C1D43FA7A0045B06C /* OpenGLES.framework */; };
+		A5DE7D1F1D43FA850045B06C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D1E1D43FA850045B06C /* CoreText.framework */; };
+		A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D201D43FA910045B06C /* UIKit.framework */; };
+		A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D221D43FAA80045B06C /* libc++.tbd */; };
+		A5DE7D251D43FBDD0045B06C /* ShinobiCharts in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D241D43FBDD0045B06C /* ShinobiCharts */; };
 		A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */; };
 		A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */; };
 		A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */; };
@@ -688,6 +697,195 @@
 		A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "_0_DWT_BB 2.xcdatamodel"; sourceTree = "<group>"; };
 		A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB.xcdatamodel; sourceTree = "<group>"; };
 		A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB_v3.xcdatamodel; sourceTree = "<group>"; };
+		A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewController.swift; sourceTree = "<group>"; };
+		A5DE7C611D3FDC950045B06C /* LineSeriesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeriesDrawer.h; sourceTree = "<group>"; };
+		A5DE7C621D3FDC950045B06C /* SChart+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChart+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C631D3FDC950045B06C /* SChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChart.h; sourceTree = "<group>"; };
+		A5DE7C641D3FDC950045B06C /* SChartActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartActivityIndicator.h; sourceTree = "<group>"; };
+		A5DE7C651D3FDC950045B06C /* SChartAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAnimation.h; sourceTree = "<group>"; };
+		A5DE7C661D3FDC950045B06C /* SChartAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7C671D3FDC950045B06C /* SChartAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAnnotation.h; sourceTree = "<group>"; };
+		A5DE7C681D3FDC950045B06C /* SChartAxis+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartAxis+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C691D3FDC950045B06C /* SChartAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAxis.h; sourceTree = "<group>"; };
+		A5DE7C6A1D3FDC950045B06C /* SChartAxisPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAxisPosition.h; sourceTree = "<group>"; };
+		A5DE7C6B1D3FDC950045B06C /* SChartAxisStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAxisStyle.h; sourceTree = "<group>"; };
+		A5DE7C6C1D3FDC950045B06C /* SChartAxisTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartAxisTitleStyle.h; sourceTree = "<group>"; };
+		A5DE7C6D1D3FDC950045B06C /* SChartBandDataValueKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBandDataValueKeys.h; sourceTree = "<group>"; };
+		A5DE7C6E1D3FDC950045B06C /* SChartBandSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBandSeries.h; sourceTree = "<group>"; };
+		A5DE7C6F1D3FDC950045B06C /* SChartBandSeriesStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartBandSeriesStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C701D3FDC950045B06C /* SChartBandSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBandSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C711D3FDC950045B06C /* SChartBarColumnSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBarColumnSeries.h; sourceTree = "<group>"; };
+		A5DE7C721D3FDC950045B06C /* SChartBarColumnSeriesStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartBarColumnSeriesStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C731D3FDC950045B06C /* SChartBarColumnSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBarColumnSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C741D3FDC950045B06C /* SChartBarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBarSeries.h; sourceTree = "<group>"; };
+		A5DE7C751D3FDC950045B06C /* SChartBarSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBarSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C761D3FDC950045B06C /* SChartBaselinePointStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBaselinePointStyle.h; sourceTree = "<group>"; };
+		A5DE7C771D3FDC950045B06C /* SChartBasePointStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartBasePointStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C781D3FDC950045B06C /* SChartBasePointStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBasePointStyle.h; sourceTree = "<group>"; };
+		A5DE7C791D3FDC950045B06C /* SChartBounceAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBounceAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7C7A1D3FDC950045B06C /* SChartBounceDelayAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBounceDelayAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7C7B1D3FDC950045B06C /* SChartBoxGestureStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBoxGestureStyle.h; sourceTree = "<group>"; };
+		A5DE7C7C1D3FDC950045B06C /* SChartBubbleDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBubbleDataPoint.h; sourceTree = "<group>"; };
+		A5DE7C7D1D3FDC950045B06C /* SChartBubbleDataValueKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBubbleDataValueKeys.h; sourceTree = "<group>"; };
+		A5DE7C7E1D3FDC950045B06C /* SChartBubblePointStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBubblePointStyle.h; sourceTree = "<group>"; };
+		A5DE7C7F1D3FDC950045B06C /* SChartBubbleSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBubbleSeries.h; sourceTree = "<group>"; };
+		A5DE7C801D3FDC950045B06C /* SChartBubbleSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartBubbleSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C811D3FDC950045B06C /* SChartCandlestickDataValueKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCandlestickDataValueKeys.h; sourceTree = "<group>"; };
+		A5DE7C821D3FDC950045B06C /* SChartCandlestickSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCandlestickSeries.h; sourceTree = "<group>"; };
+		A5DE7C831D3FDC950045B06C /* SChartCandlestickSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCandlestickSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C841D3FDC950045B06C /* SChartCanvas+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartCanvas+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C851D3FDC950045B06C /* SChartCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCanvas.h; sourceTree = "<group>"; };
+		A5DE7C861D3FDC950045B06C /* SChartCanvasOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCanvasOverlay.h; sourceTree = "<group>"; };
+		A5DE7C871D3FDC950045B06C /* SChartCanvasUnderlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCanvasUnderlay.h; sourceTree = "<group>"; };
+		A5DE7C881D3FDC950045B06C /* SChartCartesianSeries+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartCartesianSeries+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C891D3FDC950045B06C /* SChartCartesianSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCartesianSeries.h; sourceTree = "<group>"; };
+		A5DE7C8A1D3FDC950045B06C /* SChartCategoryAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCategoryAxis.h; sourceTree = "<group>"; };
+		A5DE7C8B1D3FDC950045B06C /* SChartColumnSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartColumnSeries.h; sourceTree = "<group>"; };
+		A5DE7C8C1D3FDC950045B06C /* SChartColumnSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartColumnSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7C8D1D3FDC950045B06C /* SChartCrosshair+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartCrosshair+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C8E1D3FDC950045B06C /* SChartCrosshair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCrosshair.h; sourceTree = "<group>"; };
+		A5DE7C8F1D3FDC950045B06C /* SChartCrosshairMultiValueTooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCrosshairMultiValueTooltip.h; sourceTree = "<group>"; };
+		A5DE7C901D3FDC950045B06C /* SChartCrosshairProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCrosshairProtocol.h; sourceTree = "<group>"; };
+		A5DE7C911D3FDC950045B06C /* SChartCrosshairStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCrosshairStyle.h; sourceTree = "<group>"; };
+		A5DE7C921D3FDC950045B06C /* SChartCrosshairTooltip+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartCrosshairTooltip+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C931D3FDC950045B06C /* SChartCrosshairTooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartCrosshairTooltip.h; sourceTree = "<group>"; };
+		A5DE7C941D3FDC950045B06C /* SChartDarkTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDarkTheme.h; sourceTree = "<group>"; };
+		A5DE7C951D3FDC950045B06C /* SChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartData.h; sourceTree = "<group>"; };
+		A5DE7C961D3FDC950045B06C /* SChartDataAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDataAdapter.h; sourceTree = "<group>"; };
+		A5DE7C971D3FDC950045B06C /* SChartDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDataPoint.h; sourceTree = "<group>"; };
+		A5DE7C981D3FDC950045B06C /* SChartDataPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDataPointLabel.h; sourceTree = "<group>"; };
+		A5DE7C991D3FDC950045B06C /* SChartDataPointLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDataPointLabelStyle.h; sourceTree = "<group>"; };
+		A5DE7C9A1D3FDC950045B06C /* SChartDataSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDataSeries.h; sourceTree = "<group>"; };
+		A5DE7C9B1D3FDC950045B06C /* SChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDatasource.h; sourceTree = "<group>"; };
+		A5DE7C9C1D3FDC950045B06C /* SChartDateFrequency+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartDateFrequency+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7C9D1D3FDC950045B06C /* SChartDateFrequency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDateFrequency.h; sourceTree = "<group>"; };
+		A5DE7C9E1D3FDC950045B06C /* SChartDateRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDateRange.h; sourceTree = "<group>"; };
+		A5DE7C9F1D3FDC950045B06C /* SChartDateTimeAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDateTimeAxis.h; sourceTree = "<group>"; };
+		A5DE7CA01D3FDC950045B06C /* SChartDelayBounceAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDelayBounceAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CA11D3FDC950045B06C /* SChartDelayBounceWithMinimumAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDelayBounceWithMinimumAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CA21D3FDC950045B06C /* SChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDelegate.h; sourceTree = "<group>"; };
+		A5DE7CA31D3FDC950045B06C /* SChartDiscontinuousDateTimeAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDiscontinuousDateTimeAxis.h; sourceTree = "<group>"; };
+		A5DE7CA41D3FDC950045B06C /* SChartDiscontinuousNumberAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDiscontinuousNumberAxis.h; sourceTree = "<group>"; };
+		A5DE7CA51D3FDC950045B06C /* SChartDonutSeries+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartDonutSeries+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CA61D3FDC950045B06C /* SChartDonutSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDonutSeries.h; sourceTree = "<group>"; };
+		A5DE7CA71D3FDC950045B06C /* SChartDonutSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartDonutSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CA81D3FDC950045B06C /* SChartEaseInAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartEaseInAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CA91D3FDC950045B06C /* SChartEaseInOutAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartEaseInOutAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CAA1D3FDC950045B06C /* SChartEaseOutAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartEaseOutAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CAB1D3FDC950045B06C /* SChartFlatAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartFlatAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CAC1D3FDC950045B06C /* SChartGestureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartGestureManager.h; sourceTree = "<group>"; };
+		A5DE7CAD1D3FDC950045B06C /* SChartGesturePanType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartGesturePanType.h; sourceTree = "<group>"; };
+		A5DE7CAE1D3FDC950045B06C /* SChartGradientOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartGradientOrientation.h; sourceTree = "<group>"; };
+		A5DE7CAF1D3FDC950045B06C /* SChartGridStripeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartGridStripeStyle.h; sourceTree = "<group>"; };
+		A5DE7CB01D3FDC950045B06C /* SChartiOS7Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartiOS7Theme.h; sourceTree = "<group>"; };
+		A5DE7CB11D3FDC950045B06C /* SChartLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLayer.h; sourceTree = "<group>"; };
+		A5DE7CB21D3FDC950045B06C /* SChartLegend+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartLegend+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CB31D3FDC950045B06C /* SChartLegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegend.h; sourceTree = "<group>"; };
+		A5DE7CB41D3FDC950045B06C /* SChartLegendItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendItem.h; sourceTree = "<group>"; };
+		A5DE7CB51D3FDC950045B06C /* SChartLegendStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartLegendStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CB61D3FDC950045B06C /* SChartLegendStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendStyle.h; sourceTree = "<group>"; };
+		A5DE7CB71D3FDC950045B06C /* SChartLegendSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbol.h; sourceTree = "<group>"; };
+		A5DE7CB81D3FDC950045B06C /* SChartLegendSymbolBandSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolBandSeries.h; sourceTree = "<group>"; };
+		A5DE7CB91D3FDC950045B06C /* SChartLegendSymbolBarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolBarSeries.h; sourceTree = "<group>"; };
+		A5DE7CBA1D3FDC950045B06C /* SChartLegendSymbolBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolBlock.h; sourceTree = "<group>"; };
+		A5DE7CBB1D3FDC950045B06C /* SChartLegendSymbolBlockSplit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolBlockSplit.h; sourceTree = "<group>"; };
+		A5DE7CBC1D3FDC950045B06C /* SChartLegendSymbolCandlestickSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolCandlestickSeries.h; sourceTree = "<group>"; };
+		A5DE7CBD1D3FDC950045B06C /* SChartLegendSymbolColumnSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolColumnSeries.h; sourceTree = "<group>"; };
+		A5DE7CBE1D3FDC950045B06C /* SChartLegendSymbolDonutSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolDonutSeries.h; sourceTree = "<group>"; };
+		A5DE7CBF1D3FDC950045B06C /* SChartLegendSymbolLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolLineSeries.h; sourceTree = "<group>"; };
+		A5DE7CC01D3FDC950045B06C /* SChartLegendSymbolOHLCSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolOHLCSeries.h; sourceTree = "<group>"; };
+		A5DE7CC11D3FDC950045B06C /* SChartLegendSymbolPieSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolPieSeries.h; sourceTree = "<group>"; };
+		A5DE7CC21D3FDC950045B06C /* SChartLegendSymbolPointSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolPointSeries.h; sourceTree = "<group>"; };
+		A5DE7CC31D3FDC950045B06C /* SChartLegendSymbolScatterSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLegendSymbolScatterSeries.h; sourceTree = "<group>"; };
+		A5DE7CC41D3FDC950045B06C /* SChartLightTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLightTheme.h; sourceTree = "<group>"; };
+		A5DE7CC51D3FDC950045B06C /* SChartLinearAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLinearAnimationCurve.h; sourceTree = "<group>"; };
+		A5DE7CC61D3FDC950045B06C /* SChartLineCrosshairTraceStyleEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLineCrosshairTraceStyleEnum.h; sourceTree = "<group>"; };
+		A5DE7CC71D3FDC950045B06C /* SChartLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLineSeries.h; sourceTree = "<group>"; };
+		A5DE7CC81D3FDC950045B06C /* SChartLineSeriesBaseStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLineSeriesBaseStyle.h; sourceTree = "<group>"; };
+		A5DE7CC91D3FDC950045B06C /* SChartLineSeriesStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartLineSeriesStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CCA1D3FDC950045B06C /* SChartLineSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLineSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CCB1D3FDC950045B06C /* SChartLogarithmicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartLogarithmicAxis.h; sourceTree = "<group>"; };
+		A5DE7CCC1D3FDC950045B06C /* SChartMainTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMainTitleStyle.h; sourceTree = "<group>"; };
+		A5DE7CCD1D3FDC950045B06C /* SChartMajorGridlineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMajorGridlineStyle.h; sourceTree = "<group>"; };
+		A5DE7CCE1D3FDC950045B06C /* SChartMappedSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMappedSeries.h; sourceTree = "<group>"; };
+		A5DE7CCF1D3FDC950045B06C /* SChartMidnightTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMidnightTheme.h; sourceTree = "<group>"; };
+		A5DE7CD01D3FDC950045B06C /* SChartMultiValueDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMultiValueDataPoint.h; sourceTree = "<group>"; };
+		A5DE7CD11D3FDC950045B06C /* SChartMultiXDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMultiXDataPoint.h; sourceTree = "<group>"; };
+		A5DE7CD21D3FDC950045B06C /* SChartMultiYDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartMultiYDataPoint.h; sourceTree = "<group>"; };
+		A5DE7CD31D3FDC950045B06C /* SChartNumberAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartNumberAxis.h; sourceTree = "<group>"; };
+		A5DE7CD41D3FDC950045B06C /* SChartNumberRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartNumberRange.h; sourceTree = "<group>"; };
+		A5DE7CD51D3FDC950045B06C /* SChartOHLCDataValueKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartOHLCDataValueKeys.h; sourceTree = "<group>"; };
+		A5DE7CD61D3FDC950045B06C /* SChartOHLCSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartOHLCSeries.h; sourceTree = "<group>"; };
+		A5DE7CD71D3FDC950045B06C /* SChartOHLCSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartOHLCSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CD81D3FDC950045B06C /* SChartOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartOrientation.h; sourceTree = "<group>"; };
+		A5DE7CD91D3FDC950045B06C /* SChartPieSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPieSeries.h; sourceTree = "<group>"; };
+		A5DE7CDA1D3FDC950045B06C /* SChartPieSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPieSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CDB1D3FDC950045B06C /* SChartPixelToPointMapper+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartPixelToPointMapper+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CDC1D3FDC950045B06C /* SChartPixelToPointMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPixelToPointMapper.h; sourceTree = "<group>"; };
+		A5DE7CDD1D3FDC950045B06C /* SChartPixelToPointMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPixelToPointMapping.h; sourceTree = "<group>"; };
+		A5DE7CDE1D3FDC950045B06C /* SChartPointSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPointSeries.h; sourceTree = "<group>"; };
+		A5DE7CDF1D3FDC950045B06C /* SChartPointSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPointSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CE01D3FDC950045B06C /* SChartPointStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPointStruct.h; sourceTree = "<group>"; };
+		A5DE7CE11D3FDC950045B06C /* SChartPointStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartPointStyle.h; sourceTree = "<group>"; };
+		A5DE7CE21D3FDC950045B06C /* SChartRadialDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRadialDataPoint.h; sourceTree = "<group>"; };
+		A5DE7CE31D3FDC950045B06C /* SChartRadialLineRenderMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRadialLineRenderMode.h; sourceTree = "<group>"; };
+		A5DE7CE41D3FDC950045B06C /* SChartRadialLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRadialLineSeries.h; sourceTree = "<group>"; };
+		A5DE7CE51D3FDC950045B06C /* SChartRadialLineSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRadialLineSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CE61D3FDC950045B06C /* SChartRadialSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRadialSeries.h; sourceTree = "<group>"; };
+		A5DE7CE71D3FDC950045B06C /* SChartRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartRange.h; sourceTree = "<group>"; };
+		A5DE7CE81D3FDC950045B06C /* SChartScatterSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartScatterSeries.h; sourceTree = "<group>"; };
+		A5DE7CE91D3FDC950045B06C /* SChartScatterSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartScatterSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CEA1D3FDC950045B06C /* SChartSeries+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartSeries+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CEB1D3FDC950045B06C /* SChartSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeries.h; sourceTree = "<group>"; };
+		A5DE7CEC1D3FDC950045B06C /* SChartSeriesCrosshair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshair.h; sourceTree = "<group>"; };
+		A5DE7CED1D3FDC950045B06C /* SChartSeriesCrosshairTooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltip.h; sourceTree = "<group>"; };
+		A5DE7CEE1D3FDC950045B06C /* SChartSeriesCrosshairTooltipDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipDrawer.h; sourceTree = "<group>"; };
+		A5DE7CEF1D3FDC950045B06C /* SChartSeriesCrosshairTooltipDrawerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipDrawerProtocol.h; sourceTree = "<group>"; };
+		A5DE7CF01D3FDC950045B06C /* SChartSeriesCrosshairTooltipPositioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipPositioner.h; sourceTree = "<group>"; };
+		A5DE7CF11D3FDC950045B06C /* SChartSeriesCrosshairTooltipPositionerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipPositionerProtocol.h; sourceTree = "<group>"; };
+		A5DE7CF21D3FDC950045B06C /* SChartSeriesCrosshairTooltipStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipStyler.h; sourceTree = "<group>"; };
+		A5DE7CF31D3FDC950045B06C /* SChartSeriesCrosshairTooltipStylerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesCrosshairTooltipStylerProtocol.h; sourceTree = "<group>"; };
+		A5DE7CF41D3FDC950045B06C /* SChartSeriesImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesImports.h; sourceTree = "<group>"; };
+		A5DE7CF51D3FDC950045B06C /* SChartSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesStyle.h; sourceTree = "<group>"; };
+		A5DE7CF61D3FDC950045B06C /* SChartSeriesStyleImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesStyleImports.h; sourceTree = "<group>"; };
+		A5DE7CF71D3FDC950045B06C /* SChartSimpleDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSimpleDatasource.h; sourceTree = "<group>"; };
+		A5DE7CF81D3FDC950045B06C /* SChartSpokeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSpokeStyle.h; sourceTree = "<group>"; };
+		A5DE7CF91D3FDC950045B06C /* SChartStepLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartStepLineSeries.h; sourceTree = "<group>"; };
+		A5DE7CFA1D3FDC950045B06C /* SChartStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartStyle.h; sourceTree = "<group>"; };
+		A5DE7CFB1D3FDC950045B06C /* SChartTapPressGestureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTapPressGestureHandler.h; sourceTree = "<group>"; };
+		A5DE7CFC1D3FDC950045B06C /* SChartTheme+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartTheme+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7CFD1D3FDC950045B06C /* SChartTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTheme.h; sourceTree = "<group>"; };
+		A5DE7CFE1D3FDC950045B06C /* SChartThemeImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartThemeImports.h; sourceTree = "<group>"; };
+		A5DE7CFF1D3FDC950045B06C /* SChartTickLabelClippingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickLabelClippingMode.h; sourceTree = "<group>"; };
+		A5DE7D001D3FDC950045B06C /* SChartTickLabelFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickLabelFormatter.h; sourceTree = "<group>"; };
+		A5DE7D011D3FDC950045B06C /* SChartTickLabelOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickLabelOrientation.h; sourceTree = "<group>"; };
+		A5DE7D021D3FDC950045B06C /* SChartTickLabelRefreshRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickLabelRefreshRate.h; sourceTree = "<group>"; };
+		A5DE7D031D3FDC950045B06C /* SChartTickLabelRefreshRateDeviceBased.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickLabelRefreshRateDeviceBased.h; sourceTree = "<group>"; };
+		A5DE7D041D3FDC950045B06C /* SChartTickMark+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartTickMark+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7D051D3FDC950045B06C /* SChartTickMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickMark.h; sourceTree = "<group>"; };
+		A5DE7D061D3FDC950045B06C /* SChartTickStyle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartTickStyle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7D071D3FDC950045B06C /* SChartTickStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTickStyle.h; sourceTree = "<group>"; };
+		A5DE7D081D3FDC950045B06C /* SChartTimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTimePeriod.h; sourceTree = "<group>"; };
+		A5DE7D091D3FDC950045B06C /* SChartTitle+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChartTitle+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7D0A1D3FDC950045B06C /* SChartTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTitle.h; sourceTree = "<group>"; };
+		A5DE7D0B1D3FDC950045B06C /* SChartTitlePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTitlePosition.h; sourceTree = "<group>"; };
+		A5DE7D0C1D3FDC950045B06C /* SChartTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartTitleStyle.h; sourceTree = "<group>"; };
+		A5DE7D0D1D3FDC950045B06C /* ShinobiChart+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShinobiChart+Deprecated.h"; sourceTree = "<group>"; };
+		A5DE7D0E1D3FDC950045B06C /* ShinobiChart-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShinobiChart-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5DE7D0F1D3FDC950045B06C /* ShinobiChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShinobiChart.h; sourceTree = "<group>"; };
+		A5DE7D101D3FDC950045B06C /* ShinobiChartLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShinobiChartLog.h; sourceTree = "<group>"; };
+		A5DE7D111D3FDC950045B06C /* ShinobiCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShinobiCharts.h; sourceTree = "<group>"; };
+		A5DE7D121D3FDC950045B06C /* ShinobiMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShinobiMacros.h; sourceTree = "<group>"; };
+		A5DE7D141D3FDC950045B06C /* SChartGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartGLView.h; sourceTree = "<group>"; };
+		A5DE7D151D3FDC950045B06C /* SChartSeriesDistanceInfoStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChartSeriesDistanceInfoStruct.h; sourceTree = "<group>"; };
+		A5DE7D181D43FA5F0045B06C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A5DE7D1A1D43FA710045B06C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A5DE7D1C1D43FA7A0045B06C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A5DE7D1E1D43FA850045B06C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A5DE7D201D43FA910045B06C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A5DE7D221D43FAA80045B06C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A5DE7D241D43FBDD0045B06C /* ShinobiCharts */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = ShinobiCharts; sourceTree = "<group>"; };
 		A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLock.swift; sourceTree = "<group>"; };
 		A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -713,10 +911,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */,
+				A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */,
+				A5DE7D1F1D43FA850045B06C /* CoreText.framework in Frameworks */,
+				A5DE7D1D1D43FA7A0045B06C /* OpenGLES.framework in Frameworks */,
+				A5DE7D1B1D43FA710045B06C /* CoreGraphics.framework in Frameworks */,
+				A5DE7D191D43FA5F0045B06C /* QuartzCore.framework in Frameworks */,
 				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
 				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */,
 				A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */,
+				A5DE7D251D43FBDD0045B06C /* ShinobiCharts in Frameworks */,
 				A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1387,6 +1592,12 @@
 		A52813AB1D1AF9E000F6FF57 = {
 			isa = PBXGroup;
 			children = (
+				A5DE7D221D43FAA80045B06C /* libc++.tbd */,
+				A5DE7D201D43FA910045B06C /* UIKit.framework */,
+				A5DE7D1E1D43FA850045B06C /* CoreText.framework */,
+				A5DE7D1C1D43FA7A0045B06C /* OpenGLES.framework */,
+				A5DE7D1A1D43FA710045B06C /* CoreGraphics.framework */,
+				A5DE7D181D43FA5F0045B06C /* QuartzCore.framework */,
 				A52813EA1D1AFD9100F6FF57 /* CoreData.framework */,
 				A52813E81D1AFCD300F6FF57 /* StoreKit.framework */,
 				A52813E61D1AFCC600F6FF57 /* PassKit.framework */,
@@ -1410,6 +1621,7 @@
 		A52813B61D1AF9E000F6FF57 /* 90 DWT BB */ = {
 			isa = PBXGroup;
 			children = (
+				A5DE7C561D3FD2ED0045B06C /* ShinobiControls */,
 				A5F36DCE1D2C4E7300A5C621 /* Data Model */,
 				58D6D2F81D2AAD67009B6EF5 /* Generic Core Data Classes */,
 				A5156F551D1B3256002588C0 /* MoPubSDK */,
@@ -1419,6 +1631,7 @@
 				A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */,
 				A52813B91D1AF9E000F6FF57 /* ViewController.swift */,
 				A52813BB1D1AF9E000F6FF57 /* Main.storyboard */,
+				A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */,
 				A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */,
 				A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */,
 				A52813C31D1AF9E000F6FF57 /* Info.plist */,
@@ -1443,6 +1656,219 @@
 				A52813D91D1AF9E000F6FF57 /* Info.plist */,
 			);
 			path = "90 DWT BBUITests";
+			sourceTree = "<group>";
+		};
+		A5DE7C561D3FD2ED0045B06C /* ShinobiControls */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7C5F1D3FDC780045B06C /* Headers */,
+				A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */,
+			);
+			name = ShinobiControls;
+			sourceTree = "<group>";
+		};
+		A5DE7C5F1D3FDC780045B06C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7D241D43FBDD0045B06C /* ShinobiCharts */,
+				A5DE7C601D3FDC950045B06C /* Headers */,
+				A5DE7D131D3FDC950045B06C /* PrivateHeaders */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		A5DE7C601D3FDC950045B06C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7C611D3FDC950045B06C /* LineSeriesDrawer.h */,
+				A5DE7C621D3FDC950045B06C /* SChart+Deprecated.h */,
+				A5DE7C631D3FDC950045B06C /* SChart.h */,
+				A5DE7C641D3FDC950045B06C /* SChartActivityIndicator.h */,
+				A5DE7C651D3FDC950045B06C /* SChartAnimation.h */,
+				A5DE7C661D3FDC950045B06C /* SChartAnimationCurve.h */,
+				A5DE7C671D3FDC950045B06C /* SChartAnnotation.h */,
+				A5DE7C681D3FDC950045B06C /* SChartAxis+Deprecated.h */,
+				A5DE7C691D3FDC950045B06C /* SChartAxis.h */,
+				A5DE7C6A1D3FDC950045B06C /* SChartAxisPosition.h */,
+				A5DE7C6B1D3FDC950045B06C /* SChartAxisStyle.h */,
+				A5DE7C6C1D3FDC950045B06C /* SChartAxisTitleStyle.h */,
+				A5DE7C6D1D3FDC950045B06C /* SChartBandDataValueKeys.h */,
+				A5DE7C6E1D3FDC950045B06C /* SChartBandSeries.h */,
+				A5DE7C6F1D3FDC950045B06C /* SChartBandSeriesStyle+Deprecated.h */,
+				A5DE7C701D3FDC950045B06C /* SChartBandSeriesStyle.h */,
+				A5DE7C711D3FDC950045B06C /* SChartBarColumnSeries.h */,
+				A5DE7C721D3FDC950045B06C /* SChartBarColumnSeriesStyle+Deprecated.h */,
+				A5DE7C731D3FDC950045B06C /* SChartBarColumnSeriesStyle.h */,
+				A5DE7C741D3FDC950045B06C /* SChartBarSeries.h */,
+				A5DE7C751D3FDC950045B06C /* SChartBarSeriesStyle.h */,
+				A5DE7C761D3FDC950045B06C /* SChartBaselinePointStyle.h */,
+				A5DE7C771D3FDC950045B06C /* SChartBasePointStyle+Deprecated.h */,
+				A5DE7C781D3FDC950045B06C /* SChartBasePointStyle.h */,
+				A5DE7C791D3FDC950045B06C /* SChartBounceAnimationCurve.h */,
+				A5DE7C7A1D3FDC950045B06C /* SChartBounceDelayAnimationCurve.h */,
+				A5DE7C7B1D3FDC950045B06C /* SChartBoxGestureStyle.h */,
+				A5DE7C7C1D3FDC950045B06C /* SChartBubbleDataPoint.h */,
+				A5DE7C7D1D3FDC950045B06C /* SChartBubbleDataValueKeys.h */,
+				A5DE7C7E1D3FDC950045B06C /* SChartBubblePointStyle.h */,
+				A5DE7C7F1D3FDC950045B06C /* SChartBubbleSeries.h */,
+				A5DE7C801D3FDC950045B06C /* SChartBubbleSeriesStyle.h */,
+				A5DE7C811D3FDC950045B06C /* SChartCandlestickDataValueKeys.h */,
+				A5DE7C821D3FDC950045B06C /* SChartCandlestickSeries.h */,
+				A5DE7C831D3FDC950045B06C /* SChartCandlestickSeriesStyle.h */,
+				A5DE7C841D3FDC950045B06C /* SChartCanvas+Deprecated.h */,
+				A5DE7C851D3FDC950045B06C /* SChartCanvas.h */,
+				A5DE7C861D3FDC950045B06C /* SChartCanvasOverlay.h */,
+				A5DE7C871D3FDC950045B06C /* SChartCanvasUnderlay.h */,
+				A5DE7C881D3FDC950045B06C /* SChartCartesianSeries+Deprecated.h */,
+				A5DE7C891D3FDC950045B06C /* SChartCartesianSeries.h */,
+				A5DE7C8A1D3FDC950045B06C /* SChartCategoryAxis.h */,
+				A5DE7C8B1D3FDC950045B06C /* SChartColumnSeries.h */,
+				A5DE7C8C1D3FDC950045B06C /* SChartColumnSeriesStyle.h */,
+				A5DE7C8D1D3FDC950045B06C /* SChartCrosshair+Deprecated.h */,
+				A5DE7C8E1D3FDC950045B06C /* SChartCrosshair.h */,
+				A5DE7C8F1D3FDC950045B06C /* SChartCrosshairMultiValueTooltip.h */,
+				A5DE7C901D3FDC950045B06C /* SChartCrosshairProtocol.h */,
+				A5DE7C911D3FDC950045B06C /* SChartCrosshairStyle.h */,
+				A5DE7C921D3FDC950045B06C /* SChartCrosshairTooltip+Deprecated.h */,
+				A5DE7C931D3FDC950045B06C /* SChartCrosshairTooltip.h */,
+				A5DE7C941D3FDC950045B06C /* SChartDarkTheme.h */,
+				A5DE7C951D3FDC950045B06C /* SChartData.h */,
+				A5DE7C961D3FDC950045B06C /* SChartDataAdapter.h */,
+				A5DE7C971D3FDC950045B06C /* SChartDataPoint.h */,
+				A5DE7C981D3FDC950045B06C /* SChartDataPointLabel.h */,
+				A5DE7C991D3FDC950045B06C /* SChartDataPointLabelStyle.h */,
+				A5DE7C9A1D3FDC950045B06C /* SChartDataSeries.h */,
+				A5DE7C9B1D3FDC950045B06C /* SChartDatasource.h */,
+				A5DE7C9C1D3FDC950045B06C /* SChartDateFrequency+Deprecated.h */,
+				A5DE7C9D1D3FDC950045B06C /* SChartDateFrequency.h */,
+				A5DE7C9E1D3FDC950045B06C /* SChartDateRange.h */,
+				A5DE7C9F1D3FDC950045B06C /* SChartDateTimeAxis.h */,
+				A5DE7CA01D3FDC950045B06C /* SChartDelayBounceAnimationCurve.h */,
+				A5DE7CA11D3FDC950045B06C /* SChartDelayBounceWithMinimumAnimationCurve.h */,
+				A5DE7CA21D3FDC950045B06C /* SChartDelegate.h */,
+				A5DE7CA31D3FDC950045B06C /* SChartDiscontinuousDateTimeAxis.h */,
+				A5DE7CA41D3FDC950045B06C /* SChartDiscontinuousNumberAxis.h */,
+				A5DE7CA51D3FDC950045B06C /* SChartDonutSeries+Deprecated.h */,
+				A5DE7CA61D3FDC950045B06C /* SChartDonutSeries.h */,
+				A5DE7CA71D3FDC950045B06C /* SChartDonutSeriesStyle.h */,
+				A5DE7CA81D3FDC950045B06C /* SChartEaseInAnimationCurve.h */,
+				A5DE7CA91D3FDC950045B06C /* SChartEaseInOutAnimationCurve.h */,
+				A5DE7CAA1D3FDC950045B06C /* SChartEaseOutAnimationCurve.h */,
+				A5DE7CAB1D3FDC950045B06C /* SChartFlatAnimationCurve.h */,
+				A5DE7CAC1D3FDC950045B06C /* SChartGestureManager.h */,
+				A5DE7CAD1D3FDC950045B06C /* SChartGesturePanType.h */,
+				A5DE7CAE1D3FDC950045B06C /* SChartGradientOrientation.h */,
+				A5DE7CAF1D3FDC950045B06C /* SChartGridStripeStyle.h */,
+				A5DE7CB01D3FDC950045B06C /* SChartiOS7Theme.h */,
+				A5DE7CB11D3FDC950045B06C /* SChartLayer.h */,
+				A5DE7CB21D3FDC950045B06C /* SChartLegend+Deprecated.h */,
+				A5DE7CB31D3FDC950045B06C /* SChartLegend.h */,
+				A5DE7CB41D3FDC950045B06C /* SChartLegendItem.h */,
+				A5DE7CB51D3FDC950045B06C /* SChartLegendStyle+Deprecated.h */,
+				A5DE7CB61D3FDC950045B06C /* SChartLegendStyle.h */,
+				A5DE7CB71D3FDC950045B06C /* SChartLegendSymbol.h */,
+				A5DE7CB81D3FDC950045B06C /* SChartLegendSymbolBandSeries.h */,
+				A5DE7CB91D3FDC950045B06C /* SChartLegendSymbolBarSeries.h */,
+				A5DE7CBA1D3FDC950045B06C /* SChartLegendSymbolBlock.h */,
+				A5DE7CBB1D3FDC950045B06C /* SChartLegendSymbolBlockSplit.h */,
+				A5DE7CBC1D3FDC950045B06C /* SChartLegendSymbolCandlestickSeries.h */,
+				A5DE7CBD1D3FDC950045B06C /* SChartLegendSymbolColumnSeries.h */,
+				A5DE7CBE1D3FDC950045B06C /* SChartLegendSymbolDonutSeries.h */,
+				A5DE7CBF1D3FDC950045B06C /* SChartLegendSymbolLineSeries.h */,
+				A5DE7CC01D3FDC950045B06C /* SChartLegendSymbolOHLCSeries.h */,
+				A5DE7CC11D3FDC950045B06C /* SChartLegendSymbolPieSeries.h */,
+				A5DE7CC21D3FDC950045B06C /* SChartLegendSymbolPointSeries.h */,
+				A5DE7CC31D3FDC950045B06C /* SChartLegendSymbolScatterSeries.h */,
+				A5DE7CC41D3FDC950045B06C /* SChartLightTheme.h */,
+				A5DE7CC51D3FDC950045B06C /* SChartLinearAnimationCurve.h */,
+				A5DE7CC61D3FDC950045B06C /* SChartLineCrosshairTraceStyleEnum.h */,
+				A5DE7CC71D3FDC950045B06C /* SChartLineSeries.h */,
+				A5DE7CC81D3FDC950045B06C /* SChartLineSeriesBaseStyle.h */,
+				A5DE7CC91D3FDC950045B06C /* SChartLineSeriesStyle+Deprecated.h */,
+				A5DE7CCA1D3FDC950045B06C /* SChartLineSeriesStyle.h */,
+				A5DE7CCB1D3FDC950045B06C /* SChartLogarithmicAxis.h */,
+				A5DE7CCC1D3FDC950045B06C /* SChartMainTitleStyle.h */,
+				A5DE7CCD1D3FDC950045B06C /* SChartMajorGridlineStyle.h */,
+				A5DE7CCE1D3FDC950045B06C /* SChartMappedSeries.h */,
+				A5DE7CCF1D3FDC950045B06C /* SChartMidnightTheme.h */,
+				A5DE7CD01D3FDC950045B06C /* SChartMultiValueDataPoint.h */,
+				A5DE7CD11D3FDC950045B06C /* SChartMultiXDataPoint.h */,
+				A5DE7CD21D3FDC950045B06C /* SChartMultiYDataPoint.h */,
+				A5DE7CD31D3FDC950045B06C /* SChartNumberAxis.h */,
+				A5DE7CD41D3FDC950045B06C /* SChartNumberRange.h */,
+				A5DE7CD51D3FDC950045B06C /* SChartOHLCDataValueKeys.h */,
+				A5DE7CD61D3FDC950045B06C /* SChartOHLCSeries.h */,
+				A5DE7CD71D3FDC950045B06C /* SChartOHLCSeriesStyle.h */,
+				A5DE7CD81D3FDC950045B06C /* SChartOrientation.h */,
+				A5DE7CD91D3FDC950045B06C /* SChartPieSeries.h */,
+				A5DE7CDA1D3FDC950045B06C /* SChartPieSeriesStyle.h */,
+				A5DE7CDB1D3FDC950045B06C /* SChartPixelToPointMapper+Deprecated.h */,
+				A5DE7CDC1D3FDC950045B06C /* SChartPixelToPointMapper.h */,
+				A5DE7CDD1D3FDC950045B06C /* SChartPixelToPointMapping.h */,
+				A5DE7CDE1D3FDC950045B06C /* SChartPointSeries.h */,
+				A5DE7CDF1D3FDC950045B06C /* SChartPointSeriesStyle.h */,
+				A5DE7CE01D3FDC950045B06C /* SChartPointStruct.h */,
+				A5DE7CE11D3FDC950045B06C /* SChartPointStyle.h */,
+				A5DE7CE21D3FDC950045B06C /* SChartRadialDataPoint.h */,
+				A5DE7CE31D3FDC950045B06C /* SChartRadialLineRenderMode.h */,
+				A5DE7CE41D3FDC950045B06C /* SChartRadialLineSeries.h */,
+				A5DE7CE51D3FDC950045B06C /* SChartRadialLineSeriesStyle.h */,
+				A5DE7CE61D3FDC950045B06C /* SChartRadialSeries.h */,
+				A5DE7CE71D3FDC950045B06C /* SChartRange.h */,
+				A5DE7CE81D3FDC950045B06C /* SChartScatterSeries.h */,
+				A5DE7CE91D3FDC950045B06C /* SChartScatterSeriesStyle.h */,
+				A5DE7CEA1D3FDC950045B06C /* SChartSeries+Deprecated.h */,
+				A5DE7CEB1D3FDC950045B06C /* SChartSeries.h */,
+				A5DE7CEC1D3FDC950045B06C /* SChartSeriesCrosshair.h */,
+				A5DE7CED1D3FDC950045B06C /* SChartSeriesCrosshairTooltip.h */,
+				A5DE7CEE1D3FDC950045B06C /* SChartSeriesCrosshairTooltipDrawer.h */,
+				A5DE7CEF1D3FDC950045B06C /* SChartSeriesCrosshairTooltipDrawerProtocol.h */,
+				A5DE7CF01D3FDC950045B06C /* SChartSeriesCrosshairTooltipPositioner.h */,
+				A5DE7CF11D3FDC950045B06C /* SChartSeriesCrosshairTooltipPositionerProtocol.h */,
+				A5DE7CF21D3FDC950045B06C /* SChartSeriesCrosshairTooltipStyler.h */,
+				A5DE7CF31D3FDC950045B06C /* SChartSeriesCrosshairTooltipStylerProtocol.h */,
+				A5DE7CF41D3FDC950045B06C /* SChartSeriesImports.h */,
+				A5DE7CF51D3FDC950045B06C /* SChartSeriesStyle.h */,
+				A5DE7CF61D3FDC950045B06C /* SChartSeriesStyleImports.h */,
+				A5DE7CF71D3FDC950045B06C /* SChartSimpleDatasource.h */,
+				A5DE7CF81D3FDC950045B06C /* SChartSpokeStyle.h */,
+				A5DE7CF91D3FDC950045B06C /* SChartStepLineSeries.h */,
+				A5DE7CFA1D3FDC950045B06C /* SChartStyle.h */,
+				A5DE7CFB1D3FDC950045B06C /* SChartTapPressGestureHandler.h */,
+				A5DE7CFC1D3FDC950045B06C /* SChartTheme+Deprecated.h */,
+				A5DE7CFD1D3FDC950045B06C /* SChartTheme.h */,
+				A5DE7CFE1D3FDC950045B06C /* SChartThemeImports.h */,
+				A5DE7CFF1D3FDC950045B06C /* SChartTickLabelClippingMode.h */,
+				A5DE7D001D3FDC950045B06C /* SChartTickLabelFormatter.h */,
+				A5DE7D011D3FDC950045B06C /* SChartTickLabelOrientation.h */,
+				A5DE7D021D3FDC950045B06C /* SChartTickLabelRefreshRate.h */,
+				A5DE7D031D3FDC950045B06C /* SChartTickLabelRefreshRateDeviceBased.h */,
+				A5DE7D041D3FDC950045B06C /* SChartTickMark+Deprecated.h */,
+				A5DE7D051D3FDC950045B06C /* SChartTickMark.h */,
+				A5DE7D061D3FDC950045B06C /* SChartTickStyle+Deprecated.h */,
+				A5DE7D071D3FDC950045B06C /* SChartTickStyle.h */,
+				A5DE7D081D3FDC950045B06C /* SChartTimePeriod.h */,
+				A5DE7D091D3FDC950045B06C /* SChartTitle+Deprecated.h */,
+				A5DE7D0A1D3FDC950045B06C /* SChartTitle.h */,
+				A5DE7D0B1D3FDC950045B06C /* SChartTitlePosition.h */,
+				A5DE7D0C1D3FDC950045B06C /* SChartTitleStyle.h */,
+				A5DE7D0D1D3FDC950045B06C /* ShinobiChart+Deprecated.h */,
+				A5DE7D0E1D3FDC950045B06C /* ShinobiChart-Bridging-Header.h */,
+				A5DE7D0F1D3FDC950045B06C /* ShinobiChart.h */,
+				A5DE7D101D3FDC950045B06C /* ShinobiChartLog.h */,
+				A5DE7D111D3FDC950045B06C /* ShinobiCharts.h */,
+				A5DE7D121D3FDC950045B06C /* ShinobiMacros.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		A5DE7D131D3FDC950045B06C /* PrivateHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7D141D3FDC950045B06C /* SChartGLView.h */,
+				A5DE7D151D3FDC950045B06C /* SChartSeriesDistanceInfoStruct.h */,
+			);
+			path = PrivateHeaders;
 			sourceTree = "<group>";
 		};
 		A5F36DCE1D2C4E7300A5C621 /* Data Model */ = {
@@ -1752,6 +2178,7 @@
 				A51571671D1B3256002588C0 /* MPNativeCache.m in Sources */,
 				5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */,
 				58333B1E1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift in Sources */,
+				A5A2D9711D3991F9009A363E /* DatePickerViewController.swift in Sources */,
 				A515716F1D1B3256002588C0 /* MPClientAdPositioning.m in Sources */,
 				A51571531D1B3256002588C0 /* MPVASTStringUtilities.m in Sources */,
 				A51571571D1B3256002588C0 /* MPAdConversionTracker.m in Sources */,
@@ -1827,6 +2254,7 @@
 				A51571041D1B3256002588C0 /* MPClosableView.m in Sources */,
 				A5F36E081D2C4F2100A5C621 /* Measurement.swift in Sources */,
 				A51571451D1B3256002588C0 /* MPUserInteractionGestureRecognizer.m in Sources */,
+				A5DE7C581D3FD33F0045B06C /* ExerciseChartViewController.swift in Sources */,
 				A51571861D1B3256002588C0 /* MOPUBNativeVideoAdConfigValues.m in Sources */,
 				A51571561D1B3256002588C0 /* MoPub.m in Sources */,
 				A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */,
@@ -2056,10 +2484,32 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.g-rantsoftware.-0-DWT-BB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2143,10 +2593,32 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.g-rantsoftware.-0-DWT-BB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

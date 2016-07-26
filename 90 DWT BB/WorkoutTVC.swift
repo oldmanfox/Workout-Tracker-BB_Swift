@@ -9,12 +9,16 @@
 import UIKit
 //import Foundation
 
-class WorkoutTVC: CDTableViewController {
+class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate {
 
     var session = ""
     var workoutRoutine = ""
     var selectedWorkout = ""
-    var workoutIndex = 2
+    var workoutIndex = 0
+    
+    var selectedCellIdentifier = ""
+    var workoutCompleteCell = WorkoutTVC_CompletionTableViewCell()
+    
     
     var exerciseNameArray = [[], []]
     var exerciseRepsArray = [[], []]
@@ -297,6 +301,8 @@ class WorkoutTVC: CDTableViewController {
                         }
                     }
 
+//                    cell.graphButton.addTarget(self, action: #selector(WorkoutTVC.graphButtonPressed(_:)), forControlEvents: .TouchUpInside)
+                    
                     return cell
                 }
                 else {
@@ -307,8 +313,13 @@ class WorkoutTVC: CDTableViewController {
                     cell.selectedWorkout = selectedWorkout // B1: Chest+Tri etc...
                     cell.workoutIndex = workoutIndex // Index of the workout in the program
                     cell.session = session
+                    cell.indexPath = indexPath
 
                     cell.updateWorkoutCompleteCellUI()
+                    
+                    cell.previousDateButton.addTarget(self, action: #selector(WorkoutTVC.previousButtonPressed(_:)), forControlEvents: .TouchUpInside)
+                    
+                    workoutCompleteCell = cell
                     
                     return cell
                 }
@@ -348,16 +359,123 @@ class WorkoutTVC: CDTableViewController {
         
         view.endEditing(true)
     }
-
-    /*
+    
+    
+    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
+        
+        if selectedCellIdentifier == "PreviousButtonPressed" {
+            
+            workoutCompleteCell.updateWorkoutCompleteCellUI()
+        }
+    }
+    
+    @IBAction func previousButtonPressed(sender: UIButton) {
+        
+        print("Previous Button Pressed")
+        
+        selectedCellIdentifier = "PreviousButtonPressed"
+        
+        let popOverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DatePickerViewController") as! DatePickerViewController
+        
+        popOverContent.session = session
+        popOverContent.workoutRoutine = workoutRoutine
+        popOverContent.selectedWorkout = selectedWorkout
+        popOverContent.workoutIndex = workoutIndex
+        
+        popOverContent.modalPresentationStyle = .Popover
+        
+        let popOver = popOverContent.popoverPresentationController
+        popOver?.sourceView = sender
+        popOver?.sourceRect = sender.bounds
+        popOver?.permittedArrowDirections = .Any
+        popOver?.delegate = self
+        
+        presentViewController(popOverContent, animated: true, completion: nil)
+    }
+    
+//    @IBAction func graphButtonPressed(sender: UIButton) {
+//        
+//        selectedCellIdentifier = "GraphButtonPressed"
+//        
+//        let indexPath = self.tableView.indexPathForRowAtPoint(sender.center)
+//        let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as? WorkoutTVC_WorkoutTableViewCell
+//        
+//        let graphDataPoints = [cell!.repNumberLabel1.text,
+//                               cell!.repNumberLabel2.text,
+//                               cell!.repNumberLabel3.text,
+//                               cell!.repNumberLabel4.text,
+//                               cell!.repNumberLabel5.text,
+//                               cell!.repNumberLabel6.text]
+//        
+//        let popOverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExerciseChartViewController") as! ExerciseChartViewController
+//        
+//        popOverContent.session = session
+//        popOverContent.workoutRoutine = workoutRoutine
+//        popOverContent.selectedWorkout = selectedWorkout
+//        popOverContent.exerciseName = cell!.nonUpperCaseExerciseName
+//        popOverContent.graphDataPoints = graphDataPoints
+//        popOverContent.workoutIndex = workoutIndex
+//        
+//        popOverContent.modalPresentationStyle = .Popover
+//        
+//        let popOver = popOverContent.popoverPresentationController
+//        popOver?.sourceView = sender
+//        popOver?.sourceRect = sender.bounds
+//        popOver?.permittedArrowDirections = .Any
+//        popOver?.delegate = self
+//        
+//        presentViewController(popOverContent, animated: true, completion: nil)
+//    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowShinobiChart" {
+            
+            let destinationNavController = segue.destinationViewController as? UINavigationController
+            let destinationVC = destinationNavController?.topViewController as! ExerciseChartViewController
+            
+            destinationVC.session = session
+            destinationVC.workoutRoutine = workoutRoutine
+            destinationVC.selectedWorkout = selectedWorkout
+            destinationVC.workoutIndex = workoutIndex
+            
+            let button = sender as! UIButton
+            let view = button.superview
+            let cell = view?.superview as! WorkoutTVC_WorkoutTableViewCell
+            
+            destinationVC.exerciseName = cell.nonUpperCaseExerciseName
+            destinationVC.navigationItem.title = selectedWorkout
+            
+            let graphDataPoints = [cell.repNumberLabel1.text,
+                                   cell.repNumberLabel2.text,
+                                   cell.repNumberLabel3.text,
+                                   cell.repNumberLabel4.text,
+                                   cell.repNumberLabel5.text,
+                                   cell.repNumberLabel6.text]
+            
+            destinationVC.graphDataPoints = graphDataPoints
+            
+            let exerciseName = cell.nonUpperCaseExerciseName
+            print("Exercise Name = \(exerciseName)")
+            
+//            let controller = destinationVC?.popoverPresentationController
+//            
+//            if controller != nil {
+//                
+//                //controller?.delegate = self
+//            }
+        }
     }
-    */
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        
+        return .None
+    }
     
     func loadExerciseNameArray(workout: String) {
         

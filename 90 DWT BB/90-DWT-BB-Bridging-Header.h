@@ -10,5 +10,6 @@
 #define _0_DWT_BB_Bridging_Header_h
 
 #import "MoPub-Bridging-Header.h"
+#import "ShinobiChart-Bridging-Header.h"
 
 #endif /* _0_DWT_BB_Bridging_Header_h */

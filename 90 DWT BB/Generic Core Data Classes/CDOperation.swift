@@ -501,7 +501,7 @@ class CDOperation {
                     insertWorkoutInfo.workout = workout as String
                     insertWorkoutInfo.index = index
                     insertWorkoutInfo.workoutCompleted = true
-                    insertWorkoutInfo.date = NSDate()
+                    insertWorkoutInfo.date = useDate
                     
                     CDHelper.saveSharedContext()
                     
@@ -511,7 +511,7 @@ class CDOperation {
                     let updateWorkoutInfo = workoutCompleteDateObjects[0]
                     
                     updateWorkoutInfo.workoutCompleted = true
-                    updateWorkoutInfo.date = NSDate()
+                    updateWorkoutInfo.date = useDate
                     
                     CDHelper.saveSharedContext()
                     
@@ -526,7 +526,7 @@ class CDOperation {
                             let updateWorkoutInfo = workoutCompleteDateObjects[index]
                             
                             updateWorkoutInfo.workoutCompleted = true
-                            updateWorkoutInfo.date = NSDate()
+                            updateWorkoutInfo.date = useDate
                         }
                         else {
                             // Delete duplicate records.

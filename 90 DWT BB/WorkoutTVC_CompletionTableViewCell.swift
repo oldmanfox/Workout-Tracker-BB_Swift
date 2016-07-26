@@ -14,6 +14,7 @@ class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
     var workoutRoutine = ""
     var selectedWorkout = ""
     var workoutIndex = 0
+    var indexPath = NSIndexPath()
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -48,6 +49,26 @@ class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
     
     @IBAction func workoutCompletedPrevious(sender: UIButton) {
         
+//        WorkoutTVC.testFunction(sender, indexPath: indexPath)
+//        
+//        
+//        let popOverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DatePickerViewController") as! DatePickerViewController
+//        
+//        popOverContent.modalPresentationStyle = .Popover
+//        
+//        let popOver = popOverContent.popoverPresentationController
+//        popOver?.sourceView = sender
+//        popOver?.sourceRect = sender.bounds
+//        popOver?.permittedArrowDirections = .Any
+//        popOver?.delegate = self
+        
+        
+        //.presentViewController(popOverContent, animated: true, completion: nil)
+//        popOver.popoverPresentationController?.delegate = self
+//        popOver.popoverPresentationController?.sourceView = sender
+//        popOver.popoverPresentationController?.sourceRect = sender.bounds
+//        popOver.popoverPresentationController?.permittedArrowDirections = .Any
+        
     }
     
     func updateWorkoutCompleteCellUI () {
@@ -75,7 +96,7 @@ class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
             self.backgroundColor = UIColor.darkGrayColor()
             
             // Label
-            dateLabel.text! = "Workout Completed: \(completedDate)"
+            dateLabel.text? = "Workout Completed: \(completedDate)"
             dateLabel.textColor = UIColor.whiteColor()
         }
     }
