@@ -47,30 +47,6 @@ class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
         updateWorkoutCompleteCellUI()
     }
     
-    @IBAction func workoutCompletedPrevious(sender: UIButton) {
-        
-//        WorkoutTVC.testFunction(sender, indexPath: indexPath)
-//        
-//        
-//        let popOverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DatePickerViewController") as! DatePickerViewController
-//        
-//        popOverContent.modalPresentationStyle = .Popover
-//        
-//        let popOver = popOverContent.popoverPresentationController
-//        popOver?.sourceView = sender
-//        popOver?.sourceRect = sender.bounds
-//        popOver?.permittedArrowDirections = .Any
-//        popOver?.delegate = self
-        
-        
-        //.presentViewController(popOverContent, animated: true, completion: nil)
-//        popOver.popoverPresentationController?.delegate = self
-//        popOver.popoverPresentationController?.sourceView = sender
-//        popOver.popoverPresentationController?.sourceRect = sender.bounds
-//        popOver.popoverPresentationController?.permittedArrowDirections = .Any
-        
-    }
-    
     func updateWorkoutCompleteCellUI () {
         
         let workoutCompletedObjects = CDOperation.getWorkoutCompletedObjects(session, routine: workoutRoutine, workout: selectedWorkout, index: workoutIndex)

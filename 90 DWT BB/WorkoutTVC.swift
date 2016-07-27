@@ -56,43 +56,8 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
         static let darkGreen = UIColor (red: 0/255, green: 110/255, blue: 96/255, alpha: 1)
     }
     
-    // MARK: - CELL CONFIGURATION
-    override func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        
-        
-    }
-    
-    // MARK: - INITIALIZATION
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-//        // CDTableViewController subclass customization
-//        self.entity = "Workout"
-//        self.sort = [NSSortDescriptor(key: "tableViewSection", ascending: true),NSSortDescriptor(key: "tableViewRow", ascending: true)]
-//        self.sectionNameKeyPath = "tableViewSection"
-//        self.fetchBatchSize = 25
-//        self.filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index == %@",
-//                                  session,
-//                                  workoutRoutine,
-//                                  selectedWorkout,
-//                                  "1")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // CDTableViewController subclass customization
-//        self.entity = "Workout"
-//        self.sort = [NSSortDescriptor(key: "tableViewSection", ascending: true),NSSortDescriptor(key: "tableViewRow", ascending: true)]
-//        self.sectionNameKeyPath = "tableViewSection"
-//        self.fetchBatchSize = 25
-//        self.filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index == %@",
-//                                  session,
-//                                  workoutRoutine,
-//                                  selectedWorkout,
-//                                  "1")
-
-        //self.performFetch()
         
         loadExerciseNameArray(selectedWorkout)
         
@@ -103,11 +68,6 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.performFetch()
     }
     
     // MARK: - Table view data source
@@ -300,8 +260,6 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                             }
                         }
                     }
-
-//                    cell.graphButton.addTarget(self, action: #selector(WorkoutTVC.graphButtonPressed(_:)), forControlEvents: .TouchUpInside)
                     
                     return cell
                 }
@@ -393,40 +351,6 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
         presentViewController(popOverContent, animated: true, completion: nil)
     }
     
-//    @IBAction func graphButtonPressed(sender: UIButton) {
-//        
-//        selectedCellIdentifier = "GraphButtonPressed"
-//        
-//        let indexPath = self.tableView.indexPathForRowAtPoint(sender.center)
-//        let cell = self.tableView.cellForRowAtIndexPath(indexPath!) as? WorkoutTVC_WorkoutTableViewCell
-//        
-//        let graphDataPoints = [cell!.repNumberLabel1.text,
-//                               cell!.repNumberLabel2.text,
-//                               cell!.repNumberLabel3.text,
-//                               cell!.repNumberLabel4.text,
-//                               cell!.repNumberLabel5.text,
-//                               cell!.repNumberLabel6.text]
-//        
-//        let popOverContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExerciseChartViewController") as! ExerciseChartViewController
-//        
-//        popOverContent.session = session
-//        popOverContent.workoutRoutine = workoutRoutine
-//        popOverContent.selectedWorkout = selectedWorkout
-//        popOverContent.exerciseName = cell!.nonUpperCaseExerciseName
-//        popOverContent.graphDataPoints = graphDataPoints
-//        popOverContent.workoutIndex = workoutIndex
-//        
-//        popOverContent.modalPresentationStyle = .Popover
-//        
-//        let popOver = popOverContent.popoverPresentationController
-//        popOver?.sourceView = sender
-//        popOver?.sourceRect = sender.bounds
-//        popOver?.permittedArrowDirections = .Any
-//        popOver?.delegate = self
-//        
-//        presentViewController(popOverContent, animated: true, completion: nil)
-//    }
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -462,13 +386,6 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
             
             let exerciseName = cell.nonUpperCaseExerciseName
             print("Exercise Name = \(exerciseName)")
-            
-//            let controller = destinationVC?.popoverPresentationController
-//            
-//            if controller != nil {
-//                
-//                //controller?.delegate = self
-//            }
         }
     }
     

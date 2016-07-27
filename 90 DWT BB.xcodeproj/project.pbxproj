@@ -911,14 +911,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
+				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */,
 				A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */,
 				A5DE7D1F1D43FA850045B06C /* CoreText.framework in Frameworks */,
 				A5DE7D1D1D43FA7A0045B06C /* OpenGLES.framework in Frameworks */,
 				A5DE7D1B1D43FA710045B06C /* CoreGraphics.framework in Frameworks */,
 				A5DE7D191D43FA5F0045B06C /* QuartzCore.framework in Frameworks */,
-				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
-				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */,
 				A52813E71D1AFCC600F6FF57 /* PassKit.framework in Frameworks */,
 				A5DE7D251D43FBDD0045B06C /* ShinobiCharts in Frameworks */,
@@ -2500,6 +2500,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2609,6 +2615,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

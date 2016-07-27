@@ -23,6 +23,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var originalCurrentWeight4_Text = ""
     var originalCurrentWeight5_Text = ""
     var originalCurrentWeight6_Text = ""
+    var originalCurrentNotes_Text = ""
     
     @IBOutlet weak var repNumberLabel1: UILabel!
     @IBOutlet weak var repNumberLabel2: UILabel!
@@ -61,11 +62,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight1(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
         }
         else {
             
@@ -76,11 +77,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight2(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
         }
         else {
             
@@ -91,11 +92,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight3(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
         }
         else {
             
@@ -106,11 +107,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight4(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
         }
         else {
             
@@ -121,11 +122,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight5(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
         }
         else {
             
@@ -136,11 +137,11 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight6(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0) {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
         }
         else {
             
@@ -149,6 +150,29 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func saveCurrentNotes(sender: UITextField) {
+        
+        // Only update the fields that have been changed.
+        if (sender.text?.characters.count > 0 && sender.text != "PREVIOUS NOTES") {
+            
+            print("String is: \(sender.text!)")
+            
+            CDOperation.saveNoteWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , note: sender.text!, round: 5)
+        }
+        else {
+            
+            sender.text = originalCurrentNotes_Text
+        }
+    }
+    
+    @IBAction func graphButtonPressed(sender: UIButton) {
+        
+        saveCurrentWeight1(currentWeight1)
+        saveCurrentWeight2(currentWeight2)
+        saveCurrentWeight3(currentWeight3)
+        saveCurrentWeight4(currentWeight4)
+        saveCurrentWeight5(currentWeight5)
+        saveCurrentWeight6(currentWeight6)
+        saveCurrentNotes(currentNotes)
     }
     
     override func awakeFromNib() {

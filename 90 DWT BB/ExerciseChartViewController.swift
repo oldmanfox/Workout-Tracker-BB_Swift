@@ -40,7 +40,7 @@ class ExerciseChartViewController: UIViewController, SChartDatasource {
         chart.titleLabel.textColor = UIColor (red: 175/255, green: 89/255, blue: 8/255, alpha: 1)
         chart.titleCentresOn = SChartTitleCentresOn.Chart
         
-        chart.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        chart.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
 
         // Add a pair of axes
         let xAxis = SChartCategoryAxis()
@@ -84,7 +84,7 @@ class ExerciseChartViewController: UIViewController, SChartDatasource {
     
     func numberOfSeriesInSChart(chart: ShinobiChart) -> Int {
         
-        let highestIndexFound = GetHighestDatabaseIndex()
+        let highestIndexFound = NSInteger(GetHighestDatabaseIndex())
         
         return highestIndexFound;
     }
@@ -156,7 +156,7 @@ class ExerciseChartViewController: UIViewController, SChartDatasource {
         // Enable area fill
         //columnSeries.style.areaColorGradient = [UIColor clearColor];
         
-        let tryNumber = index + 1
+        let tryNumber = NSNumber(int: index + 1)
         
         if (ColumnSeriesMatchAtIndex(index)) {
             
@@ -235,14 +235,14 @@ class ExerciseChartViewController: UIViewController, SChartDatasource {
         if (self.workoutObjects.count == 0) {
             
             // No Matches
-            dataPoint.yValue = "0.0"
+            dataPoint.yValue = NSNumber(double: 0.0)
         }
         else {
             
             // Found a match
             let matches = workoutObjects.last!
-            let yValue = matches.weight
-            dataPoint.yValue = yValue
+            let yValue = Double(matches.weight!)
+            dataPoint.yValue = NSNumber(double: yValue!)
         }
         
         return dataPoint

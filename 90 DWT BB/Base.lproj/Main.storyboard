@@ -722,6 +722,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
+                                                <action selector="graphButtonPressed:" destination="agd-Zh-b1F" eventType="touchUpInside" id="Np8-yz-YP0"/>
                                                 <segue destination="0uT-wy-4GO" kind="presentation" identifier="ShowShinobiChart" id="qpu-De-wZs"/>
                                             </connections>
                                         </button>
@@ -906,9 +907,6 @@
                                             <state key="normal" title="PREVIOUS">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="workoutCompletedPrevious:" destination="PRM-E5-WXi" eventType="touchUpInside" id="Icv-5U-CdL"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-2K-B4f">
                                             <rect key="frame" x="202" y="65" width="196" height="40"/>
