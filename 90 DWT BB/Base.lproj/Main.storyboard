@@ -624,7 +624,7 @@
                                                 <action selector="saveCurrentWeight1:" destination="agd-Zh-b1F" eventType="editingDidEnd" id="Pfx-Qk-4JI"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9W-TX-4vB">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9W-TX-4vB">
                                             <rect key="frame" x="102" y="137" width="96" height="50"/>
                                             <color key="backgroundColor" red="0.015686274510000001" green="0.5568627451" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -640,7 +640,7 @@
                                                 <action selector="saveCurrentWeight2:" destination="agd-Zh-b1F" eventType="editingDidEnd" id="ygr-kW-NEg"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG7-dg-zdX">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG7-dg-zdX">
                                             <rect key="frame" x="202" y="137" width="96" height="50"/>
                                             <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -656,7 +656,7 @@
                                                 <action selector="saveCurrentWeight3:" destination="agd-Zh-b1F" eventType="editingDidEnd" id="Szx-Pc-dvY"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tod-SA-FzX">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tod-SA-FzX">
                                             <rect key="frame" x="302" y="137" width="96" height="50"/>
                                             <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -672,7 +672,7 @@
                                                 <action selector="saveCurrentWeight4:" destination="agd-Zh-b1F" eventType="editingDidEnd" id="xCC-o7-Rx3"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-q3-Rl6">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-q3-Rl6">
                                             <rect key="frame" x="502" y="137" width="96" height="50"/>
                                             <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -688,7 +688,7 @@
                                                 <action selector="saveCurrentWeight6:" destination="agd-Zh-b1F" eventType="editingDidEnd" id="x1F-Mk-dnr"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CURRENT NOTES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-IQ-ffx">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CURRENT NOTES" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-IQ-ffx">
                                             <rect key="frame" x="302" y="195" width="296" height="40"/>
                                             <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -726,7 +726,7 @@
                                                 <segue destination="0uT-wy-4GO" kind="presentation" identifier="ShowShinobiChart" id="qpu-De-wZs"/>
                                             </connections>
                                         </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-k7-iq8">
+                                        <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="55.5" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-k7-iq8">
                                             <rect key="frame" x="402" y="137" width="96" height="50"/>
                                             <color key="backgroundColor" red="0.015686274510000001" green="0.5568627451" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>

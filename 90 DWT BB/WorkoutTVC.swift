@@ -158,6 +158,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                     cell.currentWeight4.text = "0.0"
                     cell.currentWeight5.text = "0.0"
                     cell.currentWeight6.text = "0.0"
+                    cell.currentNotes.text = "CURRENT NOTES"
                     
                     cell.originalCurrentWeight1_Text = "0.0"
                     cell.originalCurrentWeight2_Text = "0.0"
@@ -165,6 +166,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                     cell.originalCurrentWeight4_Text = "0.0"
                     cell.originalCurrentWeight5_Text = "0.0"
                     cell.originalCurrentWeight6_Text = "0.0"
+                    cell.originalCurrentNotes_Text = "CURRENT NOTES"
                     
                     cell.previousWeight1.text = "0.0"
                     cell.previousWeight2.text = "0.0"
@@ -180,7 +182,18 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                         
                         for object in workoutObjects {
                             
-                            print("Round = \(object.round!) - Weight = \(object.weight!)")
+                            var tempWeight = ""
+                            
+                            if object.weight != nil {
+                                
+                                tempWeight = object.weight!
+                            }
+                            else {
+                                
+                                tempWeight = "0.0"
+                            }
+                            
+                            print("Round = \(object.round!) - Weight = \(tempWeight)")
                         }
                         
                         if workoutObjects.count != 0 {
@@ -189,29 +202,97 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                                 
                                 switch object.round as! Int {
                                 case 0:
-                                    cell.currentWeight1.text = object.weight
-                                    cell.originalCurrentWeight1_Text = object.weight!
+                                    if object.weight != nil {
+                                        
+                                        cell.currentWeight1.text = object.weight
+                                        cell.originalCurrentWeight1_Text = object.weight!
+                                    }
+                                    else {
+                                        cell.currentWeight1.text = "0.0"
+                                        cell.originalCurrentWeight1_Text = "0.0"
+                                    }
+                                    
+                                    //cell.currentNotes.text = "CURRENT NOTES"
                                     
                                 case 1:
-                                    cell.currentWeight2.text = object.weight
-                                    cell.originalCurrentWeight2_Text = object.weight!
+                                    if object.weight != nil {
+                                       
+                                        cell.currentWeight2.text = object.weight
+                                        cell.originalCurrentWeight2_Text = object.weight!
+                                    }
+                                    else {
+                                        
+                                        cell.currentWeight2.text = "0.0"
+                                        cell.originalCurrentWeight2_Text = "0.0"
+                                    }
+                                    
+                                    //cell.currentNotes.text = "CURRENT NOTES"
                                     
                                 case 2:
-                                    cell.currentWeight3.text = object.weight
-                                    cell.originalCurrentWeight3_Text = object.weight!
+                                    if object.weight != nil {
+                                        
+                                        cell.currentWeight3.text = object.weight
+                                        cell.originalCurrentWeight3_Text = object.weight!
+                                    }
+                                    else {
+                                        
+                                        cell.currentWeight3.text = "0.0"
+                                        cell.originalCurrentWeight3_Text = "0.0"
+                                    }
+                                    
+                                    //cell.currentNotes.text = "CURRENT NOTES"
                                     
                                 case 3:
-                                    cell.currentWeight4.text = object.weight
-                                    cell.originalCurrentWeight4_Text = object.weight!
-                                
+                                    if object.weight != nil {
+                                        
+                                        cell.currentWeight4.text = object.weight
+                                        cell.originalCurrentWeight4_Text = object.weight!
+                                    }
+                                    else {
+                                        
+                                        cell.currentWeight4.text = "0.0"
+                                        cell.originalCurrentWeight4_Text = "0.0"
+                                    }
+                                    
+                                    //cell.currentNotes.text = "CURRENT NOTES"
+                                    
                                 case 4:
-                                    cell.currentWeight5.text = object.weight
-                                    cell.originalCurrentWeight5_Text = object.weight!
+                                    if object.weight != nil {
+                                        
+                                        cell.currentWeight5.text = object.weight
+                                        cell.originalCurrentWeight5_Text = object.weight!
+                                    }
+                                    else {
+                                        
+                                        cell.currentWeight5.text = "0.0"
+                                        cell.originalCurrentWeight5_Text = "0.0"
+                                    }
+                                    
+                                    //cell.currentNotes.text = "CURRENT NOTES"
                                     
                                 case 5:
-                                    cell.currentWeight6.text = object.weight
-                                    cell.originalCurrentWeight6_Text = object.weight!
-                                    cell.currentNotes.text = object.notes?.uppercaseString
+                                    if object.weight != nil {
+                                        
+                                        cell.currentWeight6.text = object.weight
+                                        cell.originalCurrentWeight6_Text = object.weight!
+                                        
+                                    }
+                                    else {
+                                        
+                                        cell.currentWeight6.text = "0.0"
+                                        cell.originalCurrentWeight6_Text = "0.0"
+                                    }
+                                    
+                                    if object.notes != nil {
+                                        
+                                        cell.currentNotes.text = object.notes?.uppercaseString
+                                        cell.originalCurrentNotes_Text = object.notes!.uppercaseString
+                                    }
+                                    else {
+                                        
+                                        cell.currentNotes.text = "CURRENT NOTES"
+                                        cell.originalCurrentNotes_Text = "CURRENT NOTES"
+                                    }
                                     
                                 default:
                                     break

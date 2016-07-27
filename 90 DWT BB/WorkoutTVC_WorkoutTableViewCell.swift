@@ -25,6 +25,8 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var originalCurrentWeight6_Text = ""
     var originalCurrentNotes_Text = ""
     
+    var activeTextField = UITextField()
+    
     @IBOutlet weak var repNumberLabel1: UILabel!
     @IBOutlet weak var repNumberLabel2: UILabel!
     @IBOutlet weak var repNumberLabel3: UILabel!
@@ -62,7 +64,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight1(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight1_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -77,7 +79,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight2(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight2_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -92,7 +94,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight3(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight3_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -107,7 +109,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight4(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight4_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -122,7 +124,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight5(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight5_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -137,7 +139,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentWeight6(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "0.0") {
+        if (sender.text?.characters.count > 0 && sender.text != "0.0" && sender.text != originalCurrentWeight6_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -152,7 +154,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func saveCurrentNotes(sender: UITextField) {
         
         // Only update the fields that have been changed.
-        if (sender.text?.characters.count > 0 && sender.text != "PREVIOUS NOTES") {
+        if (sender.text?.characters.count > 0 && sender.text != "CURRENT NOTES" && sender.text != originalCurrentNotes_Text) {
             
             print("String is: \(sender.text!)")
             
@@ -166,14 +168,32 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBAction func graphButtonPressed(sender: UIButton) {
         
-        saveCurrentWeight1(currentWeight1)
-        saveCurrentWeight2(currentWeight2)
-        saveCurrentWeight3(currentWeight3)
-        saveCurrentWeight4(currentWeight4)
-        saveCurrentWeight5(currentWeight5)
-        saveCurrentWeight6(currentWeight6)
-        saveCurrentNotes(currentNotes)
-    }
+        switch self.activeTextField.tag {
+        case 0:
+            saveCurrentWeight1(currentWeight1)
+            
+        case 1:
+            saveCurrentWeight2(currentWeight2)
+            
+        case 2:
+            saveCurrentWeight3(currentWeight3)
+            
+        case 3:
+            saveCurrentWeight4(currentWeight4)
+            
+        case 4:
+            saveCurrentWeight5(currentWeight5)
+            
+        case 5:
+            saveCurrentWeight6(currentWeight6)
+            
+        case 6:
+            saveCurrentNotes(currentNotes)
+            
+        default:
+            break
+        }
+}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -195,6 +215,10 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     // MARK: - UITextFieldDelegates
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        self.activeTextField = textField
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         

@@ -169,7 +169,7 @@ class ExerciseChartViewController: UIViewController, SChartDatasource {
             }
             else {
                 
-                columnSeries.title = "Try \(tryNumber) - \(tempNote)"
+                columnSeries.title = "Try \(tryNumber) - \(tempNote!)"
             }
         }
         else {

@@ -256,7 +256,7 @@ class CDOperation {
                     
                     let updateWorkoutInfo = workoutObjects[0]
                     
-                    updateWorkoutInfo.weight = note
+                    updateWorkoutInfo.notes = note
                     updateWorkoutInfo.date = NSDate()
                     
                     CDHelper.saveSharedContext()
@@ -271,7 +271,7 @@ class CDOperation {
                             // Get data from the newest existing record.  Usually the last record sorted by date.
                             let updateWorkoutInfo = workoutObjects[index]
                             
-                            updateWorkoutInfo.weight = note
+                            updateWorkoutInfo.notes = note
                             updateWorkoutInfo.date = NSDate()
                         }
                         else {
