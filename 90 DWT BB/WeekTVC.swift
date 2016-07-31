@@ -329,7 +329,7 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
                     CDOperation.deleteDate(session, routine: workoutRoutine, workout: nameArray[i], index: indexArray[i])
                 }
             }
-                        
+            
         default:
             
             // Completed
