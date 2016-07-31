@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekTVC: UITableViewController {
+class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate {
     
     private var currentWeekWorkoutList = [[], []]
     private var daysOfWeekNumberList = [[], []]
@@ -19,6 +19,11 @@ class WeekTVC: UITableViewController {
     var workoutRoutine = ""
     var session = ""
     var workoutWeek = ""
+    
+    var longPGR = UILongPressGestureRecognizer()
+    var indexPath = NSIndexPath()
+    var position = NSInteger()
+    var request = ""
     
     private struct Color {
         static let white = "White"
@@ -61,6 +66,15 @@ class WeekTVC: UITableViewController {
         
         loadArraysForCell()
         
+        // Add rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: #selector(WeekTVC.editButtonPressed(_:)))
+        
+        // Add a long press gesture recognizer
+        self.longPGR = UILongPressGestureRecognizer(target: self, action: #selector(MonthTVC.longPressGRAction(_:)))
+        self.longPGR.minimumPressDuration = 1.0
+        self.longPGR.allowableMovement = 10.0
+        self.tableView.addGestureRecognizer(self.longPGR)
+
         print("SHARED CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context))")
         
         print("IMPORT CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.importContext))")
@@ -69,6 +83,304 @@ class WeekTVC: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func editButtonPressed(sender: UIBarButtonItem) {
+        
+        let tempMessage = "Set the status for all workouts of:\n\n\(workoutRoutine) - \(workoutWeek)"
+        
+        let alertController = UIAlertController(title: "Workout Status", message: tempMessage, preferredStyle: .ActionSheet)
+        
+        let notCompletedAction = UIAlertAction(title: "Not Completed", style: .Destructive, handler: {
+            action in
+            
+            self.request = "Not Completed"
+            self.verifyAddDeleteRequestFromBarButtonItem()
+        })
+        
+        let completedAction = UIAlertAction(title: "Completed", style: .Default, handler: {
+            action in
+            
+            self.request = "Completed"
+            self.verifyAddDeleteRequestFromBarButtonItem()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertController.addAction(notCompletedAction)
+        alertController.addAction(completedAction)
+        alertController.addAction(cancelAction)
+        
+        if let popover = alertController.popoverPresentationController {
+            
+            popover.barButtonItem = sender
+            popover.sourceView = self.view
+            popover.delegate = self
+            popover.permittedArrowDirections = .Any
+        }
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+
+    func longPressGRAction(sender: UILongPressGestureRecognizer) {
+     
+        if (sender.isEqual(self.longPGR)) {
+            
+            if sender.state == UIGestureRecognizerState.Began {
+                
+                let p = sender.locationInView(self.tableView)
+                
+                if let tempIndexPath = self.tableView.indexPathForRowAtPoint(p) {
+                    
+                    self.indexPath = tempIndexPath
+                    self.position = self.findArrayPosition(self.indexPath)
+                    
+                    // get affected cell and label
+                    let cell = self.tableView.cellForRowAtIndexPath(self.indexPath) as! WeekTVC_TableViewCell
+                    
+                    let tempMessage = ("Set the status for:\n\n\(workoutRoutine) - \(workoutWeek) - \(cell.titleLabel.text!)")
+                    
+                    let alertController = UIAlertController(title: "Workout Status", message: tempMessage, preferredStyle: .ActionSheet)
+                    
+                    let notCompletedAction = UIAlertAction(title: "Not Completed", style: .Destructive, handler: {
+                        action in
+                        
+                        self.request = "Not Completed"
+                        self.verifyAddDeleteRequestFromTableViewCell()
+                    })
+                    
+                    let completedAction = UIAlertAction(title: "Completed", style: .Default, handler: {
+                        action in
+                        
+                        self.request = "Completed"
+                        self.verifyAddDeleteRequestFromTableViewCell()
+                    })
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    
+                    alertController.addAction(notCompletedAction)
+                    alertController.addAction(completedAction)
+                    alertController.addAction(cancelAction)
+                    
+                    if let popover = alertController.popoverPresentationController {
+                        
+                        popover.sourceView = cell
+                        popover.delegate = self
+                        popover.sourceRect = (cell.bounds)
+                        popover.permittedArrowDirections = .Any
+                    }
+                    
+                    presentViewController(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func verifyAddDeleteRequestFromTableViewCell() {
+        
+        // get affected cell
+        let cell = self.tableView.cellForRowAtIndexPath(self.indexPath) as! WeekTVC_TableViewCell
+        
+        self.position = self.findArrayPosition(self.indexPath)
+        
+        let tempMessage = ("You are about to set the status for\n\n\(CDOperation.getCurrentRoutine()) - \(workoutWeek) - \(cell.titleLabel.text!)\n\nto:\n\n\(self.request)\n\nDo you want to proceed?")
+        
+        let alertController = UIAlertController(title: "Warning", message: tempMessage, preferredStyle: .Alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {
+            action in
+            
+            self.addDeleteDate()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func verifyAddDeleteRequestFromBarButtonItem() {
+        
+        let tempMessage = "You are about to set the status for all workouts of:\n\n\(workoutRoutine) - \(workoutWeek)\n\nto:\n\n\(self.request)\n\nDo you want to proceed?"
+        
+        let alertController = UIAlertController(title: "Warning", message: tempMessage, preferredStyle: .Alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {
+            action in
+            
+            self.AddDeleteDatesFromOneWeek()
+            self.tableView.reloadData()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func addDeleteDate() {
+        
+        switch self.request {
+        case "Not Completed":
+            
+            // ***DELETE***
+            
+            switch workoutRoutine {
+            case "Bulk":
+                
+                // Bulk
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for _ in 0..<nameArray.count {
+                    
+                    CDOperation.deleteDate(session, routine: workoutRoutine, workout: nameArray[position], index: indexArray[position])
+                }
+                
+            default:
+                
+                // Tone
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for _ in 0..<nameArray.count {
+                    
+                    CDOperation.deleteDate(session, routine: workoutRoutine, workout: nameArray[position], index: indexArray[position])
+                }
+            }
+
+            // Update TableViewCell Accessory Icon - Arrow
+            let cell = self.tableView.cellForRowAtIndexPath(self.indexPath) as! WeekTVC_TableViewCell
+            if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
+                
+                cell.accessoryView = tempAccessoryView
+            }
+            
+        default:
+            
+            // Completed
+            
+            // ***ADD***
+            
+            switch workoutRoutine {
+            case "Bulk":
+                
+                // Bulk
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for _ in 0..<nameArray.count {
+                    
+                    CDOperation.saveWorkoutCompleteDate(session, routine: workoutRoutine, workout: nameArray[position], index: indexArray[position], useDate: NSDate())
+                }
+
+            default:
+                
+                // Tone
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for _ in 0..<nameArray.count {
+                    
+                    CDOperation.saveWorkoutCompleteDate(session, routine: workoutRoutine, workout: nameArray[position], index: indexArray[position], useDate: NSDate())
+                }
+            }
+            
+            // Update TableViewCell Accessory Icon - Checkmark
+            let cell = self.tableView.cellForRowAtIndexPath(self.indexPath) as! WeekTVC_TableViewCell
+            if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "RED_White_CheckMark")) {
+                
+                cell.accessoryView = tempAccessoryView
+            }
+        }
+    }
+
+    func AddDeleteDatesFromOneWeek() {
+        
+        switch self.request {
+        case "Not Completed":
+            
+            // ***DELETE***
+            
+            switch workoutRoutine {
+            case "Bulk":
+                
+                // Bulk
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for i in 0..<nameArray.count {
+                    
+                    CDOperation.deleteDate(session, routine: workoutRoutine, workout: nameArray[i], index: indexArray[i])
+                }
+                
+            default:
+                
+                // Tone
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for i in 0..<nameArray.count {
+                    
+                    CDOperation.deleteDate(session, routine: workoutRoutine, workout: nameArray[i], index: indexArray[i])
+                }
+            }
+                        
+        default:
+            
+            // Completed
+            
+            // ***ADD***
+            
+            switch workoutRoutine {
+            case "Bulk":
+                
+                // Bulk
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for i in 0..<nameArray.count {
+                    
+                    CDOperation.saveWorkoutCompleteDate(session, routine: workoutRoutine, workout: nameArray[i], index: indexArray[i], useDate: NSDate())
+                }
+                
+            default:
+                
+                // Tone
+                let nameArray = CDOperation.loadWorkoutNameArray()[getIntValueforWeekString() - 1]
+                let indexArray = CDOperation.loadWorkoutIndexArray()[getIntValueforWeekString() - 1]
+                
+                for i in 0..<nameArray.count {
+                    
+                    CDOperation.saveWorkoutCompleteDate(session, routine: workoutRoutine, workout: nameArray[i], index: indexArray[i], useDate: NSDate())
+                }
+            }
+        }
+    }
+    
+    func findArrayPosition(indexPath: NSIndexPath) -> NSInteger {
+        
+        var position = NSInteger(0)
+        
+        for i in 0...indexPath.section {
+            
+            if (i == indexPath.section) {
+                
+                position = position + (indexPath.row + 1)
+            }
+            else {
+                
+                let totalRowsInSection = self.tableView.numberOfRowsInSection(i)
+                
+                position = position + totalRowsInSection
+            }
+        }
+        
+        return position - 1
     }
 
     // MARK: - Table view data source
@@ -102,11 +414,25 @@ class WeekTVC: UITableViewController {
             cell.detailLabel.hidden = false
         }
         
-        if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
-            
-            cell.accessoryView = tempAccessoryView
-        }
+        let workoutCompletedObjects = CDOperation.getWorkoutCompletedObjects(session, routine: workoutRoutine, workout: currentWeekWorkoutList[indexPath.section][indexPath.row] as! NSString, index: workoutIndexList[indexPath.section][indexPath.row] as! NSNumber)
         
+        if workoutCompletedObjects.count != 0 {
+            
+            // Workout completed so put a checkmark as the accessoryview icon
+            if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "RED_White_CheckMark")) {
+                
+                cell.accessoryView = tempAccessoryView
+            }
+        }
+        else {
+            
+            // Workout was NOT completed so put the arrow as the accessory view icon
+            if let tempAccessoryView:UIImageView = UIImageView (image: UIImage (named: "next_arrow")) {
+                
+                cell.accessoryView = tempAccessoryView
+            }
+        }
+
         switch daysOfWeekColorList[indexPath.section][indexPath.row] as! String {
         case "White":
             cell.dayOfWeekTextField.backgroundColor = UIColor .whiteColor()
@@ -198,6 +524,60 @@ class WeekTVC: UITableViewController {
         default:
             return originalString
             
+        }
+    }
+    
+    func getIntValueforWeekString() -> Int {
+        
+        switch workoutWeek {
+        case "Week 1":
+            
+            return 1
+          
+        case "Week 2":
+            
+            return 2
+            
+        case "Week 3":
+            
+            return 3
+            
+        case "Week 4":
+            
+            return 4
+            
+        case "Week 5":
+            
+            return 5
+            
+        case "Week 6":
+            
+            return 6
+            
+        case "Week 7":
+            
+            return 7
+            
+        case "Week 8":
+            
+            return 8
+            
+        case "Week 9":
+            
+            return 9
+            
+        case "Week 10":
+            
+            return 10
+            
+        case "Week 11":
+            
+            return 11
+
+        default:
+            
+            // Week 12
+            return 12
         }
     }
     

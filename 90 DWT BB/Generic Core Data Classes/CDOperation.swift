@@ -636,4 +636,610 @@ class CDOperation {
             }
         } catch { print(" ERROR executing a fetch request: \( error)") }
     }
+    
+    class func loadWorkoutNameArray() -> [[String]] {
+        
+        switch getCurrentRoutine() {
+        case "Bulk":
+            // BUILD
+            let build_Week1_WorkoutNameArray = ["B1: Chest+Tri",
+                                                "B1: Legs",
+                                                "B1: Back+Bi",
+                                                "B1: Shoulders",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout",
+                                                "Rest",
+                                                "B1: Chest+Tri",
+                                                "T1: Chest+Tri"]
+            
+            let build_Week2_WorkoutNameArray = ["B1: Legs",
+                                                "B1: Back+Bi",
+                                                "T1: Back+Bi",
+                                                "B1: Shoulders",
+                                                "B3: Ab Workout",
+                                                "Rest",
+                                                "B1: Chest+Tri",
+                                                "T1: Chest+Tri",
+                                                "B1: Legs",
+                                                "B1: Back+Bi",
+                                                "T1: Back+Bi"]
+            
+            let build_Week3_WorkoutNameArray = ["B1: Shoulders",
+                                                "B3: Ab Workout",
+                                                "Rest",
+                                                "B1: Chest+Tri",
+                                                "T1: Chest+Tri",
+                                                "B1: Legs",
+                                                "B1: Back+Bi",
+                                                "T1: Back+Bi",
+                                                "B1: Shoulders",
+                                                "B3: Ab Workout",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout"]
+            
+            let build_Week4_WorkoutNameArray = ["B2: Chest",
+                                                "B2: Legs",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders",
+                                                "Rest",
+                                                "B2: Chest"]
+            
+            let build_Week5_WorkoutNameArray = ["B2: Legs",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders",
+                                                "Rest",
+                                                "B2: Chest",
+                                                "B2: Legs"]
+            
+            let build_Week6_WorkoutNameArray = ["B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders",
+                                                "Rest",
+                                                "B2: Chest",
+                                                "B2: Legs",
+                                                "B2: Back"]
+            
+            let build_Week7_WorkoutNameArray = ["B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders",
+                                                "Rest",
+                                                "B2: Chest",
+                                                "B2: Legs",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout"]
+            
+            let build_Week8_WorkoutNameArray = ["B2: Shoulders",
+                                                "Rest",
+                                                "B2: Chest",
+                                                "B2: Legs",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders"]
+            
+            let build_Week9_WorkoutNameArray = ["Rest",
+                                                "B2: Chest",
+                                                "B2: Legs",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Ab Workout",
+                                                "B2: Shoulders",
+                                                "Rest"]
+            
+            let build_Week10_WorkoutNameArray = ["B1: Chest+Tri",
+                                                 "T1: Chest+Tri",
+                                                 "B2: Legs",
+                                                 "B1: Back+Bi",
+                                                 "T1: Back+Bi",
+                                                 "B3: Cardio",
+                                                 "B3: Complete Body",
+                                                 "B3: Ab Workout",
+                                                 "Rest",
+                                                 "B2: Arms",
+                                                 "B1: Shoulders"]
+            
+            let build_Week11_WorkoutNameArray = ["B2: Chest",
+                                                 "B1: Legs",
+                                                 "B3: Cardio",
+                                                 "B3: Complete Body",
+                                                 "B3: Ab Workout",
+                                                 "Rest",
+                                                 "B2: Back",
+                                                 "B2: Arms",
+                                                 "B3: Ab Workout",
+                                                 "B3: Cardio",
+                                                 "B3: Complete Body"]
+            
+            let build_Week12_WorkoutNameArray = ["B1: Chest+Tri",
+                                                 "T1: Chest+Tri",
+                                                 "B2: Legs",
+                                                 "B3: Cardio",
+                                                 "B3: Complete Body",
+                                                 "B3: Ab Workout",
+                                                 "Rest",
+                                                 "B1: Back+Bi",
+                                                 "T1: Back+Bi",
+                                                 "B2: Shoulders",
+                                                 "B3: Cardio",
+                                                 "B3: Complete Body",
+                                                 "B3: Ab Workout"]
+            
+            let build_WorkoutNameArray = [build_Week1_WorkoutNameArray,
+                                          build_Week2_WorkoutNameArray,
+                                          build_Week3_WorkoutNameArray,
+                                          build_Week4_WorkoutNameArray,
+                                          build_Week5_WorkoutNameArray,
+                                          build_Week6_WorkoutNameArray,
+                                          build_Week7_WorkoutNameArray,
+                                          build_Week8_WorkoutNameArray,
+                                          build_Week9_WorkoutNameArray,
+                                          build_Week10_WorkoutNameArray,
+                                          build_Week11_WorkoutNameArray,
+                                          build_Week12_WorkoutNameArray]
+            
+            return build_WorkoutNameArray
+            
+        default:
+            // TONE
+            let tone_Week1_WorkoutNameArray = ["B1: Chest+Tri",
+                                               "B1: Legs",
+                                               "B1: Back+Bi",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B1: Shoulders",
+                                               "Rest",
+                                               "B1: Chest+Tri",
+                                               "T1: Chest+Tri"]
+            
+            let tone_Week2_WorkoutNameArray = ["B1: Legs",
+                                               "B1: Back+Bi",
+                                               "T1: Back+Bi",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B1: Shoulders",
+                                               "Rest",
+                                               "B1: Chest+Tri",
+                                               "T1: Chest+Tri",
+                                               "B1: Legs"]
+            
+            let tone_Week3_WorkoutNameArray = ["B1: Back+Bi",
+                                               "T1: Back+Bi",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B1: Shoulders",
+                                               "Rest",
+                                               "B1: Chest+Tri",
+                                               "T1: Chest+Tri",
+                                               "B1: Legs",
+                                               "B1: Back+Bi",
+                                               "T1: Back+Bi"]
+            
+            let tone_Week4_WorkoutNameArray = ["B2: Chest",
+                                               "B2: Legs",
+                                               "B2: Arms",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B2: Back",
+                                               "B2: Shoulders",
+                                               "Rest"]
+            
+            let tone_Week5_WorkoutNameArray = ["B2: Chest",
+                                               "B2: Legs",
+                                               "B2: Arms",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B2: Back",
+                                               "B2: Shoulders",
+                                               "Rest"]
+            
+            let tone_Week6_WorkoutNameArray = ["B2: Chest",
+                                               "B2: Legs",
+                                               "B2: Arms",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B2: Back",
+                                               "B2: Shoulders",
+                                               "Rest"]
+            
+            let tone_Week7_WorkoutNameArray = ["B2: Chest",
+                                               "B2: Legs",
+                                               "B2: Arms",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B2: Back",
+                                               "B2: Shoulders",
+                                               "Rest"]
+            
+            let tone_Week8_WorkoutNameArray = ["B2: Chest",
+                                               "B2: Legs",
+                                               "B2: Arms",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B2: Back",
+                                               "B2: Shoulders",
+                                               "Rest"]
+            
+            let tone_Week9_WorkoutNameArray = ["B1: Chest+Tri",
+                                               "T1: Chest+Tri",
+                                               "B2: Legs",
+                                               "B1: Back+Bi",
+                                               "T1: Back+Bi",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout",
+                                               "B1: Shoulders",
+                                               "Rest",
+                                               "B3: Cardio",
+                                               "B3: Complete Body",
+                                               "B3: Ab Workout"]
+            
+            let tone_Week10_WorkoutNameArray = ["B2: Chest",
+                                                "B1: Legs",
+                                                "B2: Shoulders",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout",
+                                                "Rest"]
+            
+            let tone_Week11_WorkoutNameArray = ["B1: Chest+Tri",
+                                                "T1: Chest+Tri",
+                                                "B2: Legs",
+                                                "B1: Back+Bi",
+                                                "T1: Back+Bi",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout",
+                                                "B1: Shoulders",
+                                                "Rest",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout"]
+            
+            let tone_Week12_WorkoutNameArray = ["B2: Chest",
+                                                "B1: Legs",
+                                                "B2: Shoulders",
+                                                "B2: Back",
+                                                "B2: Arms",
+                                                "B3: Cardio",
+                                                "B3: Complete Body",
+                                                "B3: Ab Workout",
+                                                "Rest"]
+            
+            let tone_WorkoutNameArray = [tone_Week1_WorkoutNameArray,
+                                         tone_Week2_WorkoutNameArray,
+                                         tone_Week3_WorkoutNameArray,
+                                         tone_Week4_WorkoutNameArray,
+                                         tone_Week5_WorkoutNameArray,
+                                         tone_Week6_WorkoutNameArray,
+                                         tone_Week7_WorkoutNameArray,
+                                         tone_Week8_WorkoutNameArray,
+                                         tone_Week9_WorkoutNameArray,
+                                         tone_Week10_WorkoutNameArray,
+                                         tone_Week11_WorkoutNameArray,
+                                         tone_Week12_WorkoutNameArray]
+
+            return tone_WorkoutNameArray
+        }
+    }
+    
+    class func loadWorkoutIndexArray() -> [[Int]] {
+        
+        switch getCurrentRoutine() {
+        case "Bulk":
+            // BUILD
+            let build_Week1_WorkoutIndexArray = [1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 2,
+                                                 1]
+            
+            let build_Week2_WorkoutIndexArray = [2,
+                                                 2,
+                                                 1,
+                                                 2,
+                                                 2,
+                                                 2,
+                                                 3,
+                                                 2,
+                                                 3,
+                                                 3,
+                                                 2]
+            
+            let build_Week3_WorkoutIndexArray = [3,
+                                                 3,
+                                                 3,
+                                                 4,
+                                                 3,
+                                                 4,
+                                                 4,
+                                                 3,
+                                                 4,
+                                                 4,
+                                                 2,
+                                                 2,
+                                                 5]
+            
+            let build_Week4_WorkoutIndexArray = [1,
+                                                 1,
+                                                 1,
+                                                 1,
+                                                 6,
+                                                 1,
+                                                 4,
+                                                 2]
+            
+            let build_Week5_WorkoutIndexArray = [2,
+                                                 2,
+                                                 2,
+                                                 7,
+                                                 2,
+                                                 5,
+                                                 3,
+                                                 3]
+            
+            let build_Week6_WorkoutIndexArray = [3,
+                                                 3,
+                                                 8,
+                                                 3,
+                                                 6,
+                                                 4,
+                                                 4,
+                                                 4]
+            
+            let build_Week7_WorkoutIndexArray = [4,
+                                                 9,
+                                                 4,
+                                                 7,
+                                                 5,
+                                                 5,
+                                                 5,
+                                                 5,
+                                                 10]
+            
+            let build_Week8_WorkoutIndexArray = [5,
+                                                 8,
+                                                 6,
+                                                 6,
+                                                 6,
+                                                 6,
+                                                 11,
+                                                 6]
+            
+            let build_Week9_WorkoutIndexArray = [9,
+                                                 7,
+                                                 7,
+                                                 7,
+                                                 7,
+                                                 12,
+                                                 7,
+                                                 10]
+            
+            let build_Week10_WorkoutIndexArray = [5,
+                                                  4,
+                                                  8,
+                                                  5,
+                                                  4,
+                                                  3,
+                                                  3,
+                                                  13,
+                                                  11,
+                                                  8,
+                                                  5]
+            
+            let build_Week11_WorkoutIndexArray = [8,
+                                                  5,
+                                                  4,
+                                                  4,
+                                                  14,
+                                                  12,
+                                                  8,
+                                                  9,
+                                                  15,
+                                                  5,
+                                                  5]
+            
+            let build_Week12_WorkoutIndexArray = [6,
+                                                  5,
+                                                  9,
+                                                  6,
+                                                  6,
+                                                  16,
+                                                  13,
+                                                  6,
+                                                  5,
+                                                  8,
+                                                  7,
+                                                  7,
+                                                  17]
+            
+            let build_WorkoutIndexArray = [build_Week1_WorkoutIndexArray,
+                                           build_Week2_WorkoutIndexArray,
+                                           build_Week3_WorkoutIndexArray,
+                                           build_Week4_WorkoutIndexArray,
+                                           build_Week5_WorkoutIndexArray,
+                                           build_Week6_WorkoutIndexArray,
+                                           build_Week7_WorkoutIndexArray,
+                                           build_Week8_WorkoutIndexArray,
+                                           build_Week9_WorkoutIndexArray,
+                                           build_Week10_WorkoutIndexArray,
+                                           build_Week11_WorkoutIndexArray,
+                                           build_Week12_WorkoutIndexArray]
+            
+            return build_WorkoutIndexArray
+
+        default:
+            // TONE
+            let tone_Week1_WorkoutIndexArray = [1,
+                                                1,
+                                                1,
+                                                1,
+                                                1,
+                                                1,
+                                                1,
+                                                1,
+                                                2,
+                                                1]
+            
+            let tone_Week2_WorkoutIndexArray = [2,
+                                                2,
+                                                1,
+                                                2,
+                                                2,
+                                                2,
+                                                2,
+                                                2,
+                                                3,
+                                                2,
+                                                3]
+            
+            let tone_Week3_WorkoutIndexArray = [3,
+                                                2,
+                                                3,
+                                                3,
+                                                3,
+                                                3,
+                                                3,
+                                                4,
+                                                3,
+                                                4,
+                                                4,
+                                                3]
+            
+            let tone_Week4_WorkoutIndexArray = [1,
+                                                1,
+                                                1,
+                                                4,
+                                                4,
+                                                4,
+                                                1,
+                                                1,
+                                                4]
+            
+            let tone_Week5_WorkoutIndexArray = [2,
+                                                2,
+                                                2,
+                                                5,
+                                                5,
+                                                5,
+                                                2,
+                                                2,
+                                                5]
+            
+            let tone_Week6_WorkoutIndexArray = [3,
+                                                3,
+                                                3,
+                                                6,
+                                                6,
+                                                6,
+                                                3,
+                                                3,
+                                                6]
+            
+            let tone_Week7_WorkoutIndexArray = [4,
+                                                4,
+                                                4,
+                                                7,
+                                                7,
+                                                7,
+                                                4,
+                                                4,
+                                                7]
+            
+            let tone_Week8_WorkoutIndexArray = [5,
+                                                5,
+                                                5,
+                                                8,
+                                                8,
+                                                8,
+                                                5,
+                                                5,
+                                                8]
+            
+            let tone_Week9_WorkoutIndexArray = [5,
+                                                4,
+                                                6,
+                                                5,
+                                                4,
+                                                9,
+                                                9,
+                                                9,
+                                                4,
+                                                9,
+                                                10,
+                                                10,
+                                                10]
+            
+            let tone_Week10_WorkoutIndexArray = [6,
+                                                 5,
+                                                 6,
+                                                 6,
+                                                 6,
+                                                 11,
+                                                 11,
+                                                 11,
+                                                 10]
+            
+            let tone_Week11_WorkoutIndexArray = [6,
+                                                 5,
+                                                 7,
+                                                 6,
+                                                 5,
+                                                 12,
+                                                 12,
+                                                 12,
+                                                 5,
+                                                 11,
+                                                 13,
+                                                 13,
+                                                 13]
+            
+            let tone_Week12_WorkoutIndexArray = [7,
+                                                 6,
+                                                 7,
+                                                 7,
+                                                 7,
+                                                 14,
+                                                 14,
+                                                 14,
+                                                 12]
+            
+            let tone_WorkoutIndexArray = [tone_Week1_WorkoutIndexArray,
+                                          tone_Week2_WorkoutIndexArray,
+                                          tone_Week3_WorkoutIndexArray,
+                                          tone_Week4_WorkoutIndexArray,
+                                          tone_Week5_WorkoutIndexArray,
+                                          tone_Week6_WorkoutIndexArray,
+                                          tone_Week7_WorkoutIndexArray,
+                                          tone_Week8_WorkoutIndexArray,
+                                          tone_Week9_WorkoutIndexArray,
+                                          tone_Week10_WorkoutIndexArray,
+                                          tone_Week11_WorkoutIndexArray,
+                                          tone_Week12_WorkoutIndexArray]
+            
+            return tone_WorkoutIndexArray
+        }
+    }
 }

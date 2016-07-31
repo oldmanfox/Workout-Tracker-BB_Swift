@@ -174,6 +174,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                     cell.previousWeight4.text = "0.0"
                     cell.previousWeight5.text = "0.0"
                     cell.previousWeight6.text = "0.0"
+                    cell.previousNotes.text = "PREVIOUS NOTES"
                     
                     // Current Weight Fields and Notes
                     if let workoutObjects = CDOperation.getWeightTextForExercise(session, routine: workoutRoutine, workout: selectedWorkout, exercise: titleArray![0] as! String, index: workoutIndex)  as? [Workout] {
@@ -308,7 +309,18 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                         
                         for object in workoutObjects {
                             
-                            print("Round = \(object.round!) - Weight = \(object.weight!)")
+                            var tempWeight = ""
+                            
+                            if object.weight != nil {
+                                
+                                tempWeight = object.weight!
+                            }
+                            else {
+                                
+                                tempWeight = "0.0"
+                            }
+
+                            print("Round = \(object.round!) - Weight = \(tempWeight)")
                         }
                         
                         if workoutObjects.count != 0 {
