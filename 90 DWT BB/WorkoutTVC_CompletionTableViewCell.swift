@@ -67,7 +67,7 @@ class WorkoutTVC_CompletionTableViewCell: UITableViewCell {
             
             let object = workoutCompletedObjects.last
             let completedDate = NSDateFormatter .localizedStringFromDate((object?.date)!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
-//            getDate = [NSDateFormatter localizedStringFromDate:myDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle]
+
             // Cell
             self.backgroundColor = UIColor.darkGrayColor()
             

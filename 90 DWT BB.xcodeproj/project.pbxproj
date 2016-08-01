@@ -237,6 +237,7 @@
 		A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D201D43FA910045B06C /* UIKit.framework */; };
 		A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D221D43FAA80045B06C /* libc++.tbd */; };
 		A5DE7D251D43FBDD0045B06C /* ShinobiCharts in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D241D43FBDD0045B06C /* ShinobiCharts */; };
+		A5DE7D281D4F9FFC0045B06C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */; };
 		A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */; };
 		A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */; };
 		A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */; };
@@ -886,6 +887,7 @@
 		A5DE7D201D43FA910045B06C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5DE7D221D43FAA80045B06C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A5DE7D241D43FBDD0045B06C /* ShinobiCharts */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = ShinobiCharts; sourceTree = "<group>"; };
+		A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLock.swift; sourceTree = "<group>"; };
 		A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1627,6 +1629,7 @@
 				A5156F551D1B3256002588C0 /* MoPubSDK */,
 				A51571AC1D1C3613002588C0 /* In-App Purchases */,
 				A51571AB1D1C35F6002588C0 /* TableView Controllers */,
+				A5DE7D261D4F9FC00045B06C /* ViewControllers */,
 				A52813E51D1AFC9300F6FF57 /* 90 DWT BB.entitlements */,
 				A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */,
 				A52813B91D1AF9E000F6FF57 /* ViewController.swift */,
@@ -1871,6 +1874,14 @@
 			path = PrivateHeaders;
 			sourceTree = "<group>";
 		};
+		A5DE7D261D4F9FC00045B06C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A5F36DCE1D2C4E7300A5C621 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2111,6 +2122,7 @@
 				A51571391D1B3256002588C0 /* MPAnalyticsTracker.m in Sources */,
 				58D6D30E1D2AAD67009B6EF5 /* MigrationVC.swift in Sources */,
 				A51571141D1B3256002588C0 /* MPRetryingHTTPOperation.m in Sources */,
+				A5DE7D281D4F9FFC0045B06C /* NotesViewController.swift in Sources */,
 				A515717B1D1B3256002588C0 /* MPServerAdPositioning.m in Sources */,
 				A51571A51D1B3256002588C0 /* MPRewardedVideoConnection.m in Sources */,
 				A515712D1D1B3256002588C0 /* MRImageDownloader.m in Sources */,
@@ -2506,6 +2518,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2615,6 +2633,12 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,

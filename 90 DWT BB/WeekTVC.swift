@@ -55,12 +55,6 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         navigationItem.title = "Workout"
         
@@ -78,6 +72,27 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
         print("SHARED CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.context))")
         
         print("IMPORT CONTEXT - \(CDOperation.objectCountForEntity("Workout", context: CDHelper.shared.importContext))")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+
+        self.tableView.reloadData()
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
+    }
+    
+    func doNothing() {
+        
+        // Do nothing
     }
 
     override func didReceiveMemoryWarning() {
@@ -485,7 +500,17 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WeekTVC_TableViewCell {
+            
+            if cell.titleLabel.text == "Rest" || cell.titleLabel.text == "Cardio" || cell.titleLabel.text == "Ab Workout" {
+                
+                self.performSegueWithIdentifier("toNotes", sender: indexPath)
+            }
+            else {
+                
+                self.performSegueWithIdentifier("toWorkout", sender: indexPath)
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -497,6 +522,18 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
         if segue.identifier == "toWorkout" {
             
             let destinationVC = segue.destinationViewController as? WorkoutTVC
+            let selectedRow = tableView.indexPathForSelectedRow
+            
+            destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC?.workoutIndex = (workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
+            destinationVC!.workoutRoutine = workoutRoutine
+            destinationVC?.session = session
+        }
+        else {
+            // NotesViewController
+            
+            let destinationVC = segue.destinationViewController as? NotesViewController
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!

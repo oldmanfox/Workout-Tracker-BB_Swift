@@ -46,12 +46,6 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        // Update the database
-        //CDOperation.updateWorkoutEntityForFRC()
-        
-        // Force fetch when notified of significant data changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
         
         // Get the current session
         session = CDOperation.getCurrentSession()
@@ -73,17 +67,15 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+        
         self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         print("VIEWDIDAPPEAR")
-        //performFetch()
-
-//        // Trigger Deduplication
-//        CDDeduplicator.deDuplicateEntityWithName("Workout", uniqueAttributeName: "date", backgroundMoc: CDHelper.shared.importContext)
-//        
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,11 +83,17 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - DEALLOCATION
-    deinit {
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
     }
-
+    
+    func doNothing() {
+        
+        // Do nothing
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -212,11 +210,6 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
         default:
             sectionsArray = [[], []]
         }
-    }
-    
-    func doNothing() {
-        
-        // Do nothing
     }
     
     func longPressGRAction(sender: UILongPressGestureRecognizer) {

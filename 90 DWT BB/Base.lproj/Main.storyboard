@@ -109,7 +109,6 @@
                                     <outlet property="dayOfWeekTextField" destination="lrh-xf-qeh" id="uTH-LI-C8n"/>
                                     <outlet property="detailLabel" destination="yZN-Bc-W5f" id="NdP-tn-b08"/>
                                     <outlet property="titleLabel" destination="nIF-GV-qKq" id="pVI-Ii-GFj"/>
-                                    <segue destination="uxf-T1-en9" kind="show" identifier="toWorkout" id="kVM-5V-nCg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,6 +119,10 @@
                     </tableView>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="uxf-T1-en9" kind="show" identifier="toWorkout" id="k4z-xx-ULw"/>
+                        <segue destination="o32-gT-wM2" kind="show" identifier="toNotes" id="nAu-5h-oKW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olF-8w-5cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1074,7 +1077,7 @@
         <!--Rest-->
         <scene sceneID="tuZ-sO-LLm">
             <objects>
-                <viewController id="o32-gT-wM2" userLabel="Rest" customClass="NotesViewController" sceneMemberID="viewController">
+                <viewController id="o32-gT-wM2" userLabel="Rest" customClass="NotesViewController" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ly4-tO-hmR"/>
                         <viewControllerLayoutGuide type="bottom" id="Iuj-z6-ODA"/>
@@ -1085,11 +1088,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZM-xo-CP9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hideKeyboard:" destination="o32-gT-wM2" eventType="touchUpInside" id="o1M-Fp-X2K"/>
+                                    <action selector="hideKeyboard:" destination="o32-gT-wM2" eventType="touchUpInside" id="kDe-DM-w4q"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-hW-a4A">
@@ -1097,35 +1101,37 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-Ud-IT9">
                                         <rect key="frame" x="20" y="40" width="173" height="34"/>
-                                        <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="67v-eo-LI8"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="VSG-8H-YYf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="workoutCompletedDelete:" destination="o32-gT-wM2" eventType="touchUpInside" id="ok2-wV-vQ1"/>
+                                            <action selector="deleteDateButtonPressed:" destination="o32-gT-wM2" eventType="touchUpInside" id="PFb-Cl-3Tc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-rH-WgK">
                                         <rect key="frame" x="213" y="40" width="174" height="34"/>
-                                        <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.031372549020000001" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="EA1-c2-oYm"/>
                                             <constraint firstAttribute="height" constant="34" id="Wh7-1l-1uk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Today">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="workoutCompletedToday:" destination="o32-gT-wM2" eventType="touchUpInside" id="kdB-hB-Aq5"/>
+                                            <action selector="todayDateButtonPressed:" destination="o32-gT-wM2" eventType="touchUpInside" id="HNY-15-g5k"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWF-No-SwM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Completed: __/__/__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWF-No-SwM">
                                         <rect key="frame" x="20" y="8" width="560" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Kdl-yQ-1xH"/>
@@ -1136,17 +1142,18 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-yK-Bpf">
                                         <rect key="frame" x="407" y="40" width="173" height="34"/>
-                                        <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="y69-LU-UoL"/>
                                             <constraint firstAttribute="height" constant="34" id="yQV-b7-OaH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Previous">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="workoutCompletedPrevious:" destination="o32-gT-wM2" eventType="touchUpInside" id="kts-jc-DMd"/>
+                                            <action selector="previousDateButtonPressed:" destination="o32-gT-wM2" eventType="touchUpInside" id="aVH-xA-RAY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1172,24 +1179,24 @@
                                     <constraint firstAttribute="bottom" secondItem="sIh-yK-Bpf" secondAttribute="bottom" constant="8" id="vUo-v3-Nbr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-Vz-Fgz">
-                                <rect key="frame" x="20" y="72" width="49" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-Vz-Fgz">
+                                <rect key="frame" x="20" y="72" width="58" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="G3k-HB-aI4"/>
-                                    <constraint firstAttribute="width" constant="46" id="e4M-Hc-HfN"/>
+                                    <constraint firstAttribute="width" constant="58" id="e4M-Hc-HfN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.68627450980000004" green="0.34901960780000002" blue="0.031372549020000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njr-tG-kes">
-                                <rect key="frame" x="76" y="72" width="504" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="86" y="72" width="494" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VU7-yi-zCv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Round 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-q7-TwG">
                                 <rect key="frame" x="20" y="258" width="40" height="12"/>
@@ -1202,22 +1209,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRR-A8-sdd">
-                                <rect key="frame" x="76" y="220" width="504" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="86" y="220" width="494" height="50"/>
+                                <color key="backgroundColor" red="0.85882352941176465" green="0.8784313725490196" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ile-RN-0kQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xlZ-0V-3LE">
-                                <rect key="frame" x="20" y="220" width="49" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xlZ-0V-3LE">
+                                <rect key="frame" x="20" y="220" width="58" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Rey-BK-trD"/>
+                                    <constraint firstAttribute="width" constant="58" id="Rey-BK-trD"/>
                                     <constraint firstAttribute="height" constant="21" id="vK3-Cm-w5a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1227,9 +1234,9 @@
                             <constraint firstItem="SDk-hW-a4A" firstAttribute="top" secondItem="njr-tG-kes" secondAttribute="bottom" constant="8" id="3u9-MR-Si3"/>
                             <constraint firstItem="njr-tG-kes" firstAttribute="top" secondItem="ly4-tO-hmR" secondAttribute="bottom" constant="8" id="6UH-vq-z6z"/>
                             <constraint firstAttribute="trailing" secondItem="wRR-A8-sdd" secondAttribute="trailing" constant="20" id="7Lb-fp-oYD"/>
-                            <constraint firstItem="njr-tG-kes" firstAttribute="leading" secondItem="TN0-Vz-Fgz" secondAttribute="trailing" constant="10" id="Nc3-5p-JEl"/>
+                            <constraint firstItem="njr-tG-kes" firstAttribute="leading" secondItem="TN0-Vz-Fgz" secondAttribute="trailing" constant="8" id="Nc3-5p-JEl"/>
                             <constraint firstItem="TN0-Vz-Fgz" firstAttribute="leading" secondItem="Fnr-Qd-7Us" secondAttribute="leading" constant="20" id="PyZ-RB-yx5"/>
-                            <constraint firstItem="wRR-A8-sdd" firstAttribute="leading" secondItem="xlZ-0V-3LE" secondAttribute="trailing" constant="10" id="Uej-gH-lEo"/>
+                            <constraint firstItem="wRR-A8-sdd" firstAttribute="leading" secondItem="xlZ-0V-3LE" secondAttribute="trailing" constant="8" id="Uej-gH-lEo"/>
                             <constraint firstItem="TN0-Vz-Fgz" firstAttribute="top" secondItem="ly4-tO-hmR" secondAttribute="bottom" constant="8" id="bDH-UV-6De"/>
                             <constraint firstItem="r3e-q7-TwG" firstAttribute="top" secondItem="xlZ-0V-3LE" secondAttribute="bottom" constant="17" id="cay-iS-0sV"/>
                             <constraint firstItem="r3e-q7-TwG" firstAttribute="leading" secondItem="Fnr-Qd-7Us" secondAttribute="leading" constant="20" id="eZY-n6-2xd"/>
@@ -1244,23 +1251,23 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="UNt-bb-rji"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="mPa-hO-VE2">
                             <connections>
-                                <action selector="shareActionSheet:" destination="o32-gT-wM2" id="xbu-04-ivq"/>
+                                <action selector="shareButtonPressed:" destination="o32-gT-wM2" id="s3N-Iz-wiQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="currentNotes" destination="njr-tG-kes" id="iEY-6i-Bh4"/>
-                        <outlet property="currentNotesLabel" destination="TN0-Vz-Fgz" id="WkV-oj-XFd"/>
-                        <outlet property="dateLabel" destination="wWF-No-SwM" id="0G6-Sc-Uio"/>
-                        <outlet property="datePickerView" destination="SDk-hW-a4A" id="7O8-QI-oLX"/>
-                        <outlet property="deleteDateButton" destination="ILS-Ud-IT9" id="OF6-cr-kEK"/>
-                        <outlet property="previousDateButton" destination="sIh-yK-Bpf" id="dfW-a6-F6U"/>
-                        <outlet property="previousNotes" destination="wRR-A8-sdd" id="PCm-9Y-Q20"/>
-                        <outlet property="previousNotesLabel" destination="xlZ-0V-3LE" id="4q6-Mc-coC"/>
-                        <outlet property="round" destination="r3e-q7-TwG" id="Q8Z-Xd-ZRT"/>
-                        <outlet property="shareActionButton" destination="mPa-hO-VE2" id="SJT-6N-iZX"/>
-                        <outlet property="todayDateButton" destination="FrL-rH-WgK" id="WfB-iD-gP0"/>
+                        <outlet property="currentNotes" destination="njr-tG-kes" id="kjE-tY-dy9"/>
+                        <outlet property="currentNotesLabel" destination="TN0-Vz-Fgz" id="u48-82-ctk"/>
+                        <outlet property="dateLabel" destination="wWF-No-SwM" id="B7E-9m-JPx"/>
+                        <outlet property="datePickerView" destination="SDk-hW-a4A" id="g2n-0W-cTJ"/>
+                        <outlet property="deleteDateButton" destination="ILS-Ud-IT9" id="DDD-sZ-PTP"/>
+                        <outlet property="previousDateButton" destination="sIh-yK-Bpf" id="5Mp-wA-V5z"/>
+                        <outlet property="previousNotes" destination="wRR-A8-sdd" id="Man-TN-hpA"/>
+                        <outlet property="previousNotesLabel" destination="xlZ-0V-3LE" id="wc3-td-aNO"/>
+                        <outlet property="roundLabel" destination="r3e-q7-TwG" id="I4d-t0-AYI"/>
+                        <outlet property="shareActionButton" destination="mPa-hO-VE2" id="vUJ-pf-yJO"/>
+                        <outlet property="todayDateButton" destination="FrL-rH-WgK" id="gBP-cZ-Ued"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR6-P6-YjN" userLabel="First Responder" sceneMemberID="firstResponder"/>

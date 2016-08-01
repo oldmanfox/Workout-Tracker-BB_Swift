@@ -382,6 +382,156 @@ class CDOperation {
         return "0.0"
     }
     
+    class func getNotesTextForRound(session: String, routine: String, workout: String, round: NSNumber, index: NSNumber) -> String? {
+        
+        let request = NSFetchRequest( entityName: "Workout")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        // Weight with index and round
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@ AND round = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index,
+                                 round)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                
+                //print("workoutObjects.count = \(workoutObjects.count)")
+                
+                switch workoutObjects.count {
+                case 0:
+                    // No matches for this object.
+                    
+                    return ""
+                    
+                case 1:
+                    let matchedWorkoutInfo = workoutObjects[0]
+                    
+                    return matchedWorkoutInfo.notes
+                    
+                default:
+                    // More than one match
+                    // Sort by most recent date and pick the newest
+                    print("More than one match for object")
+                    let matchedWorkoutInfo = workoutObjects.last
+                    
+                    return matchedWorkoutInfo!.notes
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return ""
+    }
+    
+    class func getNoteObjects(session: NSString, routine: NSString, workout: NSString, index: NSNumber) -> [Workout] {
+        
+        let tempWorkoutCompleteArray = [Workout]()
+        
+        let request = NSFetchRequest( entityName: "Workout")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutNoteObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                
+                print("workoutNoteObjects.count = \(workoutNoteObjects.count)")
+                
+                return workoutNoteObjects
+            }
+            
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return tempWorkoutCompleteArray
+    }
+    
+    class func saveNoteWithPredicateNoExercise(session: String, routine: String, workout: String, index: NSNumber, note: String, round: NSNumber) {
+        
+        let request = NSFetchRequest( entityName: "Workout")
+        let sortRound = NSSortDescriptor( key: "round", ascending: true)
+        let sortExercise = NSSortDescriptor(key: "exercise", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortWorkout = NSSortDescriptor(key: "workout", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        request.sortDescriptors = [sortWorkout, sortExercise, sortRound]
+        
+        // Weight with index and round
+        let filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index = %@ AND round == %@",
+                                 session,
+                                 routine,
+                                 workout,
+                                 index,
+                                 round)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                
+                print("workoutObjects.count = \(workoutObjects.count)")
+                
+                switch workoutObjects.count {
+                case 0:
+                    // No matches for this object.
+                    // Insert a new record
+                    print("No Matches")
+                    let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("Workout", inManagedObjectContext: CDHelper.shared.context) as! Workout
+                    
+                    insertWorkoutInfo.session = session
+                    insertWorkoutInfo.routine = routine
+                    insertWorkoutInfo.workout = workout
+                    insertWorkoutInfo.round = round
+                    insertWorkoutInfo.index = index
+                    insertWorkoutInfo.notes = note
+                    insertWorkoutInfo.date = NSDate()
+                    
+                    CDHelper.saveSharedContext()
+                    
+                case 1:
+                    // Update existing record
+                    
+                    let updateWorkoutInfo = workoutObjects[0]
+                    
+                    updateWorkoutInfo.notes = note
+                    updateWorkoutInfo.date = NSDate()
+                    
+                    CDHelper.saveSharedContext()
+                    
+                default:
+                    // More than one match
+                    // Sort by most recent date and delete all but the newest
+                    print("More than one match for object")
+                    for index in 0..<workoutObjects.count {
+                        
+                        if (index == workoutObjects.count - 1) {
+                            // Get data from the newest existing record.  Usually the last record sorted by date.
+                            let updateWorkoutInfo = workoutObjects[index]
+                            
+                            updateWorkoutInfo.notes = note
+                            updateWorkoutInfo.date = NSDate()
+                        }
+                        else {
+                            // Delete duplicate records.
+                            CDHelper.shared.context.deleteObject(workoutObjects[index])
+                        }
+                    }
+                    
+                    CDHelper.saveSharedContext()
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+    }
+    
     class func getCurrentRoutine() -> String {
         
         let request = NSFetchRequest( entityName: "Routine")
