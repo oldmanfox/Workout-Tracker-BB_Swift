@@ -238,6 +238,9 @@
 		A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D221D43FAA80045B06C /* libc++.tbd */; };
 		A5DE7D251D43FBDD0045B06C /* ShinobiCharts in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D241D43FBDD0045B06C /* ShinobiCharts */; };
 		A5DE7D281D4F9FFC0045B06C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */; };
+		A5DE7D2A1D50F2040045B06C /* MeasurementsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7D291D50F2040045B06C /* MeasurementsTVC.swift */; };
+		A5DE7D2C1D50FC9D0045B06C /* MeasurementsRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7D2B1D50FC9D0045B06C /* MeasurementsRecordViewController.swift */; };
+		A5DE7D2E1D50FCD90045B06C /* MeasurementsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7D2D1D50FCD90045B06C /* MeasurementsReportViewController.swift */; };
 		A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */; };
 		A5F36E001D2C4F2100A5C621 /* AutoLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */; };
 		A5F36E011D2C4F2100A5C621 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */; };
@@ -888,6 +891,9 @@
 		A5DE7D221D43FAA80045B06C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A5DE7D241D43FBDD0045B06C /* ShinobiCharts */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = ShinobiCharts; sourceTree = "<group>"; };
 		A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		A5DE7D291D50F2040045B06C /* MeasurementsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsTVC.swift; sourceTree = "<group>"; };
+		A5DE7D2B1D50FC9D0045B06C /* MeasurementsRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsRecordViewController.swift; sourceTree = "<group>"; };
+		A5DE7D2D1D50FCD90045B06C /* MeasurementsReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsReportViewController.swift; sourceTree = "<group>"; };
 		A5F36DEF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5F36DF01D2C4F2100A5C621 /* AutoLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLock.swift; sourceTree = "<group>"; };
 		A5F36DF11D2C4F2100A5C621 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -913,8 +919,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
 				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
+				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
 				A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */,
 				A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */,
 				A5DE7D1F1D43FA850045B06C /* CoreText.framework in Frameworks */,
@@ -1577,6 +1583,7 @@
 				5867DC101D1F0F1F00363A4A /* MonthTVC.swift */,
 				5867DC121D1F0F4100363A4A /* WeekTVC.swift */,
 				5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */,
+				A5DE7D291D50F2040045B06C /* MeasurementsTVC.swift */,
 			);
 			name = "TableView Controllers";
 			sourceTree = "<group>";
@@ -1878,6 +1885,8 @@
 			isa = PBXGroup;
 			children = (
 				A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */,
+				A5DE7D2B1D50FC9D0045B06C /* MeasurementsRecordViewController.swift */,
+				A5DE7D2D1D50FCD90045B06C /* MeasurementsReportViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2073,6 +2082,7 @@
 				A5F36E021D2C4F2100A5C621 /* Photo.swift in Sources */,
 				A515711F1D1B3256002588C0 /* MPInstanceProvider.m in Sources */,
 				A515718E1D1B3256002588C0 /* MOPUBNativeVideoAdRendererSettings.m in Sources */,
+				A5DE7D2C1D50FC9D0045B06C /* MeasurementsRecordViewController.swift in Sources */,
 				A51571701D1B3256002588C0 /* MPCollectionViewAdPlacer.m in Sources */,
 				A5F36E121D2EE1AD00A5C621 /* CDImporter.swift in Sources */,
 				A51570F71D1B3256002588C0 /* MPBannerCustomEventAdapter.m in Sources */,
@@ -2128,6 +2138,7 @@
 				A515712D1D1B3256002588C0 /* MRImageDownloader.m in Sources */,
 				A5F36E051D2C4F2100A5C621 /* Email+CoreDataProperties.swift in Sources */,
 				A515712A1D1B3256002588C0 /* MRController.m in Sources */,
+				A5DE7D2E1D50FCD90045B06C /* MeasurementsReportViewController.swift in Sources */,
 				A51571181D1B3256002588C0 /* MPHTMLInterstitialCustomEvent.m in Sources */,
 				A515712F1D1B3256002588C0 /* MRPictureManager.m in Sources */,
 				A51571501D1B3256002588C0 /* MPVASTModel.m in Sources */,
@@ -2172,6 +2183,7 @@
 				A515715B1D1B3256002588C0 /* MPInterstitialAdController.m in Sources */,
 				A515716A1D1B3256002588C0 /* MPNativeView.m in Sources */,
 				A51571A61D1B3256002588C0 /* MPRewardedVideo.m in Sources */,
+				A5DE7D2A1D50F2040045B06C /* MeasurementsTVC.swift in Sources */,
 				A51571461D1B3256002588C0 /* MPVASTAd.m in Sources */,
 				A51571611D1B3256002588C0 /* MPMoPubNativeAdAdapter.m in Sources */,
 				A51571511D1B3256002588C0 /* MPVASTResource.m in Sources */,
@@ -2524,6 +2536,18 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2645,6 +2669,18 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

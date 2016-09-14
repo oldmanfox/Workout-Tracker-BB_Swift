@@ -328,7 +328,9 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
             mailcomposer.setSubject("90 DWT BB Workout Data")
             mailcomposer.addAttachmentData(csvData!, mimeType: "text/csv", fileName: workoutName)
             
-            presentViewController(mailcomposer, animated: true, completion: nil)
+            presentViewController(mailcomposer, animated: true, completion: {
+                UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+            })
         }
     }
 

@@ -787,6 +787,196 @@ class CDOperation {
         } catch { print(" ERROR executing a fetch request: \( error)") }
     }
     
+    class func getMeasurementObjects(session: NSString, month: NSString) -> [NSManagedObject] {
+        
+        let request = NSFetchRequest( entityName: "Measurement")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND month == %@",
+                                 session,
+                                 month)
+        
+        request.predicate = filter
+        
+        do {
+            if let measurementObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Measurement] {
+                
+                print("measurementObjects.count = \(measurementObjects.count)")
+                
+                return measurementObjects
+                
+            }
+            
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        return []
+    }
+    
+    class func saveMeasurements(session: String, month: String, weight: String, chest: String, waist: String, hips: String, leftArm: String, rightArm: String, leftThigh: String, rightThigh: String) {
+        
+        let request = NSFetchRequest( entityName: "Measurement")
+        let sortDate = NSSortDescriptor( key: "date", ascending: true)
+        request.sortDescriptors = [sortDate]
+        
+        let filter = NSPredicate(format: "session == %@ AND month == %@",
+                                 session,
+                                 month)
+        
+        request.predicate = filter
+        
+        do {
+            if let measurementObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Measurement] {
+                
+                print("measurementObjects.count = \(measurementObjects.count)")
+                
+                switch measurementObjects.count {
+                case 0:
+                    // No matches for this object.
+                    // Insert a new record
+                    print("No Matches")
+                    let insertWorkoutInfo = NSEntityDescription.insertNewObjectForEntityForName("Measurement", inManagedObjectContext: CDHelper.shared.context) as! Measurement
+                    
+                    insertWorkoutInfo.session = session
+                    insertWorkoutInfo.month = month
+                    insertWorkoutInfo.date = NSDate()
+                    
+                    if weight != "" {
+                        insertWorkoutInfo.weight = weight
+                    }
+                    
+                    if chest != "" {
+                        insertWorkoutInfo.chest = chest
+                    }
+                    
+                    if waist != "" {
+                        insertWorkoutInfo.waist = waist
+                    }
+                    
+                    if hips != "" {
+                        insertWorkoutInfo.hips = hips
+                    }
+                    
+                    if leftArm != "" {
+                        insertWorkoutInfo.leftArm = leftArm
+                    }
+                    
+                    if rightArm != "" {
+                        insertWorkoutInfo.rightArm = rightArm
+                    }
+                    
+                    if leftThigh != "" {
+                        insertWorkoutInfo.leftThigh = leftThigh
+                    }
+                    
+                    if rightThigh != "" {
+                        insertWorkoutInfo.rightThigh = rightThigh
+                    }
+                    
+                    CDHelper.saveSharedContext()
+                    
+                case 1:
+                    // Update existing record
+                    
+                    let updateWorkoutInfo = measurementObjects[0]
+                    
+                    updateWorkoutInfo.session = session
+                    updateWorkoutInfo.month = month
+                    updateWorkoutInfo.date = NSDate()
+                    
+                    if weight != "" {
+                        updateWorkoutInfo.weight = weight
+                    }
+                    
+                    if chest != "" {
+                        updateWorkoutInfo.chest = chest
+                    }
+                    
+                    if waist != "" {
+                        updateWorkoutInfo.waist = waist
+                    }
+                    
+                    if hips != "" {
+                        updateWorkoutInfo.hips = hips
+                    }
+                    
+                    if leftArm != "" {
+                        updateWorkoutInfo.leftArm = leftArm
+                    }
+                    
+                    if rightArm != "" {
+                        updateWorkoutInfo.rightArm = rightArm
+                    }
+                    
+                    if leftThigh != "" {
+                        updateWorkoutInfo.leftThigh = leftThigh
+                    }
+                    
+                    if rightThigh != "" {
+                        updateWorkoutInfo.rightThigh = rightThigh
+                    }
+                    
+                    CDHelper.saveSharedContext()
+                    
+                default:
+                    // More than one match
+                    // Sort by most recent date and delete all but the newest
+                    print("More than one match for object")
+                    for index in 0..<measurementObjects.count {
+                        
+                        if (index == measurementObjects.count - 1) {
+                            // Get data from the newest existing record.  Usually the last record sorted by date.
+                            let updateWorkoutInfo = measurementObjects[index]
+                            
+                            updateWorkoutInfo.session = session
+                            updateWorkoutInfo.month = month
+                            updateWorkoutInfo.date = NSDate()
+                            
+                            if weight != "" {
+                                updateWorkoutInfo.weight = weight
+                            }
+                            
+                            if chest != "" {
+                                updateWorkoutInfo.chest = chest
+                            }
+                            
+                            if waist != "" {
+                                updateWorkoutInfo.waist = waist
+                            }
+                            
+                            if hips != "" {
+                                updateWorkoutInfo.hips = hips
+                            }
+                            
+                            if leftArm != "" {
+                                updateWorkoutInfo.leftArm = leftArm
+                            }
+                            
+                            if rightArm != "" {
+                                updateWorkoutInfo.rightArm = rightArm
+                            }
+                            
+                            if leftThigh != "" {
+                                updateWorkoutInfo.leftThigh = leftThigh
+                            }
+                            
+                            if rightThigh != "" {
+                                updateWorkoutInfo.rightThigh = rightThigh
+                            }
+                        }
+                        else {
+                            // Delete duplicate records.
+                            CDHelper.shared.context.deleteObject(measurementObjects[index])
+                        }
+                    }
+                    
+                    CDHelper.saveSharedContext()
+                }
+            }
+            
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+    }
+
     class func loadWorkoutNameArray() -> [[String]] {
         
         switch getCurrentRoutine() {
