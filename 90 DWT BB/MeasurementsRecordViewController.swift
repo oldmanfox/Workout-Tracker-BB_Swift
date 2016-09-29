@@ -194,7 +194,6 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
         }
         
         presentViewController(alertController, animated: true, completion: nil)
-
     }
     
     func emailResults() {
@@ -267,6 +266,7 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
                 // Send email
                 
                 let csvData = writeString.dataUsingEncoding(NSASCIIStringEncoding)
+                let subject = NSString .localizedStringWithFormat("90 DWT BB %@ Measurements - Session %@", self.navigationItem.title!, session)
                 let fileName = NSString .localizedStringWithFormat("90 DWT BB %@ Measurements - Session %@.csv", self.navigationItem.title!, session)
                 var emailAddress = [""]
                 
@@ -295,7 +295,7 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
                 } catch { print(" ERROR executing a fetch request: \( error)") }
                 
                 mailcomposer.setToRecipients(emailAddress)
-                mailcomposer.setSubject(fileName as String)
+                mailcomposer.setSubject(subject as String)
                 mailcomposer.addAttachmentData(csvData!, mimeType: "text/csv", fileName: fileName as String)
                 
                 presentViewController(mailcomposer, animated: true, completion: {
@@ -313,6 +313,7 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
     @IBAction func saveAction(sender: UIButton) {
         
         saveMeasurements()
+        self.hideKeyboard(sender)
     }
     
     func saveMeasurements() {

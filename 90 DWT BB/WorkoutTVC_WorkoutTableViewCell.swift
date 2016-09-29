@@ -14,6 +14,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
     var session = ""
     var workoutRoutine = ""
     var selectedWorkout = ""
+    var workoutWeek = ""
     var nonUpperCaseExerciseName = ""
     var workoutIndex = 0
         
@@ -68,7 +69,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 0, reps: self.repNumberLabel1.text!)
         }
         else {
             
@@ -83,7 +84,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 1, reps: self.repNumberLabel2.text!)
         }
         else {
             
@@ -98,7 +99,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 2, reps: self.repNumberLabel3.text!)
         }
         else {
             
@@ -113,7 +114,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 3, reps: self.repNumberLabel4.text!)
         }
         else {
             
@@ -128,7 +129,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 4, reps: self.repNumberLabel5.text!)
         }
         else {
             
@@ -143,7 +144,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5)
+            CDOperation.saveWeightWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , weight: sender.text!, round: 5, reps: self.repNumberLabel6.text!)
         }
         else {
             
@@ -158,7 +159,7 @@ class WorkoutTVC_WorkoutTableViewCell: UITableViewCell, UITextFieldDelegate {
             
             print("String is: \(sender.text!)")
             
-            CDOperation.saveNoteWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, exercise: nonUpperCaseExerciseName, index: workoutIndex , note: sender.text!, round: 5)
+            CDOperation.saveNoteWithPredicate(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, exercise: nonUpperCaseExerciseName, index: workoutIndex , note: sender.text!, round: 5)
         }
         else {
             

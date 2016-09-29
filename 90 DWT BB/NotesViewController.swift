@@ -17,6 +17,7 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
     var selectedWorkout = ""
     var workoutIndex = 0
     var originalNoteText = ""
+    var workoutWeek = ""
 
     @IBOutlet weak var currentNotes: UITextView!
     @IBOutlet weak var previousNotes: UITextView!
@@ -87,7 +88,7 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         if currentNotes.text != "" && currentNotes.text != originalNoteText {
             
-            CDOperation.saveNoteWithPredicateNoExercise(session, routine: workoutRoutine, workout: selectedWorkout, index: workoutIndex, note: currentNotes.text, round: 1)
+            CDOperation.saveNoteWithPredicateNoExercise(session, routine: workoutRoutine, workout: selectedWorkout, week: workoutWeek, index: workoutIndex, note: currentNotes.text, round: 1)
         }
     }
     

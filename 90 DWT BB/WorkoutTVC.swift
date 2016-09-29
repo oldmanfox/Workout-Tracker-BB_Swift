@@ -14,11 +14,11 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
     var session = ""
     var workoutRoutine = ""
     var selectedWorkout = ""
+    var workoutWeek = ""
     var workoutIndex = 0
     
     var selectedCellIdentifier = ""
     var workoutCompleteCell = WorkoutTVC_CompletionTableViewCell()
-    
     
     var exerciseNameArray = [[], []]
     var exerciseRepsArray = [[], []]
@@ -102,6 +102,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
                     cell.selectedWorkout = selectedWorkout // B1: Chest+Tri etc...
                     cell.workoutIndex = workoutIndex // Index of the workout in the program
                     cell.session = session
+                    cell.workoutWeek = workoutWeek
 
                     if let repNumbers = workoutObject[1] as? [String] {
                         

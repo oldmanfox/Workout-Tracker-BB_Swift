@@ -119,6 +119,7 @@ class MeasurementsTVC: UITableViewController {
             let selectedRow = tableView.indexPathForSelectedRow
             
             destinationVC?.navigationItem.title = cellTitles[(selectedRow?.section)!][(selectedRow?.row)!]
+            destinationVC?.session = self.session
         }
     }
 

@@ -47,14 +47,6 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
         
         super.viewDidLoad()
         
-        // Get the current session
-        session = CDOperation.getCurrentSession()
-        
-        // Get the current routine
-        navigationItem.title = CDOperation.getCurrentRoutine()
-        
-        findWeekList()
-        
         // Add a long press gesture recognizer
         self.longPGR = UILongPressGestureRecognizer(target: self, action: #selector(MonthTVC.longPressGRAction(_:)))
         self.longPGR.minimumPressDuration = 1.0
@@ -66,6 +58,14 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Get the current session
+        session = CDOperation.getCurrentSession()
+        
+        // Get the current routine
+        navigationItem.title = CDOperation.getCurrentRoutine()
+        
+        findWeekList()
         
         // Force fetch when notified of significant data changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)

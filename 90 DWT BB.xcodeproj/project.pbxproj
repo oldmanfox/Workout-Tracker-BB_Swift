@@ -219,7 +219,6 @@
 		A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51571B31D1C3B8D002588C0 /* StoreTVC.swift */; };
 		A52813B81D1AF9E000F6FF57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */; };
 		A52813BA1D1AF9E000F6FF57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813B91D1AF9E000F6FF57 /* ViewController.swift */; };
-		A52813BD1D1AF9E000F6FF57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52813BB1D1AF9E000F6FF57 /* Main.storyboard */; };
 		A52813BF1D1AF9E000F6FF57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */; };
 		A52813C21D1AF9E000F6FF57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */; };
 		A52813CD1D1AF9E000F6FF57 /* _0_DWT_BBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52813CC1D1AF9E000F6FF57 /* _0_DWT_BBTests.swift */; };
@@ -228,7 +227,16 @@
 		A52813E91D1AFCD300F6FF57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813E81D1AFCD300F6FF57 /* StoreKit.framework */; };
 		A52813EB1D1AFD9100F6FF57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52813EA1D1AFD9100F6FF57 /* CoreData.framework */; };
 		A52813F01D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52813EC1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodeld */; };
+		A5685A491D9312A4008297C9 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5685A481D9312A4008297C9 /* SettingsTVC.swift */; };
+		A5685A4E1D933E2B008297C9 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5685A4D1D933E2B008297C9 /* EmailViewController.swift */; };
+		A5685A501D933E46008297C9 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5685A4F1D933E46008297C9 /* WebsiteViewController.swift */; };
+		A57431C11D8B507400D2893F /* PhotoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C01D8B507400D2893F /* PhotoTVC.swift */; };
+		A57431C31D8C509E00D2893F /* TakePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C21D8C509E00D2893F /* TakePhotosViewController.swift */; };
+		A57431C51D8C5CCB00D2893F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C41D8C5CCB00D2893F /* PhotoCollectionViewCell.swift */; };
+		A57431C71D90863000D2893F /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C61D90863000D2893F /* ViewPhotosViewController.swift */; };
+		A57431C91D9190C500D2893F /* PhotoCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C81D9190C500D2893F /* PhotoCollectionHeaderView.swift */; };
 		A5A2D9711D3991F9009A363E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */; };
+		A5C84C131D899AD0008CB5BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C84C111D899AD0008CB5BB /* Main.storyboard */; };
 		A5DE7C581D3FD33F0045B06C /* ExerciseChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */; };
 		A5DE7D191D43FA5F0045B06C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D181D43FA5F0045B06C /* QuartzCore.framework */; };
 		A5DE7D1B1D43FA710045B06C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DE7D1A1D43FA710045B06C /* CoreGraphics.framework */; };
@@ -684,7 +692,6 @@
 		A52813B41D1AF9E000F6FF57 /* 90 DWT BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "90 DWT BB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52813B91D1AF9E000F6FF57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A52813BC1D1AF9E000F6FF57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52813C11D1AF9E000F6FF57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52813C31D1AF9E000F6FF57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -701,7 +708,16 @@
 		A52813ED1D1AFEEC00F6FF57 /* _0_DWT_BB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "_0_DWT_BB 2.xcdatamodel"; sourceTree = "<group>"; };
 		A52813EE1D1AFEEC00F6FF57 /* _0_DWT_BB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB.xcdatamodel; sourceTree = "<group>"; };
 		A52813EF1D1AFEEC00F6FF57 /* _0_DWT_BB_v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _0_DWT_BB_v3.xcdatamodel; sourceTree = "<group>"; };
+		A5685A481D9312A4008297C9 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
+		A5685A4D1D933E2B008297C9 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		A5685A4F1D933E46008297C9 /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		A57431C01D8B507400D2893F /* PhotoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTVC.swift; sourceTree = "<group>"; };
+		A57431C21D8C509E00D2893F /* TakePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotosViewController.swift; sourceTree = "<group>"; };
+		A57431C41D8C5CCB00D2893F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A57431C61D90863000D2893F /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
+		A57431C81D9190C500D2893F /* PhotoCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionHeaderView.swift; sourceTree = "<group>"; };
 		A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		A5C84C121D899AD0008CB5BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewController.swift; sourceTree = "<group>"; };
 		A5DE7C611D3FDC950045B06C /* LineSeriesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeriesDrawer.h; sourceTree = "<group>"; };
 		A5DE7C621D3FDC950045B06C /* SChart+Deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SChart+Deprecated.h"; sourceTree = "<group>"; };
@@ -919,8 +935,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				5867DC0D1D1DCAC800363A4A /* MMAdSDK.framework in Frameworks */,
+				5867DC0C1D1DCAC100363A4A /* GoogleMobileAds.framework in Frameworks */,
 				A5DE7D231D43FAA80045B06C /* libc++.tbd in Frameworks */,
 				A5DE7D211D43FA910045B06C /* UIKit.framework in Frameworks */,
 				A5DE7D1F1D43FA850045B06C /* CoreText.framework in Frameworks */,
@@ -957,6 +973,8 @@
 				5867DC181D20499A00363A4A /* WeekTVC_TableViewCell.swift */,
 				58333B1B1D282FA7003ED1B6 /* WorkoutTVC_WorkoutTableViewCell.swift */,
 				58333B1D1D282FD1003ED1B6 /* WorkoutTVC_CompletionTableViewCell.swift */,
+				A57431C41D8C5CCB00D2893F /* PhotoCollectionViewCell.swift */,
+				A57431C81D9190C500D2893F /* PhotoCollectionHeaderView.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1584,6 +1602,8 @@
 				5867DC121D1F0F4100363A4A /* WeekTVC.swift */,
 				5867DC141D1F0F5600363A4A /* WorkoutTVC.swift */,
 				A5DE7D291D50F2040045B06C /* MeasurementsTVC.swift */,
+				A57431C01D8B507400D2893F /* PhotoTVC.swift */,
+				A5685A481D9312A4008297C9 /* SettingsTVC.swift */,
 			);
 			name = "TableView Controllers";
 			sourceTree = "<group>";
@@ -1640,7 +1660,7 @@
 				A52813E51D1AFC9300F6FF57 /* 90 DWT BB.entitlements */,
 				A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */,
 				A52813B91D1AF9E000F6FF57 /* ViewController.swift */,
-				A52813BB1D1AF9E000F6FF57 /* Main.storyboard */,
+				A5C84C111D899AD0008CB5BB /* Main.storyboard */,
 				A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */,
 				A52813BE1D1AF9E000F6FF57 /* Assets.xcassets */,
 				A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */,
@@ -1666,6 +1686,33 @@
 				A52813D91D1AF9E000F6FF57 /* Info.plist */,
 			);
 			path = "90 DWT BBUITests";
+			sourceTree = "<group>";
+		};
+		A5685A4A1D933D86008297C9 /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				A5DE7D2B1D50FC9D0045B06C /* MeasurementsRecordViewController.swift */,
+				A5DE7D2D1D50FCD90045B06C /* MeasurementsReportViewController.swift */,
+			);
+			name = Measurements;
+			sourceTree = "<group>";
+		};
+		A5685A4B1D933D95008297C9 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A57431C21D8C509E00D2893F /* TakePhotosViewController.swift */,
+				A57431C61D90863000D2893F /* ViewPhotosViewController.swift */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
+		A5685A4C1D933DD2008297C9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A5685A4D1D933E2B008297C9 /* EmailViewController.swift */,
+				A5685A4F1D933E46008297C9 /* WebsiteViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		A5DE7C561D3FD2ED0045B06C /* ShinobiControls */ = {
@@ -1885,8 +1932,9 @@
 			isa = PBXGroup;
 			children = (
 				A5DE7D271D4F9FFC0045B06C /* NotesViewController.swift */,
-				A5DE7D2B1D50FC9D0045B06C /* MeasurementsRecordViewController.swift */,
-				A5DE7D2D1D50FCD90045B06C /* MeasurementsReportViewController.swift */,
+				A5685A4A1D933D86008297C9 /* Measurements */,
+				A5685A4B1D933D95008297C9 /* Photos */,
+				A5685A4C1D933DD2008297C9 /* Settings */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2032,6 +2080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51571961D1B3256002588C0 /* MPDAAIcon@2x.png in Resources */,
+				A5C84C131D899AD0008CB5BB /* Main.storyboard in Resources */,
 				A51571951D1B3256002588C0 /* MPDAAIcon.png in Resources */,
 				A51570FE1D1B3256002588C0 /* MPAdBrowserController.xib in Resources */,
 				A515719C1D1B3256002588C0 /* MPPlayBtn@2x.png in Resources */,
@@ -2050,7 +2099,6 @@
 				A52813BF1D1AF9E000F6FF57 /* Assets.xcassets in Resources */,
 				A51571941D1B3256002588C0 /* MPCloseButtonX@3x.png in Resources */,
 				A515719E1D1B3256002588C0 /* MPUnmutedBtn.png in Resources */,
-				A52813BD1D1AF9E000F6FF57 /* Main.storyboard in Resources */,
 				A515719A1D1B3256002588C0 /* MPMutedBtn@3x.png in Resources */,
 				A51571911D1B3256002588C0 /* MPCloseBtn@3x.png in Resources */,
 				A51571991D1B3256002588C0 /* MPMutedBtn@2x.png in Resources */,
@@ -2106,6 +2154,7 @@
 				A515710F1D1B3256002588C0 /* MPLogEvent.m in Sources */,
 				A51571681D1B3256002588C0 /* MPNativePositionResponseDeserializer.m in Sources */,
 				A51571A41D1B3256002588C0 /* MPRewardedVideoAdManager.m in Sources */,
+				A57431C91D9190C500D2893F /* PhotoCollectionHeaderView.swift in Sources */,
 				A5F36E0B1D2C4F2100A5C621 /* Routine+CoreDataProperties.swift in Sources */,
 				A515715D1D1B3256002588C0 /* MPAdPlacerInvocation.m in Sources */,
 				A51571411D1B3256002588C0 /* MPReachability.m in Sources */,
@@ -2116,6 +2165,7 @@
 				A51571081D1B3256002588C0 /* MPLastResortDelegate.m in Sources */,
 				A51571B41D1C3B8D002588C0 /* StoreTVC.swift in Sources */,
 				A51570FF1D1B3256002588C0 /* MPAdConfiguration.m in Sources */,
+				A5685A491D9312A4008297C9 /* SettingsTVC.swift in Sources */,
 				A51571201D1B3256002588C0 /* MPVASTTracking.m in Sources */,
 				A51570F61D1B3256002588C0 /* MPBannerAdManager.m in Sources */,
 				A515717F1D1B3256002588C0 /* MPStreamAdPlacer.m in Sources */,
@@ -2132,6 +2182,7 @@
 				A51571391D1B3256002588C0 /* MPAnalyticsTracker.m in Sources */,
 				58D6D30E1D2AAD67009B6EF5 /* MigrationVC.swift in Sources */,
 				A51571141D1B3256002588C0 /* MPRetryingHTTPOperation.m in Sources */,
+				A57431C51D8C5CCB00D2893F /* PhotoCollectionViewCell.swift in Sources */,
 				A5DE7D281D4F9FFC0045B06C /* NotesViewController.swift in Sources */,
 				A515717B1D1B3256002588C0 /* MPServerAdPositioning.m in Sources */,
 				A51571A51D1B3256002588C0 /* MPRewardedVideoConnection.m in Sources */,
@@ -2180,6 +2231,7 @@
 				A51571091D1B3256002588C0 /* MPProgressOverlayView.m in Sources */,
 				A515716B1D1B3256002588C0 /* MPStaticNativeAdImpressionTimer.m in Sources */,
 				A5F36E101D2EE17A00A5C621 /* CDHelper.swift in Sources */,
+				A57431C71D90863000D2893F /* ViewPhotosViewController.swift in Sources */,
 				A515715B1D1B3256002588C0 /* MPInterstitialAdController.m in Sources */,
 				A515716A1D1B3256002588C0 /* MPNativeView.m in Sources */,
 				A51571A61D1B3256002588C0 /* MPRewardedVideo.m in Sources */,
@@ -2198,6 +2250,7 @@
 				A515712C1D1B3256002588C0 /* MRExpandModalViewController.m in Sources */,
 				A515717C1D1B3256002588C0 /* MPStaticNativeAdRenderer.m in Sources */,
 				A51571361D1B3256002588C0 /* UIColor+MPAdditions.m in Sources */,
+				A5685A4E1D933E2B008297C9 /* EmailViewController.swift in Sources */,
 				A51571651D1B3256002588C0 /* MPNativeAdSourceQueue.m in Sources */,
 				A51571671D1B3256002588C0 /* MPNativeCache.m in Sources */,
 				5867DC151D1F0F5600363A4A /* WorkoutTVC.swift in Sources */,
@@ -2217,6 +2270,7 @@
 				A51571771D1B3256002588C0 /* MPNativeAdRequest.m in Sources */,
 				A51571641D1B3256002588C0 /* MPNativeAdRendererImageHandler.m in Sources */,
 				A51571541D1B3256002588C0 /* MPVASTTrackingEvent.m in Sources */,
+				A57431C31D8C509E00D2893F /* TakePhotosViewController.swift in Sources */,
 				A515716C1D1B3256002588C0 /* MPTableViewAdPlacerCell.m in Sources */,
 				A51571721D1B3256002588C0 /* MPNativeAdConstants.m in Sources */,
 				A515717A1D1B3256002588C0 /* MPNativeCustomEvent.m in Sources */,
@@ -2227,6 +2281,7 @@
 				A51571421D1B3256002588C0 /* MPSessionTracker.m in Sources */,
 				A51570F21D1B3256002588C0 /* MPMillennialBannerCustomEvent.m in Sources */,
 				A51571621D1B3256002588C0 /* MPMoPubNativeCustomEvent.m in Sources */,
+				A5685A501D933E46008297C9 /* WebsiteViewController.swift in Sources */,
 				A51571271D1B3256002588C0 /* MRCalendarManager.m in Sources */,
 				A51571761D1B3256002588C0 /* MPNativeAdRenderingImageLoader.m in Sources */,
 				A515711E1D1B3256002588C0 /* MPCoreInstanceProvider.m in Sources */,
@@ -2257,6 +2312,7 @@
 				A5F36E091D2C4F2100A5C621 /* Workout+CoreDataProperties.swift in Sources */,
 				58D6D30B1D2AAD67009B6EF5 /* CDPickerTextField.swift in Sources */,
 				A51571121D1B3256002588C0 /* MPNetworkManager.m in Sources */,
+				A57431C11D8B507400D2893F /* PhotoTVC.swift in Sources */,
 				A5F36E061D2C4F2100A5C621 /* Email.swift in Sources */,
 				A51570F11D1B3256002588C0 /* MPiAdInterstitialCustomEvent.m in Sources */,
 				A5F36DFF1D2C4F2100A5C621 /* AutoLock+CoreDataProperties.swift in Sources */,
@@ -2328,20 +2384,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A52813BB1D1AF9E000F6FF57 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A52813BC1D1AF9E000F6FF57 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A52813C11D1AF9E000F6FF57 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5C84C111D899AD0008CB5BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5C84C121D899AD0008CB5BB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2548,6 +2604,60 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2681,6 +2791,60 @@
 					"$(PROJECT_DIR)/90",
 					DWT,
 					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
+					"$(PROJECT_DIR)/90",
+					DWT,
+					BB/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				INFOPLIST_FILE = "90 DWT BB/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

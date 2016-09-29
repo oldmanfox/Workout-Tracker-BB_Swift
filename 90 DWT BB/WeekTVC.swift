@@ -524,11 +524,12 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
             let destinationVC = segue.destinationViewController as? WorkoutTVC
             let selectedRow = tableView.indexPathForSelectedRow
             
-            destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
-            destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
-            destinationVC?.workoutIndex = (workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
-            destinationVC!.workoutRoutine = workoutRoutine
-            destinationVC?.session = session
+            destinationVC?.navigationItem.title = (self.currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC!.selectedWorkout = (self.currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC?.workoutIndex = (self.workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
+            destinationVC!.workoutRoutine = self.workoutRoutine
+            destinationVC?.session = self.session
+            destinationVC?.workoutWeek = self.workoutWeek
         }
         else {
             // NotesViewController
@@ -536,11 +537,12 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
             let destinationVC = segue.destinationViewController as? NotesViewController
             let selectedRow = tableView.indexPathForSelectedRow
             
-            destinationVC?.navigationItem.title = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
-            destinationVC!.selectedWorkout = (currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
-            destinationVC?.workoutIndex = (workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
-            destinationVC!.workoutRoutine = workoutRoutine
-            destinationVC?.session = session
+            destinationVC?.navigationItem.title = (self.currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC!.selectedWorkout = (self.currentWeekWorkoutList[(selectedRow?.section)!][(selectedRow?.row)!] as? String)!
+            destinationVC?.workoutIndex = (self.workoutIndexList[(selectedRow?.section)!][(selectedRow?.row)!] as? Int)!
+            destinationVC!.workoutRoutine = self.workoutRoutine
+            destinationVC?.session = self.session
+            destinationVC!.workoutWeek = self.workoutWeek
         }
     }
     
