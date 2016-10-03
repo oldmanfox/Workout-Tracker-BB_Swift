@@ -77,10 +77,16 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         // Force fetch when notified of significant data changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
-
+        
         self.tableView.reloadData()
     }
 

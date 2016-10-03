@@ -40,9 +40,6 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         currentNotes.delegate = self
         
-        // Force fetch when notified of significant data changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
-        
         self.roundLabel.hidden = true
         
         // Apply Border to TextViews
@@ -65,6 +62,13 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
         previousNotes.text = CDOperation.getNotesTextForRound(session, routine: workoutRoutine, workout: selectedWorkout, round: 1, index: workoutIndex - 1)
         
         updateWorkoutCompleteCellUI()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -96,7 +100,7 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         saveNote()
         
-        let alertController = UIAlertController(title: "Share", message: "", preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: "Share", message: "How you want to share your progress?", preferredStyle: .ActionSheet)
         
         let emailAction = UIAlertAction(title: "Email", style: .Default, handler: {
             action in

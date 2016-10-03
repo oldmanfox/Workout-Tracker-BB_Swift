@@ -28,6 +28,24 @@ class MeasurementsReportViewController: UIViewController, MFMailComposeViewContr
         self.htmlView.loadHTMLString(self.createHTML() as String, baseURL: nil)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
+    }
+    
+    func doNothing() {
+        
+        // Do nothing
+    }
+
     @IBAction func shareButtonPressed(sender: UIBarButtonItem) {
         
         let alertController = UIAlertController(title: "Share", message: "", preferredStyle: .ActionSheet)
@@ -150,7 +168,6 @@ class MeasurementsReportViewController: UIViewController, MFMailComposeViewContr
         }
         
         // Send email
-        
         let csvData = writeString.dataUsingEncoding(NSASCIIStringEncoding)
         let subject = NSString .localizedStringWithFormat("90 DWT BB %@ Measurements - Session %@", self.navigationItem.title!, session)
         let fileName = NSString .localizedStringWithFormat("90 DWT BB %@ Measurements - Session %@.csv", self.navigationItem.title!, session)

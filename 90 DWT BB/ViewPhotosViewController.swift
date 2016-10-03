@@ -34,6 +34,26 @@ class ViewPhotosViewController: UIViewController, UIImagePickerControllerDelegat
         self.collectionView.backgroundColor = lightGrey
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+        
+        self.collectionView.reloadData()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
+    }
+    
+    func doNothing() {
+        
+        // Do nothing
+    }
+
     func getPhotosFromDatabase() {
         
         // Fetch Photos

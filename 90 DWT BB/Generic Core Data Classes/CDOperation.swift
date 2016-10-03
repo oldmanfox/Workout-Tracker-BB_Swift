@@ -2256,6 +2256,200 @@ class CDOperation {
         return writeString as String
     }
     
+    class func singleWorkoutStringForEmail(workoutName: String, index: Int) -> String {
+        
+        let writeString = NSMutableString()
+        
+        let localAllWorkoutTitleArray = self.allWorkoutTitleArray()
+        let localAllExerciseTitleArray = self.allExerciseTitleArray()
+        var exerciseTitleArray = []
+        
+        for arrayIndex in 0..<localAllWorkoutTitleArray.count {
+            
+            if workoutName == localAllWorkoutTitleArray[arrayIndex] {
+                
+                exerciseTitleArray = localAllExerciseTitleArray[arrayIndex]
+            }
+        }
+        
+        // Get the current session value stored in the database
+        let currentSessionString = self.getCurrentSession()
+        
+        // Get the current routine value stored in the database
+        let currentRoutineString = self.getCurrentRoutine()
+
+        // Convert the index Int into an NSNumber
+        let convertedIndex = NSNumber(integer: index)
+        
+        // Get workout data with workout index
+        let request = NSFetchRequest( entityName: "Workout")
+        
+        var filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND index == %@",
+                                 currentSessionString,
+                                 currentRoutineString,
+                                 workoutName,
+                                 convertedIndex)
+        
+        request.predicate = filter
+        
+        do {
+            if let workoutObjects2 = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                
+                //print("workoutObjects.count = \(workoutObjects.count)")
+                
+                // Check if there are any matches for the given index.  If none skip the index.
+                if workoutObjects2.count == 0 {
+                    
+                    // No Matches for this workout with index
+                }
+                else {
+                    
+                    // Matches found
+                    
+                    // Add column headers
+                    for a in 0..<1 {
+                        
+                        //  Add the column headers for Routine, Month, Week, Workout, and Date to the string
+                        writeString.appendString("Session,Routine,Week,Try,Workout,Date\n")
+                        
+                        let localSession = workoutObjects2[a].session!
+                        let localRoutine = workoutObjects2[a].routine!
+                        let localWeek = workoutObjects2[a].week!
+                        let localWorkout = workoutObjects2[a].workout!
+                        let localDate = workoutObjects2[a].date!
+                        
+                        let dateString = NSDateFormatter.localizedStringFromDate(localDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+                        
+                        // Add column headers for indivialual workouts based on workout index number
+                        writeString.appendString("\(localSession),\(localRoutine),\(localWeek),\(index),\(localWorkout),\(dateString)\n")
+                    }
+                    
+                    //  Add the exercise name, reps and weight
+                    for b in 0..<exerciseTitleArray.count {
+                        
+                        let tempExerciseName = exerciseTitleArray[b] as! String
+                        
+                        //  Add the exercise title to the string
+                        writeString.appendString("\(tempExerciseName)\n")
+                        
+                        //  Add the reps to the string
+                        for round in 0..<6 {
+                            
+                            let roundConverted = NSNumber(integer: round)
+                            var tempRepData = ""
+                            
+                            filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise = %@ AND round = %@ AND index == %@",
+                                                 currentSessionString,
+                                                 currentRoutineString,
+                                                 workoutName,
+                                                 tempExerciseName,
+                                                 roundConverted,
+                                                 convertedIndex)
+                            
+                            request.predicate = filter
+                            
+                            do {
+                                if let workoutObjects3 = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                                    
+                                    //print("workoutObjects.count = \(workoutObjects.count)")
+                                    
+                                    if workoutObjects3.count >= 1 {
+                                        
+                                        //  Match found
+                                        if workoutObjects3.last?.reps != nil {
+                                            
+                                            tempRepData = (workoutObjects3.last?.reps)!
+                                            
+                                            if round == 5 {
+                                                //  Last column in the row so end the line with a return mark \n
+                                                writeString.appendString("\(tempRepData)\n")
+                                            }
+                                            else {
+                                                
+                                                writeString.appendString("\(tempRepData),")
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        
+                                        if round == 5 {
+                                            
+                                            //  Inserts a "" into the string and ends the line with a return mark \n
+                                            writeString.appendString("\(tempRepData)\n")
+                                        }
+                                        else {
+                                            
+                                            //  Inserts a "" into the string
+                                            writeString.appendString("\(tempRepData),")
+                                        }
+                                    }
+                                }
+                            } catch { print(" ERROR executing a fetch request: \( error)") }
+                        }
+                        
+                        //  Add the weight line from the database
+                        for round in 0..<6 {
+                            
+                            let roundConverted = NSNumber(integer: round)
+                            var tempWeightData = ""
+                            
+                            filter = NSPredicate(format: "session == %@ AND routine == %@ AND workout == %@ AND exercise = %@ AND round = %@ AND index == %@",
+                                                 currentSessionString,
+                                                 currentRoutineString,
+                                                 workoutName,
+                                                 tempExerciseName,
+                                                 roundConverted,
+                                                 convertedIndex)
+                            
+                            request.predicate = filter
+                            
+                            do {
+                                if let workoutObjects4 = try CDHelper.shared.context.executeFetchRequest(request) as? [Workout] {
+                                    
+                                    //print("workoutObjects.count = \(workoutObjects.count)")
+                                    
+                                    if workoutObjects4.count >= 1 {
+                                        
+                                        //  Match found
+                                        if workoutObjects4.last?.weight != nil {
+                                            
+                                            tempWeightData = (workoutObjects4.last?.weight)!
+                                            
+                                            if round == 5 {
+                                                //  Last column in the row so end the line with a return mark \n
+                                                writeString.appendString("\(tempWeightData)\n")
+                                            }
+                                            else {
+                                                
+                                                writeString.appendString("\(tempWeightData),")
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        
+                                        if round == 5 {
+                                            
+                                            //  Inserts a "" into the string and ends the line with a return mark \n
+                                            writeString.appendString("\(tempWeightData)\n")
+                                        }
+                                        else {
+                                            
+                                            //  Inserts a "" into the string
+                                            writeString.appendString("\(tempWeightData),")
+                                        }
+                                    }
+                                }
+                            } catch { print(" ERROR executing a fetch request: \( error)") }
+                        }
+                    }
+                }
+            }
+        } catch { print(" ERROR executing a fetch request: \( error)") }
+        
+        //  Return the string
+        return writeString as String
+    }
+
     class func findMaxSessionValue() -> String {
         
         // Workout Entity

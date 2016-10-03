@@ -28,6 +28,26 @@ class PhotoTVC: UITableViewController {
         session = CDOperation.getCurrentSession()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+        
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
+    }
+    
+    func doNothing() {
+        
+        // Do nothing
+    }
+
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

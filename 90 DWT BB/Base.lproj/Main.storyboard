@@ -137,7 +137,7 @@
         <!--Workout-->
         <scene sceneID="eAm-CF-VbZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ql-6n-2Te" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ql-6n-2Te" customClass="WorkoutNavigationController" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" image="weight_lifting" selectedImage="weight_lifting_selected" id="mYJ-0k-ZzZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rQM-hG-iG2">
@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="1078" y="1130"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MainTBC-->
         <scene sceneID="mjy-m8-1NB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vYJ-gU-i5B" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vYJ-gU-i5B" customClass="MainTBC" customModule="_0_DWT_BB" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jVY-uq-dPP">
                         <autoresizingMask key="autoresizingMask"/>

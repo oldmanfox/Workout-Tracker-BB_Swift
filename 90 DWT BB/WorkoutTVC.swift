@@ -7,9 +7,10 @@
 //
 
 import UIKit
-//import Foundation
+import Social
+import CoreData
 
-class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate {
+class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate, MFMailComposeViewControllerDelegate {
 
     var session = ""
     var workoutRoutine = ""
@@ -63,6 +64,24 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 88
+        
+        // Add rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(WorkoutTVC.actionButtonPressed(_:)))
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Force fetch when notified of significant data changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
+        
+        self.tableView.reloadData()
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "doNothing", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +89,156 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    func doNothing() {
+        
+        // Do nothing
+    }
+
+    func actionButtonPressed(sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(title: "Share", message: "How you want to share your progress?", preferredStyle: .ActionSheet)
+        
+        let emailAction = UIAlertAction(title: "Email", style: .Default, handler: {
+            action in
+            
+            self.sendEmail(CDOperation.singleWorkoutStringForEmail(self.selectedWorkout, index: self.workoutIndex))
+        })
+        
+        let facebookAction = UIAlertAction(title: "Facebook", style: .Default, handler: {
+            action in
+            
+            if(SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)) {
+                let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                //            socialController.setInitialText("Hello World!")
+                //            socialController.addImage(someUIImageInstance)
+                //            socialController.addURL(someNSURLInstance)
+                
+                self.presentViewController(socialController, animated: true, completion: nil)
+            }
+            else {
+                
+                let alertControllerError = UIAlertController(title: "Error", message: "Please ensure you are connected to the internet AND signed into the Facebook app on your device before posting to Facebook.", preferredStyle: .Alert)
+                
+                let cancelActionError = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                
+                alertControllerError.addAction(cancelActionError)
+                
+                if let popoverError = alertControllerError.popoverPresentationController {
+                    
+                    popoverError.barButtonItem = sender
+                    popoverError.sourceView = self.view
+                    popoverError.delegate = self
+                    popoverError.permittedArrowDirections = .Any
+                }
+                
+                self.presentViewController(alertControllerError, animated: true, completion: nil)
+            }
+        })
+        
+        let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: {
+            action in
+            
+            if(SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)) {
+                let socialController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                //            socialController.setInitialText("Hello World!")
+                //            socialController.addImage(someUIImageInstance)
+                //            socialController.addURL(someNSURLInstance)
+                
+                self.presentViewController(socialController, animated: true, completion: nil)
+            }
+            else {
+                
+                let alertControllerError = UIAlertController(title: "Error", message: "Please ensure you are connected to the internet AND signed into the Twitter app on your device before posting to Twitter.", preferredStyle: .Alert)
+                
+                let cancelActionError = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                
+                alertControllerError.addAction(cancelActionError)
+                
+                if let popoverError = alertControllerError.popoverPresentationController {
+                    
+                    popoverError.barButtonItem = sender
+                    popoverError.sourceView = self.view
+                    popoverError.delegate = self
+                    popoverError.permittedArrowDirections = .Any
+                }
+                
+                self.presentViewController(alertControllerError, animated: true, completion: nil)
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertController.addAction(emailAction)
+        alertController.addAction(facebookAction)
+        alertController.addAction(twitterAction)
+        alertController.addAction(cancelAction)
+        
+        if let popover = alertController.popoverPresentationController {
+            
+            popover.barButtonItem = sender
+            popover.sourceView = self.view
+            popover.delegate = self
+            popover.permittedArrowDirections = .Any
+        }
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func sendEmail(cvsString: String) {
+        
+        // Create MailComposerViewController object.
+        let mailcomposer = MFMailComposeViewController()
+        mailcomposer.mailComposeDelegate = self
+        mailcomposer.navigationBar.tintColor = UIColor.whiteColor()
+        
+        // Check to see if the device has at least 1 email account configured
+        if MFMailComposeViewController.canSendMail() {
+            
+            // Send email
+            let csvData = cvsString.dataUsingEncoding(NSASCIIStringEncoding)
+            let subject = "90 DWT BB Workout Data"
+            let fileName = NSString .localizedStringWithFormat("%@ - Session %@.csv", self.navigationItem.title!, session)
+            var emailAddress = [""]
+            
+            // Fetch defaultEmail data.
+            let request = NSFetchRequest( entityName: "Email")
+            let sortDate = NSSortDescriptor( key: "date", ascending: true)
+            request.sortDescriptors = [sortDate]
+            
+            do {
+                if let emailObjects = try CDHelper.shared.context.executeFetchRequest(request) as? [Email] {
+                    
+                    print("emailObjects.count = \(emailObjects.count)")
+                    
+                    if emailObjects.count != 0 {
+                        
+                        // There is a default email address.
+                        emailAddress = [(emailObjects.last?.defaultEmail)!]
+                    }
+                    else {
+                        
+                        // There is NOT a default email address.  Put an empty email address in the arrary.
+                        emailAddress = [""]
+                    }
+                }
+                
+            } catch { print(" ERROR executing a fetch request: \( error)") }
+            
+            mailcomposer.setToRecipients(emailAddress)
+            mailcomposer.setSubject(subject as String)
+            mailcomposer.addAttachmentData(csvData!, mimeType: "text/csv", fileName: fileName as String)
+            
+            presentViewController(mailcomposer, animated: true, completion: {
+                UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+            })
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
