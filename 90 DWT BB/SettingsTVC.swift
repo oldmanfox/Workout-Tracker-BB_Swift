@@ -11,6 +11,7 @@ import CoreData
 
 class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate {
     
+    // MARK: Variables
     @IBOutlet weak var routineCell: UITableViewCell!
     @IBOutlet weak var emailCell: UITableViewCell!
     @IBOutlet weak var autoLockCell: UITableViewCell!
@@ -37,6 +38,7 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
     
     var session = ""
     
+    // MARK: Functions
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -63,7 +65,7 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
         // Force fetch when notified of significant data changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
         
-        self.tableView.reloadData()
+        self.findiCloudStatus()
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -75,6 +77,16 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
     func doNothing() {
         
         // Do nothing
+        
+        // Get the current session
+        session = CDOperation.getCurrentSession()
+        self.currentSessionLabel.text = self.session
+        
+        self.findRoutineSetting()
+        self.findUseAutoLockSetting()
+        self.findEmailSetting()
+        
+        self.findiCloudStatus()
     }
 
     func configureButtonBorder() {
@@ -160,7 +172,7 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
                 CDHelper.saveSharedContext()
                 
                 let parentTBC = self.tabBarController as! MainTBC
-                parentTBC.routineChangedForNC = true
+                parentTBC.routineChangedForWorkoutNC = true
             }
         } catch { print(" ERROR executing a fetch request: \( error)") }
     }
@@ -254,7 +266,9 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
                             
                             // Session changed
                             let parentTBC = self.tabBarController as! MainTBC
-                            parentTBC.sessionChangedForNC = true
+                            parentTBC.sessionChangedForWorkoutNC = true
+                            parentTBC.sessionChangedForPhotoNC = true
+                            parentTBC.sessionChangedForMeasurementNC = true
                         }
                     }
                     
@@ -309,7 +323,9 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
                         
                         // Session changed
                         let parentTBC = self.tabBarController as! MainTBC
-                        parentTBC.sessionChangedForNC = true
+                        parentTBC.sessionChangedForWorkoutNC = true
+                        parentTBC.sessionChangedForPhotoNC = true
+                        parentTBC.sessionChangedForMeasurementNC = true
                     }
                 }
             } catch { print(" ERROR executing a fetch request: \( error)") }
@@ -413,7 +429,9 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
                         
                         // Session changed
                         let parentTBC = self.tabBarController as! MainTBC
-                        parentTBC.sessionChangedForNC = true
+                        parentTBC.sessionChangedForWorkoutNC = true
+                        parentTBC.sessionChangedForPhotoNC = true
+                        parentTBC.sessionChangedForMeasurementNC = true
                     }
                 }
             } catch { print(" ERROR executing a fetch request: \( error)") }
@@ -479,7 +497,7 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
                         
                         // Default routine changed
                         let parentTBC = self.tabBarController as! MainTBC
-                        parentTBC.routineChangedForNC = true
+                        parentTBC.routineChangedForWorkoutNC = true
                     }
                 }
             } catch { print(" ERROR executing a fetch request: \( error)") }
@@ -791,4 +809,41 @@ class SettingsTVC: UITableViewController, UIPopoverPresentationControllerDelegat
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func findiCloudStatus() {
+        
+        // Check if the user is signed into an iCloud account on the device.
+        if CDHelper.shared.iCloudAccountIsSignedIn() {
+            
+            self.iCloudDriveStatusLabel.text = "ON"
+        }
+        else {
+            
+            self.iCloudDriveStatusLabel.text = "OFF.  Change in Device Settings -> iCloud"
+        }
+    }
+    
+    
+//    - (void)findiCloudStatus {
+//    
+//    // Check if the user is signed into an iCloud account on the device.
+//    if ([CoreDataHelper sharedHelper].iCloudAccountIsSignedIn) {
+//    
+//    self.iCloudAccountStatusLabel.text = @"SIGNED-IN";
+//    }
+//    else {
+//    
+//    self.iCloudAccountStatusLabel.text = @"SIGNED-OUT.  Change in Device Settings -> iCloud";
+//    }
+//    
+//    // Check if the app is allowed to use iCloud.
+//    if ([CoreDataHelper sharedHelper].iCloudEnabledByUser) {
+//    
+//    self.iCloudAppStatusLabel.text = @"YES";
+//    }
+//    else {
+//    
+//    self.iCloudAppStatusLabel.text = @"NO.  Change in Device Settings -> 60 DWT HC";
+//    }
+//    }
 }

@@ -44,6 +44,9 @@ class MeasurementsReportViewController: UIViewController, MFMailComposeViewContr
     func doNothing() {
         
         // Do nothing
+        
+        self.loadMeasurements()
+        self.htmlView.loadHTMLString(self.createHTML() as String, baseURL: nil)
     }
 
     @IBAction func shareButtonPressed(sender: UIBarButtonItem) {

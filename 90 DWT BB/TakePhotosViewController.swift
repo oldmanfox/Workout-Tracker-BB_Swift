@@ -345,7 +345,7 @@ class TakePhotosViewController: UIViewController, UIImagePickerControllerDelegat
         let sortDate = NSSortDescriptor( key: "date", ascending: true)
         request.sortDescriptors = [sortDate]
         
-        // Weight with index and round
+        // Photo with session, month, and angle
         let filter = NSPredicate(format: "session == %@ AND month == %@ AND angle == %@",
                                  self.session,
                                  self.monthString,

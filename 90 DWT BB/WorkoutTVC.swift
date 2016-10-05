@@ -92,6 +92,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
     func doNothing() {
         
         // Do nothing
+        // self.tableView.reloadData()
     }
 
     func actionButtonPressed(sender: UIBarButtonItem) {

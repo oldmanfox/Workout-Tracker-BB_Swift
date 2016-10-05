@@ -31,6 +31,9 @@ class PhotoTVC: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Get the current session
+        session = CDOperation.getCurrentSession()
+        
         // Force fetch when notified of significant data changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.doNothing), name: "SomethingChanged", object: nil)
         
@@ -46,6 +49,7 @@ class PhotoTVC: UITableViewController {
     func doNothing() {
         
         // Do nothing
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source

@@ -38,7 +38,6 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
     var session = ""
     var monthString = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +69,7 @@ class MeasurementsRecordViewController: UIViewController, UITextFieldDelegate, M
     func doNothing() {
         
         // Do nothing
+        loadMeasurements()
     }
 
     func loadMeasurements() {

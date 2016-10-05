@@ -237,6 +237,9 @@
 		A57431C51D8C5CCB00D2893F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C41D8C5CCB00D2893F /* PhotoCollectionViewCell.swift */; };
 		A57431C71D90863000D2893F /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C61D90863000D2893F /* ViewPhotosViewController.swift */; };
 		A57431C91D9190C500D2893F /* PhotoCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57431C81D9190C500D2893F /* PhotoCollectionHeaderView.swift */; };
+		A59C5EAD1DA3DECF00A5A189 /* PhotoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C5EAC1DA3DECF00A5A189 /* PhotoNavigationController.swift */; };
+		A59C5EAF1DA3E11F00A5A189 /* MeasurementNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C5EAE1DA3E11F00A5A189 /* MeasurementNavigationController.swift */; };
+		A59C5EB11DA41A9E00A5A189 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A59C5EB01DA41A9E00A5A189 /* Settings.bundle */; };
 		A5A2D9711D3991F9009A363E /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */; };
 		A5C84C131D899AD0008CB5BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C84C111D899AD0008CB5BB /* Main.storyboard */; };
 		A5DE7C581D3FD33F0045B06C /* ExerciseChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */; };
@@ -720,6 +723,9 @@
 		A57431C41D8C5CCB00D2893F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A57431C61D90863000D2893F /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
 		A57431C81D9190C500D2893F /* PhotoCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionHeaderView.swift; sourceTree = "<group>"; };
+		A59C5EAC1DA3DECF00A5A189 /* PhotoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoNavigationController.swift; sourceTree = "<group>"; };
+		A59C5EAE1DA3E11F00A5A189 /* MeasurementNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementNavigationController.swift; sourceTree = "<group>"; };
+		A59C5EB01DA41A9E00A5A189 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		A5C84C121D899AD0008CB5BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5DE7C571D3FD33F0045B06C /* ExerciseChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewController.swift; sourceTree = "<group>"; };
@@ -1665,6 +1671,8 @@
 				A52813B71D1AF9E000F6FF57 /* AppDelegate.swift */,
 				A52813B91D1AF9E000F6FF57 /* ViewController.swift */,
 				A5685A511DA29501008297C9 /* WorkoutNavigationController.swift */,
+				A59C5EAC1DA3DECF00A5A189 /* PhotoNavigationController.swift */,
+				A59C5EAE1DA3E11F00A5A189 /* MeasurementNavigationController.swift */,
 				A5685A531DA29F10008297C9 /* MainTBC.swift */,
 				A5C84C111D899AD0008CB5BB /* Main.storyboard */,
 				A5A2D9701D3991F9009A363E /* DatePickerViewController.swift */,
@@ -1672,6 +1680,7 @@
 				A52813C01D1AF9E000F6FF57 /* LaunchScreen.storyboard */,
 				A52813C31D1AF9E000F6FF57 /* Info.plist */,
 				A5156F541D1B31F1002588C0 /* 90-DWT-BB-Bridging-Header.h */,
+				A59C5EB01DA41A9E00A5A189 /* Settings.bundle */,
 			);
 			path = "90 DWT BB";
 			sourceTree = "<group>";
@@ -2107,6 +2116,7 @@
 				A515719E1D1B3256002588C0 /* MPUnmutedBtn.png in Resources */,
 				A515719A1D1B3256002588C0 /* MPMutedBtn@3x.png in Resources */,
 				A51571911D1B3256002588C0 /* MPCloseBtn@3x.png in Resources */,
+				A59C5EB11DA41A9E00A5A189 /* Settings.bundle in Resources */,
 				A51571991D1B3256002588C0 /* MPMutedBtn@2x.png in Resources */,
 				A51571211D1B3256002588C0 /* LICENSE in Resources */,
 			);
@@ -2245,12 +2255,14 @@
 				A5DE7D2A1D50F2040045B06C /* MeasurementsTVC.swift in Sources */,
 				A51571461D1B3256002588C0 /* MPVASTAd.m in Sources */,
 				A51571611D1B3256002588C0 /* MPMoPubNativeAdAdapter.m in Sources */,
+				A59C5EAF1DA3E11F00A5A189 /* MeasurementNavigationController.swift in Sources */,
 				A51571511D1B3256002588C0 /* MPVASTResource.m in Sources */,
 				A51571071D1B3256002588C0 /* MPLastResortDelegate+EventKit.m in Sources */,
 				A51571001D1B3256002588C0 /* MPAdDestinationDisplayAgent.m in Sources */,
 				A51571191D1B3256002588C0 /* MPHTMLInterstitialViewController.m in Sources */,
 				A515717D1D1B3256002588C0 /* MPStaticNativeAdRendererSettings.m in Sources */,
 				A51571221D1B3256002588C0 /* MPMRAIDBannerCustomEvent.m in Sources */,
+				A59C5EAD1DA3DECF00A5A189 /* PhotoNavigationController.swift in Sources */,
 				A515712B1D1B3256002588C0 /* MRError.m in Sources */,
 				A51571371D1B3256002588C0 /* UIView+MPAdditions.m in Sources */,
 				A51571321D1B3256002588C0 /* NSHTTPURLResponse+MPAdditions.m in Sources */,

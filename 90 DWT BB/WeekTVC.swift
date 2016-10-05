@@ -99,6 +99,7 @@ class WeekTVC: UITableViewController, UIPopoverPresentationControllerDelegate, U
     func doNothing() {
         
         // Do nothing
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

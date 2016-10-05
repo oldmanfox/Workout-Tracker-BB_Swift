@@ -86,6 +86,17 @@ class NotesViewController: UIViewController, MFMailComposeViewControllerDelegate
     func doNothing() {
         
         // Do nothing
+        
+        // Get data to display in the textfields
+        // Current textfield
+        currentNotes.text = CDOperation.getNotesTextForRound(session, routine: workoutRoutine, workout: selectedWorkout, round: 1, index: workoutIndex)
+        self.originalNoteText = currentNotes.text
+        
+        // Previous textfield
+        previousNotes.text = CDOperation.getNotesTextForRound(session, routine: workoutRoutine, workout: selectedWorkout, round: 1, index: workoutIndex - 1)
+        
+        updateWorkoutCompleteCellUI()
+
     }
     
     func saveNote() {

@@ -102,6 +102,7 @@ class MonthTVC: UITableViewController, UIPopoverPresentationControllerDelegate, 
     func doNothing() {
         
         // Do nothing
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source

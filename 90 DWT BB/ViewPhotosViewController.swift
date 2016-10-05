@@ -52,6 +52,8 @@ class ViewPhotosViewController: UIViewController, UIImagePickerControllerDelegat
     func doNothing() {
         
         // Do nothing
+        self.getPhotosFromDatabase()
+        self.collectionView.reloadData()
     }
 
     func getPhotosFromDatabase() {
