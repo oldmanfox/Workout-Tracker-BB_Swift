@@ -10,7 +10,7 @@ import UIKit
 import Social
 import CoreData
 
-class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate, MFMailComposeViewControllerDelegate {
+class WorkoutTVC: UITableViewController, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate {
 
     var session = ""
     var workoutRoutine = ""
@@ -92,7 +92,7 @@ class WorkoutTVC: CDTableViewController, UIPopoverPresentationControllerDelegate
     func doNothing() {
         
         // Do nothing
-        // self.tableView.reloadData()
+        self.tableView.reloadData()
     }
 
     func actionButtonPressed(sender: UIBarButtonItem) {

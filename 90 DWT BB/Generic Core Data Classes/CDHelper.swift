@@ -288,32 +288,6 @@ class CDHelper : NSObject  {
             print("** iCloud is DISABLED in Settings **")
             return false
         }
-        
-
-        
-//        let alert = UIAlertController(title: "Allow this app to use iCloud Drive?", message: "This will allow your data to be stored in iCloud Drive.", preferredStyle: .Alert)
-//        
-//        let allowAction = UIAlertAction(title: "Allow", style: .Default, handler: { (action) -> Void in
-//            
-//            return true
-//        })
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
-//            
-//            // Don't do anything. In your own applications, store this decision.
-//            return false
-//        })
-//        
-//        alert.addAction(allowAction)
-//        alert.addAction(cancelAction)
-//        
-//        // PRESENT
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            if let initialVC = UIApplication.sharedApplication().keyWindow?.rootViewController {
-//                initialVC.presentViewController(alert, animated: true, completion: nil)
-//            } else {print("%@ FAILED to prepare the initial view controller",#function)}
-//        })
-//        
-//        return false
     }
     
     // MARK: - SAVING
